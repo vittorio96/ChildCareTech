@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -34,6 +35,7 @@ public class ControllerMainAnagrafica extends AbstractController implements Init
     @FXML Button editChildButton;
     @FXML Button editContactButton;
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         AbstractController.setCurrentController(this);
@@ -44,15 +46,15 @@ public class ControllerMainAnagrafica extends AbstractController implements Init
     */
 
     @FXML protected void handleAddChildButton(ActionEvent event) throws IOException {
-        changeScene(addChildButton,"../../resources/fxml/anagrafica_addChild.fxml");
+        changeSceneInPopup(addChildButton,"../../resources/fxml/anagrafica_addChild.fxml",800,450);
     }
 
     @FXML protected void handleAddStaffButton(ActionEvent event) throws IOException {
-        changeScene(addStaffButton,"../../resources/fxml/anagrafica_addStaff.fxml");
+        changeSceneInPopup(addStaffButton,"../../resources/fxml/anagrafica_addStaff.fxml",800,450);
     }
 
     @FXML protected void handleAddContactButton(ActionEvent event) throws IOException {
-        changeScene(addStaffButton,"../../resources/fxml/anagrafica_addContact.fxml");
+        changeSceneInPopup(addContactButton,"../../resources/fxml/anagrafica_addContact.fxml",800,450);
     }
 
     @FXML protected void handleEditChildButton(ActionEvent event) throws IOException {
@@ -64,6 +66,6 @@ public class ControllerMainAnagrafica extends AbstractController implements Init
     }
 
     @FXML protected void handleEditContactButton(ActionEvent event) throws IOException {
-        changeSceneInPopup(editChildButton,"../../resources/fxml/anagrafica_manageContact.fxml",800,450);
+        changeSceneInPopup(editContactButton,"../../resources/fxml/anagrafica_manageContact.fxml",800,450);
     }
 }

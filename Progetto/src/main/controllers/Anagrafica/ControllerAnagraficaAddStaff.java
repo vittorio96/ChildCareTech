@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.util.StringConverter;
 import main.NormalClasses.Anagrafica.Person;
 import main.NormalClasses.Anagrafica.Staff;
@@ -26,12 +27,6 @@ public class ControllerAnagraficaAddStaff extends AbstractController implements 
     private final String pattern = "dd/MM/yyyy";
     private final int CODFISLENGTH = 16;
 
-    @FXML private TextField loggedUserDataDisplay;
-    @FXML private Button giteButton;
-    @FXML private Button mensaButton;
-    @FXML private Button anagraficaButton;
-    @FXML private Button logoutButton;
-    @FXML private Button nextButton;
     @FXML private TextField nameTextField;
     @FXML private TextField surnameTextField;
     @FXML private TextField codFisTextField;
@@ -40,10 +35,10 @@ public class ControllerAnagraficaAddStaff extends AbstractController implements 
     @FXML private DatePicker birthdayDatePicker;
     @FXML private ChoiceBox userTypeDropList;
 
+    @FXML private ImageView goHomeImageView;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loggedUserDataDisplay.setText(loggedUser.getUsername().toUpperCase());
-        setEnabledItems();
 
         codFisTextField.textProperty().addListener((ov, oldValue, newValue) -> {
             codFisTextField.setText(newValue.toUpperCase());
@@ -77,33 +72,6 @@ public class ControllerAnagraficaAddStaff extends AbstractController implements 
                 }
             }
         });
-    }
-
-    public void setEnabledItems() {
-
-        if(userTypeFlag== User.UserTypeFlag.MENSA) {
-            giteButton.setDisable(true);
-            anagraficaButton.setDisable(true);
-        }
-        if(userTypeFlag== User.UserTypeFlag.SUPERVISORE){
-            mensaButton.setDisable(true);
-        }
-    }
-
-    @FXML protected void handleMensaButtonAction(ActionEvent event) throws IOException {
-        changeScene(mensaButton,"../../resources/fxml/mainmensa.fxml");
-    }
-
-    @FXML protected void handleGiteButtonAction(ActionEvent event) throws IOException {
-        changeScene(giteButton,"../../resources/fxml/maingite.fxml");
-    }
-
-    @FXML protected void handleAnagraficaButtonAction(ActionEvent event) throws IOException {
-        changeScene(logoutButton,"../../resources/fxml/mainanagrafica.fxml");
-    }
-
-    @FXML protected void handleLogoutButtonAction(ActionEvent event) throws IOException {
-        changeScene(logoutButton,"../../resources/fxml/login.fxml");
     }
 
     @FXML protected void handleNextButtonAction(ActionEvent event) throws IOException{
@@ -141,7 +109,6 @@ public class ControllerAnagraficaAddStaff extends AbstractController implements 
                     alert2.setHeaderText("Successo! ");
                     alert2.setContentText("Dati inseriti correttamente nel database.\n" + "Sarai ridiretto al menu");
                     alert2.showAndWait();
-                    changeScene(logoutButton, "../../resources/fxml/mainanagrafica.fxml");
                 }
             } catch (Exception e){
                 //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
@@ -213,5 +180,11 @@ public class ControllerAnagraficaAddStaff extends AbstractController implements 
 
         return errors == 0;
 
+    }
+
+    public void handleGoHomebutton() {
+        if(createConfirmationDialog("Sei sicuro di voler chiudere?",
+                "I dati inseriti non verranno salvati."))
+            closePopup(goHomeImageView);
     }
 }

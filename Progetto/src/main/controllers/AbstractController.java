@@ -123,13 +123,13 @@ public abstract class AbstractController {
         lateralPane.getChildren().setAll(anchorPane);
     }
 
-    public boolean createConfirmationDialog(){
+    public boolean createConfirmationDialog(String headerText, String contentText){
         Alert alert2 = new Alert(Alert.AlertType.CONFIRMATION);
         ButtonType buttonTypeOne = new ButtonType("No");
         ButtonType buttonTypeTwo = new ButtonType("Si");
         alert2.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
-        alert2.setHeaderText("Sei sicuro di voler eliminare?");
-        alert2.setContentText("Una volta fatta la cancellazione è impossibile annullarla ");
+        alert2.setHeaderText(headerText);
+        alert2.setContentText(contentText);
         alert2.showAndWait();
 
         return alert2.getResult() == buttonTypeTwo;

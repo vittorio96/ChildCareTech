@@ -17,11 +17,10 @@
 
 <VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.Gite.ControllerGiteManagePresenzeTappe">
   <children>
-    <SplitPane dividerPositions="0.3151447661469933, 0.4732739420935412, 0.6191536748329621" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <SplitPane dividerPositions="0.2884187082405345, 0.4510022271714922, 0.6002227171492205" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
             <TableView fx:id="giteTable" prefHeight="298.0" prefWidth="175.0" stylesheets="@../CSS/tableview.css">
                <columns>
-                  <TableColumn fx:id="codiceGitaColumn" prefWidth="67.72594064474106" text="Codice" />
                   <TableColumn fx:id="dataGitaColumn" prefWidth="88.2740707397461" text="Data" />
                   <TableColumn fx:id="nomeGitaColumn" prefWidth="75.0" text="Nome gita" />
                </columns>
@@ -47,8 +46,8 @@
             </TableView>
             <TableView fx:id="iscrizioniTable" prefHeight="298.0" prefWidth="175.0" stylesheets="@../CSS/tableview.css">
                <columns>
-                  <TableColumn fx:id="codiceBambinoColumn" prefWidth="91.21292114257812" text="CodR" />
-                  <TableColumn fx:id="nomeBambinoColumn" prefWidth="205.787109375" text="Nome" />
+                  <TableColumn fx:id="codiceBambinoColumn" prefWidth="70.0" text="CodR" />
+                  <TableColumn fx:id="nomeBambinoColumn" prefWidth="108.0" text="Nome" />
                   <TableColumn fx:id="cognomeBambinoColumn" prefWidth="75.0" text="Cognome" />
                   <TableColumn fx:id="presenzaBambinoColumn" prefWidth="75.0" sortable="false" text="Presenza" />
                </columns>

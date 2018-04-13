@@ -31,14 +31,10 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
     private final String pattern = "dd/MM/yyyy";
     private final String inputPattern = "yyyy-MM-dd";
     private String NAME = "contatto";
-
-    //Choicebox
-    @FXML private ComboBox choiceDropList;
+    private String lastSelection;
 
     //Pane
-    @FXML private Pane parentMainPane;
-    @FXML private Pane doctorMainPane;
-    @FXML private Pane supplierMainPane;
+    @FXML private TabPane tabPane;
 
     //Tabella Genitore
     @FXML private TableView<StringPropertyContact> parentTable;
@@ -83,10 +79,6 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
 
         supplierNameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeFProperty());
 
-        parentMainPane.setVisible(false);
-        doctorMainPane.setVisible(false);
-        supplierMainPane.setVisible(false);
-
         showParentDetails(null);
         showDoctorDetails(null);
         showSupplierDetails(null);
@@ -98,11 +90,11 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
         supplierTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showSupplierDetails(newValue));
 
-        ArrayList items = new ArrayList<String>();
-        items.addAll(Arrays.asList(Contact.ContactTypeFlag.values()));
-        items.add("FORNITORE");
-        ObservableList al = FXCollections.observableArrayList(items);
-        choiceDropList.setItems(al);
+        tabPane.getSelectionModel().selectedItemProperty().addListener((obs,ov,nv)->{
+            if(nv!=null){
+                lastSelection = nv.getText().toUpperCase();
+            }
+        });
 
         List<Contact> contactArrayList = null;
         contactArrayList = CLIENT.clientExtractContactsFromDb();
@@ -129,24 +121,6 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
     @FXML private void handleGoHomebutton(){
         Stage stage = (Stage) parentSaveChangesButton.getScene().getWindow();
         stage.close();
-    }
-
-    @FXML private void handleSelectedOption(){
-        if(!choiceDropList.getSelectionModel().isEmpty()) {
-            if(choiceDropList.getSelectionModel().getSelectedItem().toString().equals(Contact.ContactTypeFlag.GENITORE.toString())){
-                doctorMainPane.setVisible(false);
-                supplierMainPane.setVisible(false);
-                parentMainPane.setVisible(true);
-            } else if(choiceDropList.getSelectionModel().getSelectedItem().toString().equals(Contact.ContactTypeFlag.PEDIATRA.toString())) {
-                supplierMainPane.setVisible(false);
-                parentMainPane.setVisible(false);
-                doctorMainPane.setVisible(true);
-            } else {
-                parentMainPane.setVisible(false);
-                doctorMainPane.setVisible(false);
-                supplierMainPane.setVisible(true);
-            }
-        }
     }
 
     //Parent

@@ -7,6 +7,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.util.StringConverter;
 import main.*;
 import main.NormalClasses.Anagrafica.Child;
@@ -26,6 +28,7 @@ public class ControllerAnagraficaAddChild extends AbstractController implements 
     private final int CODFISLENGTH = 16;
     private int parent2errors = 0;
 
+    @FXML ImageView goHomeImageView;
     //Bambino
     @FXML private TextField nameTextField;
     @FXML private TextField surnameTextField;
@@ -161,6 +164,7 @@ public class ControllerAnagraficaAddChild extends AbstractController implements 
                     //Genera QR
                     QRGenerator.GenerateQR(child);
                     createSuccessPopup();
+                    closePopup(goHomeImageView);
                 }
             } catch (Exception e){
                 //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
@@ -315,4 +319,9 @@ public class ControllerAnagraficaAddChild extends AbstractController implements 
         return parent2errors;
     }
 
+    public void handleGoHomebutton() {
+        if(createConfirmationDialog("Sei sicuro di voler chiudere?",
+                "I dati inseriti non verranno salvati."))
+            closePopup(goHomeImageView);
+    }
 }

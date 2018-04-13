@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import main.*;
 import main.NormalClasses.Anagrafica.Contact;
@@ -23,14 +24,6 @@ import java.util.ResourceBundle;
 
 public class ControllerAnagraficaAddContact extends AbstractController implements Initializable {
 
-    @FXML private TextField loggedUserDataDisplay;
-    @FXML private Button giteButton;
-    @FXML private Button mensaButton;
-    @FXML private Button anagraficaButton;
-    @FXML private Button logoutButton;
-    @FXML private ComboBox choiceDropList;
-    @FXML private Pane contactEsternoPane;
-    @FXML private Pane fornitorePane;
 
     //fornitore
     @FXML private TextField nomeFornitoreTextField;
@@ -44,69 +37,34 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
     @FXML private TextField surnameTextField;
     @FXML private TextField codFisTextField;
 
+    @FXML private TextField nameTextField1;
+    @FXML private TextField cellphoneTextField1;
+    @FXML private TextField surnameTextField1;
+    @FXML private TextField codFisTextField1;
+    @FXML private Tab genericContact;
+
+    @FXML private ImageView goHomeImageView;
+    @FXML private TabPane tabPane;
+    @FXML private String lastSelection;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loggedUserDataDisplay.setText(loggedUser.getUsername().toUpperCase());
 
         codFisTextField.textProperty().addListener((ov, oldValue, newValue) -> {
             codFisTextField.setText(newValue.toUpperCase());
         });
 
-        setEnabledItems();
+        tabPane.getSelectionModel().selectedItemProperty().addListener((obs,ov,nv)->{
+            if(nv!=null){
+                lastSelection = nv.getText().toUpperCase();
+            }
+        });
+
         AbstractController.setCurrentController(this);
 
-        ArrayList items = new ArrayList<String>();
-        items.addAll(Arrays.asList(Contact.ContactTypeFlag.values()));
-        items.add("FORNITORE");
-        ObservableList al = FXCollections.observableArrayList(items);
-        choiceDropList.setItems(al);
-
-        fornitorePane.setVisible(false);
-        contactEsternoPane.setVisible(false);
     }
 
-    public void setEnabledItems() {
 
-        if(userTypeFlag== User.UserTypeFlag.MENSA) {
-            giteButton.setDisable(true);
-            anagraficaButton.setDisable(true);
-        }
-        if(userTypeFlag== User.UserTypeFlag.SUPERVISORE){
-            mensaButton.setDisable(true);
-        }
-    }
-
-    @FXML protected void handleMensaButtonAction(ActionEvent event) throws IOException {
-        changeScene(mensaButton,"../../resources/fxml/mainmensa.fxml");
-    }
-
-    @FXML protected void handleGiteButtonAction(ActionEvent event) throws IOException {
-        changeScene(giteButton,"../../resources/fxml/maingite.fxml");
-    }
-
-    @FXML protected void handleAnagraficaButtonAction(ActionEvent event) throws IOException {
-        changeScene(logoutButton,"../../resources/fxml/mainanagrafica.fxml");
-    }
-
-    @FXML protected void handleLogoutButtonAction(ActionEvent event) throws IOException {
-        changeScene(logoutButton,"../../resources/fxml/login.fxml");
-    }
-
-    @FXML protected void handleSelectedOption() throws IOException{
-
-        if(!choiceDropList.getSelectionModel().isEmpty()) {
-           if(choiceDropList.getSelectionModel().getSelectedItem().toString().equals("FORNITORE")){
-
-               contactEsternoPane.setVisible(false);
-               fornitorePane.setVisible(true);
-
-           } else {
-               fornitorePane.setVisible(false);
-               contactEsternoPane.setVisible(true);
-           }
-        }
-
-    }
 
     @FXML protected void handleFornitoreButtonAction(ActionEvent event) throws IOException{
         //Fornitore
@@ -135,7 +93,7 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
                     alert2.setHeaderText("Successo! ");
                     alert2.setContentText("Dati inseriti correttamente nel database.\n" + "Sarai ridiretto al menu");
                     alert2.showAndWait();
-                    changeScene(logoutButton, "../../resources/fxml/mainanagrafica.fxml");
+                    closePopup(goHomeImageView);
                 }
             } catch (Exception e){
                 //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
@@ -151,17 +109,14 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
         }
     }
 
-    @FXML protected void handleNextButtonAction(ActionEvent event) throws IOException{
+    @FXML protected void handleDoctorNextButtonAction(ActionEvent event) throws IOException{
         //Genitore o Pediatra
-        if(textConstraintsRespectedForContact()) {
+        if(textConstraintsRespectedForDoctor()) {
             String nome = nameTextField.getText();
             String cognome = surnameTextField.getText();
             String cell = cellphoneTextField.getText();
             String codFis = codFisTextField.getText();
-            String selection = choiceDropList.getSelectionModel().getSelectedItem().toString();
-            System.out.println(selection);
-            Contact.ContactTypeFlag tipo =
-                    Contact.ContactTypeFlag.valueOf(selection);
+            Contact.ContactTypeFlag tipo = Contact.ContactTypeFlag.valueOf(lastSelection);
 
             Person contact = new Contact(nome,  cognome, codFis, cell, Integer.toString(tipo.getOrdernum()) );
 
@@ -181,7 +136,7 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
                     alert2.setHeaderText("Successo! ");
                     alert2.setContentText("Dati inseriti correttamente nel database.\n" + "Sarai ridiretto al menu");
                     alert2.showAndWait();
-                    changeScene(logoutButton, "../../resources/fxml/mainanagrafica.fxml");
+                    closePopup(goHomeImageView);
                 }
             } catch (Exception e){
                 //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
@@ -198,7 +153,43 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
 
     }
 
-    private boolean textConstraintsRespectedForContact() {
+    private boolean textConstraintsRespectedForParent() {
+        final int CODFISLENGTH = 16;
+        String errorCss = "-fx-text-box-border: red ; -fx-focus-color: red ;";
+        String normalCss = "-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
+        int errors = 0;
+
+        if(codFisTextField1.getText().length()!= CODFISLENGTH){
+            codFisTextField1.setStyle(errorCss);
+            errors++;
+        }else {
+            codFisTextField1.setStyle(normalCss);
+        }
+
+        if(cellphoneTextField1.getText().length()== 0){
+            cellphoneTextField1.setStyle(errorCss);
+            errors++;
+        }else {
+            cellphoneTextField1.setStyle(normalCss);
+        }
+
+        if(nameTextField1.getText().length() == 0){
+            nameTextField1.setStyle(errorCss);
+            errors++;
+        }else {
+            nameTextField1.setStyle(normalCss);
+        }
+
+        if(surnameTextField1.getText().length() == 0){
+            surnameTextField1.setStyle(errorCss);
+            errors++;
+        }else {
+            surnameTextField1.setStyle(normalCss);
+        }
+        return errors == 0;
+    }
+
+    private boolean textConstraintsRespectedForDoctor() {
         final int CODFISLENGTH = 16;
         String errorCss = "-fx-text-box-border: red ; -fx-focus-color: red ;";
         String normalCss = "-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
@@ -270,4 +261,39 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
         return errors == 0;
     }
 
+    public void handleGoHomebutton(MouseEvent mouseEvent) {
+        if(createConfirmationDialog("Sei sicuro di voler chiudere?",
+                "I dati inseriti non verranno salvati."))
+            closePopup(goHomeImageView);
+    }
+
+    public void handleParentNextButtonAction(ActionEvent event) {
+        if(textConstraintsRespectedForParent()) {
+            String nome = nameTextField1.getText();
+            String cognome = surnameTextField1.getText();
+            String cell = cellphoneTextField1.getText();
+            String codFis = codFisTextField1.getText();
+            Contact.ContactTypeFlag tipo = Contact.ContactTypeFlag.valueOf(lastSelection);
+
+            Person contact = new Contact(nome,  cognome, codFis, cell, Integer.toString(tipo.getOrdernum()) );
+
+            boolean success = CLIENT.clientInsertIntoDb(contact);
+            try {
+                if (!success) {
+                    createErrorPopup("Verifica i dati inseriti ","Contatto già esistente o cellulare già in Db");
+
+                } else {
+                    createSuccessPopup();
+                    closePopup(goHomeImageView);
+                }
+            } catch (Exception e){
+                //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
+            }
+
+        }
+        else{
+            createErrorPopup("Verifica i dati inseriti ", "Hai lasciato campi vuoti o con un formato sbagliato");
+        }
+
+    }
 }
