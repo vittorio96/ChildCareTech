@@ -1,0 +1,28 @@
+.combo-box .list-cell {
+    -fx-background-color:  #EEF2F6;
+    -fx-background-radius: 0;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #DAE4EB, #EEF2F6;
+    -fx-background-insets: 0, 1;
+}
+
+.combo-box-popup .list-view .list-cell
+{
+    -fx-padding: 4 0 4 5;
+
+    /* No alternate highlighting */
+    -fx-background-color: #EEF2F6;
+}
+.combo-box-popup .list-view .list-cell:filled:hover
+{
+    -fx-background-color: white;
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+.combo-box-base
+{
+    -fx-background-color: #EEF2F6, #EEF2F6, #EEF2F6, #EEF2F6;
+
+}

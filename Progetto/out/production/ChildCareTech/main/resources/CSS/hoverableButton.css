@@ -1,0 +1,10 @@
+.button{
+  -fx-background-color:  #eef2f6;
+  -fx-background-radius: 0;
+  }
+
+.button:hover {
+    -fx-background-color: #717E93; /* Darker */
+    -fx-text-fill: white;
+    -fx-font-family: 'Futura';
+}

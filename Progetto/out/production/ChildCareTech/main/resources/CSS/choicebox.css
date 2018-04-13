@@ -1,0 +1,11 @@
+.choice-box {
+  -fx-background-color: #EEF2F6;
+  -fx-mark-color: #717E93; // arrow color
+}
+.choice-box .context-menu { -fx-background-color: white; }
+// Focused item background color in the list
+.choice-box .menu-item:focused { -fx-background-color: #42A0EC; }
+// Text color of non-focused items in the list
+.choice-box .menu-item > .label { -fx-text-fill: #717E93; }
+// Text color of focused item in the list
+.choice-box .menu-item:focused > .label { -fx-text-fill: white; }

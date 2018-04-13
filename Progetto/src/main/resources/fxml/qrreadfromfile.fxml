@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.ControllerAccessiGeneraQR">
+   <children>
+      <SplitPane layoutX="153.0" layoutY="70.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ImageView fx:id="qrDisplay" fitHeight="200.0" fitWidth="200.0" layoutX="160.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="117.0" fitWidth="127.0" layoutX="345.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/files.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="searchButton" layoutX="361.0" layoutY="270.0" mnemonicParsing="false" stylesheets="@../CSS/darkButton.css" text="Cerca File" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Button fx:id="exitButton" layoutX="733.0" layoutY="-32.0" mnemonicParsing="false" text="Button" />
+   </children>
+</AnchorPane>

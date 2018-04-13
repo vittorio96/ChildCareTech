@@ -1,0 +1,25 @@
+.combo-box .list-cell {
+    -fx-background-color:  #DAE4EB;
+    -fx-text-fill: black;
+    -fx-background-radius: 0;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover
+{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+
+
+.combo-box-popup .list-view {
+    -fx-background-color: #DAE4EB, #DAE4EB;
+    -fx-background-insets: 0, 1;
+}
+
+/*Arrow Shadow-Border-InnerBorder-ArrowContainer*/
+.combo-box-base
+{
+    -fx-background-color: #DAE4EB, #DAE4EB, #DAE4EB, #DAE4EB;
+
+}

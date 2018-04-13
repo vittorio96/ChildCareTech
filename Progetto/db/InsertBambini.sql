@@ -1,0 +1,10 @@
+/*
+-- Query: SELECT * FROM ChildCareTech.Bambino
+LIMIT 0, 1000
+
+-- Date: 2018-03-23 14:26
+*/
+INSERT INTO `Bambino` (`CodF`,`Nome`,`Cognome`,`DataN`,`CodR`,`CodFGen1`,`CodFGen2`,`CodFPed`) VALUES ('FUJY7890ASDF5213','Jose','De la Verga','2018-03-20',13,'FUJY7890ASDF5245','FUJY7890ASDF6581','FUJY7890ASDF6581');
+INSERT INTO `Bambino` (`CodF`,`Nome`,`Cognome`,`DataN`,`CodR`,`CodFGen1`,`CodFGen2`,`CodFPed`) VALUES ('PATAVLZ970212PLO','Patricio','Avilez','2018-03-05',18,'JUNAVLZ970212PLP','VALMTZ789187KHSL','KIMFSTR010288PLO');
+INSERT INTO `Bambino` (`CodF`,`Nome`,`Cognome`,`DataN`,`CodR`,`CodFGen1`,`CodFGen2`,`CodFPed`) VALUES ('TGBYHNUJMIBTREDF','Raul','Lopez','2018-03-19',10,'TGBYHNUJMIBTREDP','TGBYHNUJMIBTRLIR','TGBYHNUJMIBTRLIR');
+INSERT INTO `Bambino` (`CodF`,`Nome`,`Cognome`,`DataN`,`CodR`,`CodFGen1`,`CodFGen2`,`CodFPed`) VALUES ('TGCRFSPLTGCRFSPL','Joaquin','Marquez','2018-02-26',15,'TGCRFSPLTGCRFSPA','TGCRFSPLTGCRFS87','TGCRFSPLTGCRFS76');
