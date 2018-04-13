@@ -43,7 +43,7 @@ public class ControllerAnagraficaManageStaff extends AbstractController implemen
     //Buttons
     @FXML private Button saveChangesButton;
     @FXML private Button deleteButton;
-    @FXML private Button gohomeButton;
+    @FXML private ImageView goHomeImageView;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -110,7 +110,7 @@ public class ControllerAnagraficaManageStaff extends AbstractController implemen
         }
     }
 
-    @FXML private void handleGoHomebutton(){
+    @FXML private void handleGoHomeButton(){
         Stage stage = (Stage) saveChangesButton.getScene().getWindow();
         stage.close();
     }
@@ -213,5 +213,9 @@ public class ControllerAnagraficaManageStaff extends AbstractController implemen
             birthdayDatePicker.setStyle("-fx-border-color: transparent ; -fx-focus-color: transparent ;");
         }
         return errors == 0;
+    }
+
+    public void handleGoHomebutton() {
+        closePopup(goHomeImageView);
     }
 }

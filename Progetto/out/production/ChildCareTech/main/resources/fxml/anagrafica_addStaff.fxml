@@ -11,49 +11,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.Anagrafica.ControllerAnagraficaAddStaff">
    <children>
-      <Label layoutX="330.0" layoutY="14.0" text="Aggiungi Personale" textFill="#6d7786">
+      <Label layoutX="241.0" layoutY="30.0" text="Aggiungi Personale" textFill="#6d7786">
          <font>
             <Font name="Futura Medium" size="36.0" />
          </font>
       </Label>
-      <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="452.0" prefWidth="162.0" style="-fx-background-color: #eef2f6 #eef2f6 #eef2f6 #eef2f6;">
-         <children>
-            <Pane layoutX="-3.0" layoutY="-1.0" prefHeight="99.0" prefWidth="166.0" style="-fx-background-color: #717E93;">
-               <children>
-                  <TextField id="WelcomeField" fx:id="loggedUserDataDisplay" editable="false" layoutX="27.0" layoutY="53.0" prefHeight="27.0" prefWidth="113.0" style="-fx-background-color: #717E93; -fx-text-inner-color: #FFFFFF; -fx-alignment: center; -fx-font-family: Futura;" />
-                  <ImageView fitHeight="42.0" fitWidth="37.0" layoutX="65.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../images/user.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <Button fx:id="logoutButton" layoutX="52.0" layoutY="376.0" mnemonicParsing="false" onAction="#handleLogoutButtonAction" stylesheets="@../CSS/loginButton.css" text="Logout" />
-            <Button fx:id="anagraficaButton" layoutY="98.0" mnemonicParsing="false" onAction="#handleAnagraficaButtonAction" prefHeight="41.0" prefWidth="163.0" stylesheets="@../CSS/hoverableButton.css" text="Anagrafica">
-               <font>
-                  <Font name="Futura Medium" size="13.0" />
-               </font>
-            </Button>
-            <Button fx:id="giteButton" layoutY="139.0" mnemonicParsing="false" onAction="#handleGiteButtonAction" prefHeight="41.0" prefWidth="163.0" stylesheets="@../CSS/hoverableButton.css" text="Gite">
-               <font>
-                  <Font name="Futura Medium" size="13.0" />
-               </font>
-            </Button>
-            <Button fx:id="mensaButton" layoutY="180.0" mnemonicParsing="false" onAction="#handleMensaButtonAction" prefHeight="41.0" prefWidth="163.0" stylesheets="@../CSS/hoverableButton.css" text="Mensa">
-               <font>
-                  <Font name="Futura Medium" size="13.0" />
-               </font>
-            </Button>
-         </children>
-      </Pane>
-      <GridPane alignment="TOP_CENTER" layoutX="190.0" layoutY="99.0" prefHeight="312.0" prefWidth="578.0">
+      <GridPane alignment="TOP_CENTER" layoutX="126.0" layoutY="106.0" prefHeight="312.0" prefWidth="578.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.35302734375" minWidth="10.0" prefWidth="154.5574951171875" />
@@ -123,5 +92,10 @@
             </Button>
          </children>
       </GridPane>
+      <ImageView fx:id="goHomeImageView" fitHeight="19.0" fitWidth="32.0" layoutX="766.0" layoutY="16.0" onMouseClicked="#handleGoHomebutton" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/close.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

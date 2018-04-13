@@ -91,7 +91,7 @@
                         <Button fx:id="saveChangesButton" mnemonicParsing="false" onAction="#handleSaveChangesButton" stylesheets="@../CSS/darkButton.css" text="Salva modifiche" />
                     </buttons>
                   </ButtonBar>
-                  <ImageView fx:id="goHomeButton" fitHeight="19.0" fitWidth="32.0" layoutX="483.0" layoutY="15.0" onMouseClicked="#handleGoHomebutton" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="goHomeImageView" fitHeight="19.0" fitWidth="32.0" layoutX="483.0" layoutY="15.0" onMouseClicked="#handleGoHomebutton" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/close.png" />
                      </image>

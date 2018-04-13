@@ -33,8 +33,9 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
     private String NAME = "contatto";
     private String lastSelection;
 
-    //Pane
+    //Pane & Utilities
     @FXML private TabPane tabPane;
+    @FXML private ImageView goHomeImageView;
 
     //Tabella Genitore
     @FXML private TableView<StringPropertyContact> parentTable;
@@ -116,11 +117,6 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
         doctorTable.setItems(doctorObservableList);
         parentTable.setItems(parentObservableList);
         supplierTable.setItems(supplierObservableList);
-    }
-
-    @FXML private void handleGoHomebutton(){
-        Stage stage = (Stage) parentSaveChangesButton.getScene().getWindow();
-        stage.close();
     }
 
     //Parent
@@ -480,6 +476,10 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
             supplierEmailTextField.setStyle(normalCss);
         }
         return errors == 0;
+    }
+
+    public void handleGoHomebutton() {
+        closePopup(goHomeImageView);
     }
 
 }
