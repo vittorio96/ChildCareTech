@@ -2,212 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Esercizio.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Client.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Gui.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/RemoteClientInterface.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/RemoteServerInterface.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/ServerLauncher.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/login.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/whitelock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/whiteuser.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/IMPORTANTE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/Client.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/ClientHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/ConnectionPool.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/DMLCommandExecutor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/Gui.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/IngredientSupplier.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Child.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Contact.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Person.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Staff.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Supplier.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Gite/Bus.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Gite/BusAssociation.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Gite/Stop.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Gite/StopPresence.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Gite/Trip.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/ChildIntolerance.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/Dish.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/Intolerance.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/PersonIntolerance.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/RMIServerLauncher.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/RemoteClientInterface.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/RemoteServerInterface.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/RmiMode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/ServerRMI.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/SessionMode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/SocketMode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/SocketServer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertyChild.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertyContact.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertyPerson.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertyStaff.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertySupplier.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyBus.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyChildEnrollment.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyStop.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyStopPresence.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyTrip.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Mensa/StringPropertyIngredient.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/User.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/AbstractController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerAccessiGeneraQR.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerAllergie.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerAnagraficaAddChild.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerAnagraficaAddContact.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerAnagraficaAddStaff.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerAnagraficaManageChild.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerAnagraficaManageContact.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerAnagraficaManageStaff.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerGiteAddBus.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerGiteAddStop.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerGiteAddTrip.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerGiteEditBus.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerGiteEditTrip.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerGiteManagePresenzeTappe.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerGiteManageTrip.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerGiteRemoveChildren.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerGiteSignup.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerLogin.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerMainAccessi.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerMainAnagrafica.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerMainGite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerMainMensa.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerMensaAddAllergen.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerMensaAddDish.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerMensaAddIngredient.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/ControllerSplashscreen.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/DateConverter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/qrReader/QRGenerator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/qrReader/QRReader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/qrReader/WebcamQRReader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/choicebox.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/combobox.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/darkButton.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/darkcombobox.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/dialogAlert.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/dialogAlertError.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/dialogAlertSuccess.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/hoverableButton.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/label.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/loginButton.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/nextbutton.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/noheaderTableView.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/scrollpane.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/selectionButton.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/splitpane.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/tableview.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/CSS/textlabel.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/ChildFUJY7890ASDF5213.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/ChildPATAVLZ970212PLO.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/ChildTGBYHNUJMIBTREDF.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/ChildTGCRFSPLTGCRFSPL.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Child_FUJY7890ASDF5213.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Child_PATAVLZ970212PLO.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Child_TGBYHNUJMIBTREDF.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Child_TGCRFSPLTGCRFSPL.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Child_codiceFiscale123.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/StaffCIPOLLINA1TEACHR.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/StaffDIMAISMAFRIENDOK.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Staff_CIPOLLINA1TEACHR.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Staff_DIMAISMAFRIENDOK.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Staff_ryctuvybikjnl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Staffryctuvybikjnl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/QRCodeReader.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/allergie.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_addChild.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_addContact.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_addStaff.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_editStaff.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_manageChild.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_manageContact.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_manageStaff.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/gite_addBus.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/gite_addGita.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/gite_addPresence.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/gite_addStop.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/gite_addTrip.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/gite_editBus.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/gite_editChild.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/gite_editTrip.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/gite_manageTrip.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/mainanagrafica.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/maingite.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/mainmensa.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/mainmenu.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/mainqr.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/mensa_addAllergia.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/mensa_addDish.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/mensa_addIngredient.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/mensa_viewMenu.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/qrReader.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/qr_generate.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/qrreadfromfile.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/fxml/splashscreen.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/Anagrafica_AggiungiBambino.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/Untitled.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/addBus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/addButton.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/addchild.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/bus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/businessman.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/calendar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/calendaradd.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/calendaredit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/calendarremove.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/checklist.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/checkmark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/chef.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/child.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/contacts.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/delete.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/diet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/diskette.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/edit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/editBus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/editmenu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/eraser.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/files.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/fish.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/home.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/information.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/mainmensa.fxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/map.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/meat.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/menu.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/next.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/pasta.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/qr-code-scan.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/qrcode.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/qrgen.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/qrmaker.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/removeBus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/saveb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/school-bag.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/school-bus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/schoolbus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/spaghetti.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/staff.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/tappeadd.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/tapperemove.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/teacher.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/user-41.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/user-50.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/user-52.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/user.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/whitelock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/whiteuser.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/images/zoom.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/ConnectionPoolTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../hamcrest-core-1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../junit-4.12.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../mysql-connector-java-5.1.45-bin.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_FUJY7890ASDF5213.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_FUJY7890ASDF5213.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_PATAVLZ970212PLO.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_PATAVLZ970212PLO.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_TGBYHNUJMIBTREDF.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_TGBYHNUJMIBTREDF.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_TGCRFSPLTGCRFSPL.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_TGCRFSPLTGCRFSPL.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Staff_CIPOLLINA1TEACHR.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Staff_CIPOLLINA1TEACHR.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Staff_DIMAISMAFRIENDOK.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Staff_DIMAISMAFRIENDOK.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Child_FUJY7890ASDF5213.png" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Child_FUJY7890ASDF5213.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Child_PATAVLZ970212PLO.png" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Child_PATAVLZ970212PLO.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Child_TGBYHNUJMIBTREDF.png" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Child_TGBYHNUJMIBTREDF.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Child_TGCRFSPLTGCRFSPL.png" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Child_TGCRFSPLTGCRFSPL.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Staff_CIPOLLINA1TEACHR.png" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Staff_CIPOLLINA1TEACHR.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Staff_DIMAISMAFRIENDOK.png" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Staff_DIMAISMAFRIENDOK.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qr_generate.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qr_generate.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMenu.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/qrReader/QRGenerator.java" afterPath="$PROJECT_DIR$/src/main/qrReader/QRGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/qr_generate.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/qr_generate.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -272,7 +83,7 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -457,7 +268,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -517,6 +327,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -885,6 +696,7 @@
       <workItem from="1523620671621" duration="438000" />
       <workItem from="1523621512347" duration="105000" />
       <workItem from="1523638242295" duration="4722000" />
+      <workItem from="1523744899122" duration="6000" />
     </task>
     <task id="LOCAL-00040" summary="Merge branch 'vittorio' of https://github.com/vittorio96/ChildCareTech&#10;&#10;# Conflicts:&#10;#&#9;Progetto/src/main/Gui.java">
       <created>1521838459942</created>
@@ -1233,7 +1045,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="291486000" />
+    <option name="totallyTimeSpent" value="291492000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1249,16 +1061,14 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31632653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3265306" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2257653" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1377551" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908162" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3590844" sideWeight="0.6703755" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36409155" sideWeight="0.6703755" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908162" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39795917" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1273,9 +1083,11 @@
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31632653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908162" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1368,62 +1180,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteAddTrip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-917">
-          <caret line="68" column="0" lean-forward="true" selection-start-line="68" selection-start-column="0" selection-end-line="72" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteAddStop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1308">
-          <caret line="108" column="34" lean-forward="true" selection-start-line="108" selection-start-column="34" selection-end-line="108" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteAddTrip.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteAddStop.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/gite_editBus.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/gite_addStop.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mensa_addDish.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mensa_addDish.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1005">
           <caret line="67" column="42" lean-forward="false" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteAddBus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="54" column="55" lean-forward="false" selection-start-line="54" selection-start-column="55" selection-end-line="54" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteAddBus.java" />
     <entry file="file://$PROJECT_DIR$/src/main/ServerRMI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1470,13 +1263,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mensa_viewMenu.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="46" column="56" lean-forward="false" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/qrReader/QRGenerator.java">
@@ -1493,254 +1286,100 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerMensaAddDish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="56" column="7" lean-forward="false" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteEditTrip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="82" column="32" lean-forward="false" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerMensaAddDish.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteEditTrip.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/gite_manageTrip.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2355">
           <caret line="157" column="22" lean-forward="false" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="22" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/SocketServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteRemoveChildren.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="85" column="35" lean-forward="false" selection-start-line="85" selection-start-column="35" selection-end-line="85" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteRemoveChildren.java" />
     <entry file="file://$PROJECT_DIR$/src/main/qrReader/WebcamQRReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/splashscreen.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="293" lean-forward="true" selection-start-line="11" selection-start-column="293" selection-end-line="11" selection-end-column="293" />
-          <folding />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/splashscreen.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteEditBus.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteManageTrip.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main_menu.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteEditBus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="122" column="24" lean-forward="false" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteManageTrip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="225" column="20" lean-forward="false" selection-start-line="225" selection-start-column="20" selection-end-line="225" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main_menu.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
           <caret line="71" column="40" lean-forward="false" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainanagrafica.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainanagrafica.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main_splashcreen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-46">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerSplashscreen.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main_anagrafica.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerSplashscreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-475">
-          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="22" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main_anagrafica.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="12" column="217" lean-forward="false" selection-start-line="12" selection-start-column="217" selection-end-line="12" selection-end-column="217" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerMensaAddAllergen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerMainAnagrafica.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-190">
-          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerMainAccessi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="41" column="6" lean-forward="false" selection-start-line="41" selection-start-column="6" selection-end-line="41" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteSignup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerAnagraficaAddChild.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4724">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/maingite.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-317">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerMensaAddAllergen.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerMainAnagrafica.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerMainAccessi.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerLogin.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerGiteSignup.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerAnagraficaAddChild.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/maingite.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main_splashscreen.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerMainGite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainmensa.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="47" column="138" lean-forward="false" selection-start-line="47" selection-start-column="138" selection-end-line="47" selection-end-column="138" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerMainMensa.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerMainGite.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mainmensa.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerMainMensa.java" />
     <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
           <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerMainMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerMainMenu.java" />
     <entry file="file://$PROJECT_DIR$/src/main/Gui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="21" column="59" lean-forward="true" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1748,62 +1387,47 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/qrreadfromfile.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="256" lean-forward="false" selection-start-line="8" selection-start-column="256" selection-end-line="8" selection-end-column="256" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerAccessiGeneraQR.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/qrReader.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/allergie.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/allergie.fxml" />
   </component>
   <component name="masterDetails">
     <states>

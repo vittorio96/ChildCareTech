@@ -106,7 +106,7 @@ public abstract class AbstractController {
         popOver.setAutoHide(true);
         popOver.setHideOnEscape(true);
         popOver.setDetachable(false);
-
+        popOver.setAnimated(true);
         AnchorPane p = FXMLLoader.load(getClass().getResource(fxmlPath));
         popOver.setContentNode(p);
 

@@ -17,7 +17,7 @@ public class QRGenerator {
     public static boolean GenerateQR(Person p) {
         try {
             String qrCodeData = p.getClass().getSimpleName()+"_"+p.getCodiceFiscale();
-            String filePath = "src/main/resources/QRImages/"+p.getClass().getSimpleName()+"_"+p.getCodiceFiscale()+".png";
+            String filePath = "Progetto/src/main/resources/QRImages/"+p.getClass().getSimpleName()+"_"+p.getCodiceFiscale()+".png";
             String charset = "UTF-8"; // or "ISO-8859-1"
             Map < EncodeHintType, ErrorCorrectionLevel > hintMap = new HashMap < EncodeHintType, ErrorCorrectionLevel > ();
             hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);

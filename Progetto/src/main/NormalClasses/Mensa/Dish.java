@@ -1,12 +1,17 @@
-
 package main.NormalClasses.Mensa;
 
-public class Dish {
+import java.io.Serializable;
+
+public class Dish implements Serializable{
 
     private String nomeP;
-    private DishTypeFlag tipo;
+    private DishTypeFlag tipoPiatto;
 
-    public enum DishTypeFlag {
+    public int getTipo() {
+        return tipoPiatto.orderNum;
+    }
+
+    public enum DishTypeFlag{
 
         ANTIPASTO(0), PRIMO(1), SECONDO(2), DOLCE(3);
         private int orderNum;
@@ -15,17 +20,31 @@ public class Dish {
             this.orderNum = i;
         }
 
-        public int getOrderNum() {
+        public int getTipo() {
             return orderNum;
+        }
+
+        public static DishTypeFlag fromInteger(int x) {
+            switch(x) {
+                case 0: return ANTIPASTO;
+
+                case 1: return PRIMO;
+
+                case 2: return SECONDO;
+
+                case 3: return DOLCE;
+
+            }
+            return null;
         }
     }
 
     public Dish() {
     }
 
-    public Dish(String nomeP, DishTypeFlag tipo) {
+    public Dish(String nomeP, DishTypeFlag tipoPiatto) {
         this.nomeP = nomeP;
-        this.tipo = tipo;
+        this.tipoPiatto = tipoPiatto;
     }
 
     public String getNomeP() {
@@ -36,11 +55,11 @@ public class Dish {
         this.nomeP = nomeP;
     }
 
-    public DishTypeFlag getTipo() {
-        return tipo;
+    public DishTypeFlag getTipoPiatto() {
+        return tipoPiatto;
     }
 
-    public void setTipo(DishTypeFlag tipo) {
-        this.tipo = tipo;
+    public void setTipoPiatto(DishTypeFlag tipoPiatto) {
+        this.tipoPiatto = tipoPiatto;
     }
 }

@@ -70,14 +70,20 @@ public class ControllerMainMenu extends AbstractController implements Initializa
     private void setEnabledItems() {
 
         if(userTypeFlag == User.UserTypeFlag.MENSA) {
+            adminPane.setVisible(false);
+            teacherPane.setVisible(false);
             chefPane.setVisible(true);
             giteButton.setDisable(true);
             anagraficaButton.setDisable(true);
         }
         if(userTypeFlag== User.UserTypeFlag.SUPERVISORE){
+            chefPane.setVisible(false);
+            adminPane.setVisible(false);
             teacherPane.setVisible(true);
             mensaButton.setDisable(true);
         }else {
+            chefPane.setVisible(false);
+            teacherPane.setVisible(false);
             adminPane.setVisible(true);
         }
 

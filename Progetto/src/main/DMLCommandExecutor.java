@@ -1052,7 +1052,8 @@ public class DMLCommandExecutor {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        String sql = "INSERT INTO PIATTO (NomeP, Tipo) VALUES('" + dish.getNomeP() + "', '"+dish.getTipo().getOrderNum()+"') ON DUPLICATE KEY UPDATE NomeP='" + dish.getNomeP() + "';";
+        String sql = "INSERT INTO PIATTO (NomeP, Tipo) VALUES('" + dish.getNomeP() + "', '"+dish.getTipo()
+                +"') ON DUPLICATE KEY UPDATE NomeP='" + dish.getNomeP() + "';";
         try {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
