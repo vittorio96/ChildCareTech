@@ -65,6 +65,20 @@ public abstract class AbstractController {
         dialogStage.showAndWait();
     }
 
+    public void openPopup(Node node, String fxmlPath, int dimW, int dimH) throws IOException {
+        Stage dialogStage = new Stage();
+        dialogStage.initStyle(StageStyle.UNDECORATED);
+        dialogStage.initModality(Modality.WINDOW_MODAL);
+        Stage primaryStage;
+        primaryStage =(Stage) node.getScene().getWindow();
+        dialogStage.initOwner(primaryStage);
+        Parent root = FXMLLoader.load(getClass().getResource(fxmlPath));
+        Scene scene = new Scene(root,dimW,dimH);
+        dialogStage.setScene(scene);
+        // Show the dialog and wait until the user closes it
+        dialogStage.showAndWait();
+    }
+
     public void goHome(Button button) throws IOException {
         changeScene(button,"resources/fxml/splashscreen.fxml");
     }
@@ -134,5 +148,19 @@ public abstract class AbstractController {
 
         return alert2.getResult() == buttonTypeTwo;
     }
+
+    public boolean isUserSure(){
+        Alert alert2 = new Alert(Alert.AlertType.CONFIRMATION);
+        ButtonType buttonTypeOne = new ButtonType("No");
+        ButtonType buttonTypeTwo = new ButtonType("Si");
+        alert2.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
+        alert2.setHeaderText("Sei sicuro ?");
+        alert2.setContentText("Una volta fatta questa azione non si può più tornare indietro");
+        alert2.showAndWait();
+
+        return alert2.getResult() == buttonTypeTwo;
+    }
+
+
 
 }

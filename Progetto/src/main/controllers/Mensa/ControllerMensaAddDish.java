@@ -11,6 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import main.NormalClasses.Mensa.Dish;
 import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.StringPropertyClasses.Mensa.StringPropertyIngredient;
 import main.controllers.AbstractController;
@@ -22,7 +23,14 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ControllerMensaAddDish extends AbstractController implements Initializable {
+
+
+
+    /*
+        Stuff
+    */
     @FXML Button saveButton;
+
     @FXML TextField dishNameTextField;
     @FXML TableView<StringPropertyIngredient> availableIngredientsTable;
     @FXML TableView<StringPropertyIngredient> ingredientsOnDishTable;
@@ -30,6 +38,7 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
     @FXML TableColumn <StringPropertyIngredient,String> ingredientsOnDish;
     private ObservableList<StringPropertyIngredient> availableIngredientsList = FXCollections.observableArrayList();
     private ObservableList<StringPropertyIngredient> ingredientsOnDishList = FXCollections.observableArrayList();
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -91,4 +100,6 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
         return errors == 0;
 
     }
+
+
 }

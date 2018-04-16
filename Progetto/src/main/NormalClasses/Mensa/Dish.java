@@ -7,8 +7,8 @@ public class Dish implements Serializable{
     private String nomeP;
     private DishTypeFlag tipoPiatto;
 
-    public int getTipo() {
-        return tipoPiatto.orderNum;
+    public DishTypeFlag getTipo() {
+        return tipoPiatto;
     }
 
     public enum DishTypeFlag{
@@ -37,6 +37,8 @@ public class Dish implements Serializable{
             }
             return null;
         }
+
+
     }
 
     public Dish() {
