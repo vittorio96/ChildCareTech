@@ -47,9 +47,9 @@
 }
 
 .table-row-cell:selected {
-    -fx-background-color: #FAFAFA;
+    -fx-background-color: #717E93;
     -fx-background-insets: 0;
-    -fx-text-fill: white;
+    -fx-text-fill: #717E93;
     -fx-font-family: 'Futura';
     -fx-background-radius: 1;
 }

@@ -78,20 +78,20 @@
                               <Font name="Futura Medium" size="36.0" />
                            </font>
                         </Label>
-                        <Pane fx:id="adminPane" layoutX="178.0" layoutY="144.0" prefHeight="250.0" prefWidth="261.0">
-                           <children>
-                              <ImageView fx:id="imageDisplay" fitHeight="220.0" fitWidth="231.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/businessman.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </Pane>
                         <Pane fx:id="teacherPane" layoutX="178.0" layoutY="144.0" prefHeight="250.0" prefWidth="261.0">
                            <children>
                               <ImageView fx:id="imageDisplay1" fitHeight="220.0" fitWidth="231.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/teacher.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="adminPane" layoutX="178.0" layoutY="144.0" prefHeight="250.0" prefWidth="261.0">
+                           <children>
+                              <ImageView fx:id="imageDisplay" fitHeight="220.0" fitWidth="231.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/businessman.png" />
                                  </image>
                               </ImageView>
                            </children>

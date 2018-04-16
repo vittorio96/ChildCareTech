@@ -8,7 +8,7 @@ public class StringPropertyDish {
     private SimpleStringProperty tipoPiatto;
 
     public StringPropertyDish(Dish d) {
-        this.nomeP = new SimpleStringProperty(d.getNomeP().substring(0,0).toUpperCase()
+        this.nomeP = new SimpleStringProperty(d.getNomeP().substring(0,1).toUpperCase()
                 +d.getNomeP().substring(1).toLowerCase());
         this.tipoPiatto = new SimpleStringProperty(d.getTipoPiatto().toString());
     }

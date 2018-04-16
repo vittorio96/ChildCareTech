@@ -45,7 +45,7 @@
                         <Font name="Futura Medium" size="14.0" />
                      </font>
                   </Label>
-                  <TableView fx:id="ingredientsOnDishTable" prefHeight="129.0" prefWidth="163.0" style="-fx-background-color: white; -fx-border-color: #D3D3D3#D3D3D3;" stylesheets="@../CSS/noheaderTableView.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <TableView fx:id="ingredientsOnDishTable" prefHeight="129.0" prefWidth="163.0" style="-fx-background-color: white; -fx-border-color: #D3D3D3#D3D3D3; -fx-border-radius: 4;" stylesheets="@../CSS/noheaderTableView.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <placeholder>
                         <Label text="" />
                      </placeholder>
@@ -56,7 +56,7 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <TableView fx:id="availableIngredientsTable" prefHeight="141.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-color: #D3D3D3#D3D3D3;" stylesheets="@../CSS/noheaderTableView.css" GridPane.rowIndex="1">
+                  <TableView fx:id="availableIngredientsTable" prefHeight="141.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-color: #D3D3D3#D3D3D3; -fx-border-radius: 4;" stylesheets="@../CSS/noheaderTableView.css" GridPane.rowIndex="1">
                      <placeholder>
                         <Label text="" />
                      </placeholder>

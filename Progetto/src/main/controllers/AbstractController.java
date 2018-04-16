@@ -51,6 +51,20 @@ public abstract class AbstractController {
 
     }
 
+    public void changeScene(Node node, String fxmlPath, int w, int h) throws IOException {
+
+        Stage stage;
+        Parent root;
+        stage=(Stage) node.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource(fxmlPath));
+        Scene scene = new Scene(root, w, h);
+        stage.setResizable(false);
+        root.requestFocus();
+        stage.setScene(scene);
+        stage.show();
+
+    }
+
     public void changeSceneInPopup(Button button, String fxmlPath, int dimW, int dimH) throws IOException {
         Stage dialogStage = new Stage();
         dialogStage.initStyle(StageStyle.UNDECORATED);

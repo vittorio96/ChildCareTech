@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
@@ -19,7 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerMensaMenu extends AbstractController implements Initializable {
+public class ControllerMensaManageMenu extends AbstractController implements Initializable {
 
     /*
         Add & Remove Buttons and close button
@@ -64,11 +65,11 @@ public class ControllerMensaMenu extends AbstractController implements Initializ
         Utilities
     */
 
-    @FXML private ChoiceBox giorniChoiceBox;
-    private final String addDishFxmlPath = "../../resources/fxml/mensa_addDish.fxml";
+    @FXML private ComboBox giorniComboBox;
+    private final String viewDishesFxmlPath = "../../resources/fxml/mensa_viewDishes.fxml";
     private final Menu.MenuTypeFlag defaultDay = Menu.MenuTypeFlag.MONDAY;
-    private final int addDishW = 380;
-    private final int addDishH = 380;
+    private final int viewDishesW = 380;
+    private final int viewDishesH = 380;
 
 
     /*
@@ -91,7 +92,9 @@ public class ControllerMensaMenu extends AbstractController implements Initializ
 
     private void selectionMenuSetup() {
         ObservableList al = FXCollections.observableArrayList(Arrays.asList(Menu.MenuTypeFlag.values()));
-        giorniChoiceBox.setItems(al);
+        giorniComboBox.setItems(al);
+        giorniComboBox.getSelectionModel().selectFirst();
+
     }
 
     private void refreshDishes(Menu.MenuTypeFlag day) {
@@ -127,34 +130,35 @@ public class ControllerMensaMenu extends AbstractController implements Initializ
     }
 
 
-    public void goHome() {
+    public void goHome() throws IOException {
         closePopup(goHomeIV);
     }
 
-    private void addDish(Dish.DishTypeFlag tipo, Node trigger) {
+    private void addDishToMenu(Dish.DishTypeFlag tipo, Node trigger) {
 
         try {
             ControllerMensaViewDishes.setDishType(tipo);
-            openPopup(trigger,addDishFxmlPath,addDishW,addDishH);
-            refreshDishes(Menu.MenuTypeFlag.valueOf(giorniChoiceBox.getValue().toString()));
+            ControllerMensaViewDishes.setMenuType(getSelectedDay());
+            openPopup(trigger,viewDishesFxmlPath,viewDishesW,viewDishesH);
+            refreshDishes(getSelectedDay());
         }
         catch (IOException e) { e.printStackTrace(); }
     }
 
     public void addAntipasto() {
-        addDish(Dish.DishTypeFlag.ANTIPASTO, addAntipastoIV);
+        addDishToMenu(Dish.DishTypeFlag.ANTIPASTO, addAntipastoIV);
     }
 
     public void addPrimo() {
-        addDish(Dish.DishTypeFlag.PRIMO, addPrimoIV);
+        addDishToMenu(Dish.DishTypeFlag.PRIMO, addPrimoIV);
     }
 
     public void addSecondo() {
-        addDish(Dish.DishTypeFlag.SECONDO, addSecondoIV);
+        addDishToMenu(Dish.DishTypeFlag.SECONDO, addSecondoIV);
     }
 
     public void addDolce() {
-        addDish(Dish.DishTypeFlag.DOLCE, addDolceIV);
+        addDishToMenu(Dish.DishTypeFlag.DOLCE, addDolceIV);
     }
 
     public void removeAntipasto() {
@@ -178,10 +182,14 @@ public class ControllerMensaMenu extends AbstractController implements Initializ
             StringPropertyDish selectedDish = getSelectedDish(tipo);
             if(selectedDish != null){
                 //TODO DISH DISASSOCIATION
-                refreshDishes(Menu.MenuTypeFlag.valueOf(giorniChoiceBox.getValue().toString()));
+                refreshDishes(getSelectedDay());
             }
             else { createErrorPopup("Errore", "Non hai selezionato un piatto"); }
         }
+    }
+
+    private Menu.MenuTypeFlag getSelectedDay(){
+        return Menu.MenuTypeFlag.valueOf(giorniComboBox.getValue().toString());
     }
 
     private StringPropertyDish getSelectedDish(Dish.DishTypeFlag tipo) {

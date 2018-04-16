@@ -1,9 +1,21 @@
 package main.controllers.Mensa;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import main.NormalClasses.Mensa.Dish;
+import main.NormalClasses.Mensa.Menu;
+import main.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.controllers.AbstractController;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -14,7 +26,7 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
     */
 
     private static Dish.DishTypeFlag dishType;
-
+    private static Menu.MenuTypeFlag menuType;
 
     public static Dish.DishTypeFlag getDishType() {
         return dishType;
@@ -24,9 +36,85 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
         ControllerMensaViewDishes.dishType = dishType;
     }
 
+    public static Menu.MenuTypeFlag getMenuType() {
+        return menuType;
+    }
+
+    public static void setMenuType(Menu.MenuTypeFlag menuType) {
+        ControllerMensaViewDishes.menuType = menuType;
+    }
+
+    /*
+        Utilities
+    */
+
+    private final String addNewDishFXMLPath =  "../../resources/fxml/mensa_addDish.fxml";
+    private final int addDishW = 380;
+    private final int addDishH = 380;
+
+    /*
+        GUI items
+    */
+    @FXML private ImageView goHomeIV;
+    @FXML private ImageView addNewDishIV;
+    @FXML private TextField searchField;
+    @FXML private TableView<StringPropertyDish> dishesTable;
+    @FXML private TableColumn<StringPropertyDish,String> dishesColumn;
+
+    /*
+        Initialization
+    */
+
+    private ObservableList<StringPropertyDish> dishObservableList = FXCollections.observableArrayList();
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        dishObservableList.add(new StringPropertyDish(new Dish("Spaghetti", Dish.DishTypeFlag.PRIMO)));
+        dishObservableList.add(new StringPropertyDish(new Dish("Ravioli", Dish.DishTypeFlag.PRIMO)));
+        dishObservableList.add(new StringPropertyDish(new Dish("Pennette", Dish.DishTypeFlag.PRIMO)));
+        dishesColumn.setCellValueFactory(cellData -> cellData.getValue().nomePProperty());
 
+        // 1. Wrap the ObservableList in a FilteredList (initially display all data).
+        FilteredList<StringPropertyDish> filteredData = new FilteredList<>(dishObservableList, p -> true);
+
+        // 2. Set the filter Predicate whenever the filter changes.
+        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(person -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name of every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+
+                if (person.getNomeP().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches first name.
+                } else if (person.getNomeP().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }
+                return false; // Does not match.
+            });
+        });
+
+        // 3. Wrap the FilteredList in a SortedList.
+        SortedList<StringPropertyDish> sortedData = new SortedList<>(filteredData);
+
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        sortedData.comparatorProperty().bind(dishesTable.comparatorProperty());
+
+        // 5. Add sorted (and filtered) data to the table.
+        dishesTable.setItems(sortedData);
+    }
+
+
+
+    public void goHome() {
+        closePopup(goHomeIV);
+    }
+
+    public void addNewDish() throws IOException {
+        openPopup(addNewDishIV,addNewDishFXMLPath,addDishW,addDishH);
     }
 }

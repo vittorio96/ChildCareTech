@@ -44,8 +44,7 @@ public class ControllerMensaAddIngredient extends AbstractController implements 
 
     @FXML private void handleGoHomebutton(){
         //use a generic button
-        Stage stage = (Stage) saveButton.getScene().getWindow();
-        stage.close();
+        closePopup(saveButton);
     }
 
     private boolean textConstraintsRespected() {

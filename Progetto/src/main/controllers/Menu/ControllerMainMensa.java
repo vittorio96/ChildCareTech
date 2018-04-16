@@ -36,8 +36,8 @@ public class ControllerMainMensa extends AbstractController implements Initializ
     */
 
     public void modificamenu(ActionEvent event) throws IOException {
-        openPopOver("../../resources/fxml/mensa_addDish.fxml", PopOver.ArrowLocation.TOP_CENTER, modificaMenuButton);
-        //changeSceneInPopup(modificaMenuButton,"../../resources/fxml/mensa_addDish.fxml" , 380,380);
+       //changeScene(modificaMenuButton,"../../resources/fxml/mensa_menu.fxml");
+        changeSceneInPopup(modificaMenuButton,"../../resources/fxml/mensa_menu.fxml" , 800,450);
     }
 
     public void handleAggiungiAllergieButtonAction(ActionEvent event) {

@@ -76,9 +76,7 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
 
     @FXML private void handleGoHomebutton(){
         //use a generic button
-        PopOver stage = (PopOver) saveButton.getScene().getWindow();
-        //Stage stage = (Stage) saveButton.getScene().getWindow();
-        stage.hide();
+        closePopup(saveButton);
     }
 
     private boolean textConstraintsRespected() {
