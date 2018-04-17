@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_FUJY7890ASDF5213.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_FUJY7890ASDF5213.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_PATAVLZ970212PLO.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_PATAVLZ970212PLO.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_TGBYHNUJMIBTREDF.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_TGBYHNUJMIBTREDF.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_TGCRFSPLTGCRFSPL.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_TGCRFSPLTGCRFSPL.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Staff_CIPOLLINA1TEACHR.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Staff_CIPOLLINA1TEACHR.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Staff_DIMAISMAFRIENDOK.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Staff_DIMAISMAFRIENDOK.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Child_FUJY7890ASDF5213.png" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Child_FUJY7890ASDF5213.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Child_PATAVLZ970212PLO.png" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Child_PATAVLZ970212PLO.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Child_TGBYHNUJMIBTREDF.png" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Child_TGBYHNUJMIBTREDF.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Child_TGCRFSPLTGCRFSPL.png" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Child_TGCRFSPLTGCRFSPL.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Staff_CIPOLLINA1TEACHR.png" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Staff_CIPOLLINA1TEACHR.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/QRImages/Staff_DIMAISMAFRIENDOK.png" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Staff_DIMAISMAFRIENDOK.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../.idea/libraries/com_github_sarxos_webcam_capture_0_3_12.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../.idea/libraries/webcam_capture_0_3_12.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/ChildCareTech.iml" afterPath="$PROJECT_DIR$/../.idea/ChildCareTech.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qr_generate.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qr_generate.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMenu.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/qrReader/QRGenerator.java" afterPath="$PROJECT_DIR$/src/main/qrReader/QRGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/qr_generate.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/qr_generate.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -267,7 +254,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -326,8 +315,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -697,6 +684,7 @@
       <workItem from="1523621512347" duration="105000" />
       <workItem from="1523638242295" duration="4722000" />
       <workItem from="1523744899122" duration="6000" />
+      <workItem from="1523994348619" duration="57000" />
     </task>
     <task id="LOCAL-00040" summary="Merge branch 'vittorio' of https://github.com/vittorio96/ChildCareTech&#10;&#10;# Conflicts:&#10;#&#9;Progetto/src/main/Gui.java">
       <created>1521838459942</created>
@@ -1045,7 +1033,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="291492000" />
+    <option name="totallyTimeSpent" value="291549000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1067,7 +1055,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1377551" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908162" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36409155" sideWeight="0.6703755" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36909872" sideWeight="0.6703755" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
