@@ -20,10 +20,6 @@ public class Dish implements Serializable{
             this.orderNum = i;
         }
 
-        public int getTipo() {
-            return orderNum;
-        }
-
         public static DishTypeFlag fromInteger(int x) {
             switch(x) {
                 case 0: return ANTIPASTO;
@@ -39,6 +35,9 @@ public class Dish implements Serializable{
         }
 
 
+        public int getOrderNum() {
+            return orderNum;
+        }
     }
 
     public Dish() {

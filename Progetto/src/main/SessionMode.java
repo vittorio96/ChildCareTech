@@ -88,4 +88,16 @@ public interface SessionMode {
 
     public boolean deleteStopPresenceFromDb(StopPresence sp);
 
+    public List<String> extractIngredientsFromDb();
+
+    public List<Menu> extractMenusFromDb();
+
+    public List<Dish> extractDishesFromDb();
+
+    public List<Child> extractIntolerantsChildrenForIngredientFromDb(String nomeI);
+
+    public List<Dish> extractDishesForMenuFromDb(Menu.MenuTypeFlag codMenu);
+
+    public List<String> extractIngredientsForDishFromDb(String nomeP);
+
 }

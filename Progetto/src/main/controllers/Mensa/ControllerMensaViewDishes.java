@@ -17,6 +17,7 @@ import main.controllers.AbstractController;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ControllerMensaViewDishes extends AbstractController implements Initializable {
@@ -70,9 +71,8 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        dishObservableList.add(new StringPropertyDish(new Dish("Spaghetti", Dish.DishTypeFlag.PRIMO)));
-        dishObservableList.add(new StringPropertyDish(new Dish("Ravioli", Dish.DishTypeFlag.PRIMO)));
-        dishObservableList.add(new StringPropertyDish(new Dish("Pennette", Dish.DishTypeFlag.PRIMO)));
+        List<Dish> dishes = CLIENT.clientExtractDishesFromDb();
+        if(dishes!=null) for(Dish dish: dishes){ dishObservableList.add(new StringPropertyDish(dish));}
         dishesColumn.setCellValueFactory(cellData -> cellData.getValue().nomePProperty());
 
         // 1. Wrap the ObservableList in a FilteredList (initially display all data).

@@ -3,8 +3,11 @@ import main.NormalClasses.Anagrafica.*;
 import main.NormalClasses.Gite.*;
 import main.NormalClasses.Mensa.Dish;
 import main.NormalClasses.Mensa.Intolerance;
+import main.NormalClasses.Mensa.Menu;
 
+import java.net.MalformedURLException;
 import java.rmi.Naming;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.List;
 
@@ -439,6 +442,66 @@ public class RmiMode implements SessionMode {
         } catch (RemoteException e) {
             e.printStackTrace();
             return false;
+        }
+    }
+
+    @Override
+    public List<String> extractIngredientsFromDb() {
+        try {
+            return server.selectIngredientsFromDbExecution();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Menu> extractMenusFromDb() {
+        try {
+            return server.selectMenusFromDbExecution();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Dish> extractDishesFromDb() {
+        try {
+            return server.selectDishesFromDbExecution();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Child> extractIntolerantsChildrenForIngredientFromDb(String nomeI) {
+        try {
+            return server.selectIntolerantsChildrenForIngredientFromDbExecution(nomeI);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Dish> extractDishesForMenuFromDb(Menu.MenuTypeFlag codMenu) {
+        try {
+            return server.selectDishesForMenuFromDbExecution(codMenu);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<String> extractIngredientsForDishFromDb(String nomeP) {
+        try {
+            return server.selectIngredientsForDishFromDbExecution(nomeP);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 

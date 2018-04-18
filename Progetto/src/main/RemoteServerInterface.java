@@ -82,4 +82,16 @@ public interface RemoteServerInterface extends Remote{
 
     public boolean deleteIntoleranceFromDbExecution(Intolerance intolerance) throws RemoteException;
 
+    public List<String> selectIngredientsFromDbExecution() throws RemoteException;
+
+    public List<Menu> selectMenusFromDbExecution() throws RemoteException;
+
+    public List<Dish> selectDishesFromDbExecution() throws RemoteException;
+
+    public List<Child> selectIntolerantsChildrenForIngredientFromDbExecution(String nomeI) throws RemoteException;
+
+    public List<Dish> selectDishesForMenuFromDbExecution(Menu.MenuTypeFlag codMenu) throws RemoteException;
+
+    public List<String> selectIngredientsForDishFromDbExecution(String nomeP) throws RemoteException;
+
 }

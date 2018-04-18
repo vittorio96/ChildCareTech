@@ -4,6 +4,7 @@ import main.NormalClasses.Anagrafica.*;
 import main.NormalClasses.Gite.*;
 import main.NormalClasses.Mensa.Dish;
 import main.NormalClasses.Mensa.Intolerance;
+import main.NormalClasses.Mensa.Menu;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -153,11 +154,159 @@ public class ClientHandler implements Runnable{
                 case "cmd_deleteIntolerance": this.deleteIntoleranceFromDbExecution();
                     break;
 
+                case "cmd_selectIngredients": this.selectIngredientsFromDbExecution();
+                    break;
+
+                case "cmd_selectMenus": this.selectMenusFromDbExecution();
+                    break;
+
+                case "cmd_selectDishes": this.selectDishesFromDbExecution();
+                    break;
+
+                case "cmd_selectIntolerantsChildren": this.selectIntolerantsChildrenForIngredientFromDbExecution();
+                    break;
+
+                case "cmd_selectDishesForMenu": this.selectDishesForMenuFromDbExecution();
+                    break;
+
+                case "cmd_selectIngredientsForDish": this.selectIngredientsForDishFromDbExecution();
+                    break;
+
                 case "cmd_quit": this.closeConnection();
                     break;
             }
 
         }while(!command.equals("cmd_quit"));
+    }
+
+    private void selectIngredientsForDishFromDbExecution() {
+
+        String nomeP=null;
+
+        try {
+            nomeP = (String)socketObjectIn.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        List<String> list = null;
+        try {
+            list = DMLCommandExecutor.getInstance().selectIngredientsForDishFromDb(nomeP);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        //Send the list to client
+        try {
+            socketObjectOut.writeObject(list);
+            socketObjectOut.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void selectDishesForMenuFromDbExecution() {
+
+        Menu.MenuTypeFlag codMenu=null;
+
+        try {
+            codMenu = (Menu.MenuTypeFlag) socketObjectIn.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        List<Dish> list = null;
+        try {
+            list = DMLCommandExecutor.getInstance().selectDishesForMenuFromDb(codMenu);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        //Send the list to client
+        try {
+            socketObjectOut.writeObject(list);
+            socketObjectOut.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void selectIntolerantsChildrenForIngredientFromDbExecution() {
+        String nomeI=null;
+
+        try {
+            nomeI = (String)socketObjectIn.readObject();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        List<Child> list = null;
+        try {
+            list = DMLCommandExecutor.getInstance().selectIntolerantsChildrenForIngredientFromDb(nomeI);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        //Send the list to client
+        try {
+            socketObjectOut.writeObject(list);
+            socketObjectOut.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void selectMenusFromDbExecution() {
+        List<Menu> list = null;
+        try {
+            list = DMLCommandExecutor.getInstance().selectMenusFromDb();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                socketObjectOut.writeObject(list);
+                socketObjectOut.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void selectDishesFromDbExecution() {
+        List<Dish> list = null;
+        try {
+            list = DMLCommandExecutor.getInstance().selectDishesFromDb();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                socketObjectOut.writeObject(list);
+                socketObjectOut.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void selectIngredientsFromDbExecution() {
+        List<String> list = null;
+        try {
+            list = DMLCommandExecutor.getInstance().selectIngredientsFromDb();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                socketObjectOut.writeObject(list);
+                socketObjectOut.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void deleteIntoleranceFromDbExecution() {
@@ -234,7 +383,6 @@ public class ClientHandler implements Runnable{
             e.printStackTrace();
         }
     }
-
 
     private void selectChildrenForBusFromDbExecution() {
         Bus bus=null;

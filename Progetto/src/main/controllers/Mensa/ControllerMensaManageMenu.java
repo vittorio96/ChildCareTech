@@ -101,7 +101,7 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
 
         clearlists();
 
-        List<Dish> dishArrayList = null;//TODO DISH RETRIEVAL
+        List<Dish> dishArrayList = CLIENT.clientExtractDishesForMenuFromDb(day);
         if(dishArrayList != null){
             for(Dish dish : dishArrayList){
                 if(dish.getTipo() == Dish.DishTypeFlag.ANTIPASTO)  antipastiList.add(new StringPropertyDish(dish));

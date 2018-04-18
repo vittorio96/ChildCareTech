@@ -54,7 +54,7 @@
          <children>
             <TableView fx:id="antipastoTable" maxWidth="150.0" minWidth="150.0" prefHeight="150.0" prefWidth="175.0" stylesheets="@../CSS/tableview.css" GridPane.rowIndex="2">
                 <placeholder>
-                    <Label text="Nessun antipasto"/>
+                    <Label text="Nessun antipasto" />
                 </placeholder>
                 <columns>
                 <TableColumn fx:id="antipastoColumn" prefWidth="75.0" text="Antipasto" />
@@ -65,7 +65,7 @@
             </TableView>
             <TableView fx:id="primoTable" maxWidth="150.0" minWidth="150.0" prefHeight="150.0" prefWidth="175.0" stylesheets="@../CSS/tableview.css" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                 <placeholder>
-                    <Label text="Nessun primo"/>
+                    <Label text="Nessun primo" />
                 </placeholder>
                 <columns>
                   <TableColumn fx:id="primoColumn" prefWidth="75.0" text="Primo" />
@@ -76,7 +76,7 @@
             </TableView>
             <TableView fx:id="secondoTable" maxWidth="150.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0" stylesheets="@../CSS/tableview.css" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                 <placeholder>
-                    <Label text="Nessun secondo"/>
+                    <Label text="Nessun secondo" />
                 </placeholder>
                 <columns>
                   <TableColumn fx:id="secondoColumn" prefWidth="75.0" text="Secondo" />
@@ -87,7 +87,7 @@
             </TableView>
             <TableView fx:id="dolceTable" maxWidth="150.0" minWidth="150.0" prefHeight="175.0" prefWidth="156.0" stylesheets="@../CSS/tableview.css" GridPane.columnIndex="6" GridPane.rowIndex="2">
                 <placeholder>
-                    <Label text="Nessun dolce"/>
+                    <Label text="Nessun dolce" />
                 </placeholder>
                 <columns>
                   <TableColumn fx:id="dolceColumn" prefWidth="75.0" text="Dolce" />

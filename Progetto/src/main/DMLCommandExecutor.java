@@ -2,10 +2,7 @@ package main;
 
 import main.NormalClasses.Anagrafica.*;
 import main.NormalClasses.Gite.*;
-import main.NormalClasses.Mensa.ChildIntolerance;
-import main.NormalClasses.Mensa.Dish;
-import main.NormalClasses.Mensa.Intolerance;
-import main.NormalClasses.Mensa.PersonIntolerance;
+import main.NormalClasses.Mensa.*;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -1052,8 +1049,7 @@ public class DMLCommandExecutor {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        String sql = "INSERT INTO PIATTO (NomeP, Tipo) VALUES('" + dish.getNomeP() + "', '"+dish.getTipo()
-                +"') ON DUPLICATE KEY UPDATE NomeP='" + dish.getNomeP() + "';";
+        String sql = "INSERT INTO PIATTO (NomeP, Tipo) VALUES('" + dish.getNomeP() + "', '"+dish.getTipoPiatto().getOrderNum()+"') ON DUPLICATE KEY UPDATE NomeP='" + dish.getNomeP() + "';";
         try {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
@@ -1156,18 +1152,216 @@ public class DMLCommandExecutor {
         }
     }
 
-   /*public static void main(String[] args) throws SQLException {
+    public List<String> selectIngredientsFromDb() throws SQLException{
+        List<String> ingredientsList = new ArrayList<>();
+        ResultSet rs;
+        Statement stmt;
+
+        String sql = "SELECT * FROM INGREDIENTE";
+
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            String nomeI = rs.getString("nomeI");
+            ingredientsList.add(nomeI);
+        }
+
+        if(ingredientsList.size()>0)
+            return ingredientsList;
+        else
+            return null;
+    }
+
+    public List<Menu> selectMenusFromDb() throws SQLException{
+        List<Menu> menusList = new ArrayList<>();
+        ResultSet rs;
+        Statement stmt;
+
+        String sql = "SELECT * FROM MENU";
+
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            Menu menu = new Menu();
+            menu.setNomeM(rs.getString("NomeM"));
+            menu.setCodMenu(Menu.MenuTypeFlag.values()[rs.getInt("CodGiorno")]);
+            menusList.add(menu);
+        }
+
+        if(menusList.size()>0)
+            return menusList;
+        else
+            return null;
+    }
+
+    public List<Dish> selectDishesFromDb() throws SQLException{
+        List<Dish> dishesList = new ArrayList<>();
+        ResultSet rs;
+        Statement stmt;
+
+        String sql = "SELECT * FROM PIATTO";
+
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            Dish dish = new Dish();
+            dish.setNomeP(rs.getString("NomeP"));
+            dish.setTipoPiatto(Dish.DishTypeFlag.values()[rs.getInt("Tipo")]);
+            dishesList.add(dish);
+        }
+
+        if(dishesList.size()>0)
+            return dishesList;
+        else
+            return null;
+    }
+
+    public List<Child> selectIntolerantsChildrenForIngredientFromDb(String nomeI) throws SQLException{
+
+        List<Child> childrenList = new ArrayList<>();
+        ResultSet rs;
+        Statement stmt;
+
+        String sql = "SELECT B.* FROM BAMBINO B JOIN INTOLLERANZABAMBINO IB ON B.CodF = IB.CodF WHERE IB.NomeI = '"+nomeI+"';";
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            Child child = new Child();
+            child.setCodiceFiscale(rs.getString("codF"));
+            child.setNome(rs.getString("Nome"));
+            child.setCognome(rs.getString("Cognome"));
+            child.setDataNascita(rs.getString("DataN"));
+            child.setCodR(rs.getString("codR"));
+            childrenList.add(child);
+        }
+
+        if(childrenList.size()>0)
+            return childrenList;
+        else
+            return null;
+    }
+
+    public List<Dish> selectDishesForMenuFromDb(Menu.MenuTypeFlag codMenu) throws SQLException{
+        List<Dish> dishesList = new ArrayList<>();
+        ResultSet rs;
+        Statement stmt;
+
+        String sql = "SELECT * FROM PIATTO as P JOIN  COMPOSIZIONEMENU as CM ON P.NomeP = CM.NomeP WHERE CM.CodGiorno='"+codMenu.getOrderNum()+"' ORDER BY P.Tipo";
+
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            Dish dish = new Dish();
+            dish.setNomeP(rs.getString("NomeP"));
+            dish.setTipoPiatto(Dish.DishTypeFlag.values()[rs.getInt("Tipo")]);
+            dishesList.add(dish);
+        }
+
+        if(dishesList.size()>0)
+            return dishesList;
+        else
+            return null;
+    }
+
+    public List<String> selectIngredientsForDishFromDb(String nomeP) throws SQLException{
+        List<String> ingredientsList = new ArrayList<>();
+        ResultSet rs;
+        Statement stmt;
+
+        String sql = "SELECT I.* FROM INGREDIENTE I JOIN COMPOSIZIONEPIATTO AS CP ON I.NomeI=CP.NomeI WHERE CP.NomeP='"+nomeP+"' ORDER BY I.NomeI;";
+
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            String nomeI = rs.getString("nomeI");
+            ingredientsList.add(nomeI);
+        }
+
+        if(ingredientsList.size()>0)
+            return ingredientsList;
+        else
+            return null;
+    }
+
+
+
+    public static void main(String[] args) throws SQLException {
         List<Child> list = null;
         try {
             list= DMLCommandExecutor.getInstance().selectAvailableChildrenForTripFromDb("2018-06-06");
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        DMLCommandExecutor.getInstance().insertIngredientIntoDb("Mais");
-        DMLCommandExecutor.getInstance().insertDishIntoDb(new Dish("Tacos de lechon", Dish.DishTypeFlag.ANTIPASTO));
-        DMLCommandExecutor.getInstance().insertIntoleranceIntoDb(new ChildIntolerance("TTTTTTTTTTTTTTTT", "Mais"));
-        DMLCommandExecutor.getInstance().insertIntoleranceIntoDb(new PersonIntolerance("LLLLLLLLLLLLLLLL", "Mais"));
-        DMLCommandExecutor.getInstance().deleteIntoleranceFromDb(new PersonIntolerance("LLLLLLLLLLLLLLLL", "Mais"));
-    }*/
+
+        List<Menu> lista = DMLCommandExecutor.getInstance().selectMenusFromDb();
+        for(Menu d:lista)
+            System.out.println(d.getNomeM());
+    }
 
 }

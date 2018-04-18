@@ -698,6 +698,102 @@ public class SocketMode implements SessionMode {
         }
     }
 
+    @Override
+    public List<String> extractIngredientsFromDb() {
+        try {
+            socketObjectOut.writeObject("cmd_selectIngredients");
+            socketObjectOut.flush();
+
+            return (List<String>)socketObjectIn.readObject();//Attesa bloccante
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<Menu> extractMenusFromDb() {
+        try {
+            socketObjectOut.writeObject("cmd_selectMenus");
+            socketObjectOut.flush();
+
+            return (List<Menu>)socketObjectIn.readObject();//Attesa bloccante
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<Dish> extractDishesFromDb() {
+        try {
+            socketObjectOut.writeObject("cmd_selectDishes");
+            socketObjectOut.flush();
+
+            return (List<Dish>)socketObjectIn.readObject();//Attesa bloccante
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<Child> extractIntolerantsChildrenForIngredientFromDb(String nomeI) {
+        try {
+            socketObjectOut.writeObject("cmd_selectIntolerantsChildren");
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(nomeI);
+            socketObjectOut.flush();
+
+            return (List<Child>)socketObjectIn.readObject();//Attesa bloccante
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<Dish> extractDishesForMenuFromDb(Menu.MenuTypeFlag codMenu) {
+        try {
+            socketObjectOut.writeObject("cmd_selectDishesForMenu");
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(codMenu);
+            socketObjectOut.flush();
+
+            return (List<Dish>)socketObjectIn.readObject();//Attesa bloccante
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<String> extractIngredientsForDishFromDb(String nomeP) {
+        try {
+            socketObjectOut.writeObject("cmd_selectIngredientsForDish");
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(nomeP);
+            socketObjectOut.flush();
+
+            return (List<String>)socketObjectIn.readObject();//Attesa bloccante
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
     //Main method to support testing without GUI
       /*public static void main(String[] args){
             Client c = null;
@@ -711,8 +807,7 @@ public class SocketMode implements SessionMode {
                 e.printStackTrace();
             }
             SessionMode session = new SocketMode(c);
-            System.out.println(session.extractMissingChildrenForStopFromDb(new Stop("", "", "", "")));
             session.disconnect();
-        }*/
+      }*/
 
 }

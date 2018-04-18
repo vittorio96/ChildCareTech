@@ -3,6 +3,7 @@ package main;
 import main.NormalClasses.Anagrafica.*;
 import main.NormalClasses.Gite.*;
 import main.NormalClasses.Mensa.Dish;
+import main.NormalClasses.Mensa.Menu;
 import main.controllers.Menu.ControllerLogin;
 
 import java.net.MalformedURLException;
@@ -25,6 +26,18 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
         controllerLogin.printToOutputField(s);
     }
 
+    /*
+        Login
+    */
+
+    public static User getUser() {
+        return user;
+    }
+
+    public static void registerUser(User u) {
+        user = u;
+    }
+
     public User clientLoginDataHandler(String username, String password, String choice)  {
 
         if(choice.equals("RMI")) session = new RmiMode( this);
@@ -34,6 +47,14 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
 
         return user;
     }
+
+    public SessionMode getSession() {
+        return session;
+    }
+
+    /*
+        Anagrafica
+    */
 
     public boolean clientInsertIntoDb(Person person)  {
         return  session.insertPersonIntoDb(person);
@@ -55,15 +76,17 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
         return session.insertSupplierIntoDb(supplier);
     }
 
-    public List<Trip> clientExtractAllTripsFromDb(){
-        return session.extractAllTripsFromDb();
+    public boolean clientUpdatePersonIntoDb(Person person){
+        return session.updatePersonIntoDb(person);
     }
 
-    public List<Bus> clientExtractAllBusesFromTrip(String nomeGita, String dataGita){
-            return session.extractAllBusesForTrip(nomeGita,dataGita);
-        }
+    public boolean clientUpdateSupplierIntoDb(Supplier supplier){
+        return session.updateSupplierIntoDb(supplier);
+    }
 
-    public List<Stop> clientExtractRelatedStopsFromTrip(String nomeGita, String dataGita, String targa){ return session.extractAllStopsFromBus(nomeGita, dataGita, targa);}
+    public boolean clientDeleteFromDb(String subject, String Id){
+        return session.deleteSubjectFromDb(subject, Id);
+    }
 
     public List<Child> clientExtractChildrenFromBus(Bus bus){ return session.extractChildrenForBusFromDb(bus);}
 
@@ -87,40 +110,26 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
         return session.extractParentsForChild(codice);
     }
 
-    public boolean clientUpdatePersonIntoDb(Person person){
-        return session.updatePersonIntoDb(person);
+    /*
+        Gite
+    */
+
+    public List<Trip> clientExtractAllTripsFromDb(){
+        return session.extractAllTripsFromDb();
     }
 
-    public boolean clientUpdateSupplierIntoDb(Supplier supplier){
-        return session.updateSupplierIntoDb(supplier);
-    }
+    public List<Bus> clientExtractAllBusesFromTrip(String nomeGita, String dataGita){
+            return session.extractAllBusesForTrip(nomeGita,dataGita);
+        }
 
-    public boolean clientDeleteFromDb(String subject, String Id){
-        return session.deleteSubjectFromDb(subject, Id);
-    }
-
-    public static User getUser() {
-        return user;
-    }
-
-    public static void registerUser(User u) {
-        user = u;
-    }
-
-    public SessionMode getSession() {
-        return session;
-    }
-
-    public boolean clientChildQRAccess(String codF){
-        return session.insertChildDailyPresenceIntoDb(codF);
-    }
-
-    public boolean clientStaffQRAccess(String codF){
-        return session.insertPersonDailyPresenceIntoDb(codF);
-    }
+    public List<Stop> clientExtractRelatedStopsFromTrip(String nomeGita, String dataGita, String targa){ return session.extractAllStopsFromBus(nomeGita, dataGita, targa);}
 
     public List<Child> clientExtractEnrollableChildren(String data){
         return session.extractAvailableChildrenForTripFromDb(data);
+    }
+
+    public List<Child> clientExtractMissingChildrenForStopFromDb(Stop stop){
+        return session.extractMissingChildrenForStopFromDb(stop);
     }
 
     public boolean clientDeleteTripFromDb(String nomeG, String dataG){
@@ -147,10 +156,6 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
         return session.updateTripIntoDb(oldTrip, newTrip);
     }
 
-    public List<Child> clientExtractMissingChildrenForStopFromDb(Stop stop){
-        return session.extractMissingChildrenForStopFromDb(stop);
-    }
-
     public boolean clientInsertStopPresencesIntoDb(List<StopPresence> list){
         return session.insertStopPresencesIntoDb(list);
     }
@@ -159,11 +164,33 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
         return session.deleteBusAssociationFromDb(busAssociation);
     }
 
+    /*
+        Mensa
+    */
+
     public boolean clientInsertDishIntoDb(Dish dish){
         return session.insertDishIntoDb(dish);
     }
 
     public boolean clientInsertIngredientIntoDb(String nomeI){
         return session.insertIngredientIntoDb(nomeI);
+    }
+
+    public List<String> clientExtractIngredientsFromDb(){ return session.extractIngredientsFromDb();}
+
+    public List<Dish> clientExtractDishesForMenuFromDb(Menu.MenuTypeFlag codMenu){return session.extractDishesForMenuFromDb(codMenu);}
+
+    public List<Dish> clientExtractDishesFromDb(){ return session.extractDishesFromDb(); }
+
+    /*
+        Accessi
+    */
+
+    public boolean clientChildQRAccess(String codF){
+        return session.insertChildDailyPresenceIntoDb(codF);
+    }
+
+    public boolean clientStaffQRAccess(String codF){
+        return session.insertPersonDailyPresenceIntoDb(codF);
     }
 }
