@@ -2,28 +2,646 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6c0d706-84bd-4bc3-bf0c-c19e80a727dc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/add2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/cake.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/chicken.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/dish.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/fancyadd.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/pizza.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/pork-roast.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/pork.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/remove2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/salad2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/spaghetti2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/steak.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/turkey.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/vegetables.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/bridj-0.7.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/slf4j-api-1.7.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/webcam-capture-0.3.12.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/db/InsertEsterno.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/db/InsertIngredienti.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/textfield.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Client.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/ClientHandler.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/ConnectionPool.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/DMLCommandExecutor.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Gui.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/IngredientSupplier.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Anagrafica/Child.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Anagrafica/Contact$ContactTypeFlag.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Anagrafica/Contact.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Anagrafica/Person.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Anagrafica/Staff.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Anagrafica/Supplier.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Gite/Bus.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Gite/BusAssociation.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Gite/Stop.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Gite/StopPresence.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Gite/Trip.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Mensa/ChildIntolerance.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Mensa/Dish$DishTypeFlag.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Mensa/Dish.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Mensa/Intolerance.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Mensa/Menu$MenuTypeFlag.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Mensa/Menu.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Mensa/PersonIntolerance.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/RMIServerLauncher.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/RemoteClientInterface.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/RemoteServerInterface.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/RmiMode.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/ServerRMI.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/SessionMode.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/SocketMode.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/SocketServer.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Anagrafica/StringPropertyChild.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Anagrafica/StringPropertyContact$ContactTypeFlag.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Anagrafica/StringPropertyContact.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Anagrafica/StringPropertyPerson.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Anagrafica/StringPropertyStaff$StaffTypeFlag.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Anagrafica/StringPropertyStaff.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Anagrafica/StringPropertySupplier.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Gite/StringPropertyBus.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Gite/StringPropertyChildEnrollment.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Gite/StringPropertyStop.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Gite/StringPropertyStopPresence.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Gite/StringPropertyTrip.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Mensa/StringPropertyDish.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Mensa/StringPropertyIngredient.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/User$UserTypeFlag.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/User.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/AbstractController.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChild$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChild.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddContact.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddStaff$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaManageChild$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaManageChild.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaManageContact.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaManageStaff$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaManageStaff.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/ControllerAccessiGeneraQR.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteAddBus.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteAddStop.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteAddTrip$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteAddTrip.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteEditBus.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteEditTrip$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteEditTrip.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteManagePresenzeTappe.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteManageTrip.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteRemoveChildren.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteSignup.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddAllergen.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish$1.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish$2.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddIngredient.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaManageMenu.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaViewDishes.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerLogin.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainAccessi.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainAnagrafica.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainGite.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainMensa.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainMenu.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/QRGenerator.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/QRReader.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/WebcamQRReader.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/ChildFUJY7890ASDF5213.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/ChildPATAVLZ970212PLO.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/ChildTGBYHNUJMIBTREDF.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/ChildTGCRFSPLTGCRFSPL.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Child_FUJY7890ASDF5213.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Child_PATAVLZ970212PLO.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Child_TGBYHNUJMIBTREDF.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Child_TGCRFSPLTGCRFSPL.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Child_codiceFiscale123.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/StaffCIPOLLINA1TEACHR.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/StaffDIMAISMAFRIENDOK.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Staff_CIPOLLINA1TEACHR.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Staff_DIMAISMAFRIENDOK.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Staff_ryctuvybikjnl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/QRImages/Staffryctuvybikjnl.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/Untitled.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/add2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/addBus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/addButton.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/addchild.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/bus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/businessman.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/cake.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/calendar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/calendaradd.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/calendaredit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/calendarremove.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/checklist.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/checkmark.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/chef.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/chicken.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/child.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/contacts.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/cooking.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/delete.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/deleteButton.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/diet.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/dish.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/diskette.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/edit.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/editBus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/editmenu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/eraser.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/fancyadd.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/files.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/fish-and-chips.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/fish.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/home.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/ice-cream.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/information.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/map.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/map3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/meat.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/menu.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/menu2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/menuMensa.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/next.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/pasta.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/pizza.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/pork-roast.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/pork.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/qr-code-scan.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/qrcode.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/qrgen.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/qrmaker.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/ravioli.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/remove.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/remove2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/removeBus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/salad.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/salad2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/saveb.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/school-bag.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/school-bus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/schoolbus.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/spaghetti.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/spaghetti2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/staff.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/steak.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/tappeadd.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/tapperemove.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/teacher.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/turkey.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/user-41.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/user-50.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/user-52.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/user.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/vegetables.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/whitelock.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/whiteuser.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/world.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/zoom.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/IMPORTANTE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/choicebox.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/combobox.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/darkButton.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/darkcombobox.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/dialogAlert.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/dialogAlertError.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/dialogAlertSuccess.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/hoverableButton.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/label.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/loginButton.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/nextbutton.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/noheaderTableView.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/scrollpane.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/selectionButton.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/splitpane.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/tableview.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/tabpane" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/tabpane.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/textfield.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/CSS/textlabel.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/QRCodeReader.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_addChild.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_addContact.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_addStaff.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_editStaff.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_manageChild.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_manageContact.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_manageStaff.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/gite_addBus.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/gite_addGita.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/gite_addPresence.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/gite_addStop.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/gite_addTrip.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/gite_editBus.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/gite_editChild.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/gite_editTrip.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/gite_manageTrip.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/main_accessi.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/main_anagrafica.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/main_gite.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/main_mensa.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/main_menu.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/main_splashcreen.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/main_splashscreen.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mensa_addAllergia.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mensa_addDish.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mensa_addIngredient.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mensa_menu.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mensa_viewDishes.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mensa_viewMenu.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/qrReader.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/qr_generate.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/fxml/qrreadfromfile.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/Anagrafica_AggiungiBambino.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/images/mainmensa.fxml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/hamcrest_core_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_46.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/ant.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/description.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/gradle.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/libraries/com_github_sarxos_webcam_capture_0_3_12.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/libraries/com_google_zxing_core_3_3_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/libraries/com_google_zxing_javase_3_3_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/libraries/mysql_mysql_connector_java_5_1_46.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/libraries/org_controlsfx_controlsfx_8_40_14.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/libraries/org_hamcrest_hamcrest_junit_2_0_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/lib/bridj-0.7.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/lib/core-3.3.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/lib/java-hamcrest-2.0.0.0.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/lib/jcommander-1.72.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/lib/slf4j-api-1.7.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/lib/webcam-capture-0.3.12.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/IMPORTANTE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/controllers/ControllerAccessiGeneraQR.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/choicebox.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/combobox.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/darkButton.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/darkcombobox.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/dialogAlert.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/dialogAlertError.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/dialogAlertSuccess.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/hoverableButton.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/label.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/loginButton.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/nextbutton.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/noheaderTableView.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/scrollpane.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/selectionButton.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/splitpane.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/tableview.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/textlabel.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/ChildFUJY7890ASDF5213.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/ChildPATAVLZ970212PLO.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/ChildTGBYHNUJMIBTREDF.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/ChildTGCRFSPLTGCRFSPL.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/Child_FUJY7890ASDF5213.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/Child_PATAVLZ970212PLO.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/Child_TGBYHNUJMIBTREDF.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/Child_TGCRFSPLTGCRFSPL.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/Child_codiceFiscale123.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/StaffCIPOLLINA1TEACHR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/StaffDIMAISMAFRIENDOK.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/Staff_CIPOLLINA1TEACHR.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/Staff_DIMAISMAFRIENDOK.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/Staff_ryctuvybikjnl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/QRImages/Staffryctuvybikjnl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/QRCodeReader.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/anagrafica_addChild.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/anagrafica_addContact.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/anagrafica_addStaff.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/anagrafica_editStaff.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/anagrafica_manageChild.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/anagrafica_manageContact.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/anagrafica_manageStaff.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/gite_addBus.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/gite_addGita.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/gite_addPresence.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/gite_addStop.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/gite_addTrip.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/gite_editBus.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/gite_editChild.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/gite_editTrip.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/gite_manageTrip.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/login.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/main_accessi.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/main_anagrafica.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/main_gite.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/main_mensa.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/main_menu.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/main_splashcreen.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/main_splashscreen.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/mensa_addAllergia.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/mensa_addDish.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/mensa_addIngredient.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/mensa_viewMenu.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/qrReader.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/qr_generate.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/qrreadfromfile.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/Anagrafica_AggiungiBambino.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/Untitled.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/addBus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/addButton.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/addchild.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/bus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/businessman.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/calendar.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/calendaradd.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/calendaredit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/calendarremove.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/checklist.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/checkmark.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/chef.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/child.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/contacts.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/cooking.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/delete.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/diet.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/diskette.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/edit.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/editBus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/editmenu.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/eraser.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/files.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/fish.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/home.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/information.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/mainmensa.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/map.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/map3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/meat.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/menu.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/menu2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/menuMensa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/next.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/pasta.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/qr-code-scan.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/qrcode.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/qrgen.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/qrmaker.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/removeBus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/saveb.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/school-bag.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/school-bus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/schoolbus.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/spaghetti.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/staff.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/tappeadd.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/tapperemove.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/teacher.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/user-41.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/user-50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/user-52.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/user.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/whitelock.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/whiteuser.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/world.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/images/zoom.png" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/.idea/libraries/junit_junit_4_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_12.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/Child Care Tech.pdf" afterPath="$PROJECT_DIR$/Child Care Tech.pdf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/ChildCareTechEvolution.iml" afterPath="$PROJECT_DIR$/ChildCareTechEvolution.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/IMPORTANTE.txt" afterPath="$PROJECT_DIR$/IMPORTANTE.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/db/ChildCareTech.mwb" afterPath="$PROJECT_DIR$/db/ChildCareTech.mwb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/db/ChildCareTech_ER.pdf" afterPath="$PROJECT_DIR$/db/ChildCareTech_ER.pdf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/db/InsertAutobus.sql" afterPath="$PROJECT_DIR$/db/InsertAutobus.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/db/InsertBambini.sql" afterPath="$PROJECT_DIR$/db/InsertBambini.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/db/InsertContatti.sql" afterPath="$PROJECT_DIR$/db/InsertContatti.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/db/InsertEsterno.sql" afterPath="$PROJECT_DIR$/db/InsertEsterno.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/db/InsertIngredienti.sql" afterPath="$PROJECT_DIR$/db/InsertIngredienti.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/db/InsertPersonale.sql" afterPath="$PROJECT_DIR$/db/InsertPersonale.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/db/InsertTappa.sql" afterPath="$PROJECT_DIR$/db/InsertTappa.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/lib/controlsfx-8.40.14.jar" afterPath="$PROJECT_DIR$/lib/controlsfx-8.40.14.jar" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/lib/hamcrest-core-1.3.jar" afterPath="$PROJECT_DIR$/lib/hamcrest-core-1.3.jar" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/lib/hamcrest-junit-2.0.0.0.jar" afterPath="$PROJECT_DIR$/lib/hamcrest-junit-2.0.0.0.jar" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/lib/javase-3.3.2.jar" afterPath="$PROJECT_DIR$/lib/javase-3.3.2.jar" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/lib/junit-4.12.jar" afterPath="$PROJECT_DIR$/lib/junit-4.12.jar" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/lib/mysql-connector-java-5.1.46.jar" afterPath="$PROJECT_DIR$/lib/mysql-connector-java-5.1.46.jar" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/lib/zxing-1.7-javase 20.22.21.jar" afterPath="$PROJECT_DIR$/lib/zxing-1.7-javase 20.22.21.jar" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/lib/zxing-core-2.0 20.22.21.jar" afterPath="$PROJECT_DIR$/lib/zxing-core-2.0 20.22.21.jar" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/IMPORTANTE.txt" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/IMPORTANTE.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/Client.java" afterPath="$PROJECT_DIR$/src/main/Client.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/ClientHandler.java" afterPath="$PROJECT_DIR$/src/main/ClientHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/ConnectionPool.java" afterPath="$PROJECT_DIR$/src/main/ConnectionPool.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/DMLCommandExecutor.java" afterPath="$PROJECT_DIR$/src/main/DMLCommandExecutor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/Gui.java" afterPath="$PROJECT_DIR$/src/main/Gui.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/IngredientSupplier.java" afterPath="$PROJECT_DIR$/src/main/IngredientSupplier.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Anagrafica/Child.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Child.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Anagrafica/Contact.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Contact.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Anagrafica/Person.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Person.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Anagrafica/Staff.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Staff.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Anagrafica/Supplier.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Supplier.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Gite/Bus.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Gite/Bus.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Gite/BusAssociation.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Gite/BusAssociation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Gite/Stop.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Gite/Stop.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Gite/StopPresence.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Gite/StopPresence.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Gite/Trip.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Gite/Trip.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Mensa/ChildIntolerance.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/ChildIntolerance.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Mensa/Dish.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/Dish.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Mensa/Intolerance.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/Intolerance.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Mensa/Menu.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/Menu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/NormalClasses/Mensa/PersonIntolerance.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/PersonIntolerance.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/RMIServerLauncher.java" afterPath="$PROJECT_DIR$/src/main/RMIServerLauncher.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/RemoteClientInterface.java" afterPath="$PROJECT_DIR$/src/main/RemoteClientInterface.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/RemoteServerInterface.java" afterPath="$PROJECT_DIR$/src/main/RemoteServerInterface.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/RmiMode.java" afterPath="$PROJECT_DIR$/src/main/RmiMode.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/ServerRMI.java" afterPath="$PROJECT_DIR$/src/main/ServerRMI.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/SessionMode.java" afterPath="$PROJECT_DIR$/src/main/SessionMode.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/SocketMode.java" afterPath="$PROJECT_DIR$/src/main/SocketMode.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/SocketServer.java" afterPath="$PROJECT_DIR$/src/main/SocketServer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Anagrafica/StringPropertyChild.java" afterPath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertyChild.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Anagrafica/StringPropertyContact.java" afterPath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertyContact.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Anagrafica/StringPropertyPerson.java" afterPath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertyPerson.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Anagrafica/StringPropertyStaff.java" afterPath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertyStaff.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Anagrafica/StringPropertySupplier.java" afterPath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertySupplier.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Gite/StringPropertyBus.java" afterPath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyBus.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Gite/StringPropertyChildEnrollment.java" afterPath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyChildEnrollment.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Gite/StringPropertyStop.java" afterPath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyStop.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Gite/StringPropertyStopPresence.java" afterPath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyStopPresence.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Gite/StringPropertyTrip.java" afterPath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyTrip.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Mensa/StringPropertyDish.java" afterPath="$PROJECT_DIR$/src/main/StringPropertyClasses/Mensa/StringPropertyDish.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Mensa/StringPropertyIngredient.java" afterPath="$PROJECT_DIR$/src/main/StringPropertyClasses/Mensa/StringPropertyIngredient.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/User.java" afterPath="$PROJECT_DIR$/src/main/User.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/AbstractController.java" afterPath="$PROJECT_DIR$/src/main/controllers/AbstractController.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Anagrafica/ControllerAnagraficaAddChild.java" afterPath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddChild.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Anagrafica/ControllerAnagraficaAddContact.java" afterPath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddContact.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.java" afterPath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Anagrafica/ControllerAnagraficaManageChild.java" afterPath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageChild.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Anagrafica/ControllerAnagraficaManageContact.java" afterPath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageContact.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Anagrafica/ControllerAnagraficaManageStaff.java" afterPath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageStaff.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/ControllerAccessiGeneraQR.java" afterPath="$PROJECT_DIR$/src/main/controllers/ControllerAccessiGeneraQR.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Gite/ControllerGiteAddBus.java" afterPath="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteAddBus.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Gite/ControllerGiteAddStop.java" afterPath="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteAddStop.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Gite/ControllerGiteAddTrip.java" afterPath="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteAddTrip.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Gite/ControllerGiteEditBus.java" afterPath="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteEditBus.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Gite/ControllerGiteEditTrip.java" afterPath="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteEditTrip.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Gite/ControllerGiteManagePresenzeTappe.java" afterPath="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteManagePresenzeTappe.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Gite/ControllerGiteManageTrip.java" afterPath="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteManageTrip.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Gite/ControllerGiteRemoveChildren.java" afterPath="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteRemoveChildren.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Gite/ControllerGiteSignup.java" afterPath="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteSignup.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaAddAllergen.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddAllergen.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaAddDish.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddDish.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaAddIngredient.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddIngredient.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaManageMenu.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaManageMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaViewDishes.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaViewDishes.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Menu/ControllerLogin.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerLogin.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Menu/ControllerMainAccessi.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainAccessi.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Menu/ControllerMainAnagrafica.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainAnagrafica.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Menu/ControllerMainGite.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainGite.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Menu/ControllerMainMensa.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMensa.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Menu/ControllerMainMenu.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMenu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/qrReader/QRGenerator.java" afterPath="$PROJECT_DIR$/src/main/qrReader/QRGenerator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/qrReader/QRReader.java" afterPath="$PROJECT_DIR$/src/main/qrReader/QRReader.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/qrReader/WebcamQRReader.java" afterPath="$PROJECT_DIR$/src/main/qrReader/WebcamQRReader.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/choicebox.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/choicebox.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/combobox.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/combobox.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/darkButton.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/darkButton.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/darkcombobox.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/darkcombobox.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/dialogAlert.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/dialogAlert.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/dialogAlertError.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/dialogAlertError.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/dialogAlertSuccess.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/dialogAlertSuccess.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/hoverableButton.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/hoverableButton.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/label.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/label.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/loginButton.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/loginButton.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/nextbutton.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/nextbutton.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/noheaderTableView.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/noheaderTableView.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/scrollpane.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/scrollpane.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/selectionButton.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/selectionButton.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/splitpane.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/splitpane.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/tableview.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/tableview.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/tabpane" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/tabpane" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/tabpane.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/tabpane.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/textfield.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/textfield.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/textlabel.css" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/CSS/textlabel.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/ChildFUJY7890ASDF5213.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/ChildFUJY7890ASDF5213.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/ChildPATAVLZ970212PLO.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/ChildPATAVLZ970212PLO.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/ChildTGBYHNUJMIBTREDF.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/ChildTGBYHNUJMIBTREDF.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/ChildTGCRFSPLTGCRFSPL.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/ChildTGCRFSPLTGCRFSPL.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/Child_FUJY7890ASDF5213.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_FUJY7890ASDF5213.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/Child_PATAVLZ970212PLO.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_PATAVLZ970212PLO.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/Child_TGBYHNUJMIBTREDF.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_TGBYHNUJMIBTREDF.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/Child_TGCRFSPLTGCRFSPL.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_TGCRFSPLTGCRFSPL.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/Child_codiceFiscale123.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Child_codiceFiscale123.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/StaffCIPOLLINA1TEACHR.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/StaffCIPOLLINA1TEACHR.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/StaffDIMAISMAFRIENDOK.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/StaffDIMAISMAFRIENDOK.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/Staff_CIPOLLINA1TEACHR.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Staff_CIPOLLINA1TEACHR.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/Staff_DIMAISMAFRIENDOK.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Staff_DIMAISMAFRIENDOK.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/Staff_ryctuvybikjnl.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Staff_ryctuvybikjnl.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/QRImages/Staffryctuvybikjnl.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/QRImages/Staffryctuvybikjnl.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/QRCodeReader.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/QRCodeReader.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/anagrafica_addChild.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/anagrafica_addChild.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/anagrafica_addContact.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/anagrafica_addContact.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/anagrafica_addStaff.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/anagrafica_addStaff.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/anagrafica_editStaff.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/anagrafica_editStaff.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/anagrafica_manageChild.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/anagrafica_manageChild.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/anagrafica_manageContact.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/anagrafica_manageContact.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/anagrafica_manageStaff.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/anagrafica_manageStaff.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/gite_addBus.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/gite_addBus.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/gite_addGita.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/gite_addGita.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/gite_addPresence.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/gite_addPresence.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/gite_addStop.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/gite_addStop.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/gite_addTrip.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/gite_addTrip.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/gite_editBus.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/gite_editBus.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/gite_editChild.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/gite_editChild.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/gite_editTrip.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/gite_editTrip.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/gite_manageTrip.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/gite_manageTrip.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/login.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/login.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/main_accessi.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/main_accessi.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/main_anagrafica.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/main_anagrafica.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/main_gite.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/main_gite.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/main_mensa.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/main_mensa.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/main_menu.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/main_menu.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/main_splashcreen.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/main_splashcreen.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/main_splashscreen.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/main_splashscreen.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/mensa_addAllergia.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/mensa_addAllergia.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/mensa_addDish.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/mensa_addDish.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/mensa_addIngredient.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/mensa_addIngredient.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/mensa_menu.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/mensa_menu.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/mensa_viewDishes.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/mensa_viewDishes.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/mensa_viewMenu.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/mensa_viewMenu.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/qrReader.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qrReader.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/qr_generate.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qr_generate.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/qrreadfromfile.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qrreadfromfile.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/Anagrafica_AggiungiBambino.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/Anagrafica_AggiungiBambino.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/Untitled.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/Untitled.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/add2.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/add2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/addBus.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/addBus.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/addButton.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/addButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/addchild.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/addchild.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/bus.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/bus.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/businessman.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/businessman.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/cake.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/cake.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/calendar.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/calendar.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/calendaradd.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/calendaradd.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/calendaredit.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/calendaredit.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/calendarremove.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/calendarremove.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/checklist.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/checklist.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/checkmark.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/checkmark.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/chef.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/chef.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/chicken.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/chicken.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/child.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/child.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/close.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/close.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/contacts.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/contacts.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/cooking.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/cooking.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/delete.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/delete.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/deleteButton.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/deleteButton.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/diet.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/diet.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/dish.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/dish.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/diskette.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/diskette.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/edit.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/edit.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/editBus.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/editBus.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/editmenu.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/editmenu.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/eraser.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/eraser.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/fancyadd.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/fancyadd.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/files.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/files.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/fish-and-chips.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/fish-and-chips.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/fish.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/fish.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/home.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/home.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/ice-cream.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/ice-cream.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/information.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/information.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/mainmensa.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/mainmensa.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/map.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/map.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/map3.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/map3.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/meat.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/meat.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/menu.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/menu.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/menu2.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/menu2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/menuMensa.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/menuMensa.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/next.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/next.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/pasta.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/pasta.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/pizza.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/pizza.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/pork-roast.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/pork-roast.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/pork.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/pork.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/qr-code-scan.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/qr-code-scan.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/qrcode.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/qrcode.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/qrgen.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/qrgen.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/qrmaker.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/qrmaker.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/ravioli.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/ravioli.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/remove.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/remove.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/remove2.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/remove2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/removeBus.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/removeBus.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/salad.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/salad.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/salad2.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/salad2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/saveb.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/saveb.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/school-bag.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/school-bag.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/school-bus.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/school-bus.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/schoolbus.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/schoolbus.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/spaghetti.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/spaghetti.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/spaghetti2.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/spaghetti2.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/staff.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/staff.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/steak.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/steak.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/tappeadd.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/tappeadd.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/tapperemove.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/tapperemove.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/teacher.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/teacher.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/turkey.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/turkey.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/user-41.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/user-41.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/user-50.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/user-50.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/user-52.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/user-52.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/user.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/user.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/vegetables.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/vegetables.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/whitelock.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/whitelock.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/whiteuser.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/whiteuser.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/world.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/world.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/images/zoom.png" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/zoom.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Progetto/src/test/ConnectionPoolTest.java" afterPath="$PROJECT_DIR$/src/test/ConnectionPoolTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ChildCareTech.iml" afterPath="$PROJECT_DIR$/.idea/ChildCareTech.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/controlsfx_8_40_14.xml" afterPath="$PROJECT_DIR$/.idea/libraries/controlsfx_8_40_14.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_46.xml" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_46.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/zxing_1_7_javase_20_22_21.xml" afterPath="$PROJECT_DIR$/.idea/libraries/zxing_1_7_javase_20_22_21.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Progetto/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Progetto/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/Progetto/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,9 +659,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="ControllerMensaManageMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaManageMenu.java">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaManageMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1845">
+            <state relative-caret-position="0">
               <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
               <folding>
                 <element signature="e#5307#5308#0" expanded="true" />
@@ -54,7 +672,7 @@
         </entry>
       </file>
       <file leaf-file-name="ControllerMensaViewDishes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaViewDishes.java">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaViewDishes.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1380">
               <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
@@ -64,7 +682,7 @@
         </entry>
       </file>
       <file leaf-file-name="ControllerMainMensa.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Menu/ControllerMainMensa.java">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMensa.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
               <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
@@ -74,11 +692,17 @@
         </entry>
       </file>
       <file leaf-file-name="ControllerMensaAddDish.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaAddDish.java">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddDish.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="134" column="5" lean-forward="false" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="150">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding>
+                <element signature="e#1832#1858#0" expanded="true" />
+                <element signature="e#1940#1966#0" expanded="true" />
+                <element signature="e#2019#2027#0" expanded="true" />
+                <element signature="e#7480#7481#0" expanded="true" />
+                <element signature="e#7516#7517#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,7 +718,7 @@
         </entry>
       </file>
       <file leaf-file-name="AbstractController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/AbstractController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1080">
               <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
@@ -223,66 +847,6 @@
               <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="Progetto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="Progetto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="Progetto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="Progetto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="Progetto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Mensa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="Progetto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Menu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="Progetto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="NormalClasses" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="Progetto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -300,15 +864,17 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="substring&#9;PSI&#9;JAVA://com.sun.org.apache.regexp.internal.CharacterIterator#substring&#10;substring(1,&#9;PSI&#9;JAVA://org.hamcrest.core.SubstringMatcher&#10;confirmatio&#9;PSI&#9;JAVA://javafx.scene.control.Alert.AlertType#CONFIRMATION" />
+    <property name="SearchEverywhereHistoryKey" value="Progetto&#9;PSI&#9;JAVA://com.sun.tools.doclets.internal.toolkit.util.VisibleMemberMap.ClassMembers#isPropertyGetterOrSetter&#10;substring&#9;PSI&#9;JAVA://com.sun.org.apache.regexp.internal.CharacterIterator#substring&#10;substring(1,&#9;PSI&#9;JAVA://org.hamcrest.core.SubstringMatcher&#10;confirmatio&#9;PSI&#9;JAVA://javafx.scene.control.Alert.AlertType#CONFIRMATION" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Progetto/src/main/resources/fxml" />
-    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="main.StringPropertyClasses.Mensa" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Progetto/src/main/resources/fxml" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -524,7 +1090,7 @@
       <workItem from="1523911282387" duration="834000" />
       <workItem from="1523994370460" duration="181000" />
       <workItem from="1524037322198" duration="15476000" />
-      <workItem from="1524091852607" duration="23000" />
+      <workItem from="1524091852607" duration="748000" />
     </task>
     <task id="LOCAL-00001" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
       <created>1523647210513</created>
@@ -603,11 +1169,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524053081201</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
+      <created>1524091884367</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1524091884367</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42325000" />
+    <option name="totallyTimeSpent" value="43050000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -688,7 +1261,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/resources/images/Anagrafica_AggiungiBambino.fxml">
+    <entry file="file://$PROJECT_DIR$/src/IMPORTANTE.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/main_mensa.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
@@ -698,31 +1278,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/IMPORTANTE.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/resources/fxml/main_mensa.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/qrReader/WebcamQRReader.java">
+    <entry file="file://$PROJECT_DIR$/src/main/qrReader/WebcamQRReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
           <caret line="44" column="44" lean-forward="true" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/RemoteServerInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/main/RemoteServerInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="86" column="74" lean-forward="true" selection-start-line="86" selection-start-column="74" selection-end-line="86" selection-end-column="74" />
@@ -730,7 +1296,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/RmiMode.java">
+    <entry file="file://$PROJECT_DIR$/src/main/RmiMode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="516" column="32" lean-forward="true" selection-start-line="516" selection-start-column="32" selection-end-line="516" selection-end-column="32" />
@@ -738,7 +1304,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/ServerRMI.java">
+    <entry file="file://$PROJECT_DIR$/src/main/ServerRMI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5250">
           <caret line="359" column="1" lean-forward="false" selection-start-line="359" selection-start-column="1" selection-end-line="359" selection-end-column="1" />
@@ -746,7 +1312,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/IngredientSupplier.java">
+    <entry file="file://$PROJECT_DIR$/src/main/IngredientSupplier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
@@ -754,7 +1320,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/RemoteClientInterface.java">
+    <entry file="file://$PROJECT_DIR$/src/main/RemoteClientInterface.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
@@ -762,35 +1328,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/NormalClasses/Mensa/Menu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/NormalClasses/Mensa/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding>
+            <element signature="e#353#354#0" expanded="false" />
+            <element signature="e#394#395#0" expanded="false" />
+            <element signature="e#430#431#0" expanded="false" />
+            <element signature="e#469#470#0" expanded="false" />
+            <element signature="e#655#656#0" expanded="false" />
+            <element signature="e#683#684#0" expanded="false" />
+            <element signature="e#725#726#0" expanded="false" />
+            <element signature="e#759#760#0" expanded="false" />
+            <element signature="e#799#800#0" expanded="false" />
+            <element signature="e#829#830#0" expanded="false" />
+            <element signature="e#881#882#0" expanded="false" />
+            <element signature="e#919#920#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/NormalClasses/Mensa/Dish.java">
+    <entry file="file://$PROJECT_DIR$/src/main/NormalClasses/Mensa/Dish.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#756#757#0" expanded="false" />
+            <element signature="e#795#796#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/NormalClasses/Mensa/ChildIntolerance.java">
+    <entry file="file://$PROJECT_DIR$/src/main/NormalClasses/Mensa/ChildIntolerance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/NormalClasses/Mensa/Intolerance.java">
+    <entry file="file://$PROJECT_DIR$/src/main/NormalClasses/Mensa/Intolerance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/SocketMode.java">
+    <entry file="file://$PROJECT_DIR$/src/main/SocketMode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="789" column="31" lean-forward="true" selection-start-line="789" selection-start-column="31" selection-end-line="789" selection-end-column="31" />
@@ -798,7 +1384,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/ClientHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/ClientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14580">
           <caret line="983" column="1" lean-forward="false" selection-start-line="983" selection-start-column="1" selection-end-line="983" selection-end-column="1" />
@@ -806,7 +1392,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/DMLCommandExecutor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/DMLCommandExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
           <caret line="95" column="40" lean-forward="false" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
@@ -857,7 +1443,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/ConnectionPool.java">
+    <entry file="file://$PROJECT_DIR$/src/main/ConnectionPool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
@@ -865,7 +1451,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/Gui.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Gui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
@@ -873,7 +1459,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/SessionMode.java">
+    <entry file="file://$PROJECT_DIR$/src/main/SessionMode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
           <caret line="100" column="4" lean-forward="true" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="70" />
@@ -881,7 +1467,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/RMIServerLauncher.java">
+    <entry file="file://$PROJECT_DIR$/src/main/RMIServerLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="72" lean-forward="false" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
@@ -911,7 +1497,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/resources/fxml/mensa_viewDishes.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mensa_viewDishes.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
@@ -922,14 +1508,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Mensa/StringPropertyDish.java">
+    <entry file="file://$PROJECT_DIR$/src/main/StringPropertyClasses/Mensa/StringPropertyDish.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="10" column="46" lean-forward="true" selection-start-line="10" selection-start-column="46" selection-end-line="11" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaAddIngredient.java">
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddIngredient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="37" column="13" lean-forward="true" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
@@ -937,7 +1524,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/resources/fxml/mensa_addDish.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mensa_addDish.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
@@ -948,7 +1535,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/resources/fxml/mensa_menu.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mensa_menu.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
       </provider>
@@ -965,6 +1552,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -979,7 +1567,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Menu/ControllerMainMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMenu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
           <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
@@ -987,7 +1575,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/Client.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-42">
           <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
@@ -1014,10 +1602,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Mensa/StringPropertyIngredient.java">
+    <entry file="file://$PROJECT_DIR$/src/main/StringPropertyClasses/Mensa/StringPropertyIngredient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,6 +1614,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="494" column="0" lean-forward="false" selection-start-line="494" selection-start-column="0" selection-end-line="494" selection-end-column="0" />
+          <folding>
+            <element signature="e#15414#15415#0" expanded="false" />
+            <element signature="e#15459#15460#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1039,6 +1632,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="e#1665#1666#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1053,6 +1649,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1060,6 +1657,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding>
+            <element signature="e#1722#1723#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1078,6 +1678,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="473" column="0" lean-forward="false" selection-start-line="473" selection-start-column="0" selection-end-line="473" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,6 +1686,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="101" column="51" lean-forward="false" selection-start-line="101" selection-start-column="51" selection-end-line="101" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1092,6 +1694,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1099,10 +1702,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/AbstractController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
@@ -1110,7 +1714,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Menu/ControllerMainMensa.java">
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMensa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
@@ -1118,9 +1722,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaManageMenu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaManageMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1845">
+        <state relative-caret-position="0">
           <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
           <folding>
             <element signature="e#5307#5308#0" expanded="true" />
@@ -1129,7 +1733,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaViewDishes.java">
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaViewDishes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1380">
           <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
@@ -1145,11 +1749,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaAddDish.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/lib/tools.jar!/com/sun/tools/doclets/internal/toolkit/util/VisibleMemberMap.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="134" column="5" lean-forward="false" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+        <state relative-caret-position="252">
+          <caret line="521" column="24" lean-forward="false" selection-start-line="521" selection-start-column="24" selection-end-line="521" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddDish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#1832#1858#0" expanded="true" />
+            <element signature="e#1940#1966#0" expanded="true" />
+            <element signature="e#2019#2027#0" expanded="true" />
+            <element signature="e#7480#7481#0" expanded="true" />
+            <element signature="e#7516#7517#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1218,7 +1836,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>controlsfx-8.40.14</last-edited>
+          <last-edited>zxing-1.7-javase 20.22.21</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
