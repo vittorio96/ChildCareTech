@@ -2,15 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6c0d706-84bd-4bc3-bf0c-c19e80a727dc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/add2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/cake.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/chicken.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/dish.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/fancyadd.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/pizza.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/pork-roast.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/pork.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/remove2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/salad2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/spaghetti2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/steak.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/turkey.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/images/vegetables.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/bridj-0.7.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/slf4j-api-1.7.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/webcam-capture-0.3.12.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/db/InsertEsterno.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/db/InsertIngredienti.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/CSS/textfield.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Progetto/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Progetto/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/noheaderTableView.css" afterPath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/CSS/noheaderTableView.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/mensa_addDish.fxml" afterPath="$PROJECT_DIR$/Progetto/out/production/ChildCareTech/main/resources/fxml/mensa_addDish.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Mensa/StringPropertyIngredient.java" afterPath="$PROJECT_DIR$/Progetto/src/main/StringPropertyClasses/Mensa/StringPropertyIngredient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaAddDish.java" afterPath="$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaAddDish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaManageMenu.java" afterPath="$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaManageMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaViewDishes.java" afterPath="$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaViewDishes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/mensa_viewDishes.fxml" afterPath="$PROJECT_DIR$/Progetto/src/main/resources/fxml/mensa_viewDishes.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/Progetto/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,7 +56,7 @@
       <file leaf-file-name="ControllerMensaViewDishes.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaViewDishes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="836">
+            <state relative-caret-position="1380">
               <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
               <folding />
             </state>
@@ -53,7 +66,7 @@
       <file leaf-file-name="ControllerMainMensa.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Menu/ControllerMainMensa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
+            <state relative-caret-position="330">
               <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
@@ -64,12 +77,8 @@
         <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaAddDish.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="172">
-              <caret line="134" column="5" lean-forward="true" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
-              <folding>
-                <element signature="e#1832#1858#0" expanded="true" />
-                <element signature="e#1940#1966#0" expanded="true" />
-                <element signature="e#2019#2027#0" expanded="true" />
-              </folding>
+              <caret line="134" column="5" lean-forward="false" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,8 +86,8 @@
       <file leaf-file-name="ReadOnlyUnbackedObservableList.java" pinned="false" current-in-tab="false">
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/javafx-src.zip!/com/sun/javafx/scene/control/ReadOnlyUnbackedObservableList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="150" column="13" lean-forward="true" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
+            <state relative-caret-position="1485">
+              <caret line="150" column="13" lean-forward="false" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -87,7 +96,7 @@
       <file leaf-file-name="AbstractController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/AbstractController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
+            <state relative-caret-position="1080">
               <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding />
             </state>
@@ -205,6 +214,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -272,22 +283,11 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="Progetto" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="fxml" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -523,7 +523,8 @@
       <workItem from="1523909126231" duration="1790000" />
       <workItem from="1523911282387" duration="834000" />
       <workItem from="1523994370460" duration="181000" />
-      <workItem from="1524037322198" duration="14813000" />
+      <workItem from="1524037322198" duration="15476000" />
+      <workItem from="1524091852607" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
       <created>1523647210513</created>
@@ -595,11 +596,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524047605436</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
+      <created>1524053081201</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1524053081201</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41639000" />
+    <option name="totallyTimeSpent" value="42325000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -612,30 +620,29 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29756796" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3018598" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39897698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -712,9 +719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
           <caret line="44" column="44" lean-forward="true" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -762,20 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <element signature="e#353#354#0" expanded="false" />
-            <element signature="e#394#395#0" expanded="false" />
-            <element signature="e#430#431#0" expanded="false" />
-            <element signature="e#469#470#0" expanded="false" />
-            <element signature="e#655#656#0" expanded="false" />
-            <element signature="e#683#684#0" expanded="false" />
-            <element signature="e#725#726#0" expanded="false" />
-            <element signature="e#759#760#0" expanded="false" />
-            <element signature="e#799#800#0" expanded="false" />
-            <element signature="e#829#830#0" expanded="false" />
-            <element signature="e#881#882#0" expanded="false" />
-            <element signature="e#919#920#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -783,10 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#756#757#0" expanded="false" />
-            <element signature="e#795#796#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -794,7 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -802,7 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,7 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,7 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -944,7 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="10" column="46" lean-forward="true" selection-start-line="10" selection-start-column="46" selection-end-line="11" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -984,7 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
           <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1031,9 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="1313" column="0" lean-forward="false" selection-start-line="1313" selection-start-column="0" selection-end-line="1313" selection-end-column="0" />
-          <folding>
-            <element signature="e#55025#55026#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1041,7 +1018,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,10 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="494" column="0" lean-forward="false" selection-start-line="494" selection-start-column="0" selection-end-line="494" selection-end-column="0" />
-          <folding>
-            <element signature="e#15414#15415#0" expanded="false" />
-            <element signature="e#15459#15460#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1060,7 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,9 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding>
-            <element signature="e#1665#1666#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1078,7 +1046,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1086,7 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1094,9 +1060,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding>
-            <element signature="e#1722#1723#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1115,7 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="473" column="0" lean-forward="false" selection-start-line="473" selection-start-column="0" selection-end-line="473" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1123,7 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="101" column="51" lean-forward="false" selection-start-line="101" selection-start-column="51" selection-end-line="101" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1131,7 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1139,13 +1099,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/AbstractController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
+        <state relative-caret-position="1080">
           <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding />
         </state>
@@ -1153,7 +1112,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Menu/ControllerMainMensa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
+        <state relative-caret-position="330">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
@@ -1172,7 +1131,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaViewDishes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
+        <state relative-caret-position="1380">
           <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding />
         </state>
@@ -1180,8 +1139,8 @@
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/javafx-src.zip!/com/sun/javafx/scene/control/ReadOnlyUnbackedObservableList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="150" column="13" lean-forward="true" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
+        <state relative-caret-position="1485">
+          <caret line="150" column="13" lean-forward="false" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1189,12 +1148,8 @@
     <entry file="file://$PROJECT_DIR$/Progetto/src/main/controllers/Mensa/ControllerMensaAddDish.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
-          <caret line="134" column="5" lean-forward="true" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
-          <folding>
-            <element signature="e#1832#1858#0" expanded="true" />
-            <element signature="e#1940#1966#0" expanded="true" />
-            <element signature="e#2019#2027#0" expanded="true" />
-          </folding>
+          <caret line="134" column="5" lean-forward="false" selection-start-line="134" selection-start-column="5" selection-end-line="134" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
