@@ -14,29 +14,21 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.Mensa.ControllerMensaViewDishes">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.Mensa.ControllerMensaViewDishes">
    <children>
-      <GridPane layoutX="18.0" layoutY="7.0" prefHeight="356.0" prefWidth="357.0">
+      <GridPane layoutX="271.0" layoutY="37.0" prefHeight="378.0" prefWidth="477.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="327.0" minWidth="10.0" prefWidth="311.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="43.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="401.43212890625" minWidth="10.0" prefWidth="54.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="436.06689453125" minWidth="10.0" prefWidth="339.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="84.2596435546875" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="122.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="116.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="116.0" minHeight="0.0" prefHeight="11.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="242.0" minHeight="10.0" prefHeight="204.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="116.0" minHeight="0.0" prefHeight="45.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="116.0" minHeight="0.0" prefHeight="11.028335571289062" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="310.5476303100586" minHeight="10.0" prefHeight="307.97166442871094" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fitHeight="93.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
-               <image>
-                  <Image url="@../images/pork-roast.png" />
-               </image>
-               <GridPane.margin>
-                  <Insets left="30.0" />
-               </GridPane.margin>
-            </ImageView>
-            <TableView fx:id="dishesTable" maxWidth="260.0" prefHeight="203.0" prefWidth="260.0" style="-fx-background-color: white; -fx-border-color: #D3D3d3; -fx-border-radius: 5;" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+            <TableView fx:id="dishesTable" maxHeight="340.0" maxWidth="340.0" prefHeight="340.0" prefWidth="340.0" style="-fx-background-color: white; -fx-border-color: #D3D3d3; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
               <columns>
                 <TableColumn fx:id="dishesColumn" prefWidth="75.0" text="Piatti disponibili" />
               </columns>
@@ -48,34 +40,44 @@
                   <URL value="@../CSS/noheaderTableView.css" />
                </stylesheets>
             </TableView>
-            <ImageView fx:id="addNewDishIV" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#addNewDish" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <ImageView fx:id="addNewDishIV" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#addNewDish" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <GridPane.margin>
-                  <Insets bottom="60.0" />
+                  <Insets bottom="80.0" />
                </GridPane.margin>
                <image>
                   <Image url="@../images/fancyadd.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="goHomeIV" fitHeight="19.0" fitWidth="32.0" onMouseClicked="#goHome" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
-               <image>
-                  <Image url="@../images/close.png" />
-               </image>
-            </ImageView>
-            <TextField fx:id="searchField" maxWidth="260.0" prefHeight="27.0" prefWidth="260.0" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-            <Label text="Cerca:" textFill="#717e93" GridPane.rowIndex="1">
+            <TextField fx:id="searchField" maxWidth="300.0" prefHeight="27.0" prefWidth="300.0" stylesheets="@../CSS/textfield.css" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+            <Label prefHeight="18.0" prefWidth="40.0" text="Cerca" textFill="#717e93" GridPane.columnIndex="1" GridPane.halignment="LEFT">
                <font>
                   <Font name="Futura Medium" size="13.0" />
                </font>
             </Label>
-            <ImageView fx:id="saveDishIV" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#saveNewDish" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <ImageView fx:id="saveDishIV" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#saveNewDish" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <image>
                   <Image url="@../images/diskette.png" />
                </image>
                <GridPane.margin>
-                  <Insets top="60.0" />
+                  <Insets top="80.0" />
                </GridPane.margin>
             </ImageView>
          </children>
       </GridPane>
+      <ImageView fx:id="goHomeIV" fitHeight="19.0" fitWidth="32.0" layoutX="775.0" layoutY="8.0" onMouseClicked="#goHome" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/close.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="128.0" fitWidth="128.0" layoutX="103.0" layoutY="197.0">
+         <image>
+            <Image url="@../images/dish.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="94.0" layoutY="76.0" prefHeight="62.0" prefWidth="148.0" text="Scelta Piatto" textFill="#717e93">
+         <font>
+            <Font name="Futura Medium" size="26.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

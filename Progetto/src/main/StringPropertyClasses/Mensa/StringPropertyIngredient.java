@@ -6,7 +6,7 @@ public class StringPropertyIngredient {
     private SimpleStringProperty nome;
 
     public StringPropertyIngredient(String nome) {
-        this.nome = new SimpleStringProperty(nome);
+        this.nome = new SimpleStringProperty(nome.substring(0,1).toUpperCase() +nome.substring(1).toLowerCase());
     }
 
     public String getNome() {

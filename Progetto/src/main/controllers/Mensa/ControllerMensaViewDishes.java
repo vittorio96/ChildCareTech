@@ -70,11 +70,16 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
 
     private ObservableList<StringPropertyDish> dishObservableList = FXCollections.observableArrayList();
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        refreshDishes();
+    }
+
+    private void refreshDishes() {
         List<Dish> dishes = CLIENT.clientExtractDishesFromDb();
-        if(dishes!=null) for(Dish dish: dishes){ dishObservableList.add(new StringPropertyDish(dish));}
+        if(dishes!=null) for(Dish dish: dishes){
+            if(dish.getTipo()==dishType) dishObservableList.add(new StringPropertyDish(dish));
+        }
         dishesColumn.setCellValueFactory(cellData -> cellData.getValue().nomePProperty());
 
         // 1. Wrap the ObservableList in a FilteredList (initially display all data).
@@ -83,7 +88,7 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
         // 2. Set the filter Predicate whenever the filter changes.
         searchField.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(person -> {
-                // If filter text is empty, display all persons.
+                // If filter text is empty, display all
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
                 }
@@ -111,13 +116,13 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
     }
 
 
-
     public void goHome() {
         closePopup(goHomeIV);
     }
 
     public void addNewDish() throws IOException {
         openPopup(addNewDishIV,addNewDishFXMLPath,addDishW,addDishH);
+
     }
 
     public void saveNewDish() {

@@ -68,8 +68,8 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
     @FXML private ComboBox giorniComboBox;
     private final String viewDishesFxmlPath = "../../resources/fxml/mensa_viewDishes.fxml";
     private final Menu.MenuTypeFlag defaultDay = Menu.MenuTypeFlag.MONDAY;
-    private final int viewDishesW = 380;
-    private final int viewDishesH = 380;
+    private final int viewDishesW = 800;
+    private final int viewDishesH = 450;
 
 
     /*

@@ -1,5 +1,6 @@
 package main.controllers.Mensa;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -23,6 +24,8 @@ import org.controlsfx.control.PopOver;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -41,8 +44,11 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
     @FXML private TableView<StringPropertyIngredient> ingredientsOnDishTable;
     @FXML private TableColumn <StringPropertyIngredient,String> availableIngredients;
     @FXML private TableColumn <StringPropertyIngredient,String> ingredientsOnDish;
-    private ObservableList<StringPropertyIngredient> availableIngredientsList = FXCollections.observableArrayList();
-    private ObservableList<StringPropertyIngredient> ingredientsOnDishList = FXCollections.observableArrayList();
+    private List<StringPropertyIngredient> onDishNormalList = new ArrayList<StringPropertyIngredient>();
+    private List<StringPropertyIngredient> availableNormalList = new ArrayList<StringPropertyIngredient>();
+    private List<String> tempList = new ArrayList<String>();
+    private ObservableList<StringPropertyIngredient> availableIngredientsObservableList = FXCollections.observableArrayList();
+    private ObservableList<StringPropertyIngredient> ingredientsOnDishObservableList = FXCollections.observableArrayList();
     private SortedList<StringPropertyIngredient> sortedData;
     private FilteredList<StringPropertyIngredient> filteredData;
 
@@ -50,16 +56,16 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setColumnassociations();
+        refreshIngredientsList();
         setFilter();
 
 
     }
 
     private void setFilter() {
-        refreshIngredientsList();
         availableIngredients.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
         //(initially display all data).
-        filteredData = new FilteredList<>(availableIngredientsList, p -> true);
+        filteredData = new FilteredList<>(availableIngredientsObservableList, p -> true);
         //Set the filter
         searchFieldAvailable.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(ingredient -> {
@@ -98,21 +104,63 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
     }
 
     private void refreshIngredientsList() {
-        availableIngredientsList.clear();
-        List<String> ingredients = CLIENT.clientExtractIngredientsFromDb();
-        if(ingredients!=null)
-            for(String s: ingredients)
-                availableIngredientsList.add(new StringPropertyIngredient(
-                        s.substring(0,1).toUpperCase() +s.substring(1).toLowerCase()));
+        availableIngredientsObservableList.clear();
+        tempList= CLIENT.clientExtractIngredientsFromDb();
+        if(tempList!=null)
+            for(String s: tempList)
+                availableNormalList.add(new StringPropertyIngredient(s)  );
+        availableIngredientsObservableList.addAll(availableNormalList);                //from caps to normal
+
     }
 
-    private void toAvailableIngredients(StringPropertyIngredient newValue) {
-        //availableIngredientsList.add(newValue);
-        //ingredientsOnDishList.remove(newValue);
+    private void toAvailableIngredients(StringPropertyIngredient selected) {
+
+        Platform.runLater(new Runnable() {
+            @Override public void run() {
+                if(selected!=null){
+                availableNormalList.add(selected);
+                int initialsize = onDishNormalList.size();
+                boolean done = false;
+                for(int i=0; i < initialsize ;i++){
+                    if(onDishNormalList.get(i).getNome().equals(selected.getNome())) {
+                        onDishNormalList.remove(i);
+                        done = true;
+                    }
+                    if (done==true) break;
+                }
+                setItems();
+                setFilter();
+            }}});
+
     }
 
-    private void toDish(StringPropertyIngredient newValue) {
-        //TODO handle exchange between tables
+    private void toDish(StringPropertyIngredient selected) {
+        Platform.runLater(new Runnable() {
+            @Override public void run() {
+                if(selected!=null){
+                onDishNormalList.add(selected);
+                int initialsize = availableNormalList.size();
+                boolean done = false;
+                for(int i=0; i < initialsize ;i++){
+                    if(availableNormalList.get(i).getNome().equals(selected.getNome())) {
+                        availableNormalList.remove(i);
+                        done = true;
+                    }
+                    if (done==true) break;
+                 }
+                    setItems();
+                    setFilter();
+                }
+            }});
+    }
+
+    private void setItems() {
+        ingredientsOnDishObservableList.clear();
+        ingredientsOnDishObservableList.addAll(onDishNormalList);
+        ingredientsOnDishTable.setItems(ingredientsOnDishObservableList);
+        availableIngredientsObservableList.clear();
+        availableIngredientsObservableList.addAll(availableNormalList);
+        availableIngredientsTable.setItems(availableIngredientsObservableList);
     }
 
     public void handleSaveButton(ActionEvent event) {
@@ -145,7 +193,7 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
             dishNameTextField.setStyle(normalCss);
         }
 
-        if(ingredientsOnDishList.size()==0){
+        if(onDishNormalList.size()<1){
             errors++;
         }
 
