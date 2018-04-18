@@ -67,7 +67,7 @@
                   <Font name="Futura Medium" size="13.0" />
                </font>
             </Label>
-            <ImageView fx:id="addNewDishIV1" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#addNewDish" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+            <ImageView fx:id="saveDishIV" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#saveNewDish" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <image>
                   <Image url="@../images/diskette.png" />
                </image>

@@ -82,9 +82,9 @@ public class ControllerMainMenu extends AbstractController implements Initializa
             teacherPane.setVisible(true);
             mensaButton.setDisable(true);
         }else {
-            chefPane.setVisible(true);
+            chefPane.setVisible(false);
             teacherPane.setVisible(false);
-            adminPane.setVisible(false);
+            adminPane.setVisible(true);
         }
 
     }

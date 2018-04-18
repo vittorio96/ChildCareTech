@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/ChildCareTech.mwb" afterPath="$PROJECT_DIR$/db/ChildCareTech.mwb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.idea/workspace.xml" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/InsertPersonale.sql" afterPath="$PROJECT_DIR$/db/InsertPersonale.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Client.java" afterPath="$PROJECT_DIR$/src/main/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ClientHandler.java" afterPath="$PROJECT_DIR$/src/main/ClientHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/DMLCommandExecutor.java" afterPath="$PROJECT_DIR$/src/main/DMLCommandExecutor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/Dish.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/Dish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/Menu.java" afterPath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/Menu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/RemoteServerInterface.java" afterPath="$PROJECT_DIR$/src/main/RemoteServerInterface.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/RmiMode.java" afterPath="$PROJECT_DIR$/src/main/RmiMode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ServerRMI.java" afterPath="$PROJECT_DIR$/src/main/ServerRMI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/SessionMode.java" afterPath="$PROJECT_DIR$/src/main/SessionMode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/SocketMode.java" afterPath="$PROJECT_DIR$/src/main/SocketMode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaManageMenu.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaManageMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddDish.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddDish.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddIngredient.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddIngredient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaViewDishes.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaViewDishes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/mensa_menu.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mensa_menu.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMenu.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/CSS/noheaderTableView.css" afterPath="$PROJECT_DIR$/src/main/resources/CSS/noheaderTableView.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/mensa_addDish.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mensa_addDish.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/mensa_viewDishes.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mensa_viewDishes.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />

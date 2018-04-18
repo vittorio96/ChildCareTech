@@ -25,8 +25,7 @@ public class ControllerMensaAddIngredient extends AbstractController implements 
 
     public void handleSaveButton(ActionEvent event) {
         if(textConstraintsRespected()){
-
-            boolean success = CLIENT.clientInsertIngredientIntoDb(ingredientNameTextField.getText());
+            boolean success = CLIENT.clientInsertIngredientIntoDb(ingredientNameTextField.getText().toUpperCase());
             try {
                 if (!success) {
                     createErrorPopup("Errore","Non è stato possibile aggiungere l'ingrediente");

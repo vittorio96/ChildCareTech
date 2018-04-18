@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import main.NormalClasses.Mensa.Dish;
 import main.NormalClasses.Mensa.Menu;
 import main.StringPropertyClasses.Mensa.StringPropertyDish;
@@ -50,14 +51,15 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
     */
 
     private final String addNewDishFXMLPath =  "../../resources/fxml/mensa_addDish.fxml";
-    private final int addDishW = 380;
-    private final int addDishH = 380;
+    private final int addDishW = 800;
+    private final int addDishH = 450;
 
     /*
         GUI items
     */
     @FXML private ImageView goHomeIV;
     @FXML private ImageView addNewDishIV;
+    @FXML private ImageView saveDishIV;
     @FXML private TextField searchField;
     @FXML private TableView<StringPropertyDish> dishesTable;
     @FXML private TableColumn<StringPropertyDish,String> dishesColumn;
@@ -116,5 +118,9 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
 
     public void addNewDish() throws IOException {
         openPopup(addNewDishIV,addNewDishFXMLPath,addDishW,addDishH);
+    }
+
+    public void saveNewDish() {
+        //TODO savedish to menu
     }
 }

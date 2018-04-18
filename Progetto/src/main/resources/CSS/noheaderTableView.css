@@ -6,9 +6,6 @@
     -fx-background-color: transparent;
 }
 
-/* Spaltenköpfea
-    Struktur column-header-background -> column-header */
-
 .noheader .column-header-background {
         -fx-max-height: 0;
         -fx-pref-height: 0;
@@ -30,7 +27,7 @@
 }
 
 .table-view .table-cell{
-    -fx-text-fill: #374051;
+    -fx-text-fill: #717E93;
     -fx-font-family: 'Futura';
 }
 
@@ -47,9 +44,53 @@
 }
 
 .table-row-cell:selected {
+    -fx-text-background-color: white;
     -fx-background-color: #717E93;
     -fx-background-insets: 0;
     -fx-text-fill: #717E93;
     -fx-font-family: 'Futura';
     -fx-background-radius: 1;
 }
+
+.table-row-cell:selected .text {
+    -fx-fill: white ;
+}
+/* The main scrollbar CSS class of ListView */
+.scroll-bar:horizontal ,
+.scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+/* The increment and decrement button CSS class of scrollbar */
+.increment-button ,.decrement-button {
+  -fx-background-color:transparent;
+	-fx-border-color:derive(gray,80%);
+}
+.increment-arrow, .decrement-arrow{
+   -fx-background-color:transparent;
+   -fx-padding:0;
+   -fx-opacity: 0;
+}
+
+.scroll-bar:vertical {
+    -fx-pref-width: 10.5;
+    -fx-padding: 3;
+}
+/* The main scrollbar **track** CSS class  */
+.scroll-bar:horizontal .track ,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+	 -fx-border-color:derive(gray,80%);
+	 -fx-background-radius: 0em;
+}
+
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+  -fx-background-color:derive(black,90%);
+	-fx-background-insets: 0, 0, 0;
+	-fx-background-radius: 0em;
+
+}
+.filler { -fx-background-color: transparent}
+.corner { -fx-background-color: transparent}

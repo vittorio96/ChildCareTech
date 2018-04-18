@@ -26,6 +26,7 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
         controllerLogin.printToOutputField(s);
     }
 
+
     /*
         Login
     */
@@ -178,6 +179,8 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
 
     public List<String> clientExtractIngredientsFromDb(){ return session.extractIngredientsFromDb();}
 
+    public List<String> clientExtractIngredientsForDishFromDb(String nomeP){ return session.extractIngredientsForDishFromDb(nomeP);}
+
     public List<Dish> clientExtractDishesForMenuFromDb(Menu.MenuTypeFlag codMenu){return session.extractDishesForMenuFromDb(codMenu);}
 
     public List<Dish> clientExtractDishesFromDb(){ return session.extractDishesFromDb(); }
@@ -193,4 +196,6 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
     public boolean clientStaffQRAccess(String codF){
         return session.insertPersonDailyPresenceIntoDb(codF);
     }
+
+
 }
