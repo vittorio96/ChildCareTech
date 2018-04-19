@@ -41,6 +41,7 @@ public class ControllerAccessiGeneraQR extends AbstractController implements Ini
 
     //Buttons
     @FXML private ImageView goHomeButton;
+    private String QRFOLDER = "/Users/rafaelmosca/ChildCareTech/src/main/resources/QRImages/";
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -84,7 +85,7 @@ public class ControllerAccessiGeneraQR extends AbstractController implements Ini
             codFisTextField.setText(child.getCodiceFiscale());
             QRGenerator.GenerateQR(child);
             try{
-                FileInputStream fileInputStream = new FileInputStream(new File("/Users/rafaelmosca/ChildCareTech/Progetto/src/main/resources/QRImages/"+child.getClass().getSimpleName()+"_"+child.getCodiceFiscale()+".png"));
+                FileInputStream fileInputStream = new FileInputStream(new File("/Users/rafaelmosca/ChildCareTech/src/main/resources/QRImages/"+child.getClass().getSimpleName()+"_"+child.getCodiceFiscale()+".png"));
                 Image qr =  new Image(fileInputStream);
                 qrDisplay.setImage(qr);
             }catch (Exception e){
@@ -101,7 +102,7 @@ public class ControllerAccessiGeneraQR extends AbstractController implements Ini
             codFisTextField.setText(staff.getCodiceFiscale());
             QRGenerator.GenerateQR(staff);
             try {
-                FileInputStream fileInputStream = new FileInputStream(new File("/Users/rafaelmosca/ChildCareTech/Progetto/src/main/resources/QRImages/"+staff.getClass().getSimpleName()+"_"+staff.getCodiceFiscale()+".png"));
+                FileInputStream fileInputStream = new FileInputStream(new File(QRFOLDER + staff.getClass().getSimpleName()+"_"+staff.getCodiceFiscale()+".png"));
                 Image qr =  new Image(fileInputStream);
                 qrDisplay.setImage(qr);
             }catch (Exception e){

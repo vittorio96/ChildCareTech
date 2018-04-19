@@ -38,7 +38,7 @@ public class WebcamQRReader extends JFrame implements Runnable, ThreadFactory {
         this.client = client;
         setLayout(new FlowLayout());
         setTitle("Read QR / Bar Code With Webcam");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         Dimension size = WebcamResolution.VGA.getSize();
 

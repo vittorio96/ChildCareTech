@@ -43,7 +43,7 @@ public class ControllerMensaAddIngredient extends AbstractController implements 
 
     @FXML private void handleGoHomebutton(){
         //use a generic button
-        closePopup(saveButton);
+        hidePopOver(saveButton);
     }
 
     private boolean textConstraintsRespected() {

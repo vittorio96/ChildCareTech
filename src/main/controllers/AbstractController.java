@@ -141,8 +141,8 @@ public abstract class AbstractController {
         popOver.show(node);
     }
 
-    public void hidePopOver(Button button){
-        PopOver stage = (PopOver) button.getScene().getWindow();
+    public void hidePopOver(Node node){
+        PopOver stage = (PopOver) node.getScene().getWindow();
         stage.hide();
     }
 

@@ -173,7 +173,8 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
     }
 
     public void addNewIngredient(MouseEvent mouseEvent) throws IOException {
-        openPopup(addNewIngredient,"../../resources/fxml/mensa_addIngredient.fxml",380,380);
+        openPopOver("../../resources/fxml/mensa_addIngredient.fxml", PopOver.ArrowLocation.BOTTOM_CENTER, addNewIngredient);
+        //openPopup(addNewIngredient,"../../resources/fxml/mensa_addIngredient.fxml",380,380);
         setFilter();
     }
 

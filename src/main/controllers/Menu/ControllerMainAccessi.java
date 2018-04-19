@@ -22,6 +22,7 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.concurrent.FutureTask;
 
 public class ControllerMainAccessi extends AbstractController implements Initializable {
 
@@ -74,6 +75,7 @@ public class ControllerMainAccessi extends AbstractController implements Initial
 
 
     @FXML protected void handleReadQRFromWebcamButtonAction(ActionEvent event) throws IOException {
-
+        FutureTask<WebcamQRReader> launchWebcam = new FutureTask<>(WebcamQRReader::new) ;
+        SwingUtilities.invokeLater(launchWebcam);
     }
 }
