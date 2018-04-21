@@ -267,7 +267,7 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT * FROM Bambino;";
+        String sql = "SELECT * FROM Bambino ORDER BY Cognome;";
         Connection conn = myPool.getConnection();
 
         try {
@@ -306,7 +306,7 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT * FROM ESTERNO;";
+        String sql = "SELECT * FROM ESTERNO ORDER BY Cognome;";
         Connection conn = myPool.getConnection();
 
         try {
@@ -343,7 +343,7 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT * FROM FORNITORE;";
+        String sql = "SELECT * FROM FORNITORE ORDER BY NomeF;";
         Connection conn = myPool.getConnection();
 
         try {
@@ -380,7 +380,7 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT * FROM PERSONALE;";
+        String sql = "SELECT * FROM PERSONALE ORDER BY Cognome;";
         Connection conn = myPool.getConnection();
 
         try {
@@ -448,7 +448,7 @@ public class DMLCommandExecutor {
             return null;
     }
 
-    public boolean deleteFromDb(String subject, String toDelId) {
+    public boolean deletePersonFromDb(String subject, String toDelId) {
         Connection conn = myPool.getConnection();
 
         Statement stmt = null;
@@ -481,7 +481,6 @@ public class DMLCommandExecutor {
             delete = "DELETE FROM BAMBINO WHERE CodF='" + toDelId + "';";
         } else if (subject.equals("Supplier")) {
             delete = "DELETE FROM FORNITORE WHERE PIva='" + toDelId + "';";
-
         } else if (subject.equals("Staff")) {
             delete = "DELETE FROM PERSONALE WHERE CodF='" + toDelId + "';";
 
@@ -604,7 +603,7 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT * FROM GITA WHERE DataG>=DATE(SYSDATE());";
+        String sql = "SELECT * FROM GITA WHERE DataG>=DATE(SYSDATE()) ORDER BY DataG;";
         Connection conn = myPool.getConnection();
 
         try {
@@ -642,7 +641,7 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT * FROM TAPPA WHERE NomeG='" + nomeG + "' AND DataG='" + dataG + "' AND Targa='" + targa + "';";
+        String sql = "SELECT * FROM TAPPA WHERE NomeG='" + nomeG + "' AND DataG='" + dataG + "' AND Targa='" + targa + "' ORDER BY NumTappa;";
         Connection conn = myPool.getConnection();
 
         try {
@@ -675,13 +674,13 @@ public class DMLCommandExecutor {
             return null;
     }
 
-    public List<Bus> selectAllBusForTripFromDb(String nomeG, String dataG) throws SQLException {
+    public List<Bus> selectAllBusesForTripFromDb(String nomeG, String dataG) throws SQLException {
 
         List<Bus> busList = new ArrayList<>();
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT * FROM AUTOBUS WHERE NomeG='" + nomeG + "' AND DataG='" + dataG + "';";
+        String sql = "SELECT * FROM AUTOBUS WHERE NomeG='" + nomeG + "' AND DataG='" + dataG + "' ORDER BY NomeA;";
         Connection conn = myPool.getConnection();
 
         try {
@@ -900,7 +899,7 @@ public class DMLCommandExecutor {
         Statement stmt;
 
         String sql = "SELECT * FROM BAMBINO WHERE CodF NOT IN (" +
-                "SELECT CodF FROM ASSEGNAZIONEAUTOBUS WHERE DataG='"+tripDate+"');";
+                "SELECT CodF FROM ASSEGNAZIONEAUTOBUS WHERE DataG='"+tripDate+"') ORDER BY Cognome;";
         Connection conn = myPool.getConnection();
 
         try {
@@ -939,7 +938,7 @@ public class DMLCommandExecutor {
         Statement stmt;
 
         String sql = "SELECT * FROM BAMBINO as B JOIN ASSEGNAZIONEAUTOBUS as AB ON B.CodF=AB.CodF " +
-                "WHERE AB.Targa='"+bus.getTarga()+"' AND AB.NomeG='"+bus.getNomeG()+"' AND AB.DataG='"+bus.getDataG()+"' ;";
+                "WHERE AB.Targa='"+bus.getTarga()+"' AND AB.NomeG='"+bus.getNomeG()+"' AND AB.DataG='"+bus.getDataG()+"' ORDER BY B.Cognome;";
         Connection conn = myPool.getConnection();
 
         try {
@@ -983,7 +982,7 @@ public class DMLCommandExecutor {
                 "WHERE B.CodF=AB.CodF AND PB.CodF=AB.CodF AND DATE(PB.DataOra)='"+stop.getDataGita()+"' AND AB.NomeG='"+stop.getNomeGita()+"' AND AB.Targa='"+stop.getTarga()+"' AND AB.DataG='"+stop.getDataGita()+"' "+
                 "AND B.CodF NOT IN (SELECT PT.CodF " +
                 "FROM PRESENZATAPPA as PT " +
-                "WHERE PT.NomeG='"+stop.getNomeGita()+"' AND PT.Targa='"+stop.getTarga()+"' AND PT.DataG='"+stop.getDataGita()+"' AND PT.NumTappa='"+stop.getNumeroTappa()+"');";
+                "WHERE PT.NomeG='"+stop.getNomeGita()+"' AND PT.Targa='"+stop.getTarga()+"' AND PT.DataG='"+stop.getDataGita()+"' AND PT.NumTappa='"+stop.getNumeroTappa()+"') ORDER BY B.Cognome;";
         Connection conn = myPool.getConnection();
 
         try {
@@ -1157,7 +1156,7 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT * FROM INGREDIENTE";
+        String sql = "SELECT * FROM INGREDIENTE ORDER BY NomeI";
 
         Connection conn = myPool.getConnection();
 
@@ -1188,7 +1187,7 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT * FROM MENU";
+        String sql = "SELECT * FROM MENU ORDER BY CodGiorno";
 
         Connection conn = myPool.getConnection();
 
@@ -1221,7 +1220,7 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT * FROM PIATTO";
+        String sql = "SELECT * FROM PIATTO ORDER BY NomeP";
 
         Connection conn = myPool.getConnection();
 
@@ -1255,7 +1254,7 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT B.* FROM BAMBINO B JOIN INTOLLERANZABAMBINO IB ON B.CodF = IB.CodF WHERE IB.NomeI = '"+nomeI+"';";
+        String sql = "SELECT B.* FROM BAMBINO B JOIN INTOLLERANZABAMBINO IB ON B.CodF = IB.CodF WHERE IB.NomeI = '"+nomeI+"' ORDER BY B.Cognome;";
         Connection conn = myPool.getConnection();
 
         try {
@@ -1349,19 +1348,175 @@ public class DMLCommandExecutor {
             return null;
     }
 
+    public boolean insertDishIntoMenuIntoDb(Menu.MenuTypeFlag codMenu, String nomeP){
+
+        Statement stmt = null;
+        boolean status = false;
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String sql = "INSERT INTO COMPOSIZIONEMENU (NomeP, CodGiorno) VALUES('" + nomeP + "', '"+codMenu.getOrderNum()+"') ON DUPLICATE KEY UPDATE NomeP='" + nomeP + "';";
+        try {
+            if (stmt.executeUpdate(sql) == 1)
+                status = true;
+        } catch (SQLException ex) { //Handle a double key exception
+            //System.out.println("Double entry in insert");
+            ex.printStackTrace();
+        } finally {
+            myPool.releaseConnection(conn);
+            return status;
+        }
+    }
+
+    public boolean insertIngredientIntoDishIntoDb(String nomeP, String nomeI){
+
+        Statement stmt = null;
+        boolean status = false;
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String sql = "INSERT INTO COMPOSIZIONEPIATTO (NomeI, NomeP) VALUES('" + nomeI + "', '"+nomeP+"') ON DUPLICATE KEY UPDATE NomeP='" + nomeP + "';";
+        try {
+            if (stmt.executeUpdate(sql) == 1)
+                status = true;
+        } catch (SQLException ex) { //Handle a double key exception
+            //System.out.println("Double entry in insert");
+            ex.printStackTrace();
+        } finally {
+            myPool.releaseConnection(conn);
+            return status;
+        }
+    }
+
+    public boolean deleteDishFromMenuFromDb(Menu.MenuTypeFlag codMenu, String nomeP){
+        Statement stmt = null;
+        boolean status = false;
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String sql = "DELETE FROM COMPOSIZIONEMENU WHERE NomeP='" + nomeP + "' AND CodGiorno= '"+codMenu.getOrderNum()+"';";
+        try {
+            if (stmt.executeUpdate(sql) == 1)
+                status = true;
+        } catch (SQLException ex) { //Handle a double key exception
+            ex.printStackTrace();
+        } finally {
+            myPool.releaseConnection(conn);
+            return status;
+        }
+    }
+
+    public boolean deleteIngredientFromDishFromDb(String nomeP, String nomeI){
+        Statement stmt = null;
+        boolean status = false;
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        String sql = "DELETE FROM COMPOSIZIONEPIATTO WHERE NomeP='" + nomeP + "' AND NomeI= '"+ nomeI +"';";
+        try {
+            if (stmt.executeUpdate(sql) == 1)
+                status = true;
+        } catch (SQLException ex) { //Handle a double key exception
+            ex.printStackTrace();
+        } finally {
+            myPool.releaseConnection(conn);
+            return status;
+        }
+    }
+
+    public List<Dish> selectDishesForTypeFromDb(Dish.DishTypeFlag dishType) throws SQLException{
+        List<Dish> dishesList = new ArrayList<>();
+        ResultSet rs;
+        Statement stmt;
+
+        String sql = "SELECT * FROM PIATTO WHERE Tipo='"+dishType.getOrderNum()+"' ORDER BY NomeP";
+
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            Dish dish = new Dish();
+            dish.setNomeP(rs.getString("NomeP"));
+            dish.setTipoPiatto(Dish.DishTypeFlag.values()[rs.getInt("Tipo")]);
+            dishesList.add(dish);
+        }
+
+        if(dishesList.size()>0)
+            return dishesList;
+        else
+            return null;
+    }
+
+    public List<Staff> selectIntolerantsWorkersForIngredientFromDb(String nomeI) throws SQLException{
+
+        List<Staff> peopleList = new ArrayList<>();
+        ResultSet rs;
+        Statement stmt;
+
+        String sql = "SELECT P.* FROM PERSONALE P JOIN INTOLLERANZAPERSONALE IP ON P.CodF = IP.CodF WHERE IP.NomeI = '"+nomeI+"' ORDER BY P.Cognome;";
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            Staff staffMember = new Staff();
+            staffMember.setCodiceFiscale(rs.getString("CodF"));
+            staffMember.setNome(rs.getString("Nome"));
+            staffMember.setCognome(rs.getString("Cognome"));
+            staffMember.setTipo(rs.getString("TypeFlag"));
+            peopleList.add(staffMember);
+        }
+
+        if(peopleList.size()>0)
+            return peopleList;
+        else
+            return null;
+    }
 
 
-    public static void main(String[] args) throws SQLException {
+
+   /*public static void main(String[] args) throws SQLException {
         List<Child> list = null;
         try {
             list= DMLCommandExecutor.getInstance().selectAvailableChildrenForTripFromDb("2018-06-06");
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        List<Menu> lista = DMLCommandExecutor.getInstance().selectMenusFromDb();
-        for(Menu d:lista)
-            System.out.println(d.getNomeM());
-    }
+    }*/
 
 }

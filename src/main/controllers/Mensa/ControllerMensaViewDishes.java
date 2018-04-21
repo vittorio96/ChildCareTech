@@ -4,17 +4,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.Node;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import main.NormalClasses.Mensa.Dish;
 import main.NormalClasses.Mensa.Menu;
 import main.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.controllers.AbstractController;
+import org.controlsfx.control.PopOver;
 
 import java.io.IOException;
 import java.net.URL;
@@ -63,6 +65,7 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
     @FXML private TextField searchField;
     @FXML private TableView<StringPropertyDish> dishesTable;
     @FXML private TableColumn<StringPropertyDish,String> dishesColumn;
+    private final String viewIngredientsFxmlPath = "../../resources/fxml/mensa_viewIngredientsPopOver.fxml";
 
     /*
         Initialization
@@ -72,8 +75,25 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         refreshDishes();
+        dishesTable.setRowFactory( tv -> {
+            TableRow<StringPropertyDish> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
+                    StringPropertyDish selected = row.getItem();
+                    ControllerShowIngredientsPopOver.setDish(selected);
+                    try {
+                        openPopOver(viewIngredientsFxmlPath, PopOver.ArrowLocation.LEFT_CENTER, row);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            return row ;
+        });
     }
+
 
     private void refreshDishes() {
         List<Dish> dishes = CLIENT.clientExtractDishesFromDb();
@@ -128,4 +148,5 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
     public void saveNewDish() {
         //TODO savedish to menu
     }
+
 }

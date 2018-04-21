@@ -505,6 +505,66 @@ public class RmiMode implements SessionMode {
         }
     }
 
+    @Override
+    public boolean insertIngredientIntoDishIntoDb(String nomeP, String nomeI) {
+        try {
+            return server.insertIngredientIntoDishIntoDbExecution(nomeP, nomeI);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean insertDishIntoMenuIntoDb(Menu.MenuTypeFlag codMenu, String nomeP) {
+        try {
+            return server.insertDishIntoMenuIntoDbExecution(codMenu, nomeP);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean deleteIngredientFromDishFromDb(String nomeP, String nomeI) {
+        try {
+            return server.deleteIngredientFromDishFromDbExecution(nomeP, nomeI);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean deleteDishFromMenuFromDb(Menu.MenuTypeFlag codMenu, String nomeP) {
+        try {
+            return server.deleteDishFromMenuFromDbExecution(codMenu, nomeP);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public List<Dish> extractDishesForTypeFromDb(Dish.DishTypeFlag dishType) {
+        try {
+            return server.selectDishesForTypeFromDbExecution(dishType);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Staff> extractIntolerantsWorkersForIngredientFromDb(String nomeI) {
+        try {
+            return server.selectIntolerantsWorkersForIngredientFromDbExecution(nomeI);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     /*public static void main(String[] args){
         Client c = null;
         try {
@@ -517,6 +577,7 @@ public class RmiMode implements SessionMode {
             e.printStackTrace();
         }
         SessionMode session = new RmiMode(c);
+
         session.disconnect();
     }*/
 }

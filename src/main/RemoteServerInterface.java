@@ -94,4 +94,16 @@ public interface RemoteServerInterface extends Remote{
 
     public List<String> selectIngredientsForDishFromDbExecution(String nomeP) throws RemoteException;
 
+    public boolean insertIngredientIntoDishIntoDbExecution(String nomeP, String nomeI) throws RemoteException;//Parameters are the primary keys
+
+    public boolean insertDishIntoMenuIntoDbExecution(Menu.MenuTypeFlag codMenu, String nomeP) throws RemoteException;
+
+    public boolean deleteIngredientFromDishFromDbExecution(String nomeP, String nomeI) throws RemoteException;
+
+    public boolean deleteDishFromMenuFromDbExecution(Menu.MenuTypeFlag codMenu, String nomeP) throws RemoteException;
+
+    public List<Dish> selectDishesForTypeFromDbExecution(Dish.DishTypeFlag dishType) throws RemoteException;
+
+    public List<Staff> selectIntolerantsWorkersForIngredientFromDbExecution(String nomeI) throws RemoteException;
+
 }

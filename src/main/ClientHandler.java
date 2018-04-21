@@ -172,11 +172,149 @@ public class ClientHandler implements Runnable{
                 case "cmd_selectIngredientsForDish": this.selectIngredientsForDishFromDbExecution();
                     break;
 
+                case "cmd_insertIngredientIntoDish": this.insertIngredientIntoDishIntoDbExecution();
+                    break;
+
+                case "cmd_insertDishIntoMenu": this.insertDishIntoMenuIntoDbExecution();
+                    break;
+
+                case "cmd_deleteIngredientFromDish": this.deleteIngredientFromDishFromDbExecution();
+                    break;
+
+                case "cmd_deleteDishFromMenu": this.deleteDishFromMenuFromDbExecution();
+                    break;
+
+                case "cmd_selectDishesForType": this.selectDishesForTypeFromDbExecution();
+                    break;
+
+                case "cmd_selectIntolerantsWorkers": this.selectIntolerantsWorkersForIngredientFromDbExecution();
+                    break;
+
                 case "cmd_quit": this.closeConnection();
                     break;
             }
 
         }while(!command.equals("cmd_quit"));
+    }
+
+    private void selectIntolerantsWorkersForIngredientFromDbExecution() {
+        String nomeI=null;
+
+        try {
+            nomeI = (String)socketObjectIn.readObject();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        List<Staff> list = null;
+        try {
+            list = DMLCommandExecutor.getInstance().selectIntolerantsWorkersForIngredientFromDb(nomeI);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        //Send the list to client
+        try {
+            socketObjectOut.writeObject(list);
+            socketObjectOut.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void selectDishesForTypeFromDbExecution() {
+        Dish.DishTypeFlag dishType=null;
+
+        try {
+            dishType = (Dish.DishTypeFlag) socketObjectIn.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        List<Dish> list = null;
+        try {
+            list = DMLCommandExecutor.getInstance().selectDishesForTypeFromDb(dishType);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        //Send the list to client
+        try {
+            socketObjectOut.writeObject(list);
+            socketObjectOut.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void deleteDishFromMenuFromDbExecution() {
+        try {
+            Menu.MenuTypeFlag codMenu = (Menu.MenuTypeFlag) socketObjectIn.readObject();//Attesa bloccante
+            String nomeP = (String) socketObjectIn.readObject();//Attesa bloccante
+
+            boolean status = DMLCommandExecutor.getInstance().deleteDishFromMenuFromDb(codMenu, nomeP);
+
+            socketObjectOut.writeBoolean(status);
+            socketObjectOut.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void deleteIngredientFromDishFromDbExecution() {
+        try {
+            String nomeP = (String) socketObjectIn.readObject();//Attesa bloccante
+            String nomeI = (String) socketObjectIn.readObject();//Attesa bloccante
+
+            boolean status = DMLCommandExecutor.getInstance().deleteIngredientFromDishFromDb(nomeP, nomeI);
+
+            socketObjectOut.writeBoolean(status);
+            socketObjectOut.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void insertDishIntoMenuIntoDbExecution() {
+        try {
+            Menu.MenuTypeFlag codMenu = (Menu.MenuTypeFlag) socketObjectIn.readObject();//Attesa bloccante
+            String nomeP = (String) socketObjectIn.readObject();//Attesa bloccante
+
+            boolean status = DMLCommandExecutor.getInstance().insertDishIntoMenuIntoDb(codMenu, nomeP);
+
+            socketObjectOut.writeBoolean(status);
+            socketObjectOut.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void insertIngredientIntoDishIntoDbExecution() {
+        try {
+            String nomeP = (String) socketObjectIn.readObject();//Attesa bloccante
+            String nomeI = (String) socketObjectIn.readObject();//Attesa bloccante
+
+            boolean status = DMLCommandExecutor.getInstance().insertIngredientIntoDishIntoDb(nomeP, nomeI);
+
+            socketObjectOut.writeBoolean(status);
+            socketObjectOut.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     private void selectIngredientsForDishFromDbExecution() {
@@ -656,7 +794,7 @@ public class ClientHandler implements Runnable{
         }
 
         try {
-            list = DMLCommandExecutor.getInstance().selectAllBusForTripFromDb(nomeG, dataG);
+            list = DMLCommandExecutor.getInstance().selectAllBusesForTripFromDb(nomeG, dataG);
         } catch (SQLException e) {
             e.printStackTrace();
             System.out.println(e.getSQLState());
@@ -786,7 +924,7 @@ public class ClientHandler implements Runnable{
             subject = (String)socketObjectIn.readObject();//Attesa bloccante
             toDelId = (String)socketObjectIn.readObject();//Attesa bloccante
 
-            boolean status = DMLCommandExecutor.getInstance().deleteFromDb(subject, toDelId);
+            boolean status = DMLCommandExecutor.getInstance().deletePersonFromDb(subject, toDelId);
             socketObjectOut.writeBoolean(status);
             socketObjectOut.flush();
 

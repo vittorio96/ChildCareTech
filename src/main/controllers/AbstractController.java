@@ -127,7 +127,7 @@ public abstract class AbstractController {
         stage.close();
     }
 
-    public void openPopOver(String fxmlPath, PopOver.ArrowLocation arrowLocation, Node node) throws IOException {
+    public void openPopOver(String fxmlPath, PopOver.ArrowLocation arrowLocation, Node owner) throws IOException {
         PopOver popOver = new PopOver();
         popOver.setArrowLocation(arrowLocation);
         popOver.setAutoFix(true);
@@ -138,7 +138,7 @@ public abstract class AbstractController {
         AnchorPane p = FXMLLoader.load(getClass().getResource(fxmlPath));
         popOver.setContentNode(p);
 
-        popOver.show(node);
+        popOver.show(owner);
     }
 
     public void hidePopOver(Node node){

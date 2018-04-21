@@ -100,4 +100,16 @@ public interface SessionMode {
 
     public List<String> extractIngredientsForDishFromDb(String nomeP);
 
+    public boolean insertIngredientIntoDishIntoDb(String nomeP, String nomeI);//Parameters are the primary keys
+
+    public boolean insertDishIntoMenuIntoDb(Menu.MenuTypeFlag codMenu, String nomeP);
+
+    public boolean deleteIngredientFromDishFromDb(String nomeP, String nomeI);
+
+    public boolean deleteDishFromMenuFromDb(Menu.MenuTypeFlag codMenu, String nomeP);
+
+    public List<Dish> extractDishesForTypeFromDb(Dish.DishTypeFlag dishType);
+
+    public List<Staff> extractIntolerantsWorkersForIngredientFromDb(String nomeI);
+
 }

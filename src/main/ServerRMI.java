@@ -122,7 +122,7 @@ public class ServerRMI extends UnicastRemoteObject implements RemoteServerInterf
     @Override
     public boolean deleteFromDbExecution(String subject, String toDelId) throws RemoteException {
 
-        return DMLCommandExecutor.getInstance().deleteFromDb(subject, toDelId);
+        return DMLCommandExecutor.getInstance().deletePersonFromDb(subject, toDelId);
 
     }
 
@@ -156,7 +156,7 @@ public class ServerRMI extends UnicastRemoteObject implements RemoteServerInterf
 
         try {
 
-            return DMLCommandExecutor.getInstance().selectAllBusForTripFromDb(nomeG, dataG);
+            return DMLCommandExecutor.getInstance().selectAllBusesForTripFromDb(nomeG, dataG);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -352,6 +352,46 @@ public class ServerRMI extends UnicastRemoteObject implements RemoteServerInterf
     public List<String> selectIngredientsForDishFromDbExecution(String nomeP) throws RemoteException {
         try {
             return DMLCommandExecutor.getInstance().selectIngredientsForDishFromDb(nomeP);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public boolean insertIngredientIntoDishIntoDbExecution(String nomeP, String nomeI) throws RemoteException {
+        return DMLCommandExecutor.getInstance().insertIngredientIntoDishIntoDb(nomeP, nomeI);
+    }
+
+    @Override
+    public boolean insertDishIntoMenuIntoDbExecution(Menu.MenuTypeFlag codMenu, String nomeP) throws RemoteException {
+        return DMLCommandExecutor.getInstance().insertDishIntoMenuIntoDb(codMenu, nomeP);
+    }
+
+    @Override
+    public boolean deleteIngredientFromDishFromDbExecution(String nomeP, String nomeI) throws RemoteException {
+        return DMLCommandExecutor.getInstance().deleteIngredientFromDishFromDb(nomeP, nomeI);
+    }
+
+    @Override
+    public boolean deleteDishFromMenuFromDbExecution(Menu.MenuTypeFlag codMenu, String nomeP) throws RemoteException {
+        return DMLCommandExecutor.getInstance().deleteDishFromMenuFromDb(codMenu, nomeP);
+    }
+
+    @Override
+    public List<Dish> selectDishesForTypeFromDbExecution(Dish.DishTypeFlag dishType) throws RemoteException {
+        try {
+            return DMLCommandExecutor.getInstance().selectDishesForTypeFromDb(dishType);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Staff> selectIntolerantsWorkersForIngredientFromDbExecution(String nomeI) throws RemoteException {
+        try {
+            return DMLCommandExecutor.getInstance().selectIntolerantsWorkersForIngredientFromDb(nomeI);
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

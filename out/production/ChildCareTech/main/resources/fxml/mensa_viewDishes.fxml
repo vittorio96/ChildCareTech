@@ -16,7 +16,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.Mensa.ControllerMensaViewDishes">
    <children>
-      <GridPane layoutX="271.0" layoutY="37.0" prefHeight="378.0" prefWidth="477.0">
+      <GridPane layoutX="207.0" layoutY="37.0" prefHeight="378.0" prefWidth="477.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="401.43212890625" minWidth="10.0" prefWidth="54.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="436.06689453125" minWidth="10.0" prefWidth="339.0" />
@@ -69,12 +69,12 @@
             <Image url="@../images/close.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="128.0" fitWidth="128.0" layoutX="103.0" layoutY="197.0">
+      <ImageView fitHeight="128.0" fitWidth="128.0" layoutX="74.0" layoutY="200.0">
          <image>
             <Image url="@../images/dish.png" />
          </image>
       </ImageView>
-      <Label layoutX="94.0" layoutY="76.0" prefHeight="62.0" prefWidth="148.0" text="Scelta Piatto" textFill="#717e93">
+      <Label layoutX="66.0" layoutY="102.0" prefHeight="62.0" prefWidth="148.0" text="Scelta Piatto" textFill="#717e93">
          <font>
             <Font name="Futura Medium" size="26.0" />
          </font>

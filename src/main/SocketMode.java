@@ -794,20 +794,126 @@ public class SocketMode implements SessionMode {
         }
     }
 
-    //Main method to support testing without GUI
-      /*public static void main(String[] args){
-            Client c = null;
-            try {
-                c = new Client();
-            } catch (RemoteException e) {
-                e.printStackTrace();
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (NotBoundException e) {
-                e.printStackTrace();
-            }
-            SessionMode session = new SocketMode(c);
-            session.disconnect();
-      }*/
+    @Override
+    public boolean insertIngredientIntoDishIntoDb(String nomeP, String nomeI) {
+        try {
+            socketObjectOut.writeObject(new String("cmd_insertIngredientIntoDish"));
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(nomeP);
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(nomeI);
+            socketObjectOut.flush();
 
+            return socketObjectIn.readBoolean();//Attesa bloccante
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean insertDishIntoMenuIntoDb(Menu.MenuTypeFlag codMenu, String nomeP) {
+        try {
+            socketObjectOut.writeObject(new String("cmd_insertDishIntoMenu"));
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(codMenu);
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(nomeP);
+            socketObjectOut.flush();
+
+            return socketObjectIn.readBoolean();//Attesa bloccante
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean deleteIngredientFromDishFromDb(String nomeP, String nomeI) {
+        try {
+            socketObjectOut.writeObject(new String("cmd_deleteIngredientFromDish"));
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(nomeP);
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(nomeI);
+            socketObjectOut.flush();
+
+            return socketObjectIn.readBoolean();//Attesa bloccante
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public boolean deleteDishFromMenuFromDb(Menu.MenuTypeFlag codMenu, String nomeP) {
+        try {
+            socketObjectOut.writeObject(new String("cmd_deleteDishFromMenu"));
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(codMenu);
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(nomeP);
+            socketObjectOut.flush();
+
+            return socketObjectIn.readBoolean();//Attesa bloccante
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
+    public List<Dish> extractDishesForTypeFromDb(Dish.DishTypeFlag dishType) {
+        try {
+            socketObjectOut.writeObject("cmd_selectDishesForType");
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(dishType);
+            socketObjectOut.flush();
+
+            return (List<Dish>)socketObjectIn.readObject();//Attesa bloccante
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<Staff> extractIntolerantsWorkersForIngredientFromDb(String nomeI) {
+        try {
+            socketObjectOut.writeObject("cmd_selectIntolerantsWorkers");
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(nomeI);
+            socketObjectOut.flush();
+
+            return (List<Staff>)socketObjectIn.readObject();//Attesa bloccante
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    //Main method to support testing without GUI
+     /*public static void main(String[] args){
+         Client c = null;
+         try {
+             c = new Client();
+         } catch (RemoteException e) {
+             e.printStackTrace();
+         } catch (MalformedURLException e) {
+             e.printStackTrace();
+         } catch (NotBoundException e) {
+             e.printStackTrace();
+         }
+         SessionMode session = new SocketMode(c);
+
+         session.disconnect();
+     }*/
 }

@@ -213,5 +213,4 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
         return selectedDish;
     }
 
-
 }
