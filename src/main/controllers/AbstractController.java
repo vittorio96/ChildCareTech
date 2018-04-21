@@ -105,6 +105,12 @@ public abstract class AbstractController {
         alert2.showAndWait();
     }
 
+    public void createGenericErrorPopup(){
+        createErrorPopup("Errore", "Qualcosa è andato storto, riprova più tardi");
+    }
+
+
+
     public void createSuccessPopup(){
         Alert alert2 = new Alert(Alert.AlertType.ERROR); //truly a success
         alert2.setGraphic(new javafx.scene.image.ImageView(this.getClass().getResource("/main/resources/images/checkmark.png").toString()));

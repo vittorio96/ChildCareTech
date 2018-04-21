@@ -15,6 +15,7 @@ import main.NormalClasses.Mensa.Menu;
 import main.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.controllers.AbstractController;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
@@ -181,7 +182,7 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
         if(isUserSure()) {
             StringPropertyDish selectedDish = getSelectedDish(tipo);
             if(selectedDish != null){
-                //TODO DISH DISASSOCIATION
+                CLIENT.clientDeleteDishFromMenuFromDb(getSelectedDay(), selectedDish.getNomeP());
                 refreshDishes(getSelectedDay());
             }
             else { createErrorPopup("Errore", "Non hai selezionato un piatto"); }

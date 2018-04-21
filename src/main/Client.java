@@ -177,6 +177,18 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
         return session.insertIngredientIntoDb(nomeI);
     }
 
+    public boolean clientInsertIngredientIntoDishIntoDb(String nomeP, String nomeI){ return session.insertIngredientIntoDishIntoDb(nomeP, nomeI); }
+
+    public boolean clientInsertDishIntoMenuIntoDb(Menu.MenuTypeFlag codMenu, String nomeP){ return session.insertDishIntoMenuIntoDb(codMenu, nomeP); }
+
+    public boolean clientDeleteIngredientFromDishFromDb(String nomeP, String nomeI){ return session.deleteIngredientFromDishFromDb(nomeP, nomeI); }
+
+    public boolean clientDeleteDishFromMenuFromDb(Menu.MenuTypeFlag codMenu, String nomeP){ return session.deleteDishFromMenuFromDb(codMenu, nomeP); }
+
+    public List<Dish> clientExtractDishesForTypeFromDb(Dish.DishTypeFlag dishType){ return session.extractDishesForTypeFromDb(dishType); }
+
+    public List<Staff> clientExtractIntolerantsWorkersForIngredientFromDb(String nomeI){ return session.extractIntolerantsWorkersForIngredientFromDb(nomeI); }
+
     public List<String> clientExtractIngredientsFromDb(){ return session.extractIngredientsFromDb();}
 
     public List<String> clientExtractIngredientsForDishFromDb(String nomeP){ return session.extractIngredientsForDishFromDb(nomeP);}
@@ -196,6 +208,8 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
     public boolean clientStaffQRAccess(String codF){
         return session.insertPersonDailyPresenceIntoDb(codF);
     }
+
+
 
 
 }

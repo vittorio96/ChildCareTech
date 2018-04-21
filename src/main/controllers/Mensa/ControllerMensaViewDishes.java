@@ -145,8 +145,19 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
 
     }
 
-    public void saveNewDish() {
-        //TODO savedish to menu
+    public StringPropertyDish getSelectedDish() {
+        StringPropertyDish selectedDish = null;
+        if(dishesTable.getSelectionModel().selectedItemProperty().get() != null)
+            selectedDish = dishesTable.getSelectionModel().selectedItemProperty().get();
+        return selectedDish;
+
     }
 
+    public void saveDishIntoMenu() {
+        if(getSelectedDish()!=null){
+            boolean success= CLIENT.clientInsertDishIntoMenuIntoDb(menuType,getSelectedDish().getNomeP());
+            if (success) createSuccessPopup();
+            else createGenericErrorPopup();
+        } else createErrorPopup("Errore", "Seleziona un piatto dalla tabella!");
+    }
 }
