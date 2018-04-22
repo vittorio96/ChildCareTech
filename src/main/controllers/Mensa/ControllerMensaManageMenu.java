@@ -5,18 +5,19 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 import main.NormalClasses.Mensa.Dish;
 import main.NormalClasses.Mensa.Menu;
 import main.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.controllers.AbstractController;
+import org.controlsfx.control.PopOver;
+
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -67,10 +68,12 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
     */
 
     @FXML private ComboBox giorniComboBox;
+    private final String viewIngredientsFxmlPath = "../../resources/fxml/mensa_viewIngredientsPopOver.fxml";
     private final String viewDishesFxmlPath = "../../resources/fxml/mensa_viewDishes.fxml";
     private final Menu.MenuTypeFlag defaultDay = Menu.MenuTypeFlag.MONDAY;
     private final int viewDishesW = 800;
     private final int viewDishesH = 450;
+    private ArrayList<PopOver> popOvers = new ArrayList<>();
 
 
     /*
@@ -82,6 +85,30 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
         columnAssociation();
         selectionMenuSetup();
         refreshDishes(defaultDay);
+        ingredientPopupSetup();
+    }
+
+    private void ingredientPopupSetup() {
+        tablePopupSetter(antipastoTable);
+        tablePopupSetter(primoTable);
+        tablePopupSetter(secondoTable);
+        tablePopupSetter(dolceTable);
+    }
+
+    private void tablePopupSetter(TableView table){
+        table.setRowFactory( tv -> {
+            TableRow<StringPropertyDish> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
+                    StringPropertyDish selected = row.getItem();
+                    ControllerShowIngredientsPopOver.setDish(selected);
+                    try {
+                        popOvers.add(openPopOverWR(viewIngredientsFxmlPath, PopOver.ArrowLocation.LEFT_CENTER, row));
+                    }catch (IOException e) { e.printStackTrace(); }
+                }
+            });
+            return row ;
+        });
     }
 
     private void columnAssociation() {
@@ -95,12 +122,12 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
         ObservableList al = FXCollections.observableArrayList(Arrays.asList(Menu.MenuTypeFlag.values()));
         giorniComboBox.setItems(al);
         giorniComboBox.getSelectionModel().selectFirst();
-
+        giorniComboBox.setOnAction(event -> refreshDishes(getSelectedDay()));
     }
 
     private void refreshDishes(Menu.MenuTypeFlag day) {
 
-        clearlists();
+        clearLists();
 
         List<Dish> dishArrayList = CLIENT.clientExtractDishesForMenuFromDb(day);
         if(dishArrayList != null){
@@ -114,6 +141,13 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
 
         setTables();
     }
+    private void clearLists() {
+        dishList.clear();
+        antipastiList.clear();
+        primiList.clear();
+        secondiList.clear();
+        dolciList.clear();
+    }
 
     private void setTables() {
         antipastoTable.setItems(antipastiList);
@@ -122,17 +156,15 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
         dolceTable.setItems(dolciList);
     }
 
-    private void clearlists() {
-        dishList.clear();
-        antipastiList.clear();
-        primiList.clear();
-        secondiList.clear();
-        dolciList.clear();
+    public void goHome() throws IOException {
+        handleOpenedPopovers();
+        closePopup(goHomeIV);
     }
 
-
-    public void goHome() throws IOException {
-        closePopup(goHomeIV);
+    private void handleOpenedPopovers() {
+        if(popOvers.size()>0){
+            for(PopOver p: popOvers) if(p!= null) p.hide(Duration.millis(0));
+        }
     }
 
     private void addDishToMenu(Dish.DishTypeFlag tipo, Node trigger) {
@@ -179,14 +211,13 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
     }
 
     private void removeDish(Dish.DishTypeFlag tipo) {
-        if(isUserSure()) {
-            StringPropertyDish selectedDish = getSelectedDish(tipo);
-            if(selectedDish != null){
+        StringPropertyDish selectedDish = getSelectedDish(tipo);
+        if(selectedDish != null) {
+            if(isUserSure()) {
                 CLIENT.clientDeleteDishFromMenuFromDb(getSelectedDay(), selectedDish.getNomeP());
                 refreshDishes(getSelectedDay());
             }
-            else { createErrorPopup("Errore", "Non hai selezionato un piatto"); }
-        }
+        }else { createErrorPopup("Errore", "Non hai selezionato un piatto"); }
     }
 
     private Menu.MenuTypeFlag getSelectedDay(){

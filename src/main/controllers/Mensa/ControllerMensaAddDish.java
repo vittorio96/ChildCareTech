@@ -16,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import main.NormalClasses.Mensa.Dish;
+import main.NormalClasses.Mensa.Menu;
 import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.StringPropertyClasses.Mensa.StringPropertyIngredient;
@@ -35,7 +36,14 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
          Stuff
     */
 
+    private static Dish.DishTypeFlag dishType;
+
+    public static void setDishType(Dish.DishTypeFlag dishType) {
+        ControllerMensaAddDish.dishType = dishType;
+    }
+
     @FXML private ImageView goHomeIV;
+    @FXML private Button refreshButton;
     @FXML private ImageView saveNewDishIV;
     @FXML private ImageView addNewIngredient;
     @FXML private TextField searchFieldAvailable;
@@ -51,6 +59,8 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
     private ObservableList<StringPropertyIngredient> ingredientsOnDishObservableList = FXCollections.observableArrayList();
     private SortedList<StringPropertyIngredient> sortedData;
     private FilteredList<StringPropertyIngredient> filteredData;
+    private static boolean newIng;
+    private static String lastIng;
 
 
     @Override
@@ -59,12 +69,9 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
         refreshIngredientsList();
         setFilter();
 
-
     }
 
     private void setFilter() {
-        availableIngredients.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
-        //(initially display all data).
         filteredData = new FilteredList<>(availableIngredientsObservableList, p -> true);
         //Set the filter
         searchFieldAvailable.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -101,16 +108,20 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
                 (observable, oldValue, newValue) -> toDish(newValue));
         ingredientsOnDishTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> toAvailableIngredients(newValue));
+        availableIngredients.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
     }
 
     private void refreshIngredientsList() {
+        ingredientsOnDishObservableList.clear();
         availableIngredientsObservableList.clear();
+        onDishNormalList.clear();
+        availableNormalList.clear();
         tempList= CLIENT.clientExtractIngredientsFromDb();
         if(tempList!=null)
             for(String s: tempList)
                 availableNormalList.add(new StringPropertyIngredient(s)  );
-        availableIngredientsObservableList.addAll(availableNormalList);                //from caps to normal
-
+        availableIngredientsObservableList.addAll(availableNormalList);
+        newIng = false;//from caps to normal
     }
 
     private void toAvailableIngredients(StringPropertyIngredient selected) {
@@ -163,19 +174,37 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
         availableIngredientsTable.setItems(availableIngredientsObservableList);
     }
 
-    public void handleSaveButton(ActionEvent event) {
+    public void saveNewDish() {
         if(textConstraintsRespected()){
-
+            int errors = 0;
+            String nomeP = dishNameTextField.getText();
+            errors += CLIENT.clientInsertDishIntoDb(new Dish(nomeP,dishType)) ? 0:1000;
+            for(StringPropertyIngredient ingredient: onDishNormalList){
+                errors += CLIENT.clientInsertIngredientIntoDishIntoDb(nomeP,ingredient.getNome())? 0:1;
+            }
+            if(errors==0) createSuccessPopup();
+            else createGenericErrorPopup();
+            handleGoHomebutton();
         }else{
             createErrorPopup("Verifica i dati inseriti", "Hai lasciato campi vuoti o con un formato sbagliato");
         }
-        //TODO add DishAssociations
+
+    }
+
+    public static void setNewIng(boolean newIng) {
+        ControllerMensaAddDish.newIng = newIng;
+    }
+
+    public static void setLastIng(String lastIng) {
+        ControllerMensaAddDish.lastIng = lastIng;
     }
 
     public void addNewIngredient(MouseEvent mouseEvent) throws IOException {
+        newIng = false;
         openPopOver("../../resources/fxml/mensa_addIngredient.fxml", PopOver.ArrowLocation.BOTTOM_CENTER, addNewIngredient);
-        //openPopup(addNewIngredient,"../../resources/fxml/mensa_addIngredient.fxml",380,380);
-        setFilter();
+        if(newIng){
+            getNewIngredient();
+        }
     }
 
     @FXML private void handleGoHomebutton(){
@@ -198,11 +227,19 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
             errors++;
         }
 
+        if(dishType == null){
+            errors++;
+        }
+
         return errors == 0;
 
     }
 
-
-    public void saveNewDish(MouseEvent mouseEvent) {
+    public void getNewIngredient() {
+        searchFieldAvailable.setText("");
+        availableNormalList.add(new StringPropertyIngredient(lastIng));
+        availableIngredientsObservableList.clear();
+        availableIngredientsObservableList.addAll(availableNormalList);
+        availableIngredientsTable.setItems(availableIngredientsObservableList);
     }
 }

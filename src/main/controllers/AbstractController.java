@@ -147,6 +147,21 @@ public abstract class AbstractController {
         popOver.show(owner);
     }
 
+    public PopOver openPopOverWR(String fxmlPath, PopOver.ArrowLocation arrowLocation, Node owner) throws IOException {
+        PopOver popOver = new PopOver();
+        popOver.setArrowLocation(arrowLocation);
+        popOver.setAutoFix(true);
+        popOver.setAutoHide(true);
+        popOver.setHideOnEscape(true);
+        popOver.setDetachable(false);
+        popOver.setAnimated(true);
+        AnchorPane p = FXMLLoader.load(getClass().getResource(fxmlPath));
+        popOver.setContentNode(p);
+
+        popOver.show(owner);
+        return popOver;
+    }
+
     public void hidePopOver(Node node){
         PopOver stage = (PopOver) node.getScene().getWindow();
         stage.hide();

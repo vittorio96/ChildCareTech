@@ -96,6 +96,7 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
 
 
     private void refreshDishes() {
+        dishObservableList.clear();
         List<Dish> dishes = CLIENT.clientExtractDishesFromDb();
         if(dishes!=null) for(Dish dish: dishes){
             if(dish.getTipo()==dishType) dishObservableList.add(new StringPropertyDish(dish));
@@ -141,8 +142,9 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
     }
 
     public void addNewDish() throws IOException {
+        ControllerMensaAddDish.setDishType(dishType);
         openPopup(addNewDishIV,addNewDishFXMLPath,addDishW,addDishH);
-
+        refreshDishes();
     }
 
     public StringPropertyDish getSelectedDish() {
@@ -156,7 +158,10 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
     public void saveDishIntoMenu() {
         if(getSelectedDish()!=null){
             boolean success= CLIENT.clientInsertDishIntoMenuIntoDb(menuType,getSelectedDish().getNomeP());
-            if (success) createSuccessPopup();
+            if (success) {
+                createSuccessPopup();
+                goHome();
+            }
             else createGenericErrorPopup();
         } else createErrorPopup("Errore", "Seleziona un piatto dalla tabella!");
     }

@@ -32,6 +32,8 @@ public class ControllerMensaAddIngredient extends AbstractController implements 
                 } else {
                     createSuccessPopup();
                     handleGoHomebutton();
+                    ControllerMensaAddDish.setNewIng(true);
+                    ControllerMensaAddDish.setLastIng(ingredientNameTextField.getText().toUpperCase());
                 }
             } catch (Exception e){
                 //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
@@ -58,6 +60,8 @@ public class ControllerMensaAddIngredient extends AbstractController implements 
         }else {
             ingredientNameTextField.setStyle(normalCss);
         }
+
+
 
         return errors == 0;
 
