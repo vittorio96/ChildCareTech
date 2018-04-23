@@ -45,7 +45,7 @@
                   <Insets bottom="80.0" />
                </GridPane.margin>
                <image>
-                  <Image url="@../images/fancyadd.png" />
+                  <Image url="@../images/draw.png" />
                </image>
             </ImageView>
             <TextField fx:id="searchField" maxWidth="300.0" prefHeight="27.0" prefWidth="300.0" stylesheets="@../CSS/textfield.css" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
@@ -56,11 +56,16 @@
             </Label>
             <ImageView fx:id="saveDishIV" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#saveDishIntoMenu" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                <image>
-                  <Image url="@../images/diskette.png" />
+                  <Image url="@../images/fancyAdd.png" />
                </image>
                <GridPane.margin>
                   <Insets top="80.0" />
                </GridPane.margin>
+            </ImageView>
+            <ImageView fx:id="addNewDishIV1" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#deleteDish" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../images/deleteButton.png" />
+               </image>
             </ImageView>
          </children>
       </GridPane>

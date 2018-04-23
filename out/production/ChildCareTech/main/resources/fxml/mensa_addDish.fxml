@@ -92,11 +92,6 @@
                   <Image url="@../images/diskette.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="addNewIngredient" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#addNewIngredient" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
-               <image>
-                  <Image url="@../images/fancyadd.png" />
-               </image>
-            </ImageView>
             <GridPane prefHeight="92.0" prefWidth="354.0" GridPane.rowIndex="2">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.86585998535156" minWidth="10.0" prefWidth="107.83540344238281" />

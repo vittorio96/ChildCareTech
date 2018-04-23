@@ -160,10 +160,10 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
 
     public void deleteDish() {
         if(getSelectedDish()!=null){
-            boolean success= CLIENT.clientDeleteDishFromDb(getSelectedDish().toNormal);
+            boolean success= CLIENT.clientDeleteDishFromDb(new Dish(getSelectedDish()));
             if (success) {
                 createSuccessPopup();
-                goHome();
+                refreshDishes();
             }
             else createGenericErrorPopup();
         } else createErrorPopup("Errore", "Seleziona un piatto dalla tabella!");

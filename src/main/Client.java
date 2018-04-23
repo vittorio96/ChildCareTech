@@ -200,7 +200,9 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
 
     public List<Dish> clientExtractDishesForTypeFromDb(Dish.DishTypeFlag dishType){ return session.extractDishesForTypeFromDb(dishType); }
 
-    public List<Staff> clientExtractIntolerantsWorkersForIngredientFromDb(String nomeI){ return session.extractIntolerantsWorkersForIngredientFromDb(nomeI); }
+    public List<Child> clientExtractIntolerantChildrenForIngredientFromDb(String nomeI){ return session.extractIntolerantsChildrenForIngredientFromDb(nomeI);}
+
+    public List<Staff> clientExtractIntolerantWorkersForIngredientFromDb(String nomeI){ return session.extractIntolerantsWorkersForIngredientFromDb(nomeI); }
 
     public List<String> clientExtractIngredientsFromDb(){ return session.extractIngredientsFromDb();}
 

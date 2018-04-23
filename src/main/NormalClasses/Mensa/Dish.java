@@ -1,14 +1,23 @@
 package main.NormalClasses.Mensa;
 
+import main.NormalClasses.NormalClass;
+import main.StringPropertyClasses.Mensa.StringPropertyDish;
+import main.StringPropertyClasses.StringPropertyClass;
+
 import java.io.Serializable;
 
-public class Dish implements Serializable{
+public class Dish extends NormalClass implements Serializable{
 
     private String nomeP;
     private DishTypeFlag tipoPiatto;
 
     public DishTypeFlag getTipo() {
         return tipoPiatto;
+    }
+
+    @Override
+    public StringPropertyClass toStringProperty() {
+        return new StringPropertyDish(this);
     }
 
     public enum DishTypeFlag{
@@ -46,6 +55,11 @@ public class Dish implements Serializable{
     public Dish(String nomeP, DishTypeFlag tipoPiatto) {
         this.nomeP = nomeP;
         this.tipoPiatto = tipoPiatto;
+    }
+
+    public Dish(StringPropertyDish sp){
+        this.nomeP = sp.getNomeP();
+        this.tipoPiatto = DishTypeFlag.valueOf(sp.getTipoPiatto());
     }
 
     public String getNomeP() {

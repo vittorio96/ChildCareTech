@@ -36,7 +36,7 @@
                         <Image url="@../images/menu.png" />
                      </image></ImageView>
                   <Button fx:id="modificaMenuButton" layoutX="29.0" layoutY="225.0" mnemonicParsing="false" onAction="#modificamenu" prefHeight="28.0" prefWidth="145.0" stylesheets="@../CSS/selectionButton.css" text="Modifica menu" />
-                  <Button layoutX="29.0" layoutY="271.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="145.0" stylesheets="@../CSS/selectionButton.css" text="Conflitti allergie">
+                  <Button fx:id="conflittiAllergieButton" layoutX="29.0" layoutY="271.0" mnemonicParsing="false" onAction="#vediConflitti" prefHeight="28.0" prefWidth="145.0" stylesheets="@../CSS/selectionButton.css" text="Conflitti allergie">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>

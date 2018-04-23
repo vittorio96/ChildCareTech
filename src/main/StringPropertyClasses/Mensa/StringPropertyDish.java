@@ -2,8 +2,10 @@ package main.StringPropertyClasses.Mensa;
 
 import javafx.beans.property.SimpleStringProperty;
 import main.NormalClasses.Mensa.Dish;
+import main.NormalClasses.NormalClass;
+import main.StringPropertyClasses.StringPropertyClass;
 
-public class StringPropertyDish {
+public class StringPropertyDish extends StringPropertyClass {
     private SimpleStringProperty nomeP;
     private SimpleStringProperty tipoPiatto;
 
@@ -40,5 +42,10 @@ public class StringPropertyDish {
 
     public void setTipoPiatto(String tipoPiatto) {
         this.tipoPiatto.set(tipoPiatto);
+    }
+
+    @Override
+    public NormalClass toNormalClass() {
+        return new Dish(this);
     }
 }
