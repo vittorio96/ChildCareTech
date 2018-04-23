@@ -13,7 +13,7 @@
             <Label text="" />
          </placeholder>
          <columns>
-            <TableColumn fx:id="ingredientsOnDish" prefWidth="75.0" sortable="false" text="Ingredienti nel piatto" />
+            <TableColumn fx:id="ingredientsOnDish" prefWidth="75.0" sortable="false" text=" " />
          </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

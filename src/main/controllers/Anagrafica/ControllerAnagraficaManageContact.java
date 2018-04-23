@@ -22,6 +22,7 @@ import java.util.ResourceBundle;
 
 public class ControllerAnagraficaManageContact extends AbstractController implements Initializable {
 
+    //TODO Debug
     //main list
     private ObservableList<StringPropertyContact> parentObservableList = FXCollections.observableArrayList();
     private ObservableList<StringPropertyContact> doctorObservableList = FXCollections.observableArrayList();
@@ -60,7 +61,7 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
     //Tabella Fornitore
     @FXML private TableView<StringPropertySupplier> supplierTable;
     @FXML private TableColumn<StringPropertySupplier, String> supplierNameColumn;
-    @FXML private TableColumn<StringPropertySupplier, String> supplierSurnameColumn;
+    //@FXML private TableColumn<StringPropertySupplier, String> supplierSurnameColumn;
 
     @FXML private TextField pivaTextField;
     @FXML private TextField supplierNameTextField;
@@ -102,16 +103,19 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
 
         List<Supplier> supplierArrayList = null;
         supplierArrayList = CLIENT.clientExtractSuppliersFromDb();
+        if(contactArrayList!= null){
+            for(Contact c : contactArrayList){
 
-        for(Contact c : contactArrayList){
-
-            if(c.getTipo().equals(Integer.toString(Contact.ContactTypeFlag.GENITORE.getOrdernum())))
-                parentObservableList.add(new StringPropertyContact(c));
-            else if(c.getTipo().equals(Integer.toString(Contact.ContactTypeFlag.PEDIATRA.getOrdernum())))
-                doctorObservableList.add(new StringPropertyContact(c));
+                if(c.getTipo().equals(Integer.toString(Contact.ContactTypeFlag.GENITORE.getOrdernum())))
+                    parentObservableList.add(new StringPropertyContact(c));
+                else if(c.getTipo().equals(Integer.toString(Contact.ContactTypeFlag.PEDIATRA.getOrdernum())))
+                    doctorObservableList.add(new StringPropertyContact(c));
+            }
         }
-        for(Supplier s : supplierArrayList){
-            supplierObservableList.add(new StringPropertySupplier(s));
+        if(supplierArrayList != null){
+            for(Supplier s : supplierArrayList){
+                supplierObservableList.add(new StringPropertySupplier(s));
+            }
         }
 
         doctorTable.setItems(doctorObservableList);

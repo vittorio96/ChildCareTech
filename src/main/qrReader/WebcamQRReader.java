@@ -31,11 +31,14 @@ public class WebcamQRReader extends JFrame implements Runnable, ThreadFactory {
     private Webcam webcam = null;
     private WebcamPanel panel = null;
     private JTextArea textarea = null;
-    private Client client;
+    private static Client client;
+
+    public static void setClient(Client client) {
+        WebcamQRReader.client = client;
+    }
 
     public WebcamQRReader() {
         super();
-        this.client = client;
         setLayout(new FlowLayout());
         setTitle("Read QR / Bar Code With Webcam");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -92,17 +95,24 @@ public class WebcamQRReader extends JFrame implements Runnable, ThreadFactory {
             }
 
             if (result != null) {
-                textarea.setText("Codice riconosciuto! " + result.getText());
-                if(result != null){
+                String dechipheredCode = result.getText();
+                textarea.setText("Codice riconosciuto! " + dechipheredCode);
                     final int PREFIXSIZE=6;
-                    if(result.getText().startsWith("Child")){
-                        client.clientChildQRAccess(result.getText().substring(PREFIXSIZE));
+                    boolean success = false;
+                    if(dechipheredCode.startsWith("Child")){
+                        success = client.clientChildQRAccess(dechipheredCode.substring(PREFIXSIZE));
                     }else{
-                        client.clientStaffQRAccess(result.getText().substring(PREFIXSIZE));
+                        success = client.clientStaffQRAccess(dechipheredCode.substring(PREFIXSIZE));
                     }
-
-                }else {
-                }
+                    if(success) {
+                        textarea.append("\n Inserito con successo");
+                        try {
+                            Thread.sleep(2000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        this.dispose(); }
+                    else {textarea.append("\n Ma si è verificato un errore nel inserimento");}
             }
 
         } while (true);
@@ -110,7 +120,7 @@ public class WebcamQRReader extends JFrame implements Runnable, ThreadFactory {
 
     @Override
     public Thread newThread(Runnable r) {
-        Thread t = new Thread(r, "example-runner");
+        Thread t = new Thread(r, "Webcam");
         t.setDaemon(true);
         return t;
     }

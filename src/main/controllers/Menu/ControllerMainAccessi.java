@@ -58,12 +58,14 @@ public class ControllerMainAccessi extends AbstractController implements Initial
             String decodedQr = QRReader.readQRCode(file,"UTF-8",hintMap);
             if(decodedQr != null){
                 final int PREFIXSIZE=6;
+                boolean success = false;
                 if(decodedQr.startsWith("Child")){
-                    CLIENT.clientChildQRAccess(decodedQr.substring(PREFIXSIZE));
+                    success = CLIENT.clientChildQRAccess(decodedQr.substring(PREFIXSIZE));
                 }else{
-                    CLIENT.clientStaffQRAccess(decodedQr.substring(PREFIXSIZE));
+                    success = CLIENT.clientStaffQRAccess(decodedQr.substring(PREFIXSIZE));
                 }
-                createSuccessPopup();
+                if(success) createSuccessPopup(); else createGenericErrorPopup();
+
             }else {
                 createErrorPopup("Errore", "Non è stato possibile leggere il QR");
             }
@@ -75,6 +77,7 @@ public class ControllerMainAccessi extends AbstractController implements Initial
 
 
     @FXML protected void handleReadQRFromWebcamButtonAction(ActionEvent event) throws IOException {
+        WebcamQRReader.setClient(CLIENT);
         FutureTask<WebcamQRReader> launchWebcam = new FutureTask<>(WebcamQRReader::new) ;
         SwingUtilities.invokeLater(launchWebcam);
     }
