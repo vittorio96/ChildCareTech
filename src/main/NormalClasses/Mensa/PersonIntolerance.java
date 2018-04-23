@@ -1,6 +1,8 @@
 package main.NormalClasses.Mensa;
 
-public class PersonIntolerance extends Intolerance{
+import java.io.Serializable;
+
+public class PersonIntolerance extends Intolerance implements Serializable {
 
     public PersonIntolerance() {
         super();

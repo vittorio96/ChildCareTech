@@ -2,6 +2,7 @@ package main.StringPropertyClasses.Anagrafica;
 
 import javafx.beans.property.SimpleStringProperty;
 import main.NormalClasses.Anagrafica.Contact;
+import main.NormalClasses.Anagrafica.Person;
 
 import java.io.Serializable;
 
@@ -9,6 +10,8 @@ public class StringPropertyContact extends StringPropertyPerson implements Seria
 
     private SimpleStringProperty cellphone;
     private SimpleStringProperty typeFlag;
+
+
 
     public enum ContactTypeFlag {
         GENITORE(0), PEDIATRA(1);
@@ -40,6 +43,11 @@ public class StringPropertyContact extends StringPropertyPerson implements Seria
         this.codiceFiscale = new SimpleStringProperty(c.getCodiceFiscale());
         this.cellphone = new SimpleStringProperty(c.getCellulare());
         this.typeFlag = new SimpleStringProperty(c.getTipo());
+    }
+
+    @Override
+    public Person toPerson() {
+        return new Contact(this);
     }
 
     public String getCellphone() {

@@ -45,7 +45,7 @@ public class ClientHandler implements Runnable{
 
         do {
             try {
-                command = (String) socketObjectIn.readObject();
+                command = (String) socketObjectIn.readObject();//Attesa bloccante
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -190,11 +190,67 @@ public class ClientHandler implements Runnable{
                 case "cmd_selectIntolerantsWorkers": this.selectIntolerantsWorkersForIngredientFromDbExecution();
                     break;
 
+                case "cmd_selectUntoleratedIngredientsForPerson": this.selectUntoleratedIngredientsForPersonFromDbExecution();
+                    break;
+
+                case "cmd_selectNotUntoleratedIngredientsForPerson": this.selectNotUntoleratedIngredientsForPersonFromDbExecution();
+                    break;
+
                 case "cmd_quit": this.closeConnection();
                     break;
             }
 
         }while(!command.equals("cmd_quit"));
+    }
+
+    private void selectNotUntoleratedIngredientsForPersonFromDbExecution() {
+        Person p=null;
+
+        try {
+            p = (Person)socketObjectIn.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        List<String> list = null;
+        try {
+            list = DMLCommandExecutor.getInstance().selectNotUntoleratedIngredientsForPersonFromDb(p);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        //Send the list to client
+        try {
+            socketObjectOut.writeObject(list);
+            socketObjectOut.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void selectUntoleratedIngredientsForPersonFromDbExecution() {
+        Person p=null;
+
+        try {
+            p = (Person)socketObjectIn.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        List<String> list = null;
+        try {
+            list = DMLCommandExecutor.getInstance().selectUntoleratedIngredientsForPersonFromDb(p);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        //Send the list to client
+        try {
+            socketObjectOut.writeObject(list);
+            socketObjectOut.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void selectIntolerantsWorkersForIngredientFromDbExecution() {

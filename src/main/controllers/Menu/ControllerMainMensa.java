@@ -40,7 +40,9 @@ public class ControllerMainMensa extends AbstractController implements Initializ
         changeSceneInPopup(modificaMenuButton,"../../resources/fxml/mensa_menu.fxml" , 800,450);
     }
 
-    public void handleAggiungiAllergieButtonAction(ActionEvent event) {
+    public void handleAggiungiAllergieButtonAction() throws IOException {
+        changeSceneInPopup(aggiungiAllergieButton,"../../resources/fxml/mensa_addAllergy.fxml" , 800,450);
+
     }
 }
 

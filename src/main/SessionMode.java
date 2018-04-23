@@ -112,4 +112,8 @@ public interface SessionMode {
 
     public List<Staff> extractIntolerantsWorkersForIngredientFromDb(String nomeI);
 
+    public List<String> extractUntoleratedIngredientsForPersonFromDb(Person p);
+
+    public List<String> extractNotUntoleratedIngredientsForPersonFromDb(Person p);
+
 }

@@ -397,4 +397,24 @@ public class ServerRMI extends UnicastRemoteObject implements RemoteServerInterf
             return null;
         }
     }
+
+    @Override
+    public List<String> selectUntoleratedIngredientsForPersonFromDbExecution(Person p) throws RemoteException {
+        try {
+            return DMLCommandExecutor.getInstance().selectUntoleratedIngredientsForPersonFromDb(p);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<String> selectNotUntoleratedIngredientsForPersonFromDbExecution(Person p) throws RemoteException {
+        try {
+            return DMLCommandExecutor.getInstance().selectNotUntoleratedIngredientsForPersonFromDb(p);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

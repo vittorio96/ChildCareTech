@@ -2,6 +2,8 @@ package main.StringPropertyClasses.Anagrafica;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import main.NormalClasses.Anagrafica.Child;
+import main.NormalClasses.Anagrafica.Person;
 import main.NormalClasses.Anagrafica.Staff;
 
 import java.io.Serializable;
@@ -98,5 +100,10 @@ public class StringPropertyStaff extends StringPropertyPerson implements Seriali
 
     public void setTipo(String tipo) {
         this.tipo.set(tipo);
+    }
+
+    @Override
+    public Person toPerson() {
+        return new Staff(this);
     }
 }

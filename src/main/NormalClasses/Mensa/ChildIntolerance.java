@@ -1,6 +1,8 @@
 package main.NormalClasses.Mensa;
 
-public class ChildIntolerance extends Intolerance{
+import java.io.Serializable;
+
+public class ChildIntolerance extends Intolerance implements Serializable {
 
     public ChildIntolerance() {
         super();

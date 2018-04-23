@@ -565,6 +565,26 @@ public class RmiMode implements SessionMode {
         }
     }
 
+    @Override
+    public List<String> extractUntoleratedIngredientsForPersonFromDb(Person p) {
+        try {
+            return server.selectUntoleratedIngredientsForPersonFromDbExecution(p);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<String> extractNotUntoleratedIngredientsForPersonFromDb(Person p) {
+        try {
+            return server.selectNotUntoleratedIngredientsForPersonFromDbExecution(p);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     /*public static void main(String[] args){
         Client c = null;
         try {

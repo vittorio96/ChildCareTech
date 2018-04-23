@@ -22,7 +22,6 @@ import java.util.ResourceBundle;
 
 public class ControllerAnagraficaManageContact extends AbstractController implements Initializable {
 
-    //TODO Debug
     //main list
     private ObservableList<StringPropertyContact> parentObservableList = FXCollections.observableArrayList();
     private ObservableList<StringPropertyContact> doctorObservableList = FXCollections.observableArrayList();

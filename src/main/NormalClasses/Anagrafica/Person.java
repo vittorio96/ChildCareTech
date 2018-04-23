@@ -1,5 +1,12 @@
 package main.NormalClasses.Anagrafica;
 
+import main.NormalClasses.Mensa.ChildIntolerance;
+import main.NormalClasses.Mensa.Intolerance;
+import main.NormalClasses.Mensa.PersonIntolerance;
+import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
+import main.StringPropertyClasses.Anagrafica.StringPropertyPerson;
+import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
+
 import java.io.Serializable;
 
 public abstract class Person implements Serializable{
@@ -30,4 +37,9 @@ public abstract class Person implements Serializable{
     public void setCodiceFiscale(String codiceFiscale) {
         this.codiceFiscale = codiceFiscale;
     }
+
+
+    public abstract Intolerance createIntolerance(String ingredient);
+
+    public abstract StringPropertyPerson toStringProperty();
 }

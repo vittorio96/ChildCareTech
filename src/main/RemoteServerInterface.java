@@ -106,4 +106,8 @@ public interface RemoteServerInterface extends Remote{
 
     public List<Staff> selectIntolerantsWorkersForIngredientFromDbExecution(String nomeI) throws RemoteException;
 
+    public List<String> selectUntoleratedIngredientsForPersonFromDbExecution(Person p) throws RemoteException;
+
+    public List<String> selectNotUntoleratedIngredientsForPersonFromDbExecution(Person p) throws RemoteException;
+
 }

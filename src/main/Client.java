@@ -3,7 +3,11 @@ package main;
 import main.NormalClasses.Anagrafica.*;
 import main.NormalClasses.Gite.*;
 import main.NormalClasses.Mensa.Dish;
+import main.NormalClasses.Mensa.Intolerance;
 import main.NormalClasses.Mensa.Menu;
+import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
+import main.StringPropertyClasses.Anagrafica.StringPropertyContact;
+import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.controllers.Menu.ControllerLogin;
 
 import java.net.MalformedURLException;
@@ -103,6 +107,13 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
         return session.extractStaffFromDb();
     }
 
+    public List<? extends Person> clientExtractPersonFromDb(String s) {
+        if(s.equals(Child.class.getSimpleName())) return clientExtractChildrenFromDb();
+        if(s.equals(Staff.class.getSimpleName())) return clientExtractStaffFromDb();
+        if(s.equals(Contact.class.getSimpleName())) return clientExtractContactsFromDb();
+        return null;
+    }
+
     public List<Supplier> clientExtractSuppliersFromDb(){
         return session.extractSuppliersFromDb();
     }
@@ -197,6 +208,15 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
 
     public List<Dish> clientExtractDishesFromDb(){ return session.extractDishesFromDb(); }
 
+    public List<String> extractAllergiesForPerson(Person person) { return session.extractUntoleratedIngredientsForPersonFromDb(person); }
+
+    public List<String> extractHarmlessIngredientsForPerson(Person person) { return session.extractNotUntoleratedIngredientsForPersonFromDb(person); }
+
+    public boolean clientInsertIntoleranceIntoDb(Intolerance intolerance){ return  session.insertIntoleranceIntoDb(intolerance);}
+
+    public boolean clientDeleteIntoleranceFromDb(Intolerance intolerance){ return  session.deleteIntoleranceFromDb(intolerance);}
+
+
     /*
         Accessi
     */
@@ -208,7 +228,6 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
     public boolean clientStaffQRAccess(String codF){
         return session.insertPersonDailyPresenceIntoDb(codF);
     }
-
 
 
 

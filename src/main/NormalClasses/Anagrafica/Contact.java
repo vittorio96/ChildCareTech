@@ -1,6 +1,10 @@
 package main.NormalClasses.Anagrafica;
 
+import main.NormalClasses.Mensa.ChildIntolerance;
+import main.NormalClasses.Mensa.Intolerance;
+import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.StringPropertyClasses.Anagrafica.StringPropertyContact;
+import main.StringPropertyClasses.Anagrafica.StringPropertyPerson;
 
 public class Contact extends Person{
 
@@ -56,5 +60,15 @@ public class Contact extends Person{
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    @Override
+    public Intolerance createIntolerance(String ingredient) {
+        return new ChildIntolerance(this.codiceFiscale,ingredient);
+    }
+
+    @Override
+    public StringPropertyPerson toStringProperty() {
+        return new StringPropertyContact(this);
     }
 }

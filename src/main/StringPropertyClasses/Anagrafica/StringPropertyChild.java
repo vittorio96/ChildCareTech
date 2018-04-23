@@ -3,6 +3,8 @@ package main.StringPropertyClasses.Anagrafica;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import main.NormalClasses.Anagrafica.Child;
+import main.NormalClasses.Anagrafica.Person;
+import main.NormalClasses.Anagrafica.Staff;
 
 import java.io.Serializable;
 
@@ -162,4 +164,8 @@ public class StringPropertyChild extends StringPropertyPerson implements Seriali
         this.booleanStatus.set(booleanStatus);
     }
 
+    @Override
+    public Person toPerson() {
+        return new Child(this);
+    }
 }

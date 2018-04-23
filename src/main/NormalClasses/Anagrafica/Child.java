@@ -1,6 +1,10 @@
 package main.NormalClasses.Anagrafica;
 
+import main.NormalClasses.Mensa.ChildIntolerance;
+import main.NormalClasses.Mensa.Intolerance;
+import main.NormalClasses.Mensa.PersonIntolerance;
 import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
+import main.StringPropertyClasses.Anagrafica.StringPropertyPerson;
 
 public class Child extends Person {
 
@@ -108,4 +112,13 @@ public class Child extends Person {
         this.codiceFiscaleGen2 = codiceFiscaleGen2;
     }
 
+    @Override
+    public Intolerance createIntolerance(String ingredient) {
+        return new ChildIntolerance(this.getCodiceFiscale(), ingredient);
+    }
+
+    @Override
+    public StringPropertyPerson toStringProperty() {
+        return new StringPropertyChild(this);
+    }
 }

@@ -1,6 +1,9 @@
 package main.StringPropertyClasses.Anagrafica;
 
 import javafx.beans.property.SimpleStringProperty;
+import main.NormalClasses.Anagrafica.Child;
+import main.NormalClasses.Anagrafica.Person;
+import main.NormalClasses.Anagrafica.Staff;
 
 import java.io.Serializable;
 
@@ -44,4 +47,6 @@ public abstract class StringPropertyPerson implements Serializable{
     public void setCognome(String cognome) {
         this.cognome.set(cognome);
     }
+
+    public abstract Person toPerson();
 }

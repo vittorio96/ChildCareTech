@@ -1,5 +1,10 @@
 package main.NormalClasses.Anagrafica;
 
+import main.NormalClasses.Mensa.ChildIntolerance;
+import main.NormalClasses.Mensa.Intolerance;
+import main.NormalClasses.Mensa.PersonIntolerance;
+import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
+import main.StringPropertyClasses.Anagrafica.StringPropertyPerson;
 import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.User;
 
@@ -64,5 +69,15 @@ public class Staff extends Person{
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    @Override
+    public Intolerance createIntolerance(String ingredient) {
+        return new PersonIntolerance(this.getCodiceFiscale(), ingredient);
+    }
+
+    @Override
+    public StringPropertyPerson toStringProperty() {
+        return new StringPropertyStaff(this);
     }
 }

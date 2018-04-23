@@ -1,7 +1,9 @@
 
 package main.NormalClasses.Mensa;
 
-public abstract class Intolerance {
+import java.io.Serializable;
+
+public abstract class Intolerance implements Serializable {
 
     private String codF;
     private String nomeI;
@@ -29,5 +31,7 @@ public abstract class Intolerance {
     public void setNomeI(String nomeI) {
         this.nomeI = nomeI;
     }
+
+
 
 }

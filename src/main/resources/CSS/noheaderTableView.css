@@ -27,7 +27,7 @@
 }
 
 .table-view .table-cell{
-    -fx-text-fill: #717E93;
+    -fx-text-fill: black;
     -fx-font-family: 'Futura';
 }
 
@@ -47,7 +47,7 @@
     -fx-text-background-color: white;
     -fx-background-color: #717E93;
     -fx-background-insets: 0;
-    -fx-text-fill: #717E93;
+    -fx-text-fill: black;
     -fx-font-family: 'Futura';
     -fx-background-radius: 1;
 }

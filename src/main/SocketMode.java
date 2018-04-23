@@ -900,6 +900,40 @@ public class SocketMode implements SessionMode {
         }
     }
 
+    @Override
+    public List<String> extractUntoleratedIngredientsForPersonFromDb(Person p) {
+        try {
+            socketObjectOut.writeObject("cmd_selectUntoleratedIngredientsForPerson");
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(p);
+            socketObjectOut.flush();
+
+            return (List<String>)socketObjectIn.readObject();//Attesa bloccante
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<String> extractNotUntoleratedIngredientsForPersonFromDb(Person p) {
+        try {
+            socketObjectOut.writeObject("cmd_selectNotUntoleratedIngredientsForPerson");
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(p);
+            socketObjectOut.flush();
+
+            return (List<String>)socketObjectIn.readObject();//Attesa bloccante
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
     //Main method to support testing without GUI
      /*public static void main(String[] args){
          Client c = null;
@@ -913,6 +947,7 @@ public class SocketMode implements SessionMode {
              e.printStackTrace();
          }
          SessionMode session = new SocketMode(c);
+
 
          session.disconnect();
      }*/

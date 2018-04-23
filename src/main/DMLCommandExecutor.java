@@ -1508,6 +1508,81 @@ public class DMLCommandExecutor {
             return null;
     }
 
+    public List<String> selectUntoleratedIngredientsForPersonFromDb(Person p) throws SQLException{
+        List<String> ingredientsList = new ArrayList<>();
+        ResultSet rs;
+        Statement stmt;
+        String sql;
+
+        if(p instanceof Child)
+            sql = "SELECT NomeI FROM INTOLLERANZABAMBINO WHERE CodF = '"+p.getCodiceFiscale()+"' ORDER BY NomeI;";
+        else if(p instanceof Staff)
+            sql = "SELECT NomeI FROM INTOLLERANZAPERSONALE WHERE CodF = '"+p.getCodiceFiscale()+"' ORDER BY NomeI;";
+        else
+            return null;
+
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            String nomeI = rs.getString("NomeI");
+            ingredientsList.add(nomeI);
+        }
+
+        if(ingredientsList.size()>0)
+            return ingredientsList;
+        else
+            return null;
+    }
+
+    public List<String> selectNotUntoleratedIngredientsForPersonFromDb(Person p) throws SQLException{
+        List<String> ingredientsList = new ArrayList<>();
+        ResultSet rs;
+        Statement stmt;
+        String sql;
+
+        if(p instanceof Child)
+            sql = "SELECT I.* FROM INGREDIENTE I WHERE I.NomeI NOT IN ( " +
+                    "SELECT IB.NomeI FROM INTOLLERANZABAMBINO IB WHERE IB.CodF = '"+p.getCodiceFiscale()+"') ORDER BY I.NomeI;";
+        else if(p instanceof Staff)
+            sql = "SELECT I.* FROM INGREDIENTE I WHERE I.NomeI NOT IN (" +
+                    "SELECT IP.NomeI FROM INTOLLERANZAPERSONALE IP WHERE IP.CodF = '"+p.getCodiceFiscale()+"') ORDER BY I.NomeI;";
+        else
+            return null;
+
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            String nomeI = rs.getString("NomeI");
+            ingredientsList.add(nomeI);
+        }
+
+        if(ingredientsList.size()>0)
+            return ingredientsList;
+        else
+            return null;
+    }
 
 
    /*public static void main(String[] args) throws SQLException {
@@ -1517,6 +1592,7 @@ public class DMLCommandExecutor {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }*/
 
 }
