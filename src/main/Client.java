@@ -196,6 +196,8 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
 
     public boolean clientDeleteDishFromMenuFromDb(Menu.MenuTypeFlag codMenu, String nomeP){ return session.deleteDishFromMenuFromDb(codMenu, nomeP); }
 
+    public boolean clientDeleteDishFromDb(Dish dish){ return session.deleteDishFromDb(dish);}
+
     public List<Dish> clientExtractDishesForTypeFromDb(Dish.DishTypeFlag dishType){ return session.extractDishesForTypeFromDb(dishType); }
 
     public List<Staff> clientExtractIntolerantsWorkersForIngredientFromDb(String nomeI){ return session.extractIntolerantsWorkersForIngredientFromDb(nomeI); }

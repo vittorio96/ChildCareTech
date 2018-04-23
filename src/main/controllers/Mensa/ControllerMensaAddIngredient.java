@@ -32,8 +32,6 @@ public class ControllerMensaAddIngredient extends AbstractController implements 
                 } else {
                     createSuccessPopup();
                     handleGoHomebutton();
-                    ControllerMensaAddDish.setNewIng(true);
-                    ControllerMensaAddDish.setLastIng(ingredientNameTextField.getText().toUpperCase());
                 }
             } catch (Exception e){
                 //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
@@ -45,7 +43,7 @@ public class ControllerMensaAddIngredient extends AbstractController implements 
 
     @FXML private void handleGoHomebutton(){
         //use a generic button
-        hidePopOver(saveButton);
+        closePopup(saveButton);
     }
 
     private boolean textConstraintsRespected() {

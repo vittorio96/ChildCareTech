@@ -9,10 +9,10 @@
 .tab {
   -fx-font-family: Futura;
   -fx-font-size: 14;
-  -fx-background-color:#EEF2F6 ;
+  -fx-background-color: #DAE4EB;
 }
 
 .tab:selected {
-    -fx-background-color: #DAE4EB ;
+    -fx-background-color: #EEF2F6 ;
 }
 .tab:selected .focus-indicator {-fx-border-color: transparent}

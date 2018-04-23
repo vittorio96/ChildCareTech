@@ -43,9 +43,6 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
     }
 
     @FXML private ImageView goHomeIV;
-    @FXML private Button refreshButton;
-    @FXML private ImageView saveNewDishIV;
-    @FXML private ImageView addNewIngredient;
     @FXML private TextField searchFieldAvailable;
     @FXML private TextField dishNameTextField;
     @FXML private TableView<StringPropertyIngredient> availableIngredientsTable;
@@ -59,8 +56,6 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
     private ObservableList<StringPropertyIngredient> ingredientsOnDishObservableList = FXCollections.observableArrayList();
     private SortedList<StringPropertyIngredient> sortedData;
     private FilteredList<StringPropertyIngredient> filteredData;
-    private static boolean newIng;
-    private static String lastIng;
 
 
     @Override
@@ -121,7 +116,6 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
             for(String s: tempList)
                 availableNormalList.add(new StringPropertyIngredient(s)  );
         availableIngredientsObservableList.addAll(availableNormalList);
-        newIng = false;//from caps to normal
     }
 
     private void toAvailableIngredients(StringPropertyIngredient selected) {
@@ -141,8 +135,13 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
                 }
                 setItems();
                 setFilter();
+                sort();
             }}});
 
+    }
+
+    private void sort() {
+        availableIngredientsTable.sort();
     }
 
     private void toDish(StringPropertyIngredient selected) {
@@ -163,6 +162,7 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
                     setFilter();
                 }
             }});
+
     }
 
     private void setItems() {
@@ -191,21 +191,7 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
 
     }
 
-    public static void setNewIng(boolean newIng) {
-        ControllerMensaAddDish.newIng = newIng;
-    }
 
-    public static void setLastIng(String lastIng) {
-        ControllerMensaAddDish.lastIng = lastIng;
-    }
-
-    public void addNewIngredient(MouseEvent mouseEvent) throws IOException {
-        newIng = false;
-        openPopOver("../../resources/fxml/mensa_addIngredient.fxml", PopOver.ArrowLocation.BOTTOM_CENTER, addNewIngredient);
-        if(newIng){
-            getNewIngredient();
-        }
-    }
 
     @FXML private void handleGoHomebutton(){
         closePopup(goHomeIV);
@@ -235,11 +221,4 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
 
     }
 
-    public void getNewIngredient() {
-        searchFieldAvailable.setText("");
-        availableNormalList.add(new StringPropertyIngredient(lastIng));
-        availableIngredientsObservableList.clear();
-        availableIngredientsObservableList.addAll(availableNormalList);
-        availableIngredientsTable.setItems(availableIngredientsObservableList);
-    }
 }

@@ -25,6 +25,7 @@ public class ControllerMainMensa extends AbstractController implements Initializ
 
     @FXML private Button aggiungiAllergieButton;
     @FXML private Button modificaMenuButton;
+    @FXML private Button addIngredientButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -43,6 +44,10 @@ public class ControllerMainMensa extends AbstractController implements Initializ
     public void handleAggiungiAllergieButtonAction() throws IOException {
         changeSceneInPopup(aggiungiAllergieButton,"../../resources/fxml/mensa_addAllergy.fxml" , 800,450);
 
+    }
+
+    public void addNewIngredient() throws IOException {
+        changeSceneInPopup(addIngredientButton,"../../resources/fxml/mensa_addIngredient.fxml", 380,380);
     }
 }
 

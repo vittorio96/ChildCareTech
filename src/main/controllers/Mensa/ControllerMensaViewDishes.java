@@ -32,16 +32,8 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
     private static Dish.DishTypeFlag dishType;
     private static Menu.MenuTypeFlag menuType;
 
-    public static Dish.DishTypeFlag getDishType() {
-        return dishType;
-    }
-
     public static void setDishType(Dish.DishTypeFlag dishType) {
         ControllerMensaViewDishes.dishType = dishType;
-    }
-
-    public static Menu.MenuTypeFlag getMenuType() {
-        return menuType;
     }
 
     public static void setMenuType(Menu.MenuTypeFlag menuType) {
@@ -158,6 +150,17 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
     public void saveDishIntoMenu() {
         if(getSelectedDish()!=null){
             boolean success= CLIENT.clientInsertDishIntoMenuIntoDb(menuType,getSelectedDish().getNomeP());
+            if (success) {
+                createSuccessPopup();
+                goHome();
+            }
+            else createGenericErrorPopup();
+        } else createErrorPopup("Errore", "Seleziona un piatto dalla tabella!");
+    }
+
+    public void deleteDish() {
+        if(getSelectedDish()!=null){
+            boolean success= CLIENT.clientDeleteDishFromDb(getSelectedDish().toNormal);
             if (success) {
                 createSuccessPopup();
                 goHome();
