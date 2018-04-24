@@ -11,8 +11,6 @@ import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class RmiModeTestAnagrafica {
 
     private Client c;

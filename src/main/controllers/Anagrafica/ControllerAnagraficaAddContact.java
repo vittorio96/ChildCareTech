@@ -275,7 +275,7 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
             String codFis = codFisTextField1.getText();
             Contact.ContactTypeFlag tipo = Contact.ContactTypeFlag.valueOf(lastSelection);
 
-            Person contact = new Contact(nome,  cognome, codFis, cell, Integer.toString(tipo.getOrdernum()) );
+            Person contact = new Contact(nome,  cognome, codFis, cell, tipo);
 
             boolean success = CLIENT.clientInsertIntoDb(contact);
             try {

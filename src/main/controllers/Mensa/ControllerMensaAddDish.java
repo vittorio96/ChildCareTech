@@ -61,6 +61,8 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
         ControllerMensaAddDish.dishType = dishType;
     }
 
+    private final String ERRORCSS = "-fx-text-box-border: red ; -fx-focus-color: red ;";
+    private final String NORMALCSS ="-fx-text-box-border: lightgray ; -fx-focus-color: #81CEE9;";
     /*
          Lists
     */
@@ -216,35 +218,40 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
     }
 
     private boolean textConstraintsRespected() {
-        String errorCss = "-fx-text-box-border: red ; -fx-focus-color: red ;";
-        String normalCss = "-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
         int errors = 0;
 
-        if(dishNameTextField.getText().length() == 0){
-            dishNameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            dishNameTextField.setStyle(normalCss);
-        }
-
-        if(onDishNormalList.size()<1){
-            errors++;
-        }
-
-        if(dishType == null){
-            errors++;
-        }
+        errors+= textFieldConstraintsRespected(dishNameTextField) ? 0:1;
+        errors+= listSizeConstraintsRespected(onDishNormalList) ? 0:1;
+        errors+= (dishType != null) ? 0:1;
 
         return errors == 0;
 
     }
 
-     /*
-         Methods
+
+    /*
+         Gui Methods
     */
 
     @FXML private void handleGoHomeButton(){
         closePopup(goHomeIV);
+    }
+
+    private boolean textFieldConstraintsRespected(TextField textField) {
+        if(textField.getText().length() == 0){
+            textField.setStyle(ERRORCSS);
+            return false;
+        }else{
+            textField.setStyle(NORMALCSS);
+            return true;
+        }
+    }
+
+    private boolean listSizeConstraintsRespected(List list) {
+        if(list.size()<1){
+            return false;
+        }
+        return true;
     }
 
 

@@ -30,6 +30,14 @@ public class Contact extends Person{
         this.tipo= contact.getTypeFlag();
     }
 
+    public Contact(String nome, String cognome, String codiceFiscale, String cellulare, ContactTypeFlag contactTypeFlag) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.codiceFiscale = codiceFiscale;
+        this.cellulare = cellulare;
+        this.tipo= Integer.toString(contactTypeFlag.getOrdernum());
+    }
+
     public Contact(){}
 
 
