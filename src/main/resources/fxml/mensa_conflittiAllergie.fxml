@@ -13,13 +13,32 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.Mensa.ControllerMensaConflicts">
    <children>
-      <SplitPane dividerPositions="0.46616541353383456" layoutX="62.0" layoutY="145.0" prefHeight="450.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.2606516290726817, 0.5" layoutX="62.0" layoutY="145.0" prefHeight="450.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="dishesTable" prefHeight="448.0" prefWidth="234.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <placeholder>
+                        <Label text="Non ci sono piatti" />
+                     </placeholder>
+                     <columns>
+                        <TableColumn fx:id="dishesColumn" prefWidth="75.0" text="Piatti" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <stylesheets>
+                        <URL value="@../CSS/tableview.css" />
+                        <URL value="@../CSS/noheaderTableView.css" />
+                     </stylesheets>
+                  </TableView>
+               </children>
+            </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <TableView fx:id="ingredientsTable" prefHeight="448.0" prefWidth="234.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <placeholder>
-                        <Label text="Non ci sono ingredienti presenti nel DB" />
+                        <Label text="Non ci sono ingredienti" />
                      </placeholder>
                      <columns>
                         <TableColumn fx:id="ingredientsColumn" prefWidth="75.0" text="Ingredienti" />
@@ -86,7 +105,7 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <ImageView fx:id="goHomeIV" fitHeight="19.0" fitWidth="32.0" layoutX="775.0" layoutY="8.0" onMouseClicked="#goHome" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="closeImageView" fitHeight="19.0" fitWidth="32.0" layoutX="775.0" layoutY="8.0" onMouseClicked="#closeCurrentPopup" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/close.png" />
          </image>

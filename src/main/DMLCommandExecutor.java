@@ -1284,6 +1284,83 @@ public class DMLCommandExecutor {
             return null;
     }
 
+    public List<Staff> selectIntolerantsWorkersForMenuFromDb(Menu.MenuTypeFlag codMenu) throws SQLException{
+
+        List<Staff> staffList = new ArrayList<>();
+        ResultSet rs;
+        Statement stmt;
+
+        String sql = "SELECT P.* " +
+                "FROM PERSONALE P, INTOLLERANZAPERSONALE IP, COMPOSIZIONEPIATTO CP, COMPOSIZIONEMENU CM " +
+                "WHERE P.CodF=IP.CodF AND IP.NomeI=CP.NomeI AND CP.NomeP=CM.NomeP AND CM.CodGiorno='"+codMenu.getOrderNum()+"' ORDER BY P.Cognome;";
+
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            Staff staff = new Staff();
+            staff.setCodiceFiscale(rs.getString("CodF"));
+            staff.setNome(rs.getString("Nome"));
+            staff.setCognome(rs.getString("Cognome"));
+            staff.setDataNascita(rs.getString("DataN"));
+
+            staffList.add(staff);
+        }
+
+        if(staffList.size()>0)
+            return staffList;
+        else
+            return null;
+    }
+
+    public List<Child> selectIntolerantsChildrenForMenuFromDb(Menu.MenuTypeFlag codMenu) throws SQLException{
+
+        List<Child> childrenList = new ArrayList<>();
+        ResultSet rs;
+        Statement stmt;
+
+        String sql = "SELECT B.* " +
+                "FROM BAMBINO B, INTOLLERANZABAMBINO IB, COMPOSIZIONEPIATTO CP, COMPOSIZIONEMENU CM " +
+                "WHERE B.CodF=IB.CodF AND IB.NomeI=CP.NomeI AND CP.NomeP=CM.NomeP AND CM.CodGiorno='"+codMenu.getOrderNum()+"' ORDER BY B.Cognome;";
+        Connection conn = myPool.getConnection();
+
+        try {
+            stmt = conn.createStatement();
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            Child child = new Child();
+            child.setCodiceFiscale(rs.getString("CodF"));
+            child.setNome(rs.getString("Nome"));
+            child.setCognome(rs.getString("Cognome"));
+            child.setDataNascita(rs.getString("DataN"));
+            child.setCodR(rs.getString("codR"));
+            childrenList.add(child);
+        }
+
+        if(childrenList.size()>0)
+            return childrenList;
+        else
+            return null;
+    }
+
     public List<Dish> selectDishesForMenuFromDb(Menu.MenuTypeFlag codMenu) throws SQLException{
         List<Dish> dishesList = new ArrayList<>();
         ResultSet rs;

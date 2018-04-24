@@ -585,6 +585,26 @@ public class RmiMode implements SessionMode {
         }
     }
 
+    @Override
+    public List<Child> extractIntolerantsChildrenForMenuFromDb(Menu.MenuTypeFlag codMenu) {
+        try {
+            return server.selectIntolerantsChildrenForMenuFromDbExecution(codMenu);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Staff> extractIntolerantsWorkersForMenuFromDb(Menu.MenuTypeFlag codMenu) {
+        try {
+            return server.selectIntolerantsWorkersForMenuFromDbExecution(codMenu);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     /*public static void main(String[] args){
         Client c = null;
         try {

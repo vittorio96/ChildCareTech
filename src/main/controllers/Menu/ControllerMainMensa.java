@@ -19,7 +19,6 @@ import java.util.ResourceBundle;
 
 public class ControllerMainMensa extends AbstractController implements Initializable {
 
-
     /*
         Buttons & Initialization
     */
@@ -28,6 +27,7 @@ public class ControllerMainMensa extends AbstractController implements Initializ
     @FXML private Button modificaMenuButton;
     @FXML private Button addIngredientButton;
     @FXML private Button conflittiAllergieButton;
+    @FXML private Button todaysProblemButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -54,6 +54,10 @@ public class ControllerMainMensa extends AbstractController implements Initializ
 
     public void vediConflitti() throws IOException {
         changeSceneInPopup(conflittiAllergieButton,"../../resources/fxml/mensa_conflittiAllergie.fxml",800,450);
+    }
+
+    public void viewTodaysConflicts() throws IOException {
+        changeSceneInPopup(todaysProblemButton,"../../resources/fxml/mensa_viewTodaysConflicts.fxml",800,450);
     }
 }
 

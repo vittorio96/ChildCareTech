@@ -110,4 +110,7 @@ public interface RemoteServerInterface extends Remote{
 
     public List<String> selectNotUntoleratedIngredientsForPersonFromDbExecution(Person p) throws RemoteException;
 
+    public List<Child> selectIntolerantsChildrenForMenuFromDbExecution(Menu.MenuTypeFlag codMenu) throws RemoteException;
+
+    public List<Staff> selectIntolerantsWorkersForMenuFromDbExecution(Menu.MenuTypeFlag codMenu) throws RemoteException;
 }

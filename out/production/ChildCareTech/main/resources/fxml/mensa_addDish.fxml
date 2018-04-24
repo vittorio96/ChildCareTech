@@ -16,7 +16,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.Mensa.ControllerMensaAddDish">
    <children>
-      <ImageView fx:id="goHomeIV" fitHeight="19.0" fitWidth="32.0" layoutX="775.0" layoutY="7.0" onMouseClicked="#handleGoHomebutton" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="goHomeIV" fitHeight="19.0" fitWidth="32.0" layoutX="775.0" layoutY="7.0" onMouseClicked="#handleGoHomeButton" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/close.png" />
          </image>

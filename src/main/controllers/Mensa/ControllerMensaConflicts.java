@@ -8,11 +8,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import main.NormalClasses.Anagrafica.Child;
-import main.NormalClasses.Anagrafica.Person;
 import main.NormalClasses.Anagrafica.Staff;
+import main.NormalClasses.Mensa.Dish;
 import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
-import main.StringPropertyClasses.Anagrafica.StringPropertyPerson;
 import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
+import main.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.StringPropertyClasses.Mensa.StringPropertyIngredient;
 import main.controllers.AbstractController;
 
@@ -21,6 +21,10 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class ControllerMensaConflicts extends AbstractController implements Initializable {
+
+    /*
+        Tables
+    */
 
     @FXML private TableView<StringPropertyIngredient> ingredientsTable;
     @FXML private TableColumn<StringPropertyIngredient,String> ingredientsColumn;
@@ -33,20 +37,32 @@ public class ControllerMensaConflicts extends AbstractController implements Init
     @FXML private TableColumn<StringPropertyChild, String> nameColumn;
     @FXML private TableColumn<StringPropertyChild, String> surnameColumn;
 
-    @FXML private ImageView goHomeIV;
+    @FXML private TableView<StringPropertyDish> dishesTable;
+    @FXML private TableColumn<StringPropertyDish, String> dishesColumn;
+
+    /*
+        Lists
+    */
+
     private ObservableList<StringPropertyChild> childObservableList = FXCollections.observableArrayList();
     private ObservableList<StringPropertyStaff> staffObservableList = FXCollections.observableArrayList();
+    private ObservableList<StringPropertyDish> dishObservableList = FXCollections.observableArrayList();
     private ObservableList<StringPropertyIngredient> ingredientsObservableList = FXCollections.observableArrayList();
 
+    @FXML private ImageView closeImageView;
+
+    /*
+        Initialization
+    */
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setTableAssociations();
-        refreshIngredientsTable();
-        refreshTables();
+        refreshDishTable();
+        refreshPersonTables();
     }
 
-    private void refreshTables() {
+    private void refreshPersonTables() {
         refreshChildTable(getSelectedIngredient());
         refreshStaffTable(getSelectedIngredient());
     }
@@ -55,7 +71,19 @@ public class ControllerMensaConflicts extends AbstractController implements Init
         setChildTableAssociations();
         setStaffTableAssociations();
         setIngredientsTableAssociations();
+        setDishesTableAssociations();
     }
+
+    /*
+        Table associations
+    */
+
+    private void setDishesTableAssociations() {
+        dishesColumn.setCellValueFactory(cellData -> cellData.getValue().nomePProperty());
+        dishesTable.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> showIngredientsOnDish(newValue));
+    }
+
 
     private void setIngredientsTableAssociations() {
         ingredientsColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
@@ -63,26 +91,23 @@ public class ControllerMensaConflicts extends AbstractController implements Init
                 (observable, oldValue, newValue) -> showAllergicPeople(newValue));
     }
 
-    private void showAllergicPeople(StringPropertyIngredient selectedIngredient) {
-        refreshChildTable(selectedIngredient.getNome());
-        refreshStaffTable(selectedIngredient.getNome());
-    }
-
     private void setChildTableAssociations() {
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
         surnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
     }
-
-
 
     private void setStaffTableAssociations() {
         staffNameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
         staffSurnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
     }
 
-    private void refreshIngredientsTable() {
+    /*
+        Refresh
+    */
+
+    private void refreshIngredientsTable(String selectedDish) {
         ingredientsObservableList.clear();
-        List<String> ingredientsArrayList = CLIENT.clientExtractIngredientsFromDb();
+        List<String> ingredientsArrayList = CLIENT.clientExtractIngredientsForDishFromDb(selectedDish);
         if(ingredientsArrayList!=null){
             for(String s : ingredientsArrayList){
                 ingredientsObservableList.add(new StringPropertyIngredient(s));
@@ -117,13 +142,43 @@ public class ControllerMensaConflicts extends AbstractController implements Init
         }
     }
 
+    private void refreshDishTable() {
+        dishObservableList.clear();
+        List<Dish> dishArrayList = CLIENT.clientExtractDishesFromDb();
+        if(dishArrayList!=null){
+            for(Dish d : dishArrayList){
+                dishObservableList.add(new StringPropertyDish(d));
+            }
+        }
+        dishesTable.setItems(dishObservableList);
+    }
+
+    /*
+        Methods
+    */
+
+    private void showIngredientsOnDish(StringPropertyDish selectedDish) {
+        refreshIngredientsTable(selectedDish.getNomeP());
+    }
+
+    private void showAllergicPeople(StringPropertyIngredient selectedIngredient) {
+        if(selectedIngredient!=null){
+            refreshChildTable(selectedIngredient.getNome());
+            refreshStaffTable(selectedIngredient.getNome());
+        }
+    }
+
     public String getSelectedIngredient() {
         if(ingredientsTable.getSelectionModel().selectedItemProperty().get()!=null)
             return ingredientsTable.getSelectionModel().selectedItemProperty().get().getNome();
         return null;
     }
 
-    public void goHome() {
-        closePopup(goHomeIV);
+    /*
+        Close
+    */
+
+    public void closeCurrentPopup() {
+        closePopup(closeImageView);
     }
 }

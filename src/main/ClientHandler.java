@@ -196,11 +196,71 @@ public class ClientHandler implements Runnable{
                 case "cmd_selectNotUntoleratedIngredientsForPerson": this.selectNotUntoleratedIngredientsForPersonFromDbExecution();
                     break;
 
+                case "cmd_selectIntolerantsChildrenForMenu": this.selectIntolerantsChildrenForMenuFromDbExecution();
+                    break;
+
+                case "cmd_selectIntolerantsWorkersForMenu": this.selectIntolerantsWorkersForMenuFromDbExecution();
+                    break;
+
                 case "cmd_quit": this.closeConnection();
                     break;
             }
 
         }while(!command.equals("cmd_quit"));
+    }
+
+    private void selectIntolerantsWorkersForMenuFromDbExecution() {
+        Menu.MenuTypeFlag codMenu=null;
+
+        try {
+            codMenu = (Menu.MenuTypeFlag) socketObjectIn.readObject();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        List<Staff> list = null;
+        try {
+            list = DMLCommandExecutor.getInstance().selectIntolerantsWorkersForMenuFromDb(codMenu);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        //Send the list to client
+        try {
+            socketObjectOut.writeObject(list);
+            socketObjectOut.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void selectIntolerantsChildrenForMenuFromDbExecution() {
+        Menu.MenuTypeFlag codMenu=null;
+
+        try {
+            codMenu = (Menu.MenuTypeFlag) socketObjectIn.readObject();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        List<Child> list = null;
+        try {
+            list = DMLCommandExecutor.getInstance().selectIntolerantsChildrenForMenuFromDb(codMenu);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+        //Send the list to client
+        try {
+            socketObjectOut.writeObject(list);
+            socketObjectOut.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void selectNotUntoleratedIngredientsForPersonFromDbExecution() {

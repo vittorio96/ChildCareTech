@@ -33,7 +33,26 @@ import java.util.ResourceBundle;
 public class ControllerMensaAddDish extends AbstractController implements Initializable {
 
     /*
-         Stuff
+        Tables
+    */
+    @FXML private TableView<StringPropertyIngredient> availableIngredientsTable;
+    @FXML private TableColumn <StringPropertyIngredient,String> availableIngredients;
+
+    @FXML private TableView<StringPropertyIngredient> ingredientsOnDishTable;
+    @FXML private TableColumn <StringPropertyIngredient,String> ingredientsOnDish;
+
+
+    /*
+         GUI objects
+    */
+
+    @FXML private ImageView goHomeIV;
+    @FXML private TextField searchFieldAvailable;
+    @FXML private TextField dishNameTextField;
+
+
+    /*
+         Static
     */
 
     private static Dish.DishTypeFlag dishType;
@@ -42,13 +61,10 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
         ControllerMensaAddDish.dishType = dishType;
     }
 
-    @FXML private ImageView goHomeIV;
-    @FXML private TextField searchFieldAvailable;
-    @FXML private TextField dishNameTextField;
-    @FXML private TableView<StringPropertyIngredient> availableIngredientsTable;
-    @FXML private TableView<StringPropertyIngredient> ingredientsOnDishTable;
-    @FXML private TableColumn <StringPropertyIngredient,String> availableIngredients;
-    @FXML private TableColumn <StringPropertyIngredient,String> ingredientsOnDish;
+    /*
+         Lists
+    */
+
     private List<StringPropertyIngredient> onDishNormalList = new ArrayList<StringPropertyIngredient>();
     private List<StringPropertyIngredient> availableNormalList = new ArrayList<StringPropertyIngredient>();
     private List<String> tempList = new ArrayList<String>();
@@ -57,6 +73,9 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
     private SortedList<StringPropertyIngredient> sortedData;
     private FilteredList<StringPropertyIngredient> filteredData;
 
+    /*
+         Initialization
+    */
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -65,6 +84,7 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
         setFilter();
 
     }
+
 
     private void setFilter() {
         filteredData = new FilteredList<>(availableIngredientsObservableList, p -> true);
@@ -106,6 +126,15 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
         availableIngredients.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
     }
 
+    private void setItems() {
+        ingredientsOnDishObservableList.clear();
+        ingredientsOnDishObservableList.addAll(onDishNormalList);
+        ingredientsOnDishTable.setItems(ingredientsOnDishObservableList);
+        availableIngredientsObservableList.clear();
+        availableIngredientsObservableList.addAll(availableNormalList);
+        availableIngredientsTable.setItems(availableIngredientsObservableList);
+    }
+
     private void refreshIngredientsList() {
         ingredientsOnDishObservableList.clear();
         availableIngredientsObservableList.clear();
@@ -117,6 +146,10 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
                 availableNormalList.add(new StringPropertyIngredient(s)  );
         availableIngredientsObservableList.addAll(availableNormalList);
     }
+
+    /*
+         Methods
+    */
 
     private void toAvailableIngredients(StringPropertyIngredient selected) {
 
@@ -140,10 +173,6 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
 
     }
 
-    private void sort() {
-        availableIngredientsTable.sort();
-    }
-
     private void toDish(StringPropertyIngredient selected) {
         Platform.runLater(new Runnable() {
             @Override public void run() {
@@ -165,13 +194,8 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
 
     }
 
-    private void setItems() {
-        ingredientsOnDishObservableList.clear();
-        ingredientsOnDishObservableList.addAll(onDishNormalList);
-        ingredientsOnDishTable.setItems(ingredientsOnDishObservableList);
-        availableIngredientsObservableList.clear();
-        availableIngredientsObservableList.addAll(availableNormalList);
-        availableIngredientsTable.setItems(availableIngredientsObservableList);
+    private void sort() {
+        availableIngredientsTable.sort();
     }
 
     public void saveNewDish() {
@@ -184,17 +208,11 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
             }
             if(errors==0) createSuccessPopup();
             else createGenericErrorPopup();
-            handleGoHomebutton();
+            handleGoHomeButton();
         }else{
             createErrorPopup("Verifica i dati inseriti", "Hai lasciato campi vuoti o con un formato sbagliato");
         }
 
-    }
-
-
-
-    @FXML private void handleGoHomebutton(){
-        closePopup(goHomeIV);
     }
 
     private boolean textConstraintsRespected() {
@@ -220,5 +238,14 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
         return errors == 0;
 
     }
+
+     /*
+         Methods
+    */
+
+    @FXML private void handleGoHomeButton(){
+        closePopup(goHomeIV);
+    }
+
 
 }

@@ -204,23 +204,8 @@ public class ControllerMensaAddAllergen extends AbstractController implements In
     }
 
     /*
-        Gui getters
+        Gui getters and setters
     */
-
-    private Person getSelectedPerson() {
-        Person selectedPerson = null;
-        StringPropertyPerson selectedSPPerson = null;
-        if(childTab.isSelected()){
-            if(childTable.getSelectionModel().selectedItemProperty().get() != null)
-                selectedSPPerson = childTable.getSelectionModel().selectedItemProperty().get();
-        }
-        else if(staffTab.isSelected()){
-            if(staffTable.getSelectionModel().selectedItemProperty().get() != null)
-                selectedSPPerson = staffTable.getSelectionModel().selectedItemProperty().get();
-        }
-        if(selectedSPPerson!= null) selectedPerson = selectedSPPerson.toPerson();
-        return selectedPerson;
-    }
 
     private void setAllergicToDoubleClickMethod() {
         allergicToTable.setRowFactory( tv -> {
@@ -247,4 +232,25 @@ public class ControllerMensaAddAllergen extends AbstractController implements In
             return row ;
         });
     }
+
+    public StringPropertyPerson getSelectedStringPropertyPerson() {
+        StringPropertyPerson selectedSPPerson = null;
+        if(childTab.isSelected()){
+            if(childTable.getSelectionModel().selectedItemProperty().get() != null)
+                selectedSPPerson = childTable.getSelectionModel().selectedItemProperty().get();
+        }
+        else if(staffTab.isSelected()){
+            if(staffTable.getSelectionModel().selectedItemProperty().get() != null)
+                selectedSPPerson = staffTable.getSelectionModel().selectedItemProperty().get();
+        }
+        return selectedSPPerson;
+    }
+
+    private Person getSelectedPerson() {
+        StringPropertyPerson selectedSPPerson = getSelectedStringPropertyPerson();
+        Person selectedPerson = null;
+        if(selectedSPPerson!= null) selectedPerson = selectedSPPerson.toPerson();
+        return selectedPerson;
+    }
+
 }

@@ -417,4 +417,24 @@ public class ServerRMI extends UnicastRemoteObject implements RemoteServerInterf
             return null;
         }
     }
+
+    @Override
+    public List<Child> selectIntolerantsChildrenForMenuFromDbExecution(Menu.MenuTypeFlag codMenu) throws RemoteException {
+        try {
+            return DMLCommandExecutor.getInstance().selectIntolerantsChildrenForMenuFromDb(codMenu);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Staff> selectIntolerantsWorkersForMenuFromDbExecution(Menu.MenuTypeFlag codMenu) throws RemoteException {
+        try {
+            return DMLCommandExecutor.getInstance().selectIntolerantsWorkersForMenuFromDb(codMenu);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

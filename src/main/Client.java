@@ -233,6 +233,11 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
         return session.insertPersonDailyPresenceIntoDb(codF);
     }
 
+    public List<Staff> clientExtractIntolerantStaffToMenu(Menu.MenuTypeFlag selectedMenu) {
+        return session.extractIntolerantsWorkersForMenuFromDb(selectedMenu);
+    }
 
-
+    public List<Child> clientExtractIntolerantChildrenToMenu(Menu.MenuTypeFlag selectedMenu) {
+        return session.extractIntolerantsChildrenForMenuFromDb(selectedMenu);
+    }
 }

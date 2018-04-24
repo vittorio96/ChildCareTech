@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import main.NormalClasses.Gite.Bus;
@@ -14,16 +15,28 @@ import main.controllers.AbstractController;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerMensaAddIngredient extends AbstractController implements Initializable {
-    @FXML TextField ingredientNameTextField;
-    @FXML Button saveButton;
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+public class ControllerMensaAddIngredient extends AbstractController {
 
-    }
+    /*
+        GUI nodes
+   */
 
+    @FXML private TextField ingredientNameTextField;
+    @FXML private ImageView goHomeImageView;
+    @FXML private Button saveButton;
 
-    public void handleSaveButton(ActionEvent event) {
+    /*
+        GUI constants
+   */
+
+    private final String ERRORCSS = "-fx-text-box-border: red ; -fx-focus-color: red ;";
+    private final String NORMALCSS ="-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
+
+    /*
+        Methods
+   */
+
+    @FXML private void handleSaveButton() {
         if(textConstraintsRespected()){
             boolean success = CLIENT.clientInsertIngredientIntoDb(ingredientNameTextField.getText().toUpperCase());
             try {
@@ -42,26 +55,27 @@ public class ControllerMensaAddIngredient extends AbstractController implements 
     }
 
     @FXML private void handleGoHomebutton(){
-        //use a generic button
-        closePopup(saveButton);
+        closePopup(goHomeImageView);
     }
 
+    /*
+        Utils
+   */
+
     private boolean textConstraintsRespected() {
-        final int LICENSEPLATELENGTH = 7;
-        String errorCss = "-fx-text-box-border: red ; -fx-focus-color: red ;";
-        String normalCss = "-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
         int errors = 0;
-
-        if(ingredientNameTextField.getText().length() == 0){
-            ingredientNameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            ingredientNameTextField.setStyle(normalCss);
-        }
-
-
-
+        errors+= textFieldConstraintsRespected(ingredientNameTextField) ? 0:1;
         return errors == 0;
 
+    }
+
+    private boolean textFieldConstraintsRespected(TextField textField) {
+        if(textField.getText().length() == 0){
+            textField.setStyle(ERRORCSS);
+            return false;
+        }else{
+            textField.setStyle(NORMALCSS);
+            return true;
+        }
     }
 }

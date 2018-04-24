@@ -934,6 +934,40 @@ public class SocketMode implements SessionMode {
         }
     }
 
+    @Override
+    public List<Child> extractIntolerantsChildrenForMenuFromDb(Menu.MenuTypeFlag codMenu) {
+        try {
+            socketObjectOut.writeObject("cmd_selectIntolerantsChildrenForMenu");
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(codMenu);
+            socketObjectOut.flush();
+
+            return (List<Child>)socketObjectIn.readObject();//Attesa bloccante
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    @Override
+    public List<Staff> extractIntolerantsWorkersForMenuFromDb(Menu.MenuTypeFlag codMenu) {
+        try {
+            socketObjectOut.writeObject("cmd_selectIntolerantsWorkersForMenu");
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(codMenu);
+            socketObjectOut.flush();
+
+            return (List<Staff>)socketObjectIn.readObject();//Attesa bloccante
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
+
     //Main method to support testing without GUI
      /*public static void main(String[] args){
          Client c = null;
@@ -947,7 +981,6 @@ public class SocketMode implements SessionMode {
              e.printStackTrace();
          }
          SessionMode session = new SocketMode(c);
-
 
          session.disconnect();
      }*/

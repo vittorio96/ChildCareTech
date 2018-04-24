@@ -116,4 +116,7 @@ public interface SessionMode {
 
     public List<String> extractNotUntoleratedIngredientsForPersonFromDb(Person p);
 
+    public List<Child> extractIntolerantsChildrenForMenuFromDb(Menu.MenuTypeFlag codMenu);
+
+    public List<Staff> extractIntolerantsWorkersForMenuFromDb(Menu.MenuTypeFlag codMenu);
 }
