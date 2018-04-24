@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import main.User;
 import main.controllers.AbstractController;
+import main.controllers.AbstractStageController;
 import main.qrReader.QRReader;
 import main.qrReader.WebcamQRReader;
 
@@ -24,7 +25,7 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.concurrent.FutureTask;
 
-public class ControllerMainAccessi extends AbstractController implements Initializable {
+public class ControllerMainAccessi extends AbstractStageController implements Initializable {
 
     /*
         Buttons & Initialization

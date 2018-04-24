@@ -15,12 +15,13 @@ import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.StringPropertyClasses.Mensa.StringPropertyIngredient;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerMensaConflicts extends AbstractController implements Initializable {
+public class ControllerMensaConflicts extends AbstractPopupController implements Initializable {
 
     /*
         Tables
@@ -179,6 +180,6 @@ public class ControllerMensaConflicts extends AbstractController implements Init
     */
 
     public void closeCurrentPopup() {
-        closePopup(closeImageView);
+        close(closeImageView);
     }
 }

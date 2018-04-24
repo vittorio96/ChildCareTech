@@ -15,6 +15,7 @@ import main.NormalClasses.Gite.BusAssociation;
 import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.StringPropertyClasses.Gite.StringPropertyBus;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopOverController;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerGiteRemoveChildren extends AbstractController implements Initializable {
+public class ControllerGiteRemoveChildren extends AbstractPopOverController implements Initializable {
 
     //Buttons
     @FXML private Button genericButton;
@@ -79,10 +80,7 @@ public class ControllerGiteRemoveChildren extends AbstractController implements 
     }
 
     @FXML private void handleGoHomebutton(){
-        //use a generic button
-        /*Stage stage = (Stage) genericButton.getScene().getWindow();
-        stage.close();*/
-        hidePopOver(genericButton);
+        close(genericButton);
     }
 
 

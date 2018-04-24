@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import main.Client;
 import main.User;
 import main.controllers.AbstractController;
+import main.controllers.AbstractStageController;
 
 
 import java.io.IOException;
@@ -20,7 +21,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class ControllerLogin extends AbstractController implements Initializable {
+public class ControllerLogin extends AbstractStageController implements Initializable {
 
     /*
        Static

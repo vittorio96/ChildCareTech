@@ -12,6 +12,7 @@ import javafx.util.StringConverter;
 import main.NormalClasses.Gite.Bus;
 import main.NormalClasses.Gite.Trip;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -19,7 +20,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class ControllerGiteAddTrip extends AbstractController implements Initializable {
+public class ControllerGiteAddTrip extends AbstractPopupController implements Initializable {
     private final String pattern = "dd/MM/yyyy";
 
     //Tasti
@@ -122,6 +123,7 @@ public class ControllerGiteAddTrip extends AbstractController implements Initial
 
         }
         else{
+            createErrorPopup("Verifica i dati inseriti ", "Hai lasciato campi vuoti o con un formato sbagliato");
             Alert alert2 = new Alert(Alert.AlertType.ERROR);
             alert2.setTitle("Errore");
             alert2.setHeaderText("Verifica i dati inseriti ");
@@ -133,51 +135,14 @@ public class ControllerGiteAddTrip extends AbstractController implements Initial
 
     private boolean textConstraintsRespected() {
         final int LICENSEPLATELENGTH = 7;
-        String errorCss = "-fx-text-box-border: red ; -fx-focus-color: red ;";
-        String normalCss = "-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
         int errors = 0;
 
-        if(tripNameTextField.getText().length() == 0){
-            tripNameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            tripNameTextField.setStyle(normalCss);
-        }
-
-        if(tripOriginTextField.getText().length() == 0){
-            tripOriginTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            tripOriginTextField.setStyle(normalCss);
-        }
-
-        if(dateOfDepartureDatePicker.getValue() == null){
-            dateOfDepartureDatePicker.setStyle("-fx-border-color: red ; -fx-focus-color: #81cee9 ;");
-            errors++;
-        }else {
-            dateOfDepartureDatePicker.setStyle("-fx-border-color: transparent ; -fx-focus-color: transparent ;");
-        }
-
-        if(tripDestinationTextField.getText().length() == 0){
-            tripDestinationTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            tripDestinationTextField.setStyle(normalCss);
-        }
-
-        if(nomeAutotrasportatoreTextField.getText().length() == 0){
-            nomeAutotrasportatoreTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            nomeAutotrasportatoreTextField.setStyle(normalCss);
-        }
-
-        if(targaAutobusTextField.getText().length()!= LICENSEPLATELENGTH){
-            targaAutobusTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            targaAutobusTextField.setStyle(normalCss);
-        }
+        errors+= textFieldConstraintsRespected(tripNameTextField) ? 0:1;
+        errors+= textFieldConstraintsRespected(tripOriginTextField) ? 0:1;
+        errors+= textFieldConstraintsRespected(tripDestinationTextField) ? 0:1;
+        errors+= textFieldConstraintsRespected(nomeAutotrasportatoreTextField) ? 0:1;
+        errors+= textFieldLengthRespected(targaAutobusTextField, LICENSEPLATELENGTH) ? 0:1;
+        errors+= datePickerDateSelected(dateOfDepartureDatePicker) ? 0:1;
 
         return errors == 0;
 

@@ -11,6 +11,7 @@ import javafx.util.StringConverter;
 import main.NormalClasses.Anagrafica.Staff;
 import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -18,14 +19,10 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerAnagraficaManageStaff extends AbstractController implements Initializable {
+public class ControllerAnagraficaManageStaff extends AbstractPopupController implements Initializable {
 
     //main list
     private ObservableList<StringPropertyStaff> staffObservableList = FXCollections.observableArrayList();
-
-    //Utilities
-    private final String pattern = "dd/MM/yyyy";
-    private final String inputPattern = "yyyy-MM-dd";
 
     //Tabella
     @FXML private TableView<StringPropertyStaff> staffTable;
@@ -54,7 +51,7 @@ public class ControllerAnagraficaManageStaff extends AbstractController implemen
         birthdayDatePicker.setShowWeekNumbers(false);
         birthdayDatePicker.setPromptText("gg/mm/aaaa");
         birthdayDatePicker.setConverter(new StringConverter<LocalDate>() {
-            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(USERDATEPATTERN);
 
             @Override
             public String toString(LocalDate date) {
@@ -98,7 +95,7 @@ public class ControllerAnagraficaManageStaff extends AbstractController implemen
             surnameTextField.setText(staff.getCognome());
             codFisTextField.setText(staff.getCodiceFiscale());
             String dateValue = staff.getDataNascita();
-            DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern(inputPattern);
+            DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern(DBDATEPATTERN);
             birthdayDatePicker.setValue(LocalDate.parse(dateValue, DATE_FORMAT));
 
         } else {
@@ -188,34 +185,16 @@ public class ControllerAnagraficaManageStaff extends AbstractController implemen
 
     private boolean textConstraintsRespectedForUpdate() {
         final int CODFISLENGTH = 16;
-        String errorCss = "-fx-text-box-border: red ; -fx-focus-color: red ;";
-        String normalCss = "-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
         int errors = 0;
+        errors += textFieldConstraintsRespected(nameTextField) ? 0 : 1;
+        errors += textFieldLengthRespected(codFisTextField, CODFISLENGTH) ? 0 : 1;
+        errors += textFieldConstraintsRespected(surnameTextField) ? 0 : 1;
+        errors += datePickerDateSelected(birthdayDatePicker) ? 0 : 1;
 
-        if(nameTextField.getText().length() == 0){
-            nameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            nameTextField.setStyle(normalCss);
-        }
-
-        if(surnameTextField.getText().length() == 0){
-            surnameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            surnameTextField.setStyle(normalCss);
-        }
-
-        if(birthdayDatePicker.getValue() == null){
-            birthdayDatePicker.setStyle("-fx-border-color: red ; -fx-focus-color: #81cee9 ;");
-            errors++;
-        }else {
-            birthdayDatePicker.setStyle("-fx-border-color: transparent ; -fx-focus-color: transparent ;");
-        }
         return errors == 0;
     }
 
     public void handleGoHomebutton() {
-        closePopup(goHomeImageView);
+        close(goHomeImageView);
     }
 }

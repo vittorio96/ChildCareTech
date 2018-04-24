@@ -21,6 +21,7 @@ import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.StringPropertyClasses.Mensa.StringPropertyIngredient;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
 import org.controlsfx.control.PopOver;
 
 import java.io.IOException;
@@ -30,7 +31,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerMensaAddAllergen extends AbstractController implements Initializable {
+public class ControllerMensaAddAllergen extends AbstractPopupController implements Initializable {
 
     /*
         Tables
@@ -200,7 +201,7 @@ public class ControllerMensaAddAllergen extends AbstractController implements In
     */
 
     @FXML private void handleClosePopup() {
-        closePopup(closeIV);
+        close(closeIV);
     }
 
     /*

@@ -19,7 +19,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerAccessiGeneraQR extends AbstractController implements Initializable {
+public class ControllerAccessiGeneraQR extends AbstractPopupController implements Initializable {
     //main list
     private ObservableList<StringPropertyChild> childObservableList = FXCollections.observableArrayList();
     private ObservableList<StringPropertyStaff> staffObservableList = FXCollections.observableArrayList();
@@ -116,8 +116,7 @@ public class ControllerAccessiGeneraQR extends AbstractController implements Ini
 
 
     @FXML private void handleGoHomebutton(){
-        Stage stage = (Stage) exitButton.getScene().getWindow();
-        stage.close();
+        close(exitButton);
     }
 
 }

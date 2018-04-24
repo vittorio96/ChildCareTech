@@ -12,6 +12,8 @@ import main.NormalClasses.Mensa.Dish;
 import main.NormalClasses.Mensa.Menu;
 import main.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopOverController;
+import main.controllers.AbstractPopupController;
 import org.controlsfx.control.PopOver;
 
 import java.io.IOException;
@@ -22,7 +24,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerMensaManageMenu extends AbstractController implements Initializable {
+public class ControllerMensaManageMenu extends AbstractPopupController implements Initializable {
 
     /*
         Add & Remove Buttons and close button
@@ -54,7 +56,7 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
 
 
     /*
-        Setup
+        Lists
     */
 
     private ObservableList<StringPropertyDish> dishList = FXCollections.observableArrayList();
@@ -125,6 +127,10 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
         giorniComboBox.setOnAction(event -> refreshDishes(getSelectedDay()));
     }
 
+    /*
+        Refresh
+    */
+
     private void refreshDishes(Menu.MenuTypeFlag day) {
 
         clearLists();
@@ -156,9 +162,13 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
         dolceTable.setItems(dolciList);
     }
 
+    /*
+        GuiMethods
+    */
+
     public void goHome() throws IOException {
         handleOpenedPopovers();
-        closePopup(goHomeIV);
+        close(goHomeIV);
     }
 
     private void handleOpenedPopovers() {

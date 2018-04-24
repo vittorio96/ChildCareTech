@@ -17,6 +17,7 @@ import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.StringPropertyClasses.Gite.StringPropertyBus;
 import main.StringPropertyClasses.Gite.StringPropertyTrip;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
 import org.controlsfx.control.PopOver;
 
 import java.io.IOException;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerGiteManageTrip extends AbstractController implements Initializable {
+public class ControllerGiteManageTrip extends AbstractPopupController implements Initializable {
 
     //Utilities
     private final String pattern = "dd/MM/yyyy";

@@ -13,13 +13,14 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import main.User;
 import main.controllers.AbstractController;
+import main.controllers.AbstractStageController;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class ControllerMainGite extends AbstractController implements Initializable {
+public class ControllerMainGite extends AbstractStageController implements Initializable {
 
     /*
         Buttons & Initialization

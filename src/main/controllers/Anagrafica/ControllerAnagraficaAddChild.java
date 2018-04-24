@@ -15,6 +15,8 @@ import main.NormalClasses.Anagrafica.Child;
 import main.NormalClasses.Anagrafica.Contact;
 import main.NormalClasses.Anagrafica.Person;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
+import main.controllers.AbstractStageController;
 import main.qrReader.QRGenerator;
 
 import java.io.IOException;
@@ -23,7 +25,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class ControllerAnagraficaAddChild extends AbstractController implements Initializable {
+public class ControllerAnagraficaAddChild extends AbstractPopupController implements Initializable {
     private final String pattern = "dd/MM/yyyy";
     private final int CODFISLENGTH = 16;
     private int parent2errors = 0;
@@ -164,7 +166,7 @@ public class ControllerAnagraficaAddChild extends AbstractController implements 
                     //Genera QR
                     QRGenerator.GenerateQR(child);
                     createSuccessPopup();
-                    closePopup(goHomeImageView);
+                    close(goHomeImageView);
                 }
             } catch (Exception e){
                 //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
@@ -322,6 +324,6 @@ public class ControllerAnagraficaAddChild extends AbstractController implements 
     public void handleGoHomebutton() {
         if(createConfirmationDialog("Sei sicuro di voler chiudere?",
                 "I dati inseriti non verranno salvati."))
-            closePopup(goHomeImageView);
+            close(goHomeImageView);
     }
 }

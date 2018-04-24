@@ -13,13 +13,14 @@ import main.StringPropertyClasses.Gite.StringPropertyBus;
 import main.StringPropertyClasses.Gite.StringPropertyStop;
 import main.StringPropertyClasses.Gite.StringPropertyTrip;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerGiteAddStop extends AbstractController implements Initializable {
+public class ControllerGiteAddStop extends AbstractPopupController implements Initializable {
     //Tasti e campi
     @FXML private Button saveButton;
     @FXML private TextField luogoTextField;
@@ -49,7 +50,6 @@ public class ControllerGiteAddStop extends AbstractController implements Initial
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        AbstractController.setCurrentController(this);
         nomeGitaColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
         dataGitaColumn.setCellValueFactory(cellData -> cellData.getValue().dataProperty());
 
@@ -116,8 +116,7 @@ public class ControllerGiteAddStop extends AbstractController implements Initial
     }
 
     @FXML private void handleGoHomebutton() throws IOException {
-        //using a generic button, makes no difference
-        closePopup(saveButton);
+        close(saveButton);
     }
 
     @FXML private void deleteStop(){
@@ -170,7 +169,7 @@ public class ControllerGiteAddStop extends AbstractController implements Initial
     }
 
     private boolean textConstraintsRespected() {
-        return luogoTextField.getText()!=null;
+        return textFieldConstraintsRespected(luogoTextField);
     }
 }
 

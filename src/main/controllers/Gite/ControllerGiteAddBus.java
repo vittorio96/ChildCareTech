@@ -13,14 +13,14 @@ import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.StringPropertyClasses.Gite.StringPropertyBus;
 import main.StringPropertyClasses.Gite.StringPropertyTrip;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 
-public class ControllerGiteAddBus extends AbstractController implements Initializable {
-    private final String pattern = "dd/MM/yyyy";
+public class ControllerGiteAddBus extends AbstractPopupController implements Initializable {
 
     //Tasti
     @FXML private Button saveButton;
@@ -94,21 +94,15 @@ public class ControllerGiteAddBus extends AbstractController implements Initiali
 
 
     @FXML private void handleGoHomebutton(){
-        //use a generic button
-        Stage stage = (Stage) saveButton.getScene().getWindow();
-        stage.close();
+        close(saveButton);
     }
 
 
     @FXML private void handleSaveButton(){
             if(textConstraintsRespected()) {
-
                 String targaAutobus = targaAutobusTextField.getText();
                 String nomeAutotrasportatore = nomeAutotrasportatoreTextField.getText();
-                //Integer capienza = Integer.parseInt(capienzaTextField.getText());
-
                 StringPropertyTrip selectedTrip = gita;
-
                 Bus autobus = new Bus(targaAutobus, nomeAutotrasportatore, selectedTrip.getNome(), selectedTrip.getData());
 
                 boolean success = CLIENT.clientInsertBusIntoDb(autobus);
@@ -122,10 +116,9 @@ public class ControllerGiteAddBus extends AbstractController implements Initiali
                 } catch (Exception e){
                     //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
                 }
-
             }
             else{
-                createErrorPopup("Verifica i dati inseriti", "Hai lasciato campi vuoti o con un formato sbagliato");
+                createFieldErrorPopup();
             }
 
     }
@@ -133,36 +126,9 @@ public class ControllerGiteAddBus extends AbstractController implements Initiali
 
     private boolean textConstraintsRespected() {
         final int LICENSEPLATELENGTH = 7;
-        String errorCss = "-fx-text-box-border: red ; -fx-focus-color: red ;";
-        String normalCss = "-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
         int errors = 0;
-
-        if(nomeAutotrasportatoreTextField.getText().length() == 0){
-            nomeAutotrasportatoreTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            nomeAutotrasportatoreTextField.setStyle(normalCss);
-        }
-
-        if(targaAutobusTextField.getText().length()!= LICENSEPLATELENGTH){
-            targaAutobusTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            targaAutobusTextField.setStyle(normalCss);
-        }
-
-        /*if(capienzaTextField.getText().length() == 0){
-            capienzaTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            capienzaTextField.setStyle(normalCss);
-            try{
-                Integer.parseInt(capienzaTextField.getText());
-            }catch (NumberFormatException e){
-                capienzaTextField.setStyle(errorCss);
-                errors++;
-            }
-        }*/
+        errors+= textFieldConstraintsRespected(nomeAutotrasportatoreTextField)? 0:1;
+        errors+= textFieldLengthRespected(targaAutobusTextField, LICENSEPLATELENGTH) ? 0:1;
 
         return errors == 0;
 

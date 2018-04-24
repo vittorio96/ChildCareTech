@@ -11,6 +11,7 @@ import javafx.util.StringConverter;
 import main.NormalClasses.Anagrafica.Child;
 import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -18,7 +19,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerAnagraficaManageChild extends AbstractController implements Initializable {
+public class ControllerAnagraficaManageChild extends AbstractPopupController implements Initializable {
 
     //main list
     private ObservableList<StringPropertyChild> childObservableList = FXCollections.observableArrayList();

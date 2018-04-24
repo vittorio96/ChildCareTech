@@ -5,9 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -19,6 +17,8 @@ import org.controlsfx.control.PopOver;
 
 
 import java.io.IOException;
+import java.util.Date;
+import java.util.List;
 
 public abstract class AbstractController {
     //abstract to avoid instantiation
@@ -27,6 +27,14 @@ public abstract class AbstractController {
     public static AbstractController currentController;
     protected static User loggedUser;
     protected static User.UserTypeFlag userTypeFlag;
+
+    protected static final String ERRORCSS = "-fx-text-box-border: red ; -fx-focus-color: red ;";
+    protected static final String NORMALCSS ="-fx-text-box-border: lightgray ; -fx-focus-color: #81CEE9;";
+    protected static final String TRANSPARENTCSS = "-fx-border-color: transparent ; -fx-focus-color: transparent ;" ;
+
+    protected static final String USERDATEPATTERN = "dd/MM/yyyy";
+    protected static final String DBDATEPATTERN = "yyyy-MM-dd";
+    protected static final String PROMPTDATEPATTERN ="gg/mm/aaaa";
 
     public static void registerClient(Client c){
         CLIENT = c;
@@ -44,20 +52,6 @@ public abstract class AbstractController {
         stage=(Stage) button.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource(fxmlPath));
         Scene scene = new Scene(root, 800, 450);
-        stage.setResizable(false);
-        root.requestFocus();
-        stage.setScene(scene);
-        stage.show();
-
-    }
-
-    public void changeScene(Node node, String fxmlPath, int w, int h) throws IOException {
-
-        Stage stage;
-        Parent root;
-        stage=(Stage) node.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource(fxmlPath));
-        Scene scene = new Scene(root, w, h);
         stage.setResizable(false);
         root.requestFocus();
         stage.setScene(scene);
@@ -93,8 +87,8 @@ public abstract class AbstractController {
         dialogStage.showAndWait();
     }
 
-    public void goHome(Button button) throws IOException {
-        changeScene(button,"resources/fxml/splashscreen.fxml");
+    public void createFieldErrorPopup(){
+        createErrorPopup("Verifica i dati inseriti", "Hai lasciato campi vuoti o con un formato sbagliato");
     }
 
     public void createErrorPopup(String headerText, String contentText){
@@ -128,11 +122,6 @@ public abstract class AbstractController {
         alert2.showAndWait();
     }
 
-    public void closePopup(Node button){
-        Stage stage = (Stage) button.getScene().getWindow();
-        stage.close();
-    }
-
     public void openPopOver(String fxmlPath, PopOver.ArrowLocation arrowLocation, Node owner) throws IOException {
         PopOver popOver = new PopOver();
         popOver.setArrowLocation(arrowLocation);
@@ -162,10 +151,6 @@ public abstract class AbstractController {
         return popOver;
     }
 
-    public void hidePopOver(Node node){
-        PopOver stage = (PopOver) node.getScene().getWindow();
-        stage.hide();
-    }
 
     public void changeMenu(String fxmlPath, AnchorPane lateralPane) throws IOException {
         AnchorPane anchorPane = FXMLLoader.load(getClass().getResource(fxmlPath));
@@ -195,6 +180,65 @@ public abstract class AbstractController {
 
         return alert2.getResult() == buttonTypeTwo;
     }
+
+    public boolean textFieldConstraintsRespected(TextField textField) {
+        if(textField.getText().length() == 0){
+            textField.setStyle(ERRORCSS);
+            return false;
+        }else{
+            textField.setStyle(NORMALCSS);
+            return true;
+        }
+    }
+
+    public boolean textFieldLengthRespected(TextField textField, Integer size) {
+        if(textField.getText().length() == size){
+            textField.setStyle(ERRORCSS);
+            return false;
+        }else{
+            textField.setStyle(NORMALCSS);
+            return true;
+        }
+    }
+
+    public boolean datePickerDateSelected(DatePicker datePicker) {
+        if(datePicker.getValue() == null){
+            datePicker.setStyle(ERRORCSS);
+            return false;
+        }else {
+            datePicker.setStyle(TRANSPARENTCSS);
+            return true;
+        }
+    }
+
+    public boolean listSizeConstraintsRespected(List list) {
+        if(list.size()<1){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean comboBoxConstraintsRespected(ComboBox comboBox){
+        if(comboBox.getSelectionModel().isEmpty()){
+            comboBox.setStyle(ERRORCSS);
+            return false;
+        }else {
+            comboBox.setStyle(TRANSPARENTCSS);
+            return true;
+        }
+    }
+
+    public boolean choiceBoxConstraintsRespected(ChoiceBox choiceBox){
+        if(choiceBox.getSelectionModel().isEmpty()){
+            choiceBox.setStyle(ERRORCSS);
+            return false;
+        }else {
+            choiceBox.setStyle(TRANSPARENTCSS);
+            return true;
+        }
+    }
+
+    public abstract void close(Node node);
 
 
 

@@ -11,13 +11,14 @@ import javafx.util.StringConverter;
 import main.NormalClasses.Gite.Trip;
 import main.StringPropertyClasses.Gite.StringPropertyTrip;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopOverController;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class ControllerGiteEditTrip extends AbstractController implements Initializable {
+public class ControllerGiteEditTrip extends AbstractPopOverController implements Initializable {
 
     //Static
     private static StringPropertyTrip trip;
@@ -25,8 +26,6 @@ public class ControllerGiteEditTrip extends AbstractController implements Initia
     //Tasti
     @FXML
     private Button saveButton;
-    private final String pattern = "dd/MM/yyyy";
-    private final String inputPattern = "yyyy-MM-dd";
 
     //Campi
     @FXML private TextField tripNameTextField;
@@ -42,9 +41,9 @@ public class ControllerGiteEditTrip extends AbstractController implements Initia
     public void initialize(URL location, ResourceBundle resources) {
 
         dateOfDepartureDatePicker.setShowWeekNumbers(false);
-        dateOfDepartureDatePicker.setPromptText("gg/mm/aaaa");
+        dateOfDepartureDatePicker.setPromptText(PROMPTDATEPATTERN);
         dateOfDepartureDatePicker.setConverter(new StringConverter<LocalDate>() {
-            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(USERDATEPATTERN);
 
             @Override
             public String toString(LocalDate date) {
@@ -69,30 +68,20 @@ public class ControllerGiteEditTrip extends AbstractController implements Initia
             tripOriginTextField.setText(trip.getPartenza());
             tripDestinationTextField.setText(trip.getDestinazione());
             String dateValue = trip.getData();
-            DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern(inputPattern);
+            DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern(DBDATEPATTERN);
             dateOfDepartureDatePicker.setValue(LocalDate.parse(dateValue, DATE_FORMAT));
         }
     }
 
 
     @FXML private void handleGoHomebutton(){
-        /*Stage stage = (Stage) saveButton.getScene().getWindow();
-        stage.close();*/
-        hidePopOver(saveButton);
+        close(saveButton);
     }
 
     @FXML public void handleSaveButton(ActionEvent event) {
 
         if(textConstraintsRespected()){
-            //Creazione Trip
-            String nomeGita = tripNameTextField.getText();
-            String partenza = tripOriginTextField.getText();
-            String dataGita = dateOfDepartureDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-            String destinazione = tripDestinationTextField.getText();
-
-            Trip newgita = new Trip(nomeGita, partenza, destinazione, dataGita);
-
-            boolean success = CLIENT.clientUpdateTripIntoDb(new Trip(trip), newgita);
+            boolean success = CLIENT.clientUpdateTripIntoDb(new Trip(trip), getNewTrip());
             try {
                 if (!success) createErrorPopup("Errore di connessione", "Riprova più tardi");
                 else {
@@ -109,40 +98,28 @@ public class ControllerGiteEditTrip extends AbstractController implements Initia
 
     }
 
+    private Trip getNewTrip() {
+        String nomeGita = tripNameTextField.getText();
+        String partenza = tripOriginTextField.getText();
+        String dataGita = dateOfDepartureDatePicker.getValue().format(DateTimeFormatter.ofPattern(DBDATEPATTERN));
+        String destinazione = tripDestinationTextField.getText();
+
+        Trip newgita = new Trip(nomeGita, partenza, destinazione, dataGita);
+        return newgita;
+    }
+
     private boolean textConstraintsRespected() {
-        String errorCss = "-fx-text-box-border: red ; -fx-focus-color: red ;";
-        String normalCss = "-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
+
         int errors = 0;
-
-        if(tripNameTextField.getText().length() == 0){
-            tripNameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            tripNameTextField.setStyle(normalCss);
-        }
-
-        if(tripOriginTextField.getText().length() == 0){
-            tripOriginTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            tripOriginTextField.setStyle(normalCss);
-        }
-
-        if(dateOfDepartureDatePicker.getValue() == null){
-            dateOfDepartureDatePicker.setStyle("-fx-border-color: red ; -fx-focus-color: #81cee9 ;");
-            errors++;
-        }else {
-            dateOfDepartureDatePicker.setStyle("-fx-border-color: transparent ; -fx-focus-color: transparent ;");
-        }
-
-        if(tripDestinationTextField.getText().length() == 0){
-            tripDestinationTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            tripDestinationTextField.setStyle(normalCss);
-        }
+        errors+= textFieldConstraintsRespected(tripNameTextField) ? 0:1;
+        errors+= textFieldConstraintsRespected(tripOriginTextField) ? 0:1;
+        errors+= textFieldConstraintsRespected(tripDestinationTextField) ? 0:1;
+        errors+= datePickerDateSelected(dateOfDepartureDatePicker) ? 0:1;
 
         return errors == 0;
 
     }
+
+    //TODO isStringProperty Interface
+    //TODO isNormal Interface
 }

@@ -16,6 +16,7 @@ import main.NormalClasses.Mensa.Dish;
 import main.NormalClasses.Mensa.Menu;
 import main.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
 import org.controlsfx.control.PopOver;
 
 import java.io.IOException;
@@ -23,7 +24,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerMensaViewDishes extends AbstractController implements Initializable {
+public class ControllerMensaViewDishes extends AbstractPopupController implements Initializable {
 
     /*
         Static
@@ -130,7 +131,7 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
 
 
     public void goHome() {
-        closePopup(goHomeIV);
+        close(goHomeIV);
     }
 
     public void addNewDish() throws IOException {

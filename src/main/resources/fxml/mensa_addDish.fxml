@@ -79,7 +79,7 @@
                         <Font name="Futura Medium" size="15.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="dishNameTextField" maxWidth="257.0" prefHeight="27.0" prefWidth="257.0" stylesheets="@../CSS/textfield.css" GridPane.columnIndex="1" />
+                  <TextField fx:id="dishNameTextField" maxWidth="257.0" prefHeight="27.0" prefWidth="257.0" GridPane.columnIndex="1" />
                </children>
             </GridPane>
             <ImageView fitHeight="123.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.valignment="TOP">
@@ -101,7 +101,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <TextField fx:id="searchFieldAvailable" maxWidth="240.0" prefHeight="27.0" prefWidth="237.0" stylesheets="@../CSS/textfield.css" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                  <TextField fx:id="searchFieldAvailable" maxWidth="240.0" prefHeight="27.0" prefWidth="237.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
                   <Label prefHeight="38.0" prefWidth="105.0" text="Cerca ingrediente:" textFill="#717e93" wrapText="true" GridPane.halignment="RIGHT">
                      <font>
                         <Font name="Futura Medium" size="15.0" />

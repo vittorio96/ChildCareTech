@@ -14,12 +14,13 @@ import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.StringPropertyClasses.Gite.StringPropertyBus;
 import main.StringPropertyClasses.Gite.StringPropertyTrip;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopOverController;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerGiteEditBus extends AbstractController implements Initializable {
+public class ControllerGiteEditBus extends AbstractPopOverController implements Initializable {
 
     public static StringPropertyBus bus;
     @FXML private Button saveButton;
@@ -119,10 +120,7 @@ public class ControllerGiteEditBus extends AbstractController implements Initial
     }
 
     @FXML private void handleGoHomebutton(){
-        //use a generic button
-        /*Stage stage = (Stage) saveButton.getScene().getWindow();
-        stage.close();*/
-        hidePopOver(saveButton);
+        close(saveButton);
     }
 
 

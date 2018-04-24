@@ -17,6 +17,7 @@ import main.StringPropertyClasses.Gite.StringPropertyStop;
 import main.StringPropertyClasses.Gite.StringPropertyTrip;
 import main.StringPropertyClasses.Gite.StringPropertyStopPresence;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
-public class ControllerGiteManagePresenzeTappe extends AbstractController implements Initializable {
+public class ControllerGiteManagePresenzeTappe extends AbstractPopupController implements Initializable {
 
     //Utilities
     private final String pattern = "dd/MM/yyyy";

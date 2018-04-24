@@ -11,13 +11,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import main.User;
 import main.controllers.AbstractController;
+import main.controllers.AbstractStageController;
 import org.controlsfx.control.PopOver;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerMainMensa extends AbstractController implements Initializable {
+public class ControllerMainMensa extends AbstractStageController implements Initializable {
 
     /*
         Buttons & Initialization

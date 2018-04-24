@@ -15,6 +15,7 @@ import main.NormalClasses.Anagrafica.Contact;
 import main.NormalClasses.Anagrafica.Person;
 import main.NormalClasses.Anagrafica.Supplier;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
-public class ControllerAnagraficaAddContact extends AbstractController implements Initializable {
+public class ControllerAnagraficaAddContact extends AbstractPopupController implements Initializable {
 
 
     //fornitore
@@ -93,7 +94,7 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
                     alert2.setHeaderText("Successo! ");
                     alert2.setContentText("Dati inseriti correttamente nel database.\n" + "Sarai ridiretto al menu");
                     alert2.showAndWait();
-                    closePopup(goHomeImageView);
+                    close(goHomeImageView);
                 }
             } catch (Exception e){
                 //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
@@ -136,7 +137,7 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
                     alert2.setHeaderText("Successo! ");
                     alert2.setContentText("Dati inseriti correttamente nel database.\n" + "Sarai ridiretto al menu");
                     alert2.showAndWait();
-                    closePopup(goHomeImageView);
+                    close(goHomeImageView);
                 }
             } catch (Exception e){
                 //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
@@ -264,7 +265,7 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
     public void handleGoHomebutton(MouseEvent mouseEvent) {
         if(createConfirmationDialog("Sei sicuro di voler chiudere?",
                 "I dati inseriti non verranno salvati."))
-            closePopup(goHomeImageView);
+            close(goHomeImageView);
     }
 
     public void handleParentNextButtonAction(ActionEvent event) {
@@ -284,7 +285,7 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
 
                 } else {
                     createSuccessPopup();
-                    closePopup(goHomeImageView);
+                    close(goHomeImageView);
                 }
             } catch (Exception e){
                 //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.

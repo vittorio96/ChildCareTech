@@ -14,13 +14,14 @@ import main.NormalClasses.Mensa.Menu;
 import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
 
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerMensaTodaysConflicts extends AbstractController implements Initializable {
+public class ControllerMensaTodaysConflicts extends AbstractPopupController implements Initializable {
 
     /*
         Tables
@@ -139,7 +140,7 @@ public class ControllerMensaTodaysConflicts extends AbstractController implement
     }
 
     @FXML public void closeCurrentPopup() {
-        closePopup(closeImageView);
+        close(closeImageView);
     }
 
 }

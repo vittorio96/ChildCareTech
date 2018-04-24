@@ -12,6 +12,7 @@ import main.NormalClasses.Anagrafica.Person;
 import main.NormalClasses.Anagrafica.Staff;
 import main.User;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
 import main.qrReader.QRGenerator;
 
 import java.io.IOException;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
-public class ControllerAnagraficaAddStaff extends AbstractController implements Initializable {
+public class ControllerAnagraficaAddStaff extends AbstractPopupController implements Initializable {
 
     private final String pattern = "dd/MM/yyyy";
     private final int CODFISLENGTH = 16;
@@ -40,16 +41,20 @@ public class ControllerAnagraficaAddStaff extends AbstractController implements 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        textFieldSetup();
+        choiceBoxSetup();
+        datePickerSetup();
+    }
+
+    private void textFieldSetup() {
         codFisTextField.textProperty().addListener((ov, oldValue, newValue) -> {
             codFisTextField.setText(newValue.toUpperCase());
         });
+    }
 
-        AbstractController.setCurrentController(this);
-        ArrayList elements = new ArrayList<>(Arrays.asList(User.UserTypeFlag.values()));
-        userTypeDropList.setItems(FXCollections.observableArrayList(elements));
-
+    private void datePickerSetup() {
         birthdayDatePicker.setShowWeekNumbers(false);
-        birthdayDatePicker.setPromptText("gg/mm/aaaa");
+        birthdayDatePicker.setPromptText(PROMPTDATEPATTERN);
 
         birthdayDatePicker.setConverter(new StringConverter<LocalDate>() {
             DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
@@ -74,41 +79,23 @@ public class ControllerAnagraficaAddStaff extends AbstractController implements 
         });
     }
 
+    private void choiceBoxSetup() {
+        ArrayList elements = new ArrayList<>(Arrays.asList(User.UserTypeFlag.values()));
+        userTypeDropList.setItems(FXCollections.observableArrayList(elements));
+    }
+
     @FXML protected void handleNextButtonAction(ActionEvent event) throws IOException{
 
         if(textConstraintsRespected()) {
-            String nome = nameTextField.getText();
-            String cognome = surnameTextField.getText();
-            String codFis = codFisTextField.getText();
-            String username = usernameTextField.getText();
-            String password = passwordTextField.getText();
-            String dataN = birthdayDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-
-            User.UserTypeFlag typeFlag =
-                    User.UserTypeFlag.valueOf(userTypeDropList.getSelectionModel().getSelectedItem().toString());
-
-
-            Person staff = new Staff(codFis, nome, cognome, username, password, dataN, typeFlag);
-
+            Staff staff = createNewStaff();
             boolean success = CLIENT.clientInsertIntoDb(staff);
             try {
                 if (!success) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.getDialogPane().getScene().getStylesheets().add("/main/resources/CSS/dialogAlertError.css");
-                    alert.setTitle("Errore");
-                    alert.setHeaderText("Verifica i dati inseriti ");
-                    alert.setContentText("Codice FIscale già esistente o username già preso");
-                    alert.showAndWait();
+                    createErrorPopup("Verifica i dati inseriti ", "Codice FIscale già esistente o username già preso");
                 } else {
                     //Genera QR
                     QRGenerator.GenerateQR(staff);
-
-                    Alert alert2 = new Alert(Alert.AlertType.ERROR); //truly a success
-                    alert2.setGraphic(new ImageView(this.getClass().getResource("/main/resources/images/checkmark.png").toString()));
-                    alert2.setTitle("Successo");
-                    alert2.setHeaderText("Successo! ");
-                    alert2.setContentText("Dati inseriti correttamente nel database.\n" + "Sarai ridiretto al menu");
-                    alert2.showAndWait();
+                    createSuccessPopup();
                 }
             } catch (Exception e){
                 //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
@@ -116,75 +103,41 @@ public class ControllerAnagraficaAddStaff extends AbstractController implements 
 
         }
         else{
-            Alert alert2 = new Alert(Alert.AlertType.ERROR);
-            alert2.setTitle("Errore");
-            alert2.setHeaderText("Verifica i dati inseriti ");
-            alert2.setContentText("Hai lasciato campi vuoti o con un formato sbagliato");
-            alert2.showAndWait();
+            createFieldErrorPopup();
         }
     }
 
     private boolean textConstraintsRespected() {
-        String errorCss = "-fx-text-box-border: red ; -fx-focus-color: red ;";
-        String normalCss = "-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
         int errors = 0;
-        if(codFisTextField.getText().length()!= CODFISLENGTH){
-            codFisTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            codFisTextField.setStyle(normalCss);
-        }
-
-        if(nameTextField.getText().length() == 0){
-            nameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            nameTextField.setStyle(normalCss);
-        }
-
-        if(surnameTextField.getText().length() == 0){
-            System.out.println(surnameTextField.getText().length());
-            surnameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            System.out.println(surnameTextField.getText().length());
-            surnameTextField.setStyle(normalCss);
-        }
-
-        if(usernameTextField.getText().length() == 0){
-            usernameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            usernameTextField.setStyle(normalCss);
-        }
-
-        if(passwordTextField.getText().length() == 0){
-            passwordTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            passwordTextField.setStyle(normalCss);
-        }
-
-        if(birthdayDatePicker.getValue() == null){
-            birthdayDatePicker.setStyle("-fx-border-color: red ; -fx-focus-color: #81cee9 ;");
-            errors++;
-        }else {
-            birthdayDatePicker.setStyle("-fx-border-color: transparent ; -fx-focus-color: transparent ;");
-        }
-
-        if(userTypeDropList.getSelectionModel().isEmpty()){
-            userTypeDropList.setStyle("-fx-border-color: red ; -fx-focus-color: #81cee9 ;");
-        }else {
-            userTypeDropList.setStyle("-fx-border-color: transparent ; -fx-focus-color: transparent ;");
-        }
+        errors+= textFieldLengthRespected(codFisTextField, CODFISLENGTH) ? 0:1;
+        errors+= textFieldConstraintsRespected(nameTextField) ? 0:1;
+        errors+= textFieldConstraintsRespected(surnameTextField) ? 0:1;
+        errors+= textFieldConstraintsRespected(usernameTextField) ? 0:1;
+        errors+= textFieldConstraintsRespected(passwordTextField) ? 0:1;
+        errors+= datePickerDateSelected(birthdayDatePicker)? 0:1;
+        errors+= choiceBoxConstraintsRespected(userTypeDropList) ? 0:1;
 
         return errors == 0;
 
     }
 
+    private Staff createNewStaff(){
+        String nome = nameTextField.getText();
+        String cognome = surnameTextField.getText();
+        String codFis = codFisTextField.getText();
+        String username = usernameTextField.getText();
+        String password = passwordTextField.getText();
+        String dataN = birthdayDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        User.UserTypeFlag typeFlag =
+                User.UserTypeFlag.valueOf(userTypeDropList.getSelectionModel().getSelectedItem().toString());
+
+
+        return new Staff(codFis, nome, cognome, username, password, dataN, typeFlag);
+    }
+
     public void handleGoHomebutton() {
         if(createConfirmationDialog("Sei sicuro di voler chiudere?",
                 "I dati inseriti non verranno salvati."))
-            closePopup(goHomeImageView);
+            close(goHomeImageView);
     }
 }

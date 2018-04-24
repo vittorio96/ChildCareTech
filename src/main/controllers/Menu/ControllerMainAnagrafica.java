@@ -16,13 +16,14 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import main.User;
 import main.controllers.AbstractController;
+import main.controllers.AbstractStageController;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-public class ControllerMainAnagrafica extends AbstractController implements Initializable {
+public class ControllerMainAnagrafica extends AbstractStageController implements Initializable {
 
     /*
         Buttons & Initialization

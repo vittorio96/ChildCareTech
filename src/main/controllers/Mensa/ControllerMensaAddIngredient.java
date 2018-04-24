@@ -1,21 +1,13 @@
 package main.controllers.Mensa;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import main.NormalClasses.Gite.Bus;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopOverController;
 
-
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class ControllerMensaAddIngredient extends AbstractController {
+public class ControllerMensaAddIngredient extends AbstractPopOverController{
 
     /*
         GUI nodes
@@ -24,13 +16,6 @@ public class ControllerMensaAddIngredient extends AbstractController {
     @FXML private TextField ingredientNameTextField;
     @FXML private ImageView goHomeImageView;
     @FXML private Button saveButton;
-
-    /*
-        GUI constants
-   */
-
-    private final String ERRORCSS = "-fx-text-box-border: red ; -fx-focus-color: red ;";
-    private final String NORMALCSS ="-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
 
     /*
         Methods
@@ -55,7 +40,7 @@ public class ControllerMensaAddIngredient extends AbstractController {
     }
 
     @FXML private void handleGoHomebutton(){
-        closePopup(goHomeImageView);
+        close(goHomeImageView);
     }
 
     /*
@@ -69,13 +54,4 @@ public class ControllerMensaAddIngredient extends AbstractController {
 
     }
 
-    private boolean textFieldConstraintsRespected(TextField textField) {
-        if(textField.getText().length() == 0){
-            textField.setStyle(ERRORCSS);
-            return false;
-        }else{
-            textField.setStyle(NORMALCSS);
-            return true;
-        }
-    }
 }

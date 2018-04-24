@@ -5,32 +5,23 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 import main.NormalClasses.Mensa.Dish;
-import main.NormalClasses.Mensa.Menu;
-import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
-import main.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.StringPropertyClasses.Mensa.StringPropertyIngredient;
 import main.controllers.AbstractController;
-import org.controlsfx.control.PopOver;
+import main.controllers.AbstractPopupController;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerMensaAddDish extends AbstractController implements Initializable {
+public class ControllerMensaAddDish extends AbstractPopupController implements Initializable {
 
     /*
         Tables
@@ -61,8 +52,6 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
         ControllerMensaAddDish.dishType = dishType;
     }
 
-    private final String ERRORCSS = "-fx-text-box-border: red ; -fx-focus-color: red ;";
-    private final String NORMALCSS ="-fx-text-box-border: lightgray ; -fx-focus-color: #81CEE9;";
     /*
          Lists
     */
@@ -219,39 +208,19 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
 
     private boolean textConstraintsRespected() {
         int errors = 0;
-
         errors+= textFieldConstraintsRespected(dishNameTextField) ? 0:1;
         errors+= listSizeConstraintsRespected(onDishNormalList) ? 0:1;
         errors+= (dishType != null) ? 0:1;
 
         return errors == 0;
-
     }
-
 
     /*
          Gui Methods
     */
 
     @FXML private void handleGoHomeButton(){
-        closePopup(goHomeIV);
-    }
-
-    private boolean textFieldConstraintsRespected(TextField textField) {
-        if(textField.getText().length() == 0){
-            textField.setStyle(ERRORCSS);
-            return false;
-        }else{
-            textField.setStyle(NORMALCSS);
-            return true;
-        }
-    }
-
-    private boolean listSizeConstraintsRespected(List list) {
-        if(list.size()<1){
-            return false;
-        }
-        return true;
+        close(goHomeIV);
     }
 
 

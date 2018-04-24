@@ -11,13 +11,14 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import main.User;
 import main.controllers.AbstractController;
+import main.controllers.AbstractStageController;
 import org.controlsfx.control.PopOver;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerMainMenu extends AbstractController implements Initializable {
+public class ControllerMainMenu extends AbstractStageController implements Initializable {
 
     /*
         Buttons & Initialization
@@ -59,13 +60,15 @@ public class ControllerMainMenu extends AbstractController implements Initializa
         changeMenu("../../resources/fxml/main_anagrafica.fxml",lateralPane);
     }
 
+    @FXML protected void handleAccessiButtonAction(ActionEvent event) throws IOException {
+        changeMenu("../../resources/fxml/main_accessi.fxml",lateralPane);
+    }
+    
     @FXML protected void handleLogoutButtonAction(ActionEvent event) throws IOException {
         changeScene(logoutButton,"../../resources/fxml/login.fxml");
     }
 
-    @FXML protected void handleAccessiButtonAction(ActionEvent event) throws IOException {
-        changeMenu("../../resources/fxml/main_accessi.fxml",lateralPane);
-    }
+
 
     private void setEnabledItems() {
 

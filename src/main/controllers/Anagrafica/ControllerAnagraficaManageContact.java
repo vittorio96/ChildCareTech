@@ -13,6 +13,7 @@ import main.NormalClasses.Anagrafica.Supplier;
 import main.StringPropertyClasses.Anagrafica.StringPropertyContact;
 import main.StringPropertyClasses.Anagrafica.StringPropertySupplier;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopupController;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerAnagraficaManageContact extends AbstractController implements Initializable {
+public class ControllerAnagraficaManageContact extends AbstractPopupController implements Initializable {
 
     //main list
     private ObservableList<StringPropertyContact> parentObservableList = FXCollections.observableArrayList();
@@ -482,7 +483,7 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
     }
 
     public void handleGoHomebutton() {
-        closePopup(goHomeImageView);
+        close(goHomeImageView);
     }
 
 }

@@ -11,13 +11,15 @@ import javafx.scene.image.ImageView;
 import main.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.StringPropertyClasses.Mensa.StringPropertyIngredient;
 import main.controllers.AbstractController;
+import main.controllers.AbstractPopOverController;
+import main.controllers.AbstractPopupController;
 import org.controlsfx.control.PopOver;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerShowIngredientsPopOver extends AbstractController implements Initializable {
+public class ControllerShowIngredientsPopOver extends AbstractPopOverController implements Initializable {
 
     /*
         Static
