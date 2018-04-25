@@ -1,6 +1,5 @@
 package main.controllers.Gite;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -9,12 +8,11 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
-import main.NormalClasses.Gite.Bus;
-import main.NormalClasses.Gite.Trip;
+import main.Classes.NormalClasses.Gite.Bus;
+import main.Classes.NormalClasses.Gite.Trip;
 import main.controllers.AbstractController;
 import main.controllers.AbstractPopupController;
 
-import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -142,7 +140,7 @@ public class ControllerGiteAddTrip extends AbstractPopupController implements In
         errors+= textFieldConstraintsRespected(tripDestinationTextField) ? 0:1;
         errors+= textFieldConstraintsRespected(nomeAutotrasportatoreTextField) ? 0:1;
         errors+= textFieldLengthRespected(targaAutobusTextField, LICENSEPLATELENGTH) ? 0:1;
-        errors+= datePickerDateSelected(dateOfDepartureDatePicker) ? 0:1;
+        errors+= datePickerIsDateSelected(dateOfDepartureDatePicker) ? 0:1;
 
         return errors == 0;
 

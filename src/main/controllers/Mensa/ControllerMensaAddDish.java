@@ -11,9 +11,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import main.NormalClasses.Mensa.Dish;
-import main.StringPropertyClasses.Mensa.StringPropertyIngredient;
-import main.controllers.AbstractController;
+import main.Classes.NormalClasses.Mensa.Dish;
+import main.Classes.StringPropertyClasses.Mensa.StringPropertyIngredient;
 import main.controllers.AbstractPopupController;
 
 import java.net.URL;

@@ -1,13 +1,11 @@
 package main;
-import main.NormalClasses.Anagrafica.*;
-import main.NormalClasses.Gite.*;
-import main.NormalClasses.Mensa.Dish;
-import main.NormalClasses.Mensa.Intolerance;
-import main.NormalClasses.Mensa.Menu;
+import main.Classes.NormalClasses.Anagrafica.*;
+import main.Classes.NormalClasses.Gite.*;
+import main.Classes.NormalClasses.Mensa.Dish;
+import main.Classes.NormalClasses.Mensa.Intolerance;
+import main.Classes.NormalClasses.Mensa.Menu;
 
-import java.net.MalformedURLException;
 import java.rmi.Naming;
-import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.List;
 

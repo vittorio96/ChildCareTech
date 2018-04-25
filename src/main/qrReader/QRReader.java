@@ -14,7 +14,7 @@ import com.google.zxing.Result;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
-import main.NormalClasses.Anagrafica.Child;
+import main.Classes.NormalClasses.Anagrafica.Child;
 
 public class QRReader{
 

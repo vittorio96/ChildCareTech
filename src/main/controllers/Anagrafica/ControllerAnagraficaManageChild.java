@@ -8,9 +8,9 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
-import main.NormalClasses.Anagrafica.Child;
-import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
-import main.controllers.AbstractController;
+import main.Classes.NormalClasses.Anagrafica.Child;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyPerson;
 import main.controllers.AbstractPopupController;
 
 import java.net.URL;
@@ -52,29 +52,7 @@ public class ControllerAnagraficaManageChild extends AbstractPopupController imp
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
         surnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
 
-        birthdayDatePicker.setShowWeekNumbers(false);
-        birthdayDatePicker.setPromptText("gg/mm/aaaa");
-        birthdayDatePicker.setConverter(new StringConverter<LocalDate>() {
-            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
-
-            @Override
-            public String toString(LocalDate date) {
-                if (date != null) {
-                    return dateFormatter.format(date);
-                } else {
-                    return "";
-                }
-            }
-
-            @Override
-            public LocalDate fromString(String string) {
-                if (string != null && !string.isEmpty()) {
-                    return LocalDate.parse(string, dateFormatter);
-                } else {
-                    return null;
-                }
-            }
-        });
+        datePickerStandardInitialize(birthdayDatePicker);
 
         showChildDetails(null);
 
@@ -114,110 +92,67 @@ public class ControllerAnagraficaManageChild extends AbstractPopupController imp
 
 
     @FXML private void handleGoHomebutton(){
-        Stage stage = (Stage) saveChangesButton.getScene().getWindow();
-        stage.close();
+        close(saveChangesButton);
     }
 
     @FXML private void handleDeleteButton(){
 
-        int selectedIndex = childTable.getSelectionModel().getSelectedIndex();
-        if (selectedIndex >= 0) {
-            Alert alert2 = new Alert(Alert.AlertType.CONFIRMATION);
-            ButtonType buttonTypeOne = new ButtonType("No");
-            ButtonType buttonTypeTwo = new ButtonType("Si");
-            alert2.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
-            alert2.setHeaderText("Sei sicuro di voler eliminare?");
-            alert2.setContentText("Una volta fatta la cancellazione è impossibile annullarla ");
-            alert2.showAndWait();
-
-            if (alert2.getResult() == buttonTypeTwo) {
+        if (isAChildSelected()) {
+            if (createConfirmationDialog("Sei sicuro di voler eliminare?",
+                    "Una volta fatta la cancellazione è impossibile annullarla ")) {
 
                 StringPropertyChild selectedChild = childTable.getSelectionModel().getSelectedItem();
-                System.out.println(this.getClass().getSimpleName());
                 boolean success = CLIENT.clientDeleteFromDb("Child", selectedChild.getCodiceFiscale());
                 if (success) {
                     childObservableList.remove(selectedChild);
+                    createSuccessPopup();
                 } else {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.getDialogPane().getScene().getStylesheets().add("/main/resources/CSS/dialogAlertError.css");
-                    alert.setTitle("Errore");
-                    alert.setHeaderText("Errore");
-                    alert.setContentText("Non è stato possibile cancellare il bambino");
-                    alert.showAndWait();
+                    createErrorPopup("Errore","Non è stato possibile cancellare il bambino");
                 }
+
             }
         }else {
-            // Nothing selected.
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("ERRORE");
-            alert.setHeaderText("Non si è selezionato un bambino");
-            alert.setContentText("Seleziona un bambino dalla tabella");
-            alert.showAndWait();
+            createErrorPopup("Non si è selezionato un bambino","Seleziona un bambino dalla tabella");
         }
     }
 
     @FXML private void handleSaveChangesButton(){
 
         if(textConstraintsRespectedForUpdate()){
-            StringPropertyChild selectedChild = childTable.getSelectionModel().getSelectedItem();
-            selectedChild.setNome(nameTextField.getText());
-            selectedChild.setCognome(surnameTextField.getText());
-            selectedChild.setDataNascita(birthdayDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
 
-            //db update
-            boolean success = CLIENT.clientUpdatePersonIntoDb(new Child(selectedChild));
+            boolean success = CLIENT.clientUpdatePersonIntoDb(getSelectedChild().toPerson());
             codFisTextField.setStyle("-fx-background-color: #F4F4F4;");
             if (!success) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.getDialogPane().getScene().getStylesheets().add("/main/resources/CSS/dialogAlertError.css");
-                alert.setTitle("Errore");
-                alert.setHeaderText("Verifica i dati inseriti ");
-                alert.setContentText("Contatto già esistente o cellulare già in Db");
-                alert.showAndWait();
-            } else {
-                Alert alert2 = new Alert(Alert.AlertType.ERROR); //truly a success
-                alert2.setGraphic(new ImageView(this.getClass().getResource("/main/resources/images/checkmark.png").toString()));
-                alert2.setTitle("Successo");
-                alert2.setHeaderText("Successo! ");
-                alert2.setContentText("Dati aggiornati correttamente nel database.\n");
-                alert2.showAndWait();
-            }
+                createErrorPopup("Verifica i dati inseriti ", "Contatto già esistente o cellulare già in Db");
+            } else { createSuccessPopup(); }
 
-        }else{
-            Alert alert2 = new Alert(Alert.AlertType.ERROR);
-            alert2.setTitle("Errore");
-            alert2.setHeaderText("Verifica i dati inseriti ");
-            alert2.setContentText("Hai lasciato campi vuoti o con un formato sbagliato");
-            alert2.showAndWait();
-        }
+        }else{ createFieldErrorPopup(); }
+    }
+
+    private int childErrors() {
+        final int CODFISLENGTH = 16;
+        int childErrors = 0;
+        childErrors+= textFieldLengthRespected(codFisTextField, CODFISLENGTH) ? 0:1;
+        childErrors+= textFieldConstraintsRespected(nameTextField) ? 0:1;
+        childErrors+= textFieldConstraintsRespected(surnameTextField) ? 0:1;
+        childErrors+= datePickerIsDateSelected(birthdayDatePicker) ? 0:1;
+        return childErrors;
     }
 
     private boolean textConstraintsRespectedForUpdate() {
-        final int CODFISLENGTH = 16;
-        String errorCss = "-fx-text-box-border: red ; -fx-focus-color: red ;";
-        String normalCss = "-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
-        int errors = 0;
+        return childErrors() == 0;
+    }
 
-        if(codFisTextField.getText().length()!= CODFISLENGTH){
-            codFisTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            codFisTextField.setStyle(normalCss);
-        }
+    public boolean isAChildSelected() {
+        int selectedIndex = childTable.getSelectionModel().getSelectedIndex();
+        return selectedIndex >=0 ;
+    }
 
-        if(nameTextField.getText().length() == 0){
-            nameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            nameTextField.setStyle(normalCss);
-        }
-
-        if(surnameTextField.getText().length() == 0){
-            surnameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            surnameTextField.setStyle(normalCss);
-        }
-        return errors == 0;
+    public StringPropertyPerson getSelectedChild() {
+        StringPropertyChild selectedChild = childTable.getSelectionModel().getSelectedItem();
+        selectedChild.setNome(nameTextField.getText());
+        selectedChild.setCognome(surnameTextField.getText());
+        selectedChild.setDataNascita(birthdayDatePicker.getValue().format(DateTimeFormatter.ofPattern(DBDATEPATTERN)));
+        return selectedChild;
     }
 }

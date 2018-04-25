@@ -1,8 +1,8 @@
 package main;
 
-import main.NormalClasses.Anagrafica.*;
-import main.NormalClasses.Gite.*;
-import main.NormalClasses.Mensa.*;
+import main.Classes.NormalClasses.Anagrafica.*;
+import main.Classes.NormalClasses.Gite.*;
+import main.Classes.NormalClasses.Mensa.*;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

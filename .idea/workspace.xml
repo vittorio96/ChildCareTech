@@ -2,11 +2,79 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6c0d706-84bd-4bc3-bf0c-c19e80a727dc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/controllers/AbstractPopOverController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/controllers/AbstractPopupController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/controllers/AbstractStageController.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteSignup.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteSignup.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClass.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/Classes/StringPropertyClass.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Anagrafica/Child.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Anagrafica/Contact$ContactTypeFlag.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Anagrafica/Contact.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Anagrafica/Person.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Anagrafica/Staff.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Anagrafica/Supplier.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Gite/Bus.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Gite/BusAssociation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Gite/Stop.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Gite/StopPresence.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Gite/Trip.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Mensa/ChildIntolerance.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Mensa/Dish$DishTypeFlag.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Mensa/Dish.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Mensa/Intolerance.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Mensa/Menu$MenuTypeFlag.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Mensa/Menu.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/Mensa/PersonIntolerance.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/NormalClasses/NormalClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Anagrafica/StringPropertyChild.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Anagrafica/StringPropertyContact$ContactTypeFlag.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Anagrafica/StringPropertyContact.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Anagrafica/StringPropertyPerson.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Anagrafica/StringPropertyStaff$StaffTypeFlag.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Anagrafica/StringPropertyStaff.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Anagrafica/StringPropertySupplier.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Gite/StringPropertyBus.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Gite/StringPropertyChildEnrollment.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Gite/StringPropertyStop.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Gite/StringPropertyStopPresence.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Gite/StringPropertyTrip.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Mensa/StringPropertyDish.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/Mensa/StringPropertyIngredient.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StringPropertyClasses/StringPropertyClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/NormalClass.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/StringPropertyClass.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Child.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Anagrafica/Child.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Contact.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Anagrafica/Contact.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Person.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Anagrafica/Person.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Staff.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Anagrafica/Staff.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Supplier.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Anagrafica/Supplier.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Gite/Bus.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Gite/Bus.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Gite/BusAssociation.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Gite/BusAssociation.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Gite/Stop.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Gite/Stop.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Gite/StopPresence.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Gite/StopPresence.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Gite/Trip.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Gite/Trip.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/ChildIntolerance.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Mensa/ChildIntolerance.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/Dish.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Mensa/Dish.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/Intolerance.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Mensa/Intolerance.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/Menu.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Mensa/Menu.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/NormalClasses/Mensa/PersonIntolerance.java" afterPath="$PROJECT_DIR$/src/main/Classes/NormalClasses/Mensa/PersonIntolerance.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertyChild.java" afterPath="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyChild.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertyContact.java" afterPath="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyContact.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertyPerson.java" afterPath="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyPerson.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertyStaff.java" afterPath="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyStaff.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertySupplier.java" afterPath="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Anagrafica/StringPropertySupplier.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyBus.java" afterPath="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Gite/StringPropertyBus.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyChildEnrollment.java" afterPath="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Gite/StringPropertyChildEnrollment.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyStop.java" afterPath="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Gite/StringPropertyStop.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyStopPresence.java" afterPath="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Gite/StringPropertyStopPresence.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Gite/StringPropertyTrip.java" afterPath="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Gite/StringPropertyTrip.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Mensa/StringPropertyDish.java" afterPath="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Mensa/StringPropertyDish.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/StringPropertyClasses/Mensa/StringPropertyIngredient.java" afterPath="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Mensa/StringPropertyIngredient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Client.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Client.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/ClientHandler.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/ClientHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/DMLCommandExecutor.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/DMLCommandExecutor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/RemoteServerInterface.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/RemoteServerInterface.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/RmiMode.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/RmiMode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/ServerRMI.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/ServerRMI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/SessionMode.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/SessionMode.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/SocketMode.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/SocketMode.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/AbstractController.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/AbstractController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChild$1.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChild$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChild.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChild.class" />
@@ -39,14 +107,17 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaTodaysConflicts.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaTodaysConflicts.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaViewDishes.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaViewDishes.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerShowIngredientsPopOver.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerShowIngredientsPopOver.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerLogin.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerLogin.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainAccessi.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainAccessi.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainAnagrafica.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainAnagrafica.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainGite.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainGite.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainMensa.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainMensa.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainMenu.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainMenu.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/QRGenerator.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/QRGenerator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/QRReader.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/QRReader.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/mensa_addDish.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/mensa_addDish.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Client.java" afterPath="$PROJECT_DIR$/src/main/Client.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ClientHandler.java" afterPath="$PROJECT_DIR$/src/main/ClientHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/DMLCommandExecutor.java" afterPath="$PROJECT_DIR$/src/main/DMLCommandExecutor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/RemoteServerInterface.java" afterPath="$PROJECT_DIR$/src/main/RemoteServerInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/RmiMode.java" afterPath="$PROJECT_DIR$/src/main/RmiMode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ServerRMI.java" afterPath="$PROJECT_DIR$/src/main/ServerRMI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/SessionMode.java" afterPath="$PROJECT_DIR$/src/main/SessionMode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/SocketMode.java" afterPath="$PROJECT_DIR$/src/main/SocketMode.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/AbstractController.java" afterPath="$PROJECT_DIR$/src/main/controllers/AbstractController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddChild.java" afterPath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddChild.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddContact.java" afterPath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddContact.java" />
@@ -71,13 +142,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaTodaysConflicts.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaTodaysConflicts.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaViewDishes.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaViewDishes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerShowIngredientsPopOver.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerShowIngredientsPopOver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerLogin.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerLogin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainAccessi.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainAccessi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainAnagrafica.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainAnagrafica.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainGite.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainGite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMensa.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMensa.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMenu.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/mensa_addDish.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mensa_addDish.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/qrReader/QRGenerator.java" afterPath="$PROJECT_DIR$/src/main/qrReader/QRGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/qrReader/QRReader.java" afterPath="$PROJECT_DIR$/src/main/qrReader/QRReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/RMITest/TestMensa/RmiModeTestMensa.java" afterPath="$PROJECT_DIR$/src/test/RMITest/TestMensa/RmiModeTestMensa.java" />
     </list>
     <ignored path="$PROJECT_DIR$/Progetto/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,11 +161,86 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="ControllerMensaAddAllergen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddAllergen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="195" column="4" lean-forward="true" selection-start-line="195" selection-start-column="4" selection-end-line="197" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NormalClass.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Classes/NormalClass.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerGiteAddBus.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteAddBus.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1470">
+              <caret line="117" column="17" lean-forward="false" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ControllerAnagraficaAddChild.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddChild.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2175">
-              <caret line="168" column="25" lean-forward="false" selection-start-line="168" selection-start-column="25" selection-end-line="168" selection-end-column="25" />
+            <state relative-caret-position="1451">
+              <caret line="159" column="4" lean-forward="true" selection-start-line="159" selection-start-column="4" selection-end-line="166" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerAnagraficaAddStaff.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="60" column="13" lean-forward="false" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerAnagraficaManageChild.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageChild.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="138" column="27" lean-forward="true" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="27" />
+              <folding>
+                <element signature="e#3523#3524#0" expanded="true" />
+                <element signature="e#3563#3564#0" expanded="true" />
+                <element signature="e#5436#5437#0" expanded="true" />
+                <element signature="e#5477#5478#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerAnagraficaManageContact.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageContact.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerAnagraficaManageStaff.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageStaff.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,18 +249,18 @@
       <file leaf-file-name="ControllerAnagraficaAddContact.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddContact.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="96" column="25" lean-forward="false" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
+            <state relative-caret-position="630">
+              <caret line="191" column="1" lean-forward="true" selection-start-line="191" selection-start-column="1" selection-end-line="191" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControllerAnagraficaAddStaff.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.java">
+      <file leaf-file-name="AbstractController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="30" column="42" lean-forward="false" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+            <state relative-caret-position="3675">
+              <caret line="270" column="36" lean-forward="false" selection-start-line="270" selection-start-column="16" selection-end-line="270" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -159,8 +301,9 @@
       <find>textFi</find>
       <find>@../CSS/textfield.css</find>
       <find>stylesheets=&quot;@../CSS/textfield.css&quot;</find>
-      <find>pattern</find>
       <find>inputPattern</find>
+      <find>p.</find>
+      <find>pattern</find>
     </findStrings>
     <replaceStrings>
       <replace>../../resources/fxml/</replace>
@@ -181,27 +324,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/menu_viewTodaysConflicts.fxml" />
-        <option value="$PROJECT_DIR$/src/main/RMIServerLauncher.java" />
-        <option value="$PROJECT_DIR$/src/main/ClientHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/DMLCommandExecutor.java" />
-        <option value="$PROJECT_DIR$/src/main/RemoteServerInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/RmiMode.java" />
-        <option value="$PROJECT_DIR$/src/main/ServerRMI.java" />
-        <option value="$PROJECT_DIR$/src/main/SessionMode.java" />
-        <option value="$PROJECT_DIR$/src/main/SocketMode.java" />
-        <option value="$PROJECT_DIR$/src/main/Client.java" />
-        <option value="$PROJECT_DIR$/src/main/NormalClasses/Mensa/Menu.java" />
-        <option value="$PROJECT_DIR$/src/test/RMITest/TestAnagrafica/RmiModeTestAnagrafica.java" />
-        <option value="$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Contact.java" />
         <option value="$PROJECT_DIR$/src/test/RMITest/TestMensa/RmiModeTestMensa.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/mensa_addDish.fxml" />
         <option value="$PROJECT_DIR$/src/main/controllers/ConstraintCheckerController.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/AbstractPopupController2.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/AbstractPopOverController.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddDish.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddAllergen.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddIngredient.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaConflicts.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaManageMenu.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaTodaysConflicts.java" />
@@ -223,15 +351,30 @@
         <option value="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteAddTrip.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteEditTrip.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteAddBus.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageChild.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageStaff.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageContact.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddChild.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddContact.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/ControllerAccessiGeneraQR.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteAddStop.java" />
+        <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddIngredient.java" />
+        <option value="$PROJECT_DIR$/src/main/StringPropertyClasses/StringPropertyClass.java" />
+        <option value="$PROJECT_DIR$/src/main/NormalClasses/NormalClass.java" />
+        <option value="$PROJECT_DIR$/src/main/Classes/NormalClasses/NormalClass.java" />
+        <option value="$PROJECT_DIR$/src/main/Classes/NormalClass.java" />
+        <option value="$PROJECT_DIR$/src/main/Classes/StringPropertyClass.java" />
+        <option value="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyChild.java" />
+        <option value="$PROJECT_DIR$/src/main/Classes/NormalClasses/Anagrafica/Child.java" />
+        <option value="$PROJECT_DIR$/src/main/Classes/NormalClasses/Anagrafica/Person.java" />
+        <option value="$PROJECT_DIR$/src/main/Classes/NormalClasses/Mensa/Dish.java" />
+        <option value="$PROJECT_DIR$/src/main/Classes/NormalClasses/Anagrafica/Contact.java" />
+        <option value="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyContact.java" />
+        <option value="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyStaff.java" />
+        <option value="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Mensa/StringPropertyDish.java" />
+        <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddAllergen.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/AbstractController.java" />
+        <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddContact.java" />
+        <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddChild.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.java" />
+        <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageChild.java" />
       </list>
     </option>
   </component>
@@ -257,6 +400,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,6 +425,38 @@
               <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Classes" type="462c0819:PsiDirectoryNode" />
+              <item name="NormalClasses" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Classes" type="462c0819:PsiDirectoryNode" />
+              <item name="StringPropertyClasses" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Classes" type="462c0819:PsiDirectoryNode" />
+              <item name="StringPropertyClasses" type="462c0819:PsiDirectoryNode" />
+              <item name="Mensa" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -296,57 +473,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Gite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="qrReader" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="fxml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="RMITest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="RMITest" type="462c0819:PsiDirectoryNode" />
-              <item name="TestMensa" type="462c0819:PsiDirectoryNode" />
+              <item name="Mensa" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -643,7 +775,11 @@
       <workItem from="1524497342437" duration="6957000" />
       <workItem from="1524507320071" duration="10631000" />
       <workItem from="1524553176213" duration="22130000" />
-      <workItem from="1524586366103" duration="4000" />
+      <workItem from="1524586366103" duration="324000" />
+      <workItem from="1524586934407" duration="76000" />
+      <workItem from="1524656808817" duration="228000" />
+      <workItem from="1524670819952" duration="916000" />
+      <workItem from="1524688268319" duration="3875000" />
     </task>
     <task id="LOCAL-00001" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
       <created>1523647210513</created>
@@ -827,7 +963,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524576636844</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
+      <created>1524586496111</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1524586496111</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -857,7 +1000,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109017000" />
+    <option name="totallyTimeSpent" value="114432000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -880,7 +1023,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29542202" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3125894" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -934,163 +1077,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageContact.java</url>
-          <line>83</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="30" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/SocketMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3347">
-          <caret line="974" column="22" lean-forward="false" selection-start-line="974" selection-start-column="22" selection-end-line="974" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="239" column="73" lean-forward="false" selection-start-line="239" selection-start-column="73" selection-end-line="239" selection-end-column="73" />
-          <folding>
-            <element signature="method#clientPrint#0;class#Client#0" expanded="false" />
-            <element signature="method#clientLoginDataHandler#0;class#Client#0" expanded="false" />
-            <element signature="method#clientExtractPersonFromDb#0;class#Client#0" expanded="false" />
-            <element signature="method#clientExtractAllBusesFromTrip#0;class#Client#0" expanded="false" />
-            <element signature="method#clientExtractEnrollableChildren#0;class#Client#0" expanded="false" />
-            <element signature="method#clientExtractMissingChildrenForStopFromDb#0;class#Client#0" expanded="false" />
-            <element signature="method#clientDeleteBusFromDb#0;class#Client#0" expanded="false" />
-            <element signature="method#clientEnrollChildren#0;class#Client#0" expanded="false" />
-            <element signature="method#clientDeleteStopFromDb#0;class#Client#0" expanded="false" />
-            <element signature="method#clientUpdateTripIntoDb#0;class#Client#0" expanded="false" />
-            <element signature="method#clientInsertStopPresencesIntoDb#0;class#Client#0" expanded="false" />
-            <element signature="method#clientDeleteBusAssociationFromDb#0;class#Client#0" expanded="false" />
-            <element signature="method#clientExtractIntolerantStaffToMenu#0;class#Client#0" expanded="false" />
-            <element signature="method#clientExtractIntolerantChildrenToMenu#0;class#Client#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/NormalClasses/Mensa/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="53" lean-forward="false" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/RMITest/TestAnagrafica/RmiModeTestAnagrafica.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Child.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="23" column="67" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="23" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/NormalClasses/Mensa/ChildIntolerance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="16" lean-forward="true" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/SessionMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="38" column="19" lean-forward="false" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/NormalClasses/Mensa/Dish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="51" column="11" lean-forward="false" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/NormalClasses/Anagrafica/Contact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="43" column="32" lean-forward="false" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/RMIServerLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Gui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="37" column="30" lean-forward="false" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/mensa_addDish.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="80" column="26" lean-forward="true" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ConstraintCheckerController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddIngredient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="45" column="6" lean-forward="true" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaConflicts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="69" lean-forward="false" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaManageMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="26" column="70" lean-forward="false" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaTodaysConflicts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="142" column="13" lean-forward="true" selection-start-line="142" selection-start-column="13" selection-end-line="142" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerShowIngredientsPopOver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="21" column="79" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/controllers/Poppable.java" />
     <entry file="file://$PROJECT_DIR$/src/main/controllers/Menu/ControllerLogin.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1103,6 +1094,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="27" column="66" lean-forward="false" selection-start-line="27" selection-start-column="66" selection-end-line="27" selection-end-column="66" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1134,13 +1126,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddAllergen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="33" column="71" lean-forward="false" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddDish.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2970">
@@ -1168,55 +1153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
           <caret line="83" column="5" lean-forward="true" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
-          <folding>
-            <element signature="e#3182#3183#0" expanded="false" />
-            <element signature="e#3218#3219#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/StringPropertyClasses/Anagrafica/StringPropertyChild.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="154" column="0" lean-forward="false" selection-start-line="154" selection-start-column="0" selection-end-line="156" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/qrReader/WebcamQRReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractStageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractPopupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractPopOverController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1225,8 +1161,8 @@
         <state relative-caret-position="185">
           <caret line="82" column="39" lean-forward="false" selection-start-line="82" selection-start-column="39" selection-end-line="82" selection-end-column="39" />
           <folding>
-            <element signature="e#2577#2578#0" expanded="true" />
-            <element signature="e#2610#2611#0" expanded="true" />
+            <element signature="e#2549#2550#0" expanded="false" />
+            <element signature="e#2582#2583#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1235,60 +1171,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-107">
           <caret line="43" column="70" lean-forward="true" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageChild.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="21" column="76" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageStaff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="21" column="76" lean-forward="false" selection-start-line="21" selection-start-column="76" selection-end-line="21" selection-end-column="76" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageContact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="485" column="13" lean-forward="false" selection-start-line="485" selection-start-column="8" selection-end-line="485" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddContact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="96" column="25" lean-forward="false" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddChild.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2175">
-          <caret line="168" column="25" lean-forward="false" selection-start-line="168" selection-start-column="25" selection-end-line="168" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerAccessiGeneraQR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="118" column="26" lean-forward="false" selection-start-line="118" selection-start-column="26" selection-end-line="118" selection-end-column="26" />
-          <folding>
-            <element signature="e#4891#4892#0" expanded="true" />
-            <element signature="e#4924#4925#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1296,7 +1178,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-61">
           <caret line="204" column="24" lean-forward="false" selection-start-line="204" selection-start-column="24" selection-end-line="204" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1312,7 +1193,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-163">
           <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1320,15 +1200,190 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
           <caret line="170" column="48" lean-forward="true" selection-start-line="170" selection-start-column="48" selection-end-line="170" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/ControllerAccessiGeneraQR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="46" column="34" lean-forward="false" selection-start-line="46" selection-start-column="34" selection-end-line="46" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/qr_generate.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1410">
+          <caret line="94" column="29" lean-forward="false" selection-start-line="94" selection-start-column="29" selection-end-line="94" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/DMLCommandExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddIngredient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="10" column="73" lean-forward="false" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractStageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractPopupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="36" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractPopOverController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21780">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/qrReader/WebcamQRReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="109" column="47" lean-forward="true" selection-start-line="109" selection-start-column="47" selection-end-line="109" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/qrReader/QRReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Classes/StringPropertyClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyChild.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="174" column="31" lean-forward="false" selection-start-line="174" selection-start-column="31" selection-end-line="174" selection-end-column="31" />
           <folding>
-            <element signature="e#7347#7348#0" expanded="true" />
+            <element signature="e#5129#5130#0" expanded="true" />
+            <element signature="e#5171#5172#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Classes/NormalClasses/Anagrafica/Child.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/RMIServerLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Classes/NormalClasses/Anagrafica/Contact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="79" column="33" lean-forward="true" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Classes/NormalClasses/Mensa/Dish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-438">
+          <caret line="8" column="54" lean-forward="false" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Anagrafica/StringPropertySupplier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyContact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="17" column="33" lean-forward="true" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Classes/NormalClasses/Anagrafica/Staff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="78" column="45" lean-forward="true" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyStaff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="45" column="31" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Mensa/StringPropertyDish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="42" lean-forward="false" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Classes/NormalClasses/Anagrafica/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="41" column="40" lean-forward="false" selection-start-line="41" selection-start-column="40" selection-end-line="41" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Gui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="37" column="30" lean-forward="false" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Classes/NormalClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteAddBus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="1470">
           <caret line="117" column="17" lean-forward="false" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
           <folding />
         </state>
@@ -1336,17 +1391,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="227" column="9" lean-forward="true" selection-start-line="227" selection-start-column="9" selection-end-line="227" selection-end-column="9" />
+        <state relative-caret-position="3675">
+          <caret line="270" column="36" lean-forward="false" selection-start-line="270" selection-start-column="16" selection-end-line="270" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddAllergen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="195" column="4" lean-forward="true" selection-start-line="195" selection-start-column="4" selection-end-line="197" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="30" column="42" lean-forward="false" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+        <state relative-caret-position="60">
+          <caret line="60" column="13" lean-forward="false" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddContact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="191" column="1" lean-forward="true" selection-start-line="191" selection-start-column="1" selection-end-line="191" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddChild.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1451">
+          <caret line="159" column="4" lean-forward="true" selection-start-line="159" selection-start-column="4" selection-end-line="166" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageContact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageStaff.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageChild.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="138" column="27" lean-forward="true" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="27" />
+          <folding>
+            <element signature="e#3523#3524#0" expanded="true" />
+            <element signature="e#3563#3564#0" expanded="true" />
+            <element signature="e#5436#5437#0" expanded="true" />
+            <element signature="e#5477#5478#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

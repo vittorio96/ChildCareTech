@@ -8,12 +8,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
-import main.NormalClasses.Anagrafica.Child;
-import main.NormalClasses.Anagrafica.Staff;
-import main.NormalClasses.Mensa.Menu;
-import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
-import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
-import main.controllers.AbstractController;
+import main.Classes.NormalClasses.Anagrafica.Child;
+import main.Classes.NormalClasses.Anagrafica.Staff;
+import main.Classes.NormalClasses.Mensa.Menu;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.controllers.AbstractPopupController;
 
 import java.net.URL;

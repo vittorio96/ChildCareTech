@@ -6,8 +6,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import main.controllers.AbstractController;
 import main.controllers.AbstractPopOverController;
+import main.controllers.AbstractPopupController;
 
-public class ControllerMensaAddIngredient extends AbstractPopOverController{
+public class ControllerMensaAddIngredient extends AbstractPopupController{
 
     /*
         GUI nodes

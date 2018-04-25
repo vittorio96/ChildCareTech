@@ -6,28 +6,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import javafx.util.StringConverter;
-import main.NormalClasses.Anagrafica.Child;
-import main.NormalClasses.Anagrafica.Person;
-import main.NormalClasses.Anagrafica.Staff;
-import main.NormalClasses.Mensa.ChildIntolerance;
-import main.NormalClasses.Mensa.Intolerance;
-import main.NormalClasses.Mensa.PersonIntolerance;
-import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
-import main.StringPropertyClasses.Anagrafica.StringPropertyPerson;
-import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
-import main.StringPropertyClasses.Mensa.StringPropertyDish;
-import main.StringPropertyClasses.Mensa.StringPropertyIngredient;
-import main.controllers.AbstractController;
+import main.Classes.NormalClasses.Anagrafica.Child;
+import main.Classes.NormalClasses.Anagrafica.Person;
+import main.Classes.NormalClasses.Anagrafica.Staff;
+import main.Classes.NormalClasses.Mensa.Intolerance;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyPerson;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
+import main.Classes.StringPropertyClasses.Mensa.StringPropertyIngredient;
 import main.controllers.AbstractPopupController;
-import org.controlsfx.control.PopOver;
 
-import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -190,7 +179,7 @@ public class ControllerMensaAddAllergen extends AbstractPopupController implemen
         List<? extends Person> personArrayList = CLIENT.clientExtractPersonFromDb(classN);
         if(personArrayList!=null){
             for(Person p : personArrayList){
-                observableList.add(p.toStringProperty());
+                observableList.add((StringPropertyPerson) p.toStringProperty());
             }
         }
         table.setItems(observableList);

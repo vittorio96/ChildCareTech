@@ -8,9 +8,8 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
-import main.NormalClasses.Anagrafica.Staff;
-import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
-import main.controllers.AbstractController;
+import main.Classes.NormalClasses.Anagrafica.Staff;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.controllers.AbstractPopupController;
 
 import java.net.URL;
@@ -189,7 +188,7 @@ public class ControllerAnagraficaManageStaff extends AbstractPopupController imp
         errors += textFieldConstraintsRespected(nameTextField) ? 0 : 1;
         errors += textFieldLengthRespected(codFisTextField, CODFISLENGTH) ? 0 : 1;
         errors += textFieldConstraintsRespected(surnameTextField) ? 0 : 1;
-        errors += datePickerDateSelected(birthdayDatePicker) ? 0 : 1;
+        errors += datePickerIsDateSelected(birthdayDatePicker) ? 0 : 1;
 
         return errors == 0;
     }

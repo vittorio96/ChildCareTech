@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.StringConverter;
 import main.Client;
 import main.Gui;
 import main.User;
@@ -17,6 +18,8 @@ import org.controlsfx.control.PopOver;
 
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
@@ -201,7 +204,7 @@ public abstract class AbstractController {
         }
     }
 
-    public boolean datePickerDateSelected(DatePicker datePicker) {
+    public boolean datePickerIsDateSelected(DatePicker datePicker) {
         if(datePicker.getValue() == null){
             datePicker.setStyle(ERRORCSS);
             return false;
@@ -236,6 +239,39 @@ public abstract class AbstractController {
             choiceBox.setStyle(TRANSPARENTCSS);
             return true;
         }
+    }
+
+    public void datePickerStandardInitialize(DatePicker datePicker){
+        datePicker.setShowWeekNumbers(false);
+        datePicker.setPromptText(PROMPTDATEPATTERN);
+
+        datePicker.setConverter(new StringConverter<LocalDate>() {
+            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(USERDATEPATTERN);
+
+            @Override
+            public String toString(LocalDate date) {
+                if (date != null) {
+                    return dateFormatter.format(date);
+                } else {
+                    return "";
+                }
+            }
+
+            @Override
+            public LocalDate fromString(String string) {
+                if (string != null && !string.isEmpty()) {
+                    return LocalDate.parse(string, dateFormatter);
+                } else {
+                    return null;
+                }
+            }
+        });
+    }
+
+    public void setTextFieldAutocaps(TextField textField){
+        textField.textProperty().addListener((ov, oldValue, newValue) -> {
+            textField.setText(newValue.toUpperCase());
+        });
     }
 
     public abstract void close(Node node);

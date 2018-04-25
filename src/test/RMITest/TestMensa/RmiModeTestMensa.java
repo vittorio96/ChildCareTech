@@ -1,10 +1,10 @@
 package RMITest.TestMensa;
 
 import main.Client;
-import main.NormalClasses.Anagrafica.Child;
-import main.NormalClasses.Mensa.ChildIntolerance;
-import main.NormalClasses.Mensa.Dish;
-import main.NormalClasses.Mensa.Intolerance;
+import main.Classes.NormalClasses.Anagrafica.Child;
+import main.Classes.NormalClasses.Mensa.ChildIntolerance;
+import main.Classes.NormalClasses.Mensa.Dish;
+import main.Classes.NormalClasses.Mensa.Intolerance;
 import main.RMIServerLauncher;
 import main.RmiMode;
 import main.SessionMode;

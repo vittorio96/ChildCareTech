@@ -4,16 +4,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.image.ImageView;
-import main.StringPropertyClasses.Mensa.StringPropertyDish;
-import main.StringPropertyClasses.Mensa.StringPropertyIngredient;
-import main.controllers.AbstractController;
+import main.Classes.StringPropertyClasses.Mensa.StringPropertyDish;
+import main.Classes.StringPropertyClasses.Mensa.StringPropertyIngredient;
 import main.controllers.AbstractPopOverController;
-import main.controllers.AbstractPopupController;
-import org.controlsfx.control.PopOver;
 
 import java.net.URL;
 import java.util.List;

@@ -9,11 +9,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.input.MouseEvent;
-import main.NormalClasses.Anagrafica.Child;
-import main.NormalClasses.Gite.Bus;
-import main.NormalClasses.Gite.BusAssociation;
-import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
-import main.StringPropertyClasses.Gite.StringPropertyBus;
+import main.Classes.NormalClasses.Anagrafica.Child;
+import main.Classes.NormalClasses.Gite.Bus;
+import main.Classes.NormalClasses.Gite.BusAssociation;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
+import main.Classes.StringPropertyClasses.Gite.StringPropertyBus;
 import main.controllers.AbstractController;
 import main.controllers.AbstractPopOverController;
 

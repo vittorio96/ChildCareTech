@@ -1,13 +1,10 @@
 package main;
 
-import main.NormalClasses.Anagrafica.*;
-import main.NormalClasses.Gite.*;
-import main.NormalClasses.Mensa.Dish;
-import main.NormalClasses.Mensa.Intolerance;
-import main.NormalClasses.Mensa.Menu;
-import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
-import main.StringPropertyClasses.Anagrafica.StringPropertyContact;
-import main.StringPropertyClasses.Anagrafica.StringPropertyStaff;
+import main.Classes.NormalClasses.Anagrafica.*;
+import main.Classes.NormalClasses.Gite.*;
+import main.Classes.NormalClasses.Mensa.Dish;
+import main.Classes.NormalClasses.Mensa.Intolerance;
+import main.Classes.NormalClasses.Mensa.Menu;
 import main.controllers.Menu.ControllerLogin;
 
 import java.net.MalformedURLException;

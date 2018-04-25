@@ -1,23 +1,14 @@
 package main.controllers.Gite;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import main.NormalClasses.Anagrafica.Child;
-import main.NormalClasses.Gite.Bus;
-import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
-import main.StringPropertyClasses.Gite.StringPropertyBus;
-import main.StringPropertyClasses.Gite.StringPropertyTrip;
-import main.controllers.AbstractController;
+import main.Classes.NormalClasses.Gite.Bus;
+import main.Classes.StringPropertyClasses.Gite.StringPropertyBus;
 import main.controllers.AbstractPopOverController;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class ControllerGiteEditBus extends AbstractPopOverController implements Initializable {

@@ -8,19 +8,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.stage.Stage;
-import main.NormalClasses.Anagrafica.Child;
-import main.NormalClasses.Anagrafica.Contact;
-import main.NormalClasses.Gite.*;
-import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
-import main.StringPropertyClasses.Gite.StringPropertyBus;
-import main.StringPropertyClasses.Gite.StringPropertyStop;
-import main.StringPropertyClasses.Gite.StringPropertyTrip;
-import main.StringPropertyClasses.Gite.StringPropertyStopPresence;
-import main.controllers.AbstractController;
+import main.Classes.NormalClasses.Anagrafica.Child;
+import main.Classes.NormalClasses.Anagrafica.Contact;
+import main.Classes.NormalClasses.Gite.*;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
+import main.Classes.StringPropertyClasses.Gite.StringPropertyBus;
+import main.Classes.StringPropertyClasses.Gite.StringPropertyStop;
+import main.Classes.StringPropertyClasses.Gite.StringPropertyTrip;
 import main.controllers.AbstractPopupController;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 

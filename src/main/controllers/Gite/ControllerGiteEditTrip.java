@@ -8,9 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.util.StringConverter;
-import main.NormalClasses.Gite.Trip;
-import main.StringPropertyClasses.Gite.StringPropertyTrip;
-import main.controllers.AbstractController;
+import main.Classes.NormalClasses.Gite.Trip;
+import main.Classes.StringPropertyClasses.Gite.StringPropertyTrip;
 import main.controllers.AbstractPopOverController;
 
 import java.net.URL;
@@ -114,7 +113,7 @@ public class ControllerGiteEditTrip extends AbstractPopOverController implements
         errors+= textFieldConstraintsRespected(tripNameTextField) ? 0:1;
         errors+= textFieldConstraintsRespected(tripOriginTextField) ? 0:1;
         errors+= textFieldConstraintsRespected(tripDestinationTextField) ? 0:1;
-        errors+= datePickerDateSelected(dateOfDepartureDatePicker) ? 0:1;
+        errors+= datePickerIsDateSelected(dateOfDepartureDatePicker) ? 0:1;
 
         return errors == 0;
 

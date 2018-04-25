@@ -5,13 +5,11 @@ import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.stage.Stage;
-import main.NormalClasses.Anagrafica.Child;
-import main.NormalClasses.Gite.Bus;
-import main.NormalClasses.Gite.Trip;
-import main.StringPropertyClasses.Anagrafica.StringPropertyChild;
-import main.StringPropertyClasses.Gite.StringPropertyBus;
-import main.StringPropertyClasses.Gite.StringPropertyTrip;
+import main.Classes.NormalClasses.Anagrafica.Child;
+import main.Classes.NormalClasses.Gite.Bus;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
+import main.Classes.StringPropertyClasses.Gite.StringPropertyBus;
+import main.Classes.StringPropertyClasses.Gite.StringPropertyTrip;
 import main.controllers.AbstractController;
 import main.controllers.AbstractPopupController;
 

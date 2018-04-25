@@ -1,17 +1,13 @@
 package main;
 
-import main.NormalClasses.Anagrafica.*;
-import main.NormalClasses.Gite.*;
-import main.NormalClasses.Mensa.*;
+import main.Classes.NormalClasses.Anagrafica.*;
+import main.Classes.NormalClasses.Gite.*;
+import main.Classes.NormalClasses.Mensa.*;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.MalformedURLException;
 import java.net.Socket;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class SocketMode implements SessionMode {
