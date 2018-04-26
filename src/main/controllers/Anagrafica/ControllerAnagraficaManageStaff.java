@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import main.Classes.NormalClasses.Anagrafica.Staff;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyPerson;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.controllers.AbstractPopupController;
 
@@ -47,29 +48,7 @@ public class ControllerAnagraficaManageStaff extends AbstractPopupController imp
         surnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
         usernameColumn.setCellValueFactory(cellData -> cellData.getValue().usernameProperty());
 
-        birthdayDatePicker.setShowWeekNumbers(false);
-        birthdayDatePicker.setPromptText("gg/mm/aaaa");
-        birthdayDatePicker.setConverter(new StringConverter<LocalDate>() {
-            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(USERDATEPATTERN);
-
-            @Override
-            public String toString(LocalDate date) {
-                if (date != null) {
-                    return dateFormatter.format(date);
-                } else {
-                    return "";
-                }
-            }
-
-            @Override
-            public LocalDate fromString(String string) {
-                if (string != null && !string.isEmpty()) {
-                    return LocalDate.parse(string, dateFormatter);
-                } else {
-                    return null;
-                }
-            }
-        });
+        datePickerStandardInitialize(birthdayDatePicker);
 
         showStaffDetails(null);
 
@@ -115,15 +94,7 @@ public class ControllerAnagraficaManageStaff extends AbstractPopupController imp
 
         int selectedIndex = staffTable.getSelectionModel().getSelectedIndex();
         if (selectedIndex >= 0) {
-            Alert alert2 = new Alert(Alert.AlertType.CONFIRMATION);
-            ButtonType buttonTypeOne = new ButtonType("No");
-            ButtonType buttonTypeTwo = new ButtonType("Si");
-            alert2.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
-            alert2.setHeaderText("Sei sicuro di voler eliminare?");
-            alert2.setContentText("Una volta fatta la cancellazione è impossibile annullarla ");
-            alert2.showAndWait();
-
-            if (alert2.getResult() == buttonTypeTwo) {
+            if (createDeleteConfirmationDialog()) {
 
                 StringPropertyStaff selectedStaff = staffTable.getSelectionModel().getSelectedItem();
                 boolean success = CLIENT.clientDeleteFromDb("Staff", selectedStaff.getCodiceFiscale());
@@ -149,37 +120,12 @@ public class ControllerAnagraficaManageStaff extends AbstractPopupController imp
     }
 
     @FXML private void handleSaveChangesButton() {
-
         if (textConstraintsRespectedForUpdate()) {
-            StringPropertyStaff selectedStaff = staffTable.getSelectionModel().getSelectedItem();
-            selectedStaff.setNome(nameTextField.getText());
-            selectedStaff.setCognome(surnameTextField.getText());
-            selectedStaff.setDataNascita(birthdayDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
-
-            //db update
-            boolean success = CLIENT.clientUpdatePersonIntoDb(new Staff(selectedStaff));
+            boolean success = CLIENT.clientUpdatePersonIntoDb(getSelectedStaff().toPerson());
             if (!success) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.getDialogPane().getScene().getStylesheets().add("/main/resources/CSS/dialogAlertError.css");
-                alert.setTitle("Errore");
-                alert.setHeaderText("Verifica i dati inseriti ");
-                alert.setContentText("Username già preso");
-                alert.showAndWait();
-            } else {
-                Alert alert2 = new Alert(Alert.AlertType.ERROR); //truly a success
-                alert2.setGraphic(new ImageView(this.getClass().getResource("/main/resources/images/checkmark.png").toString()));
-                alert2.setTitle("Successo");
-                alert2.setHeaderText("Successo! ");
-                alert2.setContentText("Dati aggiornati correttamente nel database.\n");
-                alert2.showAndWait();
-            }
-        } else {
-            Alert alert2 = new Alert(Alert.AlertType.ERROR);
-            alert2.setTitle("Errore");
-            alert2.setHeaderText("Verifica i dati inseriti ");
-            alert2.setContentText("Hai lasciato campi vuoti o con un formato sbagliato");
-            alert2.showAndWait();
-        }
+                createErrorPopup("Verifica i dati inseriti ", "Username già preso");
+            } else { createSuccessPopup();}
+        } else { createFieldErrorPopup();}
     }
 
     private boolean textConstraintsRespectedForUpdate() {
@@ -189,11 +135,18 @@ public class ControllerAnagraficaManageStaff extends AbstractPopupController imp
         errors += textFieldLengthRespected(codFisTextField, CODFISLENGTH) ? 0 : 1;
         errors += textFieldConstraintsRespected(surnameTextField) ? 0 : 1;
         errors += datePickerIsDateSelected(birthdayDatePicker) ? 0 : 1;
-
         return errors == 0;
     }
 
     public void handleGoHomebutton() {
         close(goHomeImageView);
+    }
+
+    public StringPropertyPerson getSelectedStaff() {
+        StringPropertyStaff selectedStaff = staffTable.getSelectionModel().getSelectedItem();
+        selectedStaff.setNome(nameTextField.getText());
+        selectedStaff.setCognome(surnameTextField.getText());
+        selectedStaff.setDataNascita(birthdayDatePicker.getValue().format(DateTimeFormatter.ofPattern(DBDATEPATTERN)));
+        return selectedStaff;
     }
 }

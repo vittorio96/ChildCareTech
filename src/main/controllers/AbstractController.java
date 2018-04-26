@@ -172,6 +172,20 @@ public abstract class AbstractController {
         return alert2.getResult() == buttonTypeTwo;
     }
 
+    public boolean createDeleteConfirmationDialog(){
+        return createConfirmationDialog("Sei sicuro di voler eliminare?",
+                "Una volta fatta la cancellazione è impossibile annullarla ");
+    }
+
+    public void createUnableToDeletePopup(String what){
+        createErrorPopup("ERRORE", "Non è stato possibile cancellare il "+what);
+    }
+
+
+    public void createPleaseSelectRowPopup(String what){
+        createErrorPopup("Non si è selezionato un "+ what, "Seleziona un "+what+" dalla tabella");
+    }
+
     public boolean isUserSure(){
         Alert alert2 = new Alert(Alert.AlertType.CONFIRMATION);
         ButtonType buttonTypeOne = new ButtonType("No");

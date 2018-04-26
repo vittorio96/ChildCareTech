@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import main.Classes.NormalClasses.Anagrafica.Contact;
+import main.Classes.NormalClasses.Anagrafica.Person;
 import main.Classes.NormalClasses.Anagrafica.Supplier;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyContact;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertySupplier;
@@ -18,15 +19,16 @@ import java.util.ResourceBundle;
 
 public class ControllerAnagraficaManageContact extends AbstractPopupController implements Initializable {
 
-    //main list
+    /*
+        Gui elements
+    */
+
+    //main lists
     private ObservableList<StringPropertyContact> parentObservableList = FXCollections.observableArrayList();
     private ObservableList<StringPropertyContact> doctorObservableList = FXCollections.observableArrayList();
     private ObservableList<StringPropertySupplier> supplierObservableList = FXCollections.observableArrayList();
 
     //Utilities
-    private final String pattern = "dd/MM/yyyy";
-    private final String inputPattern = "yyyy-MM-dd";
-    private String NAME = "contatto";
     private String lastSelection;
 
     //Pane & Utilities
@@ -56,26 +58,20 @@ public class ControllerAnagraficaManageContact extends AbstractPopupController i
     //Tabella Fornitore
     @FXML private TableView<StringPropertySupplier> supplierTable;
     @FXML private TableColumn<StringPropertySupplier, String> supplierNameColumn;
-    //@FXML private TableColumn<StringPropertySupplier, String> supplierSurnameColumn;
 
     @FXML private TextField pivaTextField;
     @FXML private TextField supplierNameTextField;
     @FXML private TextField supplierEmailTextField;
     @FXML private TextField supplierCellphoneTextField;
 
-    //Buttons
-    @FXML private Button parentSaveChangesButton;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        parentNameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
-        parentSurnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
+        setColumnAssociations();
+        setEventListeners();
+        populateTables();
+    }
 
-        doctorNameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
-        doctorSurnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
-
-        supplierNameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeFProperty());
-
+    private void setEventListeners() {
         showParentDetails(null);
         showDoctorDetails(null);
         showSupplierDetails(null);
@@ -87,28 +83,36 @@ public class ControllerAnagraficaManageContact extends AbstractPopupController i
         supplierTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showSupplierDetails(newValue));
 
-        tabPane.getSelectionModel().selectedItemProperty().addListener((obs,ov,nv)->{
-            if(nv!=null){
+        tabPane.getSelectionModel().selectedItemProperty().addListener((obs, ov, nv) -> {
+            if (nv != null) {
                 lastSelection = nv.getText().toUpperCase();
             }
         });
+    }
 
-        List<Contact> contactArrayList = null;
-        contactArrayList = CLIENT.clientExtractContactsFromDb();
 
-        List<Supplier> supplierArrayList = null;
-        supplierArrayList = CLIENT.clientExtractSuppliersFromDb();
-        if(contactArrayList!= null){
-            for(Contact c : contactArrayList){
+    private void setColumnAssociations() {
+        parentNameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
+        parentSurnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
+        doctorNameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
+        doctorSurnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
+        supplierNameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeFProperty());
+    }
 
-                if(c.getTipo().equals(Integer.toString(Contact.ContactTypeFlag.GENITORE.getOrdernum())))
+    private void populateTables() {
+        List<Contact> contactArrayList = CLIENT.clientExtractContactsFromDb();
+
+        List<Supplier> supplierArrayList = CLIENT.clientExtractSuppliersFromDb();
+        if (contactArrayList != null) {
+            for (Contact c : contactArrayList) {
+                if (c.getTipo().equals(Integer.toString(Contact.ContactTypeFlag.GENITORE.getOrdernum())))
                     parentObservableList.add(new StringPropertyContact(c));
-                else if(c.getTipo().equals(Integer.toString(Contact.ContactTypeFlag.PEDIATRA.getOrdernum())))
+                else if (c.getTipo().equals(Integer.toString(Contact.ContactTypeFlag.PEDIATRA.getOrdernum())))
                     doctorObservableList.add(new StringPropertyContact(c));
             }
         }
-        if(supplierArrayList != null){
-            for(Supplier s : supplierArrayList){
+        if (supplierArrayList != null) {
+            for (Supplier s : supplierArrayList) {
                 supplierObservableList.add(new StringPropertySupplier(s));
             }
         }
@@ -118,9 +122,123 @@ public class ControllerAnagraficaManageContact extends AbstractPopupController i
         supplierTable.setItems(supplierObservableList);
     }
 
-    //Parent
+    /*
+        Gui methods
+    */
 
-    @FXML private void showParentDetails(StringPropertyContact parent) {
+    @FXML
+    private void handleParentSaveChangesButton() {
+        if (textConstraintsRespectedForParentUpdate()) {
+            if (isAParentRowSelected()) {
+                boolean success = CLIENT.clientUpdatePersonIntoDb(getNewParent());
+                parentCodFisTextField.setStyle("-fx-background-color: #F4F4F4;");
+                if (!success) {
+                    createErrorPopup("Verifica i dati inseriti", "Contatto già esistente o cellulare già in Db");
+                } else {
+                    createSuccessPopup();
+                }
+            }
+        } else {
+            createFieldErrorPopup();
+        }
+    }
+
+    @FXML
+    private void handleSupplierSaveChangesButton() {
+        if (textConstraintsRespectedForSupplierUpdate()) {
+            if (isASupplierRowSelected()) {
+                boolean success = CLIENT.clientUpdateSupplierIntoDb(getNewSupplier());
+                if (!success) {
+                    createErrorPopup("Verifica i dati inseriti", "Contatto già esistente o cellulare già in Db");
+                } else {
+                    createSuccessPopup();
+                }
+            }
+        } else {
+            createFieldErrorPopup();
+        }
+    }
+
+    @FXML
+    private void handleDoctorSaveChangesButton() {
+        if (textConstraintsRespectedForDoctorUpdate()) {
+            if (isADoctorRowSelected()) {
+                boolean success = CLIENT.clientUpdatePersonIntoDb(getNewDoctor());
+                doctorCodFisTextField.setStyle("-fx-background-color: #F4F4F4;");
+                if (!success) {
+                    createErrorPopup("Verifica i dati inseriti", "Contatto già esistente o cellulare già in Db");
+                } else {
+                    createSuccessPopup();
+                }
+            }
+        } else {
+            createFieldErrorPopup();
+        }
+    }
+
+    @FXML
+    private void handleSupplierDeleteButton() {
+        String NAME = "fornitore";
+        if (isASupplierRowSelected()) {
+            if (createDeleteConfirmationDialog()) {
+                StringPropertySupplier selectedSupplier = supplierTable.getSelectionModel().getSelectedItem();
+                boolean success = CLIENT.clientDeleteFromDb(Supplier.class.getSimpleName(), selectedSupplier.getpIva());
+                if (success) {
+                    supplierObservableList.remove(selectedSupplier);
+                    createSuccessPopup();
+                } else {
+                    createUnableToDeletePopup(NAME);
+                }
+            }
+        } else {
+            createPleaseSelectRowPopup(NAME);
+        }
+    }
+
+    @FXML
+    private void handleDoctorDeleteButton() {
+        String NAME = "pediatra";
+        if (isADoctorRowSelected()) {
+            if (createDeleteConfirmationDialog()) {
+                StringPropertyContact selectedContact = doctorTable.getSelectionModel().getSelectedItem();
+                boolean success = CLIENT.clientDeleteFromDb(Contact.class.getSimpleName(), selectedContact.getCodiceFiscale());
+                if (success) {
+                    doctorObservableList.remove(selectedContact);
+                    createSuccessPopup();
+                } else {
+                    createUnableToDeletePopup(NAME);
+                }
+            }
+        } else {
+            createPleaseSelectRowPopup(NAME);
+        }
+    }
+
+    @FXML
+    private void handleParentDeleteButton() {
+        String NAME = "genitore";
+        if (isAParentRowSelected()) {
+            if (createDeleteConfirmationDialog()) {
+                StringPropertyContact selectedContact = parentTable.getSelectionModel().getSelectedItem();
+                boolean success = CLIENT.clientDeleteFromDb(Contact.class.getSimpleName(), selectedContact.getCodiceFiscale());
+                if (success) {
+                    parentObservableList.remove(selectedContact);
+                    createSuccessPopup();
+                } else {
+                    createUnableToDeletePopup(NAME);
+                }
+            }
+        } else {
+            createPleaseSelectRowPopup(NAME);
+        }
+    }
+
+    /*
+        Gui methods
+    */
+
+    @FXML
+    private void showParentDetails(StringPropertyContact parent) {
         if (parent != null) {
             // Fill the textfields with info from the child object.
             parentNameTextField.setText(parent.getNome());
@@ -137,110 +255,8 @@ public class ControllerAnagraficaManageContact extends AbstractPopupController i
         }
     }
 
-    @FXML private void handleParentSaveChangesButton(){
-        if(textConstraintsRespectedForParentUpdate()){
-            int selectedIndex = parentTable.getSelectionModel().getSelectedIndex();
-            if (selectedIndex >= 0) {
-                StringPropertyContact selectedContact = parentTable.getSelectionModel().getSelectedItem();
-                selectedContact.setNome(parentNameTextField.getText());
-                selectedContact.setCognome(parentSurnameTextField.getText());
-                selectedContact.setCellphone(parentCellphoneTextField.getText());
-                boolean success = CLIENT.clientUpdatePersonIntoDb(new Contact(selectedContact));
-                parentCodFisTextField.setStyle("-fx-background-color: #F4F4F4;");
-                if (!success) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.getDialogPane().getScene().getStylesheets().add("/main/resources/CSS/dialogAlertError.css");
-                    alert.setTitle("Errore");
-                    alert.setHeaderText("Verifica i dati inseriti ");
-                    alert.setContentText("Contatto già esistente o cellulare già in Db");
-                    alert.showAndWait();
-                } else {
-                    Alert alert2 = new Alert(Alert.AlertType.ERROR); //truly a success
-                    alert2.setGraphic(new ImageView(this.getClass().getResource("/main/resources/images/checkmark.png").toString()));
-                    alert2.setTitle("Successo");
-                    alert2.setHeaderText("Successo! ");
-                    alert2.setContentText("Dati aggiornati correttamente nel database.\n");
-                    alert2.showAndWait();
-                }
-            }
-        } else{
-            Alert alert2 = new Alert(Alert.AlertType.ERROR);
-            alert2.setTitle("Errore");
-            alert2.setHeaderText("Verifica i dati inseriti ");
-            alert2.setContentText("Hai lasciato campi vuoti o con un formato sbagliato");
-            alert2.showAndWait();
-        }
-    }
-
-    @FXML private void handleParentDeleteButton(){
-        String NAME = "genitore";
-        int selectedIndex = parentTable.getSelectionModel().getSelectedIndex();
-        if (selectedIndex >= 0) {
-            Alert alert2 = new Alert(Alert.AlertType.CONFIRMATION);
-            ButtonType buttonTypeOne = new ButtonType("No");
-            ButtonType buttonTypeTwo = new ButtonType("Si");
-            alert2.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
-            alert2.setHeaderText("Sei sicuro di voler eliminare?");
-            alert2.setContentText("Una volta fatta la cancellazione è impossibile annullarla ");
-            alert2.showAndWait();
-
-            if (alert2.getResult() == buttonTypeTwo) {
-
-                StringPropertyContact selectedContact = parentTable.getSelectionModel().getSelectedItem();
-                boolean success = CLIENT.clientDeleteFromDb("Contact", selectedContact.getCodiceFiscale());
-                if (success) {
-                    parentObservableList.remove(selectedContact);
-                } else {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.getDialogPane().getScene().getStylesheets().add("/main/resources/CSS/dialogAlertError.css");
-                    alert.setTitle("Errore");
-                    alert.setHeaderText("Errore");
-                    alert.setContentText("Non è stato possibile cancellare il "+NAME);
-                    alert.showAndWait();
-                }
-            }
-        }else {
-            // Nothing selected.
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("ERRORE");
-            alert.setHeaderText("Non si è selezionato un "+NAME);
-            alert.setContentText("Seleziona un "+NAME+" dalla tabella");
-            alert.showAndWait();
-        }
-
-    }
-
-    private boolean textConstraintsRespectedForParentUpdate() {
-        String errorCss = "-fx-text-box-border: red ; -fx-focus-color: red ;";
-        String normalCss = "-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
-        int errors = 0;
-
-        if(parentNameTextField.getText().length() == 0){
-            parentNameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            parentNameTextField.setStyle(normalCss);
-        }
-
-        if(parentSurnameTextField.getText().length() == 0){
-            parentSurnameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            parentSurnameTextField.setStyle(normalCss);
-        }
-
-        if(parentCellphoneTextField.getText().length() == 0){
-            parentCellphoneTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            parentCellphoneTextField.setStyle(normalCss);
-        }
-        return errors == 0;
-    }
-
-    //Doctor
-
-    @FXML private void showDoctorDetails(StringPropertyContact doctor) {
+    @FXML
+    private void showDoctorDetails(StringPropertyContact doctor) {
         if (doctor != null) {
             // Fill the textfields with info from the child object.
             doctorNameTextField.setText(doctor.getNome());
@@ -257,110 +273,8 @@ public class ControllerAnagraficaManageContact extends AbstractPopupController i
         }
     }
 
-    @FXML private void handleDoctorSaveChangesButton(){
-        if(textConstraintsRespectedForDoctorUpdate()){
-            int selectedIndex = doctorTable.getSelectionModel().getSelectedIndex();
-            if (selectedIndex >= 0) {
-                StringPropertyContact selectedContact = doctorTable.getSelectionModel().getSelectedItem();
-                selectedContact.setNome(doctorNameTextField.getText());
-                selectedContact.setCognome(doctorSurnameTextField.getText());
-                selectedContact.setCellphone(doctorCellphoneTextField.getText());
-                boolean success = CLIENT.clientUpdatePersonIntoDb(new Contact(selectedContact));
-                doctorCodFisTextField.setStyle("-fx-background-color: #F4F4F4;");
-                if (!success) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.getDialogPane().getScene().getStylesheets().add("/main/resources/CSS/dialogAlertError.css");
-                    alert.setTitle("Errore");
-                    alert.setHeaderText("Verifica i dati inseriti ");
-                    alert.setContentText("Contatto già esistente o cellulare già in Db");
-                    alert.showAndWait();
-                } else {
-                    Alert alert2 = new Alert(Alert.AlertType.ERROR); //truly a success
-                    alert2.setGraphic(new ImageView(this.getClass().getResource("/main/resources/images/checkmark.png").toString()));
-                    alert2.setTitle("Successo");
-                    alert2.setHeaderText("Successo! ");
-                    alert2.setContentText("Dati aggiornati correttamente nel database.\n");
-                    alert2.showAndWait();
-                }
-            }
-        }else{
-            Alert alert2 = new Alert(Alert.AlertType.ERROR);
-            alert2.setTitle("Errore");
-            alert2.setHeaderText("Verifica i dati inseriti ");
-            alert2.setContentText("Hai lasciato campi vuoti o con un formato sbagliato");
-            alert2.showAndWait();
-        }
-    }
-
-    @FXML private void handleDoctorDeleteButton(){
-        String NAME = "pediatra";
-        int selectedIndex = doctorTable.getSelectionModel().getSelectedIndex();
-        if (selectedIndex >= 0) {
-            Alert alert2 = new Alert(Alert.AlertType.CONFIRMATION);
-            ButtonType buttonTypeOne = new ButtonType("No");
-            ButtonType buttonTypeTwo = new ButtonType("Si");
-            alert2.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
-            alert2.setHeaderText("Sei sicuro di voler eliminare?");
-            alert2.setContentText("Una volta fatta la cancellazione è impossibile annullarla ");
-            alert2.showAndWait();
-
-            if (alert2.getResult() == buttonTypeTwo) {
-
-                StringPropertyContact selectedContact = doctorTable.getSelectionModel().getSelectedItem();
-                boolean success = CLIENT.clientDeleteFromDb("Contact", selectedContact.getCodiceFiscale());
-                if (success) {
-                    doctorObservableList.remove(selectedContact);
-                } else {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.getDialogPane().getScene().getStylesheets().add("/main/resources/CSS/dialogAlertError.css");
-                    alert.setTitle("Errore");
-                    alert.setHeaderText("Errore");
-                    alert.setContentText("Non è stato possibile cancellare il "+NAME);
-                    alert.showAndWait();
-                }
-            }
-        }else {
-            // Nothing selected.
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("ERRORE");
-            alert.setHeaderText("Non si è selezionato un "+NAME);
-            alert.setContentText("Seleziona un "+NAME+" dalla tabella");
-            alert.showAndWait();
-        }
-
-    }
-
-    private boolean textConstraintsRespectedForDoctorUpdate() {
-        String errorCss = "-fx-text-box-border: red ; -fx-focus-color: red ;";
-        String normalCss = "-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
-        int errors = 0;
-
-        if(doctorNameTextField.getText().length() == 0){
-            doctorNameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            doctorNameTextField.setStyle(normalCss);
-        }
-
-        if(doctorSurnameTextField.getText().length() == 0){
-            doctorSurnameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            doctorSurnameTextField.setStyle(normalCss);
-        }
-
-        if(doctorCellphoneTextField.getText().length() == 0){
-            doctorCellphoneTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            doctorCellphoneTextField.setStyle(normalCss);
-        }
-        return errors == 0;
-    }
-
-    //Supplier
-
-    @FXML private void showSupplierDetails(StringPropertySupplier supplier) {
+    @FXML
+    private void showSupplierDetails(StringPropertySupplier supplier) {
         if (supplier != null) {
             // Fill the textfields with info from the child object.
             supplierNameTextField.setText(supplier.getNomeF());
@@ -377,104 +291,73 @@ public class ControllerAnagraficaManageContact extends AbstractPopupController i
         }
     }
 
-    @FXML private void handleSupplierSaveChangesButton(){
-        if(textConstraintsRespectedForSupplierUpdate()){
-            int selectedIndex = supplierTable.getSelectionModel().getSelectedIndex();
-            if (selectedIndex >= 0) {
-                StringPropertySupplier selectedSupplier = supplierTable.getSelectionModel().getSelectedItem();
-                selectedSupplier.setNomeF(supplierNameTextField.getText());
-                selectedSupplier.setTel(supplierCellphoneTextField.getText());
-                selectedSupplier.setEmail(supplierEmailTextField.getText());
-                boolean success = CLIENT.clientUpdateSupplierIntoDb(new Supplier(selectedSupplier));
-                if (!success) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.getDialogPane().getScene().getStylesheets().add("/main/resources/CSS/dialogAlertError.css");
-                    alert.setTitle("Errore");
-                    alert.setHeaderText("Verifica i dati inseriti ");
-                    alert.setContentText("Contatto già esistente o cellulare già in Db");
-                    alert.showAndWait();
-                } else {
-                    Alert alert2 = new Alert(Alert.AlertType.ERROR); //truly a success
-                    alert2.setGraphic(new ImageView(this.getClass().getResource("/main/resources/images/checkmark.png").toString()));
-                    alert2.setTitle("Successo");
-                    alert2.setHeaderText("Successo! ");
-                    alert2.setContentText("Dati aggiornati correttamente nel database.\n");
-                    alert2.showAndWait();
-                }
-            }
-        }else{
-            Alert alert2 = new Alert(Alert.AlertType.ERROR);
-            alert2.setTitle("Errore");
-            alert2.setHeaderText("Verifica i dati inseriti ");
-            alert2.setContentText("Hai lasciato campi vuoti o con un formato sbagliato");
-            alert2.showAndWait();
-        }
+    /*
+        Gui supporting methods
+    */
+
+    private boolean textConstraintsRespectedForParentUpdate() {
+        int parentErrors = 0;
+        parentErrors += textFieldConstraintsRespected(parentNameTextField) ? 0 : 1;
+        parentErrors += textFieldConstraintsRespected(parentSurnameTextField) ? 0 : 1;
+        parentErrors += textFieldConstraintsRespected(parentCellphoneTextField) ? 0 : 1;
+        return parentErrors == 0;
     }
 
-    @FXML private void handleSupplierDeleteButton(){
-        String NAME = "fornitore";
-        int selectedIndex = supplierTable.getSelectionModel().getSelectedIndex();
-        if (selectedIndex >= 0) {
-            Alert alert2 = new Alert(Alert.AlertType.CONFIRMATION);
-            ButtonType buttonTypeOne = new ButtonType("No");
-            ButtonType buttonTypeTwo = new ButtonType("Si");
-            alert2.getButtonTypes().setAll(buttonTypeOne, buttonTypeTwo);
-            alert2.setHeaderText("Sei sicuro di voler eliminare?");
-            alert2.setContentText("Una volta fatta la cancellazione è impossibile annullarla ");
-            alert2.showAndWait();
-
-            if (alert2.getResult() == buttonTypeTwo) {
-
-                StringPropertySupplier selectedSupplier = supplierTable.getSelectionModel().getSelectedItem();
-                boolean success = CLIENT.clientDeleteFromDb("Supplier", selectedSupplier.getpIva());
-                if (success) {
-                    supplierObservableList.remove(selectedSupplier);
-                } else {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.getDialogPane().getScene().getStylesheets().add("/main/resources/CSS/dialogAlertError.css");
-                    alert.setTitle("Errore");
-                    alert.setHeaderText("Errore");
-                    alert.setContentText("Non è stato possibile cancellare il "+NAME);
-                    alert.showAndWait();
-                }
-            }
-        }else {
-            // Nothing selected.
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("ERRORE");
-            alert.setHeaderText("Non si è selezionato un "+NAME);
-            alert.setContentText("Seleziona un "+NAME+" dalla tabella");
-            alert.showAndWait();
-        }
-
+    private boolean textConstraintsRespectedForDoctorUpdate() {
+        int doctorErrors = 0;
+        doctorErrors += textFieldConstraintsRespected(doctorNameTextField) ? 0 : 1;
+        doctorErrors += textFieldConstraintsRespected(doctorSurnameTextField) ? 0 : 1;
+        doctorErrors += textFieldConstraintsRespected(doctorCellphoneTextField) ? 0 : 1;
+        return doctorErrors == 0;
     }
 
     private boolean textConstraintsRespectedForSupplierUpdate() {
-        String errorCss = "-fx-text-box-border: red ; -fx-focus-color: red ;";
-        String normalCss = "-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
-        int errors = 0;
+        int supplierErrors = 0;
+        supplierErrors += textFieldConstraintsRespected(supplierNameTextField) ? 0 : 1;
+        supplierErrors += textFieldConstraintsRespected(supplierEmailTextField) ? 0 : 1;
+        supplierErrors += textFieldConstraintsRespected(supplierCellphoneTextField) ? 0 : 1;
+        return supplierErrors == 0;
+    }
 
-        if(supplierNameTextField.getText().length() == 0){
-            supplierNameTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            supplierNameTextField.setStyle(normalCss);
-        }
+    private Person getNewDoctor() {
+        StringPropertyContact selectedContact = doctorTable.getSelectionModel().getSelectedItem();
+        selectedContact.setNome(doctorNameTextField.getText());
+        selectedContact.setCognome(doctorSurnameTextField.getText());
+        selectedContact.setCellphone(doctorCellphoneTextField.getText());
+        return selectedContact.toPerson();
+    }
 
-        if(supplierCellphoneTextField.getText().length() == 0){
-            supplierCellphoneTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            supplierCellphoneTextField.setStyle(normalCss);
-        }
+    private Supplier getNewSupplier() {
+        StringPropertySupplier selectedSupplier = supplierTable.getSelectionModel().getSelectedItem();
+        selectedSupplier.setNomeF(supplierNameTextField.getText());
+        selectedSupplier.setTel(supplierCellphoneTextField.getText());
+        selectedSupplier.setEmail(supplierEmailTextField.getText());
+        return new Supplier(selectedSupplier);
+    }
 
-        if(supplierEmailTextField.getText().length() == 0){
-            supplierEmailTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            supplierEmailTextField.setStyle(normalCss);
-        }
-        return errors == 0;
+    private Person getNewParent() {
+        StringPropertyContact selectedContact = parentTable.getSelectionModel().getSelectedItem();
+        selectedContact.setNome(parentNameTextField.getText());
+        selectedContact.setCognome(parentSurnameTextField.getText());
+        selectedContact.setCellphone(parentCellphoneTextField.getText());
+        return selectedContact.toPerson();
+    }
+
+    private boolean isASupplierRowSelected() {
+        return isRowSelected(supplierTable);
+    }
+
+    private boolean isAParentRowSelected() {
+        return isRowSelected(parentTable);
+    }
+
+    private boolean isADoctorRowSelected() {
+        return isRowSelected(doctorTable);
+    }
+
+    private boolean isRowSelected(TableView tableView) {
+        int selectedIndex = tableView.getSelectionModel().getSelectedIndex();
+        return selectedIndex >= 0;
     }
 
     public void handleGoHomebutton() {
@@ -482,4 +365,3 @@ public class ControllerAnagraficaManageContact extends AbstractPopupController i
     }
 
 }
-

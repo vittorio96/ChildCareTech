@@ -77,4 +77,5 @@ public class StringPropertySupplier implements Serializable {
     public void setEmail(String email) {
         this.email.set(email);
     }
+
 }

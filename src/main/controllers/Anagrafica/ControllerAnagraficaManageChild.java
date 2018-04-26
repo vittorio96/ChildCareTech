@@ -5,9 +5,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
-import javafx.util.StringConverter;
 import main.Classes.NormalClasses.Anagrafica.Child;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyPerson;
@@ -98,22 +95,15 @@ public class ControllerAnagraficaManageChild extends AbstractPopupController imp
     @FXML private void handleDeleteButton(){
 
         if (isAChildSelected()) {
-            if (createConfirmationDialog("Sei sicuro di voler eliminare?",
-                    "Una volta fatta la cancellazione è impossibile annullarla ")) {
-
+            if (createDeleteConfirmationDialog()) {
                 StringPropertyChild selectedChild = childTable.getSelectionModel().getSelectedItem();
-                boolean success = CLIENT.clientDeleteFromDb("Child", selectedChild.getCodiceFiscale());
+                boolean success = CLIENT.clientDeleteFromDb(Child.class.getSimpleName(), selectedChild.getCodiceFiscale());
                 if (success) {
                     childObservableList.remove(selectedChild);
                     createSuccessPopup();
-                } else {
-                    createErrorPopup("Errore","Non è stato possibile cancellare il bambino");
-                }
-
+                } else { createUnableToDeletePopup("bambino"); }
             }
-        }else {
-            createErrorPopup("Non si è selezionato un bambino","Seleziona un bambino dalla tabella");
-        }
+        }else { createPleaseSelectRowPopup("bambino"); }
     }
 
     @FXML private void handleSaveChangesButton(){
