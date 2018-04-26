@@ -21,10 +21,6 @@ public class ControllerAnagraficaManageChild extends AbstractPopupController imp
     //main list
     private ObservableList<StringPropertyChild> childObservableList = FXCollections.observableArrayList();
 
-    //Utilities
-    private final String pattern = "dd/MM/yyyy";
-    private final String inputPattern = "yyyy-MM-dd";
-
     //Tabella
     @FXML private TableView<StringPropertyChild> childTable;
     @FXML private TableColumn<StringPropertyChild, String> nameColumn;
@@ -41,29 +37,34 @@ public class ControllerAnagraficaManageChild extends AbstractPopupController imp
     //Buttons
     @FXML private Button saveChangesButton;
     @FXML private Button deleteButton;
-    @FXML private Button gohomeButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setColumnAssociations();
+        datePickerStandardInitialize(birthdayDatePicker);
+        setEventListeners();
+        populateTable();
+
+    }
+
+    private void setColumnAssociations() {
         codeColumn.setCellValueFactory(cellData -> cellData.getValue().codRProperty());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
         surnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
+    }
 
-        datePickerStandardInitialize(birthdayDatePicker);
-
+    private void setEventListeners() {
         showChildDetails(null);
-
         childTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showChildDetails(newValue));
+    }
 
-        List<Child> childArrayList = null;
-        childArrayList = CLIENT.clientExtractChildrenFromDb();
+    private void populateTable() {
+        List<Child> childArrayList = CLIENT.clientExtractChildrenFromDb();
         for(Child c : childArrayList){
             childObservableList.add(new StringPropertyChild(c));
         }
         childTable.setItems(childObservableList);
-
-
     }
 
     @FXML
@@ -75,7 +76,7 @@ public class ControllerAnagraficaManageChild extends AbstractPopupController imp
             surnameTextField.setText(child.getCognome());
             codFisTextField.setText(child.getCodiceFiscale());
             String dateValue = child.getDataNascita();
-            DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern(inputPattern);
+            DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern(DBDATEPATTERN);
             birthdayDatePicker.setValue(LocalDate.parse(dateValue, DATE_FORMAT));
 
         } else {
@@ -85,11 +86,6 @@ public class ControllerAnagraficaManageChild extends AbstractPopupController imp
             surnameTextField.setText("");
             codFisTextField.setText("");
         }
-    }
-
-
-    @FXML private void handleGoHomebutton(){
-        close(saveChangesButton);
     }
 
     @FXML private void handleDeleteButton(){
@@ -119,6 +115,14 @@ public class ControllerAnagraficaManageChild extends AbstractPopupController imp
         }else{ createFieldErrorPopup(); }
     }
 
+    @FXML private void handleGoHomebutton(){
+        close(saveChangesButton);
+    }
+
+    private boolean textConstraintsRespectedForUpdate() {
+        return childErrors() == 0;
+    }
+
     private int childErrors() {
         final int CODFISLENGTH = 16;
         int childErrors = 0;
@@ -129,9 +133,6 @@ public class ControllerAnagraficaManageChild extends AbstractPopupController imp
         return childErrors;
     }
 
-    private boolean textConstraintsRespectedForUpdate() {
-        return childErrors() == 0;
-    }
 
     public boolean isAChildSelected() {
         int selectedIndex = childTable.getSelectionModel().getSelectedIndex();

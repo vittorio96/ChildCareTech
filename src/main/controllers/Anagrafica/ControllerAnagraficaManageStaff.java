@@ -39,30 +39,36 @@ public class ControllerAnagraficaManageStaff extends AbstractPopupController imp
 
     //Buttons
     @FXML private Button saveChangesButton;
-    @FXML private Button deleteButton;
     @FXML private ImageView goHomeImageView;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        nameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
-        surnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
-        usernameColumn.setCellValueFactory(cellData -> cellData.getValue().usernameProperty());
-
+        setColumnAssociations();
         datePickerStandardInitialize(birthdayDatePicker);
+        eventListenerSetup();
+    }
 
+    private void eventListenerSetup() {
         showStaffDetails(null);
 
         staffTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showStaffDetails(newValue));
+        populateTable();
+    }
 
+    private void setColumnAssociations() {
+        nameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
+        surnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
+        usernameColumn.setCellValueFactory(cellData -> cellData.getValue().usernameProperty());
+    }
+
+    private void populateTable() {
         List<Staff> staffArrayList = CLIENT.clientExtractStaffFromDb();
         for(Staff s : staffArrayList){
             staffObservableList.add(new StringPropertyStaff(s));
         }
 
         staffTable.setItems(staffObservableList);
-
-
     }
 
     @FXML private void showStaffDetails(StringPropertyStaff staff) {
@@ -86,37 +92,21 @@ public class ControllerAnagraficaManageStaff extends AbstractPopupController imp
     }
 
     @FXML private void handleGoHomeButton(){
-        Stage stage = (Stage) saveChangesButton.getScene().getWindow();
-        stage.close();
+        close(saveChangesButton);
     }
 
     @FXML private void handleDeleteButton(){
-
-        int selectedIndex = staffTable.getSelectionModel().getSelectedIndex();
-        if (selectedIndex >= 0) {
+        final String WHAT = "utente";
+        if (isAStaffRowSelected()) {
             if (createDeleteConfirmationDialog()) {
-
                 StringPropertyStaff selectedStaff = staffTable.getSelectionModel().getSelectedItem();
-                boolean success = CLIENT.clientDeleteFromDb("Staff", selectedStaff.getCodiceFiscale());
+                boolean success = CLIENT.clientDeleteFromDb(Staff.class.getSimpleName(), selectedStaff.getCodiceFiscale());
                 if (success) {
                     staffObservableList.remove(selectedStaff);
-                } else {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.getDialogPane().getScene().getStylesheets().add("/main/resources/CSS/dialogAlertError.css");
-                    alert.setTitle("Errore");
-                    alert.setHeaderText("Errore");
-                    alert.setContentText("Non è stato possibile cancellare l'utente");
-                    alert.showAndWait();
-                }
+                    createSuccessPopup();
+                } else { createUnableToDeletePopup(WHAT);}
             }
-        }else {
-            // Nothing selected.
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("ERRORE");
-            alert.setHeaderText("Non si è selezionato un utente");
-            alert.setContentText("Seleziona un utente dalla tabella");
-            alert.showAndWait();
-        }
+        }else { createPleaseSelectRowPopup(WHAT); }
     }
 
     @FXML private void handleSaveChangesButton() {
@@ -148,5 +138,14 @@ public class ControllerAnagraficaManageStaff extends AbstractPopupController imp
         selectedStaff.setCognome(surnameTextField.getText());
         selectedStaff.setDataNascita(birthdayDatePicker.getValue().format(DateTimeFormatter.ofPattern(DBDATEPATTERN)));
         return selectedStaff;
+    }
+
+    private boolean isRowSelected(TableView tableView) {
+        int selectedIndex = tableView.getSelectionModel().getSelectedIndex();
+        return selectedIndex >= 0;
+    }
+
+    public boolean isAStaffRowSelected() {
+        return isRowSelected(staffTable);
     }
 }
