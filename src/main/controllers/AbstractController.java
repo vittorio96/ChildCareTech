@@ -34,6 +34,7 @@ public abstract class AbstractController {
     protected static final String ERRORCSS = "-fx-text-box-border: red ; -fx-focus-color: red ;";
     protected static final String NORMALCSS ="-fx-text-box-border: lightgray ; -fx-focus-color: #81CEE9;";
     protected static final String TRANSPARENTCSS = "-fx-border-color: transparent ; -fx-focus-color: transparent ;" ;
+    protected static final String SERRORCSS = "-fx-border-color: red ;-fx-text-box-border: red ; -fx-focus-color: red ;";
 
     protected static final String USERDATEPATTERN = "dd/MM/yyyy";
     protected static final String DBDATEPATTERN = "yyyy-MM-dd";
@@ -209,7 +210,7 @@ public abstract class AbstractController {
     }
 
     public boolean textFieldLengthRespected(TextField textField, Integer size) {
-        if(textField.getText().length() == size){
+        if(textField.getText().length() != size){
             textField.setStyle(ERRORCSS);
             return false;
         }else{
@@ -220,7 +221,7 @@ public abstract class AbstractController {
 
     public boolean datePickerIsDateSelected(DatePicker datePicker) {
         if(datePicker.getValue() == null){
-            datePicker.setStyle(ERRORCSS);
+            datePicker.setStyle(SERRORCSS);
             return false;
         }else {
             datePicker.setStyle(TRANSPARENTCSS);
@@ -237,7 +238,7 @@ public abstract class AbstractController {
 
     public boolean comboBoxConstraintsRespected(ComboBox comboBox){
         if(comboBox.getSelectionModel().isEmpty()){
-            comboBox.setStyle(ERRORCSS);
+            comboBox.setStyle(SERRORCSS);
             return false;
         }else {
             comboBox.setStyle(TRANSPARENTCSS);
@@ -247,7 +248,7 @@ public abstract class AbstractController {
 
     public boolean choiceBoxConstraintsRespected(ChoiceBox choiceBox){
         if(choiceBox.getSelectionModel().isEmpty()){
-            choiceBox.setStyle(ERRORCSS);
+            choiceBox.setStyle(SERRORCSS);
             return false;
         }else {
             choiceBox.setStyle(TRANSPARENTCSS);

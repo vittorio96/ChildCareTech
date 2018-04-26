@@ -124,9 +124,7 @@ public class ControllerAnagraficaManageChild extends AbstractPopupController imp
     }
 
     private int childErrors() {
-        final int CODFISLENGTH = 16;
         int childErrors = 0;
-        childErrors+= textFieldLengthRespected(codFisTextField, CODFISLENGTH) ? 0:1;
         childErrors+= textFieldConstraintsRespected(nameTextField) ? 0:1;
         childErrors+= textFieldConstraintsRespected(surnameTextField) ? 0:1;
         childErrors+= datePickerIsDateSelected(birthdayDatePicker) ? 0:1;

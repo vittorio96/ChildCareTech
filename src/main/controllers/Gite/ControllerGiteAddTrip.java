@@ -100,19 +100,10 @@ public class ControllerGiteAddTrip extends AbstractPopupController implements In
                 } else {
                     success = CLIENT.clientInsertBusIntoDb(autobus);
                     if (!success) {
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.getDialogPane().getScene().getStylesheets().add("/main/resources/CSS/dialogAlertError.css");
-                        alert.setTitle("Errore");
-                        alert.setHeaderText("Verifica i dati inseriti ");
-                        alert.showAndWait();
+                        createGenericErrorPopup();
                     } else {
-                    Alert alert2 = new Alert(Alert.AlertType.ERROR); //truly a success
-                    alert2.setGraphic(new javafx.scene.image.ImageView(this.getClass().getResource("/main/resources/images/checkmark.png").toString()));
-                    alert2.setTitle("Successo");
-                    alert2.setHeaderText("Successo! ");
-                    alert2.setContentText("Dati inseriti correttamente nel database.\n");
-                    alert2.showAndWait();
-                    handleGoHomebutton();
+                        createSuccessPopup();
+                        handleGoHomebutton();
                     }
                 }
             } catch (Exception e){

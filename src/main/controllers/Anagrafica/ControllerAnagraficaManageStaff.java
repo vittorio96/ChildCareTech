@@ -122,7 +122,6 @@ public class ControllerAnagraficaManageStaff extends AbstractPopupController imp
         final int CODFISLENGTH = 16;
         int errors = 0;
         errors += textFieldConstraintsRespected(nameTextField) ? 0 : 1;
-        errors += textFieldLengthRespected(codFisTextField, CODFISLENGTH) ? 0 : 1;
         errors += textFieldConstraintsRespected(surnameTextField) ? 0 : 1;
         errors += datePickerIsDateSelected(birthdayDatePicker) ? 0 : 1;
         return errors == 0;
