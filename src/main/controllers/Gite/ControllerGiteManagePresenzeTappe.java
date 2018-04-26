@@ -24,10 +24,6 @@ import java.util.ResourceBundle;
 
 public class ControllerGiteManagePresenzeTappe extends AbstractPopupController implements Initializable {
 
-    //Utilities
-    private final String pattern = "dd/MM/yyyy";
-    private final String inputPattern = "yyyy-MM-dd";
-
     //Tabella 1
     private ObservableList<StringPropertyTrip> giteObservableList = FXCollections.observableArrayList();
 
@@ -69,21 +65,66 @@ public class ControllerGiteManagePresenzeTappe extends AbstractPopupController i
 
     @FXML private List<StopPresence> stopPresenceList;
 
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setColumnAssociations();
+        setEventListeners();
+        refreshTripTable();
+    }
+
+    @FXML public void insertStopPresence(ActionEvent event) {
+        StringPropertyStop selectedStop = tappeTable.getSelectionModel().selectedItemProperty().get();
+        if(giteTable.getSelectionModel().selectedItemProperty().get() != null &
+                autobusTable.getSelectionModel().selectedItemProperty().get() != null &
+                selectedStop != null){
+
+            stopPresenceList.clear();
+            if(bambiniObservableList.size() != 0 && giteTable.getSelectionModel().selectedItemProperty().get() != null &
+                    autobusTable.getSelectionModel().selectedItemProperty().get() != null){
+                for (StringPropertyChild c : bambiniObservableList){
+                    if (c.isBooleanStatus() )  stopPresenceList.add(new StopPresence(c.getCodiceFiscale(), selectedStop.getNumeroTappa(), selectedStop.getTarga(), selectedStop.getDataGita(), selectedStop.getNomeGita()));
+                }
+                boolean success = CLIENT.clientInsertStopPresencesIntoDb(stopPresenceList);
+                if (success) {
+                    createSuccessPopup();
+                    refreshChildTable(selectedStop);
+                } else {
+                    createErrorPopup("Errore", "Non è stato possibile iscrivere i bambini, riprova più tardi");
+                }
+            }else {
+                createErrorPopup("Errore", "Non hai selezionato una gita è una tappa, gita o autobus");
+            }
+
+        }
+    }
+
+    private void refreshTripTable(){
+
+        giteObservableList.clear();
+
+        List<Trip> giteArrayList = CLIENT.clientExtractAllTripsFromDb();
+        if(giteArrayList  != null){
+            for(Trip t : giteArrayList){
+                giteObservableList.add(new StringPropertyTrip(t));
+            }
+        }
+        giteTable.setItems(giteObservableList);
+    }
+
+    protected void setColumnAssociations() {
         dataGitaColumn.setCellValueFactory(cellData -> cellData.getValue().dataProperty());
         nomeGitaColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
-
         autobusTappaColumn.setCellValueFactory(cellData -> cellData.getValue().targaProperty());
-
         tappeColumn.setCellValueFactory( cellData -> cellData.getValue().luogoProperty() );
-
         codiceBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().codRProperty());
         nomeBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
         cognomeBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
         presenzaBambinoColumn.setCellFactory( CheckBoxTableCell.forTableColumn(presenzaBambinoColumn) );
         presenzaBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().booleanStatusProperty());
+    }
 
+    protected void setEventListeners() {
         giteTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showRelatedAutobus(newValue));
 
@@ -96,18 +137,6 @@ public class ControllerGiteManagePresenzeTappe extends AbstractPopupController i
         iscrizioniTable.setEditable(true);
         iscrizioniTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showInfo(newValue));
-
-        List<Trip> giteArrayList = null;
-        giteArrayList = CLIENT.clientExtractAllTripsFromDb();
-        if(giteArrayList  != null){
-            for(Trip t : giteArrayList){
-                giteObservableList.add(new StringPropertyTrip(t));
-            }
-        }
-        giteTable.setItems(giteObservableList);
-
-
-
     }
 
     private void showInfo(StringPropertyChild selectedChild) {
@@ -187,35 +216,6 @@ public class ControllerGiteManagePresenzeTappe extends AbstractPopupController i
         stage.close();
     }
 
-
-
-    @FXML public void insertStopPresence(ActionEvent event) {
-        StringPropertyStop selectedStop = tappeTable.getSelectionModel().selectedItemProperty().get();
-        if(giteTable.getSelectionModel().selectedItemProperty().get() != null &
-                autobusTable.getSelectionModel().selectedItemProperty().get() != null &
-                    selectedStop != null){
-
-            stopPresenceList.clear();
-            if(bambiniObservableList.size() != 0 && giteTable.getSelectionModel().selectedItemProperty().get() != null &
-                    autobusTable.getSelectionModel().selectedItemProperty().get() != null){
-                for (StringPropertyChild c : bambiniObservableList){
-                    if (c.isBooleanStatus() )  stopPresenceList.add(new StopPresence(c.getCodiceFiscale(), selectedStop.getNumeroTappa(), selectedStop.getTarga(), selectedStop.getDataGita(), selectedStop.getNomeGita()));
-                }
-                boolean success = CLIENT.clientInsertStopPresencesIntoDb(stopPresenceList);
-                if (success) {
-                    createSuccessPopup();
-                    refreshChildTable(selectedStop);
-                } else {
-                    createErrorPopup("Errore", "Non è stato possibile iscrivere i bambini, riprova più tardi");
-                }
-            }else {
-                createErrorPopup("Errore", "Non hai selezionato una gita è una tappa, gita o autobus");
-            }
-
-
-        }
-    }
-
     private void refreshChildTable(StringPropertyStop selectedStop) {
         iscrizioniTable.setItems(null);
         bambiniObservableList.clear();
@@ -229,4 +229,7 @@ public class ControllerGiteManagePresenzeTappe extends AbstractPopupController i
         }
         iscrizioniTable.setItems(bambiniObservableList);
     }
+
+    //TODO isStringProperty Interface
+    //TODO isNormal Interface
 }

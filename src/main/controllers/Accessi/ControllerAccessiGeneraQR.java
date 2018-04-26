@@ -1,4 +1,4 @@
-package main.controllers;
+package main.controllers.Accessi;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,6 +11,7 @@ import main.Classes.NormalClasses.Anagrafica.Child;
 import main.Classes.NormalClasses.Anagrafica.Staff;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
+import main.controllers.AbstractPopupController;
 import main.qrReader.QRGenerator;
 import java.io.File;
 import java.io.FileInputStream;

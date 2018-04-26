@@ -52,18 +52,19 @@ public class ControllerGiteRemoveChildren extends AbstractPopOverController impl
     public void initialize(URL location, ResourceBundle resources) {
 
         AbstractController.setCurrentController(this);
+        setColumnAssociations();
+        refreshChildrenTable();
 
+    }
+
+    protected void setColumnAssociations() {
         iscrizioniTable.setEditable(true);
         codiceBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().codRProperty());
         nomeBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
         cognomeBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
         presenzaBambinoColumn.setCellFactory( CheckBoxTableCell.forTableColumn(presenzaBambinoColumn) );
         presenzaBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().booleanStatusProperty());
-        refreshChildrenTable();
-
     }
-
-
 
     private void refreshChildrenTable(){
         if (selectedBus != null) {
@@ -79,21 +80,17 @@ public class ControllerGiteRemoveChildren extends AbstractPopOverController impl
 
     }
 
-    @FXML private void handleGoHomebutton(){
-        close(genericButton);
-    }
 
-
-    @FXML public void saveChanges(MouseEvent mouseEvent) {
+    @FXML public void saveChanges() {
         int errors = 0;
         unenrolled.clear();
         if(selectedBus != null){
             for (StringPropertyChild c : bambiniObservableList){
                 if (c.isBooleanStatus() )  unenrolled.add(new BusAssociation(c.getCodiceFiscale(),selectedBus.getNomeG(), selectedBus.getDataG(),selectedBus.getTarga()));
             }
-            Iterator itr = unenrolled.iterator();
+            Iterator<BusAssociation> itr = unenrolled.iterator();
             while (itr.hasNext()){
-                errors +=  CLIENT.clientDeleteBusAssociationFromDb((BusAssociation) itr.next())? 0:1;
+                errors +=  CLIENT.clientDeleteBusAssociationFromDb(itr.next())? 0:1;
             }
             if (errors == 0) {
                 createSuccessPopup();
@@ -104,6 +101,9 @@ public class ControllerGiteRemoveChildren extends AbstractPopOverController impl
         }else {
             createErrorPopup("Errore", "Non hai selezionato una gita è un autobus");
         }
+    }
 
+    @FXML private void handleGoHomebutton(){
+        close(genericButton);
     }
 }

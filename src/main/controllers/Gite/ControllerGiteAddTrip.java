@@ -39,85 +39,35 @@ public class ControllerGiteAddTrip extends AbstractPopupController implements In
     public void initialize(URL location, ResourceBundle resources) {
 
         AbstractController.setCurrentController(this);
-
-        dateOfDepartureDatePicker.setShowWeekNumbers(false);
-        dateOfDepartureDatePicker.setPromptText("gg/mm/aaaa");
-        dateOfDepartureDatePicker.setConverter(new StringConverter<LocalDate>() {
-            DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
-
-            @Override
-            public String toString(LocalDate date) {
-                if (date != null) {
-                    return dateFormatter.format(date);
-                } else {
-                    return "";
-                }
-            }
-
-            @Override
-            public LocalDate fromString(String string) {
-                if (string != null && !string.isEmpty()) {
-                    return LocalDate.parse(string, dateFormatter);
-                } else {
-                    return null;
-                }
-            }
-        });
+        datePickerStandardInitialize(dateOfDepartureDatePicker);
 
     }
 
     @FXML private void handleGoHomebutton(){
-        //use a generic button
-        Stage stage = (Stage) saveButton.getScene().getWindow();
-        stage.close();
+        close(saveButton);
     }
 
     @FXML private void handleSaveButton(){
         if(textConstraintsRespected()) {
 
-            //Creazione Trip
-            String nomeGita = tripNameTextField.getText();
-            String partenza = tripOriginTextField.getText();
-            String dataGita = dateOfDepartureDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-            String destinazione = tripDestinationTextField.getText();
-
-            String targaAutobus = targaAutobusTextField.getText();
-            String nomeAutotrasportatore = nomeAutotrasportatoreTextField.getText();
-
-            Trip gita = new Trip(nomeGita, dataGita, partenza, destinazione);
-            Bus autobus = new Bus(targaAutobus, nomeAutotrasportatore, nomeGita, dataGita);
+            Trip gita = getNewTrip();
+            Bus autobus = getNewBus();
 
             boolean success = CLIENT.clientInsertTripIntodb(gita);
-            try {
+            if (!success) {
+                createErrorPopup("Verifica i dati inseriti ","Gita già esistente.\n");
+            } else {
+                success = CLIENT.clientInsertBusIntoDb(autobus);
                 if (!success) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR);
-                    alert.getDialogPane().getScene().getStylesheets().add("/main/resources/CSS/dialogAlertError.css");
-                    alert.setTitle("Errore");
-                    alert.setHeaderText("Verifica i dati inseriti ");
-                    alert.setContentText("Gita già esistente.\n");
-                    alert.showAndWait();
-
+                    createGenericErrorPopup();
                 } else {
-                    success = CLIENT.clientInsertBusIntoDb(autobus);
-                    if (!success) {
-                        createGenericErrorPopup();
-                    } else {
-                        createSuccessPopup();
-                        handleGoHomebutton();
-                    }
+                    createSuccessPopup();
+                    handleGoHomebutton();
                 }
-            } catch (Exception e){
-                //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
             }
-
         }
         else{
-            createErrorPopup("Verifica i dati inseriti ", "Hai lasciato campi vuoti o con un formato sbagliato");
-            Alert alert2 = new Alert(Alert.AlertType.ERROR);
-            alert2.setTitle("Errore");
-            alert2.setHeaderText("Verifica i dati inseriti ");
-            alert2.setContentText("Hai lasciato campi vuoti o con un formato sbagliato");
-            alert2.showAndWait();
+            createFieldErrorPopup();
         }
     }
 
@@ -135,5 +85,24 @@ public class ControllerGiteAddTrip extends AbstractPopupController implements In
 
         return errors == 0;
 
+    }
+
+    /* @requires all fields correctly filled*/
+    public Trip getNewTrip() {
+        String nomeGita = tripNameTextField.getText();
+        String partenza = tripOriginTextField.getText();
+        String dataGita = dateOfDepartureDatePicker.getValue().format(DateTimeFormatter.ofPattern(DBDATEPATTERN));
+        String destinazione = tripDestinationTextField.getText();
+
+        return new Trip(nomeGita, dataGita, partenza, destinazione);
+    }
+
+    /* @requires all fields correctly filled*/
+    private Bus getNewBus(){
+        String nomeGita = tripNameTextField.getText();
+        String dataGita = dateOfDepartureDatePicker.getValue().format(DateTimeFormatter.ofPattern(DBDATEPATTERN));
+        String targaAutobus = targaAutobusTextField.getText();
+        String nomeAutotrasportatore = nomeAutotrasportatoreTextField.getText();
+        return new Bus(targaAutobus, nomeAutotrasportatore, nomeGita, dataGita);
     }
 }

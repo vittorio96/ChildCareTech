@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AbstractStageController extends AbstractController{
+public abstract class AbstractStageController extends AbstractController{
     public void changeScene(Button button, String fxmlPath) throws IOException {
 
         Stage stage;

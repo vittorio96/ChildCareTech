@@ -21,11 +21,11 @@ public class DMLCommandExecutor {
 
     private ConnectionPool myPool;
 
-
     public DMLCommandExecutor() {
 
         this.myPool = new ConnectionPool();
     }
+
 
     public boolean insertChildDailyPresenceIntoDb(String codF){
         Statement stmt = null;
@@ -131,7 +131,7 @@ public class DMLCommandExecutor {
     }
 
     //Generate a SQL statement for insertPersonIntoDb method
-    private String generateSQLInsertStatement(Person p) {//S
+    private String generateSQLInsertStatement(Person p) {
         String query = null;
         if (p instanceof Staff) {
             Staff s = (Staff) p;

@@ -16,8 +16,6 @@ public class ControllerMensaAddIngredient extends AbstractPopupController{
 
     @FXML private TextField ingredientNameTextField;
     @FXML private ImageView goHomeImageView;
-    @FXML private Button saveButton;
-
     /*
         Methods
    */
@@ -25,15 +23,11 @@ public class ControllerMensaAddIngredient extends AbstractPopupController{
     @FXML private void handleSaveButton() {
         if(textConstraintsRespected()){
             boolean success = CLIENT.clientInsertIngredientIntoDb(ingredientNameTextField.getText().toUpperCase());
-            try {
-                if (!success) {
-                    createErrorPopup("Errore","Non è stato possibile aggiungere l'ingrediente");
-                } else {
-                    createSuccessPopup();
-                    handleGoHomebutton();
-                }
-            } catch (Exception e){
-                //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
+            if (!success) {
+                createErrorPopup("Errore","Non è stato possibile aggiungere l'ingrediente");
+            } else {
+                createSuccessPopup();
+                handleGoHomebutton();
             }
         }else{
             createErrorPopup("Verifica i dati inseriti", "Hai lasciato campi vuoti o con un formato sbagliato");
@@ -52,7 +46,6 @@ public class ControllerMensaAddIngredient extends AbstractPopupController{
         int errors = 0;
         errors+= textFieldConstraintsRespected(ingredientNameTextField) ? 0:1;
         return errors == 0;
-
     }
 
 }

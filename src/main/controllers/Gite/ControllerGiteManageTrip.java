@@ -28,10 +28,6 @@ import java.util.ResourceBundle;
 
 public class ControllerGiteManageTrip extends AbstractPopupController implements Initializable {
 
-    //Utilities
-    private final String pattern = "dd/MM/yyyy";
-    private final String inputPattern = "yyyy-MM-dd";
-
     @FXML private Button genericButton;
     @FXML private ImageView editBusIV;
     @FXML private ImageView  editTripIV;
@@ -59,28 +55,32 @@ public class ControllerGiteManageTrip extends AbstractPopupController implements
     @FXML private TableColumn<StringPropertyChild, Boolean> presenzaBambinoColumn;
 
     List <BusAssociation> enrolled = new ArrayList<>();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         AbstractController.setCurrentController(this);
+        setColumnAssociations();
+        setEventListeners();
+        refreshTripTable();
+    }
 
+    protected void setColumnAssociations() {
         iscrizioniTable.setEditable(true);
         codiceBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().codRProperty());
         nomeBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
         cognomeBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
         presenzaBambinoColumn.setCellFactory( CheckBoxTableCell.forTableColumn(presenzaBambinoColumn) );
         presenzaBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().booleanStatusProperty());
-        //presenzaBambinoColumn.setCellValueFactory(p -> createEnrollment(p));
-
         dataGitaColumn.setCellValueFactory(cellData -> cellData.getValue().dataProperty());
         nomeGitaColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
+    }
+
+    protected void setEventListeners() {
         giteTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showRelatedAutobusAndChildren(newValue));
 
         busesColumn.setCellValueFactory(cellData -> cellData.getValue().targaProperty());
-
-        refreshTripTable();
-
 
     }
 
@@ -210,8 +210,7 @@ public class ControllerGiteManageTrip extends AbstractPopupController implements
     }
 
     @FXML private void goHome(){
-        Stage stage = (Stage) genericButton.getScene().getWindow();
-        stage.close();
+        close(genericButton);
     }
 
     @FXML public void editBus() throws IOException {

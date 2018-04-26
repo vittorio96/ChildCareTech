@@ -1,7 +1,7 @@
 package main.Classes;
 
-public interface NormalClass {
+public interface NormalClass<T> {
 
-    public StringPropertyClass toStringProperty();
+    public T toStringProperty();
 
 }

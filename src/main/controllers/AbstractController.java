@@ -289,6 +289,14 @@ public abstract class AbstractController {
         });
     }
 
+    protected void setColumnAssociations() {
+
+    }
+
+    protected void setEventListeners(){
+
+    }
+
     public abstract void close(Node node);
 
 

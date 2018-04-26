@@ -47,13 +47,13 @@ public class ControllerAnagraficaManageChild extends AbstractPopupController imp
 
     }
 
-    private void setColumnAssociations() {
+    protected void setColumnAssociations() {
         codeColumn.setCellValueFactory(cellData -> cellData.getValue().codRProperty());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
         surnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
     }
 
-    private void setEventListeners() {
+    protected void setEventListeners() {
         showChildDetails(null);
         childTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showChildDetails(newValue));

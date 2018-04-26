@@ -71,7 +71,7 @@ public class ControllerAnagraficaManageContact extends AbstractPopupController i
         populateTables();
     }
 
-    private void setEventListeners() {
+    protected void setEventListeners() {
         showParentDetails(null);
         showDoctorDetails(null);
         showSupplierDetails(null);
@@ -91,7 +91,7 @@ public class ControllerAnagraficaManageContact extends AbstractPopupController i
     }
 
 
-    private void setColumnAssociations() {
+    protected void setColumnAssociations() {
         parentNameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
         parentSurnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
         doctorNameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());

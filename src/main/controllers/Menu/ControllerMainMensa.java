@@ -46,7 +46,6 @@ public class ControllerMainMensa extends AbstractStageController implements Init
 
     public void handleAggiungiAllergieButtonAction() throws IOException {
         changeSceneInPopup(aggiungiAllergieButton,"../../resources/fxml/mensa_addAllergy.fxml" , 800,450);
-
     }
 
     public void addNewIngredient() throws IOException {

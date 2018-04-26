@@ -41,16 +41,12 @@ public class ControllerGiteEditBus extends AbstractPopOverController implements 
             Bus autobus = new Bus(targaAutobus, nomeAutotrasportatore, bus.getNomeG(), bus.getDataG());
 
             boolean success = CLIENT.clientUpdateBusIntoDb(new Bus(bus), autobus);
-            try {
-                if (!success) {
-                    createErrorPopup("Errore","Non è stato possibile aggiornare l'autobus ");
-                } else {
-                    createSuccessPopup();
-                    handleGoHomebutton();
+            if (!success) {
+                createErrorPopup("Errore","Non è stato possibile aggiornare l'autobus ");
+            } else {
+                createSuccessPopup();
+                handleGoHomebutton();
 
-                }
-            } catch (Exception e){
-                //do nothing, sometimes images can't be loaded, such behaviour has no impact on the application itself.
             }
 
         }else{
@@ -59,53 +55,11 @@ public class ControllerGiteEditBus extends AbstractPopOverController implements 
 
     }
 
-    /*private void refreshBusTable(){
-        if(bus!=null){
-            busObservableList.clear();
-
-            List<Child> childArrayList = CLIENT.clientExtractChildrenFromBus(normalBus);
-            if(childArrayList != null){
-                for(Child c : childArrayList){
-                    cObservableList.add(new StringPropertyBus(b));
-                }
-            }
-            c.setItems(busObservableList);
-        }
-    }*/
-
     private boolean textConstraintsRespected() {
         final int LICENSEPLATELENGTH = 7;
-        String errorCss = "-fx-text-box-border: red ; -fx-focus-color: red ;";
-        String normalCss = "-fx-text-box-border: lightgray ; -fx-focus-color: #81cee9;";
         int errors = 0;
-
-        if(nomeAutotrasportatoreTextField.getText().length() == 0){
-            nomeAutotrasportatoreTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            nomeAutotrasportatoreTextField.setStyle(normalCss);
-        }
-
-        if(targaAutobusTextField.getText().length()!= LICENSEPLATELENGTH){
-            targaAutobusTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            targaAutobusTextField.setStyle(normalCss);
-        }
-
-        /*if(capienzaTextField.getText().length() == 0){
-            capienzaTextField.setStyle(errorCss);
-            errors++;
-        }else {
-            capienzaTextField.setStyle(normalCss);
-            try{
-                Integer.parseInt(capienzaTextField.getText());
-            }catch (NumberFormatException e){
-                capienzaTextField.setStyle(errorCss);
-                errors++;
-            }
-        }*/
-
+        errors+= textFieldLengthRespected(nomeAutotrasportatoreTextField, LICENSEPLATELENGTH) ? 0:1;
+        errors+= textFieldConstraintsRespected(nomeAutotrasportatoreTextField) ? 0:1;
         return errors == 0;
 
     }
@@ -115,6 +69,6 @@ public class ControllerGiteEditBus extends AbstractPopOverController implements 
     }
 
 
-    public void addNewIngredient(MouseEvent mouseEvent) {
+    public void addNewIngredient() {
     }
 }

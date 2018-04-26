@@ -48,20 +48,60 @@ public class ControllerGiteAddStop extends AbstractPopupController implements In
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        nomeGitaColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
-        dataGitaColumn.setCellValueFactory(cellData -> cellData.getValue().dataProperty());
+        setColumnAssociations();
+        setEventListeners();
+        refreshTripTable();
 
-        busesColumn.setCellValueFactory(cellData -> cellData.getValue().targaProperty());
+    }
 
-        stopNameColumn.setCellValueFactory(cellData -> cellData.getValue().luogoProperty());
+    @FXML private void deleteStop(){
+        if (giteTable.getSelectionModel().selectedItemProperty().get() != null
+                && autobusTable.getSelectionModel().selectedItemProperty().get() != null &
+                stopTable.getSelectionModel().selectedItemProperty().get() != null) {
 
-        giteTable.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> showRelatedBuses(newValue));
+            StringPropertyStop selectedStop = stopTable.getSelectionModel().selectedItemProperty().get();
+            boolean success = CLIENT.clientDeleteStopFromDb(selectedStop.getNomeGita(), selectedStop.getDataGita(), selectedStop.getTarga(),selectedStop.getNumeroTappa());
+            if (success == true) createSuccessPopup();
+            else createErrorPopup("Errore ", "Errore di connessione riprova più tardi");
+            showRelatedTappe(selectedStop.getNomeGita(), selectedStop.getDataGita(),selectedStop.getTarga());
+        }
+    }
 
-        autobusTable.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> showRelatedTappe(newValue.getNomeG(), newValue.getDataG(), newValue.getTarga()));
+
+    @FXML private void handleSaveButton() {
+        int errors = 0;
+        if (isTripSelected() && isBusSelected()) {
+            if (textConstraintsRespected() && doForAllCheckbox.isSelected()) {
+
+                for (Bus bus : currentBusArrayList) {
+                    errors += CLIENT.clientInsertStopIntoDb(new Stop(bus.getNomeG(), bus.getDataG(), bus.getTarga(), luogoTextField.getText())) ? 0 : 1;
+                }
+                if (errors == 0) {
+                    showRelatedTappe(getSelectedBus());
+                    createSuccessPopup();
+                }
+                else createErrorPopup("Si sono verificati degli errori ", "Ci sono stati "
+                        + errors + "/" + currentBusArrayList.size() + " errori, ti consigliamo di verificare se è tutto ok, altrimenti riprova a inserire la tappa nuovamente");
 
 
+            } else if (textConstraintsRespected() && !doForAllCheckbox.isSelected()) {
+
+                StringPropertyBus bus = getSelectedBus();
+                boolean success = CLIENT.clientInsertStopIntoDb(getNewStop());
+                if (success == true) createSuccessPopup();
+                else createGenericErrorPopup();
+                showRelatedTappe(bus);
+
+            } else {
+                createErrorPopup("Verifica i dati inseriti ", "Hai lasciato campi vuoti o con un formato sbagliato");
+            }
+        } else {
+            createErrorPopup("Scegli un autobus dalla tabella ", "Non hai selezionato nessuna gita e/o autobus, seleziona una dalla tabella");
+        }
+    }
+
+    private void refreshTripTable() {
+        giteObservableList.clear();
         List<Trip> giteArrayList = CLIENT.clientExtractAllTripsFromDb();
         if(giteArrayList != null){
             for(Trip t : giteArrayList){
@@ -69,8 +109,23 @@ public class ControllerGiteAddStop extends AbstractPopupController implements In
             }
             giteTable.setItems(giteObservableList);
         }
+    }
 
 
+    protected void setEventListeners() {
+        giteTable.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> showRelatedBuses(newValue));
+
+        autobusTable.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> showRelatedTappe(newValue.getNomeG(), newValue.getDataG(), newValue.getTarga()));
+
+    }
+
+    protected void setColumnAssociations() {
+        nomeGitaColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
+        dataGitaColumn.setCellValueFactory(cellData -> cellData.getValue().dataProperty());
+        busesColumn.setCellValueFactory(cellData -> cellData.getValue().targaProperty());
+        stopNameColumn.setCellValueFactory(cellData -> cellData.getValue().luogoProperty());
     }
 
     private void showRelatedBuses(StringPropertyTrip selectedTrip) {
@@ -117,57 +172,26 @@ public class ControllerGiteAddStop extends AbstractPopupController implements In
         close(saveButton);
     }
 
-    @FXML private void deleteStop(){
-        if (giteTable.getSelectionModel().selectedItemProperty().get() != null
-                && autobusTable.getSelectionModel().selectedItemProperty().get() != null &
-                stopTable.getSelectionModel().selectedItemProperty().get() != null) {
-
-            StringPropertyStop selectedStop = stopTable.getSelectionModel().selectedItemProperty().get();
-            boolean success = CLIENT.clientDeleteStopFromDb(selectedStop.getNomeGita(), selectedStop.getDataGita(), selectedStop.getTarga(),selectedStop.getNumeroTappa());
-            if (success == true) createSuccessPopup();
-            else createErrorPopup("Errore ", "Errore di connessione riprova più tardi");
-            showRelatedTappe(selectedStop.getNomeGita(), selectedStop.getDataGita(),selectedStop.getTarga());
-        }
-    }
-
-
-    @FXML private void handleSaveButton() {
-        int errors = 0;
-        if (giteTable.getSelectionModel().selectedItemProperty().get() != null
-                && autobusTable.getSelectionModel().selectedItemProperty().get() != null) {
-            if (textConstraintsRespected() && doForAllCheckbox.isSelected()) {
-
-                for (Bus bus : currentBusArrayList) {
-                    errors += CLIENT.clientInsertStopIntoDb(new Stop(bus.getNomeG(), bus.getDataG(), bus.getTarga(), luogoTextField.getText())) ? 0 : 1;
-                }
-                if (errors == 0) {
-                    showRelatedTappe(autobusTable.getSelectionModel().selectedItemProperty().get());
-                    createSuccessPopup();
-
-                }
-                else createErrorPopup("Si sono verificati degli errori ", "Ci sono stati "
-                        + errors + "/" + currentBusArrayList.size() + " errori, ti consigliamo di verificare se è tutto ok, altrimenti riprova a inserire la tappa nuovamente");
-
-
-            } else if (textConstraintsRespected() && !doForAllCheckbox.isSelected()) {
-
-                StringPropertyBus bus = autobusTable.getSelectionModel().selectedItemProperty().get();
-                boolean success = CLIENT.clientInsertStopIntoDb(new Stop(bus.getNomeG(), bus.getDataG(), bus.getTarga(), luogoTextField.getText()));
-                if (success == true) createSuccessPopup();
-                else createErrorPopup("Errore ", "Errore di connessione riprova più tardi");
-
-                showRelatedTappe(bus);
-
-            } else {
-                createErrorPopup("Verifica i dati inseriti ", "Hai lasciato campi vuoti o con un formato sbagliato");
-            }
-        } else {
-            createErrorPopup("Scegli un autobus dalla tabella ", "Non hai selezionato nessuna gita e/o autobus, seleziona una dalla tabella");
-        }
-    }
-
     private boolean textConstraintsRespected() {
         return textFieldConstraintsRespected(luogoTextField);
+    }
+
+    private Stop getNewStop() {
+        StringPropertyBus bus = getSelectedBus();
+        Stop newStop = new Stop(bus.getNomeG(), bus.getDataG(), bus.getTarga(), luogoTextField.getText());
+        return newStop;
+    }
+
+    private StringPropertyBus getSelectedBus() {
+        return autobusTable.getSelectionModel().selectedItemProperty().get();
+    }
+
+    private boolean isTripSelected() {
+        return giteTable.getSelectionModel().selectedItemProperty().get() != null;
+    }
+
+    private boolean isBusSelected() {
+        return autobusTable.getSelectionModel().selectedItemProperty().get() != null;
     }
 }
 

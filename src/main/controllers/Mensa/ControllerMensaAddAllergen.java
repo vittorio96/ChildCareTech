@@ -63,11 +63,6 @@ public class ControllerMensaAddAllergen extends AbstractPopupController implemen
         refreshTables();
     }
 
-    private void refreshTables() {
-        refreshChildTable();
-        refreshStaffTable();
-    }
-
     private void setTableAssociations() {
         setChildTableAssociations();
         setStaffTableAssociations();
@@ -139,6 +134,30 @@ public class ControllerMensaAddAllergen extends AbstractPopupController implemen
         Refresh methods
     */
 
+    private void refreshTables() {
+        refreshChildTable();
+        refreshStaffTable();
+    }
+
+    private void refreshStaffTable() {
+        personTableRefresh(staffTable,staffObservableList, Staff.class.getSimpleName());
+    }
+
+    private void refreshChildTable(){
+        personTableRefresh(childTable,childObservableList, Child.class.getSimpleName());
+    }
+
+    private void personTableRefresh(TableView table, ObservableList<StringPropertyPerson> observableList, String classN){
+        observableList.clear();
+        List<? extends Person> personArrayList = CLIENT.clientExtractPersonFromDb(classN);
+        if(personArrayList!=null){
+            for(Person p : personArrayList){
+                observableList.add((StringPropertyPerson) p.toStringProperty());
+            }
+        }
+        table.setItems(observableList);
+    }
+
     private void refreshAllergies(Person person) {
         refreshAllergicToTable(person);
         refreshNotAllergicToTable(person);
@@ -164,25 +183,6 @@ public class ControllerMensaAddAllergen extends AbstractPopupController implemen
             }
         }
         notAllergicToTable.setItems(notAllergicToObservableList);
-    }
-
-    private void refreshStaffTable() {
-        personTableRefresh(staffTable,staffObservableList, Staff.class.getSimpleName());
-    }
-
-    private void refreshChildTable(){
-        personTableRefresh(childTable,childObservableList, Child.class.getSimpleName());
-    }
-
-    private void personTableRefresh(TableView table, ObservableList<StringPropertyPerson> observableList, String classN){
-        observableList.clear();
-        List<? extends Person> personArrayList = CLIENT.clientExtractPersonFromDb(classN);
-        if(personArrayList!=null){
-            for(Person p : personArrayList){
-                observableList.add((StringPropertyPerson) p.toStringProperty());
-            }
-        }
-        table.setItems(observableList);
     }
 
     /*

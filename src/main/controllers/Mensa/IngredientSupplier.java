@@ -1,4 +1,4 @@
-package main;
+package main.controllers.Mensa;
 
 import java.io.Serializable;
 

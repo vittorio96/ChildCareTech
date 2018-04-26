@@ -45,10 +45,10 @@ public class ControllerAnagraficaManageStaff extends AbstractPopupController imp
     public void initialize(URL location, ResourceBundle resources) {
         setColumnAssociations();
         datePickerStandardInitialize(birthdayDatePicker);
-        eventListenerSetup();
+        setEventListeners();
     }
 
-    private void eventListenerSetup() {
+    protected void setEventListeners() {
         showStaffDetails(null);
 
         staffTable.getSelectionModel().selectedItemProperty().addListener(
@@ -56,7 +56,7 @@ public class ControllerAnagraficaManageStaff extends AbstractPopupController imp
         populateTable();
     }
 
-    private void setColumnAssociations() {
+    protected void setColumnAssociations() {
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
         surnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
         usernameColumn.setCellValueFactory(cellData -> cellData.getValue().usernameProperty());
