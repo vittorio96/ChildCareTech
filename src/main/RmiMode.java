@@ -139,7 +139,7 @@ public class RmiMode implements SessionMode {
     }
 
     @Override
-    public List<Contact> extractParentsForChild(String childCodF) {
+    public List<Contact> extractParentsForChildFromDb(String childCodF) {
 
         try {
             return server.selectParentsForChildExecution(childCodF);

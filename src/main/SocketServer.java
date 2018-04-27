@@ -15,7 +15,7 @@ public class SocketServer {
 
     public SocketServer(){
 
-        System.out.println("Server avviato");
+        System.out.println("SocketServer process started");
 
         try{
             serverSocket = new ServerSocket(PORT);
@@ -34,7 +34,7 @@ public class SocketServer {
 
         ExecutorService executor = Executors.newCachedThreadPool();
 
-        System.out.println("Server ready");
+        System.out.println("[System] main.ServerSocket is ready.\"");
 
         while(true){
 

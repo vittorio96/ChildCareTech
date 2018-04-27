@@ -21,12 +21,6 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
 
     public Client() throws RemoteException, MalformedURLException, NotBoundException { }
 
-    @Override
-    public void clientPrint(String s) throws RemoteException{
-        //works only when AbstractController is instance of controllerLogin
-        controllerLogin.printToOutputField(s);
-    }
-
 
     /*
         Login
@@ -116,7 +110,7 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
     }
 
     public List<Contact> clientExtractParentsFromChild(String codice){
-        return session.extractParentsForChild(codice);
+        return session.extractParentsForChildFromDb(codice);
     }
 
     /*
@@ -236,5 +230,10 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
 
     public List<Child> clientExtractIntolerantChildrenToMenu(Menu.MenuTypeFlag selectedMenu) {
         return session.extractIntolerantsChildrenForMenuFromDb(selectedMenu);
+    }
+
+    @Override
+    public void update() throws RemoteException {
+
     }
 }

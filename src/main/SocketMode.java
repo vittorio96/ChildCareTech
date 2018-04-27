@@ -2,7 +2,9 @@ package main;
 
 import main.Classes.NormalClasses.Anagrafica.*;
 import main.Classes.NormalClasses.Gite.*;
-import main.Classes.NormalClasses.Mensa.*;
+import main.Classes.NormalClasses.Mensa.Dish;
+import main.Classes.NormalClasses.Mensa.Intolerance;
+import main.Classes.NormalClasses.Mensa.Menu;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -244,7 +246,7 @@ public class SocketMode implements SessionMode {
     }
 
     @Override
-    public List<Contact> extractParentsForChild(String childCodF) {
+    public List<Contact> extractParentsForChildFromDb(String childCodF) {
         try {
             socketObjectOut.writeObject(new String("cmd_selectParentsForChild"));
             socketObjectOut.flush();

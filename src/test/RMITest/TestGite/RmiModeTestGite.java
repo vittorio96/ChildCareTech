@@ -1,4 +1,4 @@
-package test.RMITest.TestGite;
+package RMITest.TestGite;
 
 import main.Client;
 import main.RmiMode;

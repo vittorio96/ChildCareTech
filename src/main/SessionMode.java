@@ -33,7 +33,7 @@ public interface SessionMode {
 
     public List<Staff> extractStaffFromDb();
 
-    public List<Contact> extractParentsForChild(String childCodF);
+    public List<Contact> extractParentsForChildFromDb(String childCodF);
 
     public boolean deleteSubjectFromDb(String subject, String toDelId);
 

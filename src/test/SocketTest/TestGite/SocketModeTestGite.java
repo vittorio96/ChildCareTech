@@ -1,8 +1,6 @@
-package test.SocketTest.TestGite;
+package SocketTest.TestGite;
 
-import main.Client;
-import main.RmiMode;
-import main.SessionMode;
+import main.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -15,13 +13,16 @@ import static org.junit.Assert.*;
 
 public class SocketModeTestGite {
 
-    private Client c;
-    private SessionMode socketMode;
+    private static Client c;
+    private static SessionMode socketMode;
 
     @BeforeClass
-    public void testSetUp() {
+    public static void testSetUp() {
+
+        SocketServer.main(null);
+
         try {
-            this.c = new Client();
+            c = new Client();
         } catch (RemoteException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {
@@ -29,12 +30,12 @@ public class SocketModeTestGite {
         } catch (NotBoundException e) {
             e.printStackTrace();
         }
-        this.socketMode = new RmiMode(c);
+        socketMode = new SocketMode(c);
     }
 
     @AfterClass
-    public void testSessionDisconnect() {
-        this.socketMode.disconnect();
+    public static void testSessionDisconnect() {
+        socketMode.disconnect();
     }
 
     @Test
