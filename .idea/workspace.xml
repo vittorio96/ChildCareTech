@@ -42,10 +42,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/images/x-button.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/test/ChildCareTech/RMITest/TestMensa/RmiModeTestMensa.class" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/test/ChildCareTech/test/SocketTest/TestMensa/SocketModeTestMensa.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/StartServers.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/RMITest/RMITestSuite.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/SocketTest/SocketTestSuite.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/TestSuite.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/IngredientSupplier.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChild$1.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddStaff$1.class" afterPath="" />
@@ -83,18 +79,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qr_generate.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qr_generate.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qrreadfromfile.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qrreadfromfile.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Client.java" afterPath="$PROJECT_DIR$/src/main/Client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/RmiMode.java" afterPath="$PROJECT_DIR$/src/main/RmiMode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/SessionMode.java" afterPath="$PROJECT_DIR$/src/main/SessionMode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/SocketMode.java" afterPath="$PROJECT_DIR$/src/main/SocketMode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/SocketServer.java" afterPath="$PROJECT_DIR$/src/main/SocketServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/AbstractStageController.java" afterPath="$PROJECT_DIR$/src/main/controllers/AbstractStageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/RMITest/TestAnagrafica/RmiModeTestAnagrafica.java" afterPath="$PROJECT_DIR$/src/test/RMITest/TestAnagrafica/RmiModeTestAnagrafica.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/RMITest/TestGite/RmiModeTestGite.java" afterPath="$PROJECT_DIR$/src/test/RMITest/TestGite/RmiModeTestGite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/RMITest/TestMensa/RmiModeTestMensa.java" afterPath="$PROJECT_DIR$/src/test/RMITest/TestMensa/RmiModeTestMensa.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/SocketTest/TestAnagrafica/SocketModeTestAnagrafica.java" afterPath="$PROJECT_DIR$/src/test/SocketTest/TestAnagrafica/SocketModeTestAnagrafica.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/SocketTest/TestGite/SocketModeTestGite.java" afterPath="$PROJECT_DIR$/src/test/SocketTest/TestGite/SocketModeTestGite.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/SocketTest/TestMensa/SocketModeTestMensa.java" afterPath="$PROJECT_DIR$/src/test/SocketTest/TestMensa/SocketModeTestMensa.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/TestSuite.java" afterPath="$PROJECT_DIR$/src/test/TestSuite.java" />
     </list>
     <ignored path="$PROJECT_DIR$/Progetto/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -114,70 +99,9 @@
       <file leaf-file-name="Gui.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Gui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="41" column="28" lean-forward="false" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+            <state relative-caret-position="29">
+              <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControllerMensaManageMenu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaManageMenu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="922">
-              <caret line="251" column="28" lean-forward="true" selection-start-line="251" selection-start-column="28" selection-end-line="251" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControllerMensaTodaysConflicts.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaTodaysConflicts.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1145">
-              <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControllerMensaConflicts.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaConflicts.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1407">
-              <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RmiModeTestMensa.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/RMITest/TestMensa/RmiModeTestMensa.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3510">
-              <caret line="254" column="42" lean-forward="false" selection-start-line="254" selection-start-column="42" selection-end-line="254" selection-end-column="42" />
-              <folding>
-                <element signature="e#8210#8211#0" expanded="true" />
-                <element signature="e#8270#8271#0" expanded="true" />
-                <element signature="e#8318#8319#0" expanded="true" />
-                <element signature="e#8359#8360#0" expanded="true" />
-                <element signature="e#8574#8575#0" expanded="true" />
-                <element signature="e#8624#8625#0" expanded="true" />
-                <element signature="e#9209#9210#0" expanded="true" />
-                <element signature="e#9256#9257#0" expanded="true" />
-                <marker date="1524839150260" expanded="false" signature="9474:9485" ph=" { " />
-                <marker date="1524839150260" expanded="false" signature="9516:9522" ph=" }" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -185,42 +109,8 @@
       <file leaf-file-name="TestSuite.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/TestSuite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SocketServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/SocketServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="17" column="56" lean-forward="false" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SocketModeTestMensa.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/SocketTest/TestMensa/SocketModeTestMensa.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="260" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RmiModeTestAnagrafica.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/RMITest/TestAnagrafica/RmiModeTestAnagrafica.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="120">
+              <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -330,7 +220,6 @@
         <option value="$PROJECT_DIR$/src/test/RMITest/RMITestSuite.java" />
         <option value="$PROJECT_DIR$/src/test/RMITest/TestGite/RmiModeTestGite.java" />
         <option value="$PROJECT_DIR$/src/test/SocketTest/SocketTestSuite.java" />
-        <option value="$PROJECT_DIR$/src/test/TestSuite.java" />
         <option value="$PROJECT_DIR$/src/main/SessionMode.java" />
         <option value="$PROJECT_DIR$/src/main/Client.java" />
         <option value="$PROJECT_DIR$/src/main/SocketMode.java" />
@@ -341,6 +230,7 @@
         <option value="$PROJECT_DIR$/src/main/controllers/AbstractStageController.java" />
         <option value="$PROJECT_DIR$/src/test/SocketTest/TestMensa/SocketModeTestMensa.java" />
         <option value="$PROJECT_DIR$/src/test/RMITest/TestMensa/RmiModeTestMensa.java" />
+        <option value="$PROJECT_DIR$/src/test/TestSuite.java" />
       </list>
     </option>
   </component>
@@ -786,7 +676,7 @@
       <workItem from="1524744662502" duration="812000" />
       <workItem from="1524750258995" duration="3995000" />
       <workItem from="1524754501915" duration="79000" />
-      <workItem from="1524821506397" duration="11120000" />
+      <workItem from="1524821506397" duration="11911000" />
     </task>
     <task id="LOCAL-00001" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
       <created>1523647210513</created>
@@ -1019,7 +909,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524754453016</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Code Cleanup Anagrafica">
+      <created>1524839190837</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1524839190837</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1055,7 +952,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136036000" />
+    <option name="totallyTimeSpent" value="136827000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1154,9 +1051,9 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="Enjoy Child Care Evolution The new version of Child Care Tech" />
-    <MESSAGE value="Code Cleanup Anagrafica" />
     <MESSAGE value="School Trip Code Cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="School Trip Code Cleanup" />
+    <MESSAGE value="Code Cleanup Anagrafica" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code Cleanup Anagrafica" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1587,46 +1484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Gui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="41" column="28" lean-forward="false" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaManageMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="922">
-          <caret line="251" column="28" lean-forward="true" selection-start-line="251" selection-start-column="28" selection-end-line="251" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaConflicts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1407">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaTodaysConflicts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1145">
-          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/RMITest/TestAnagrafica/RmiModeTestAnagrafica.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -1674,10 +1531,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="63" column="5" lean-forward="true" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaConflicts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1407">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaTodaysConflicts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1145">
+          <caret line="22" column="13" lean-forward="false" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaManageMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="922">
+          <caret line="251" column="28" lean-forward="true" selection-start-line="251" selection-start-column="28" selection-end-line="251" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Gui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/TestSuite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="120">
+          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
