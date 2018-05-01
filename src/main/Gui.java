@@ -23,21 +23,21 @@ public class Gui extends Application {
 
         FXMLLoader fxmlLoader = new FXMLLoader();
 
-        clientAssociationToController();
+        //clientAssociationToController();
 
         Parent root = fxmlLoader.load(getClass().getResource("resources/fxml/login.fxml"));
         primaryStage.setTitle("Child Care Tech");
-        //primaryStage.setResizable(false);
+        primaryStage.setResizable(false);
         primaryStage.setScene(new Scene(root, 800, 450));
         primaryStage.show();
 
 
     }
 
-    private void clientAssociationToController() throws RemoteException, MalformedURLException, NotBoundException {
+    /*private void clientAssociationToController() throws RemoteException, MalformedURLException, NotBoundException {
         this.c = new Client();
         AbstractController.registerClient(c);
-    }
+    }*/
 
     public static void main(String[] args) throws RemoteException {
         launch(args);

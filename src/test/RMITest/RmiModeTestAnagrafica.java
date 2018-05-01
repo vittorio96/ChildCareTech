@@ -1,4 +1,4 @@
-package RMITest.TestAnagrafica;
+package test.RMITest;
 
 import main.*;
 

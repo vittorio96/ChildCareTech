@@ -1,10 +1,10 @@
-package SocketTest.TestAnagrafica;
+package test.SocketTest;
 
-import main.*;
 import main.Classes.NormalClasses.Anagrafica.Child;
 import main.Classes.NormalClasses.Anagrafica.Contact;
 import main.Classes.NormalClasses.Anagrafica.Staff;
 import main.Classes.NormalClasses.Anagrafica.Supplier;
+import main.*;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package RMITest.TestMensa;
+package test.RMITest;
 
 import main.*;
 import main.Classes.NormalClasses.Anagrafica.Contact;
@@ -10,9 +10,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.net.MalformedURLException;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
+
 import java.util.Iterator;
 import java.util.List;
 

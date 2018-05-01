@@ -1,8 +1,5 @@
-package SocketTest;
+package test.SocketTest;
 
-import SocketTest.TestAnagrafica.SocketModeTestAnagrafica;
-import SocketTest.TestGite.SocketModeTestGite;
-import SocketTest.TestMensa.SocketModeTestMensa;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 

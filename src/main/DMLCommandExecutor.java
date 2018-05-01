@@ -503,7 +503,7 @@ public class DMLCommandExecutor {
         String sql = "INSERT INTO GITA"
                 + "(NomeG, DataG, Destinazione, Partenza)"
                 + " VALUES('" + trip.getNomeGita() + "','" + trip.getData() + "','" + trip.getDestinazione() + "' ,'" + trip.getPartenza() + "')" +
-                "ON DUPLICATE KEY UPDATE Destinazione='"+trip.getDestinazione()+"' AND Partenza='"+trip.getPartenza()+"';";
+                "ON DUPLICATE KEY UPDATE Destinazione='"+trip.getDestinazione()+"' , Partenza='"+trip.getPartenza()+"';";
         try {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
