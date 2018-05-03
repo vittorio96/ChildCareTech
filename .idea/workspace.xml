@@ -80,7 +80,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qr_generate.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qr_generate.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qrreadfromfile.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/qrreadfromfile.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Gui.java" afterPath="$PROJECT_DIR$/src/main/Gui.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/qrReader/WebcamQRReader.java" afterPath="$PROJECT_DIR$/src/main/qrReader/WebcamQRReader.java" />
     </list>
     <ignored path="$PROJECT_DIR$/Progetto/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,7 +100,7 @@
       <file leaf-file-name="SocketModeTestGite.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/SocketTest/SocketModeTestGite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="0">
               <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -119,12 +119,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gui.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Gui.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Gui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+            <state relative-caret-position="360">
+              <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerAccessiGeneraQR.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/Accessi/ControllerAccessiGeneraQR.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-855">
+              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControllerMainAccessi.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainAccessi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="81" column="75" lean-forward="false" selection-start-line="81" selection-start-column="75" selection-end-line="81" selection-end-column="75" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebcamQRReader.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/qrReader/WebcamQRReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="133" column="5" lean-forward="true" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4318#4319#0" expanded="true" />
+                <element signature="e#4375#4376#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,8 +166,8 @@
       <file leaf-file-name="SocketServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/SocketServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-129">
-              <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+            <state relative-caret-position="285">
+              <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -142,7 +176,7 @@
       <file leaf-file-name="ControllerLogin.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/controllers/Menu/ControllerLogin.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
+            <state relative-caret-position="900">
               <caret line="80" column="32" lean-forward="false" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
               <folding />
             </state>
@@ -163,97 +197,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/RmiMode.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="495">
-              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SocketTestSuite.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/SocketTest/SocketTestSuite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SessionMode.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/SessionMode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="39" column="19" lean-forward="false" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DMLCommandExecutor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/DMLCommandExecutor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7410">
-              <caret line="505" column="84" lean-forward="false" selection-start-line="505" selection-start-column="84" selection-end-line="505" selection-end-column="84" />
-              <folding>
-                <marker date="1525121127066" expanded="true" signature="991:1068" ph="INSERT INTO PRESENZABAMBINO... " />
-                <marker date="1525121127066" expanded="true" signature="1693:1772" ph="INSERT INTO PRESENZAPERSONALE... " />
-                <marker date="1525121127066" expanded="true" signature="2394:2461" ph="SELECT * FRO... Personale" />
-                <marker date="1525121127066" expanded="true" signature="5458:5775" ph="INSERT INTO FORNITORE... " />
-                <marker date="1525121127066" expanded="true" signature="6880:7020" ph="UPDATE FORNI... " />
-                <marker date="1525121127066" expanded="true" signature="8919:8957" ph="SELECT * FRO... Bambino" />
-                <marker date="1525121127066" expanded="true" signature="10208:10246" ph="SELECT * FRO... ESTERNO" />
-                <marker date="1525121127066" expanded="true" signature="11318:11356" ph="SELECT * FRO... FORNITORE" />
-                <marker date="1525121127066" expanded="true" signature="12356:12396" ph="SELECT * FRO... PERSONALE" />
-                <marker date="1525121127066" expanded="true" signature="13515:13661" ph="SELECT ESTER... BAMBINO" />
-                <marker date="1525121127066" expanded="true" signature="16176:16519" ph="INSERT INTO GITA... " />
-                <marker date="1525121127066" expanded="true" signature="17110:17386" ph="INSERT INTO AUTOBUS... " />
-                <marker date="1525121127066" expanded="true" signature="18075:18281" ph="INSERT INTO TAPPA... " />
-                <marker date="1525121127066" expanded="true" signature="18957:19276" ph="INSERT INTO PRESENZATAPPA... " />
-                <marker date="1525121127066" expanded="true" signature="19820:19882" ph="SELECT * FRO... GITA" />
-                <marker date="1525121127066" expanded="true" signature="20905:21022" ph="SELECT * FRO... TAPPA" />
-                <marker date="1525121127066" expanded="true" signature="22095:22185" ph="SELECT * FRO... AUTOBUS" />
-                <marker date="1525121127066" expanded="true" signature="23219:23285" ph="DELETE FROM " />
-                <marker date="1525121127066" expanded="true" signature="23354:23447" ph="DELETE FROM " />
-                <marker date="1525121127066" expanded="true" signature="23516:23636" ph="DELETE FROM " />
-                <marker date="1525121127066" expanded="true" signature="24306:24510" ph="DELETE FROM " />
-                <marker date="1525121127066" expanded="true" signature="25257:25531" ph="UPDATE GITA " />
-                <marker date="1525121127066" expanded="true" signature="26223:26509" ph="UPDATE AUTOB... " />
-                <marker date="1525121127066" expanded="true" signature="27347:27634" ph="INSERT INTO ASSEGNAZIONEAUTOBUS... " />
-                <marker date="1525121127066" expanded="true" signature="28158:28330" ph="DELETE FROM " />
-                <marker date="1525121127066" expanded="true" signature="29046:29189" ph="SELECT * FRO... BAMBINO" />
-                <marker date="1525121127066" expanded="true" signature="29108:29171" ph="SELECT CodF ASSEGNAZIONEAUTOBUS" />
-                <marker date="1525121127066" expanded="true" signature="30448:30667" ph="SELECT * FRO... BAMBINO" />
-                <marker date="1525121127066" expanded="true" signature="31937:32553" ph="SELECT B.* F... PRESENZABAMBINO" />
-                <marker date="1525121127066" expanded="true" signature="33937:34038" ph="INSERT INTO INGREDIENTE... " />
-                <marker date="1525121127066" expanded="true" signature="34722:34886" ph="INSERT INTO PIATTO... " />
-                <marker date="1525121127066" expanded="true" signature="35403:35457" ph="DELETE FROM " />
-                <marker date="1525121127066" expanded="true" signature="36361:36542" ph="INSERT INTO INTOLLERANZABAMBINO... " />
-                <marker date="1525121127066" expanded="true" signature="36622:36803" ph="INSERT INTO INTOLLERANZAPERSONALE... " />
-                <marker date="1525121127066" expanded="true" signature="37618:37735" ph="DELETE FROM " />
-                <marker date="1525121127066" expanded="true" signature="37816:37935" ph="DELETE FROM " />
-                <marker date="1525121127066" expanded="true" signature="38539:38579" ph="SELECT * FRO... INGREDIENTE" />
-                <marker date="1525121127066" expanded="true" signature="39368:39405" ph="SELECT * FRO... MENU" />
-                <marker date="1525121127066" expanded="true" signature="40294:40329" ph="SELECT * FRO... PIATTO" />
-                <marker date="1525121127066" expanded="true" signature="41262:41383" ph="SELECT B.* F... BAMBINO" />
-                <marker date="1525121127066" expanded="true" signature="42468:42736" ph="SELECT P.* F... PERSONALE" />
-                <marker date="1525121127066" expanded="true" signature="43769:44033" ph="SELECT B.* F... BAMBINO" />
-                <marker date="1525121127066" expanded="true" signature="45104:45243" ph="SELECT * FRO... PIATTO" />
-                <marker date="1525121127066" expanded="true" signature="46166:46289" ph="SELECT I.* F... INGREDIENTE" />
-                <marker date="1525121127066" expanded="true" signature="47255:47401" ph="INSERT INTO COMPOSIZIONEMENU... " />
-                <marker date="1525121127066" expanded="true" signature="48117:48245" ph="INSERT INTO COMPOSIZIONEPIATTO... " />
-                <marker date="1525121127066" expanded="true" signature="48967:49066" ph="DELETE FROM " />
-                <marker date="1525121127066" expanded="true" signature="49721:49804" ph="DELETE FROM " />
-                <marker date="1525121127066" expanded="true" signature="50326:50401" ph="SELECT * FRO... PIATTO" />
-                <marker date="1525121127066" expanded="true" signature="51331:51456" ph="SELECT P.* F... PERSONALE" />
-                <marker date="1525121127066" expanded="true" signature="52562:52654" ph="SELECT NomeI... INTOLLERANZABAMBINO" />
-                <marker date="1525121127066" expanded="true" signature="52713:52807" ph="SELECT NomeI... INTOLLERANZAPERSONALE" />
-                <marker date="1525121127066" expanded="true" signature="53730:53912" ph="SELECT I.* F... INGREDIENTE" />
-                <marker date="1525121127066" expanded="true" signature="53808:53894" ph="SELECT IB.No... INTOLLERANZABAMBINO" />
-                <marker date="1525121127066" expanded="true" signature="53971:54154" ph="SELECT I.* F... INGREDIENTE" />
-                <marker date="1525121127066" expanded="true" signature="54048:54136" ph="SELECT IP.No... INTOLLERANZAPERSONALE" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -320,8 +265,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.java" />
-        <option value="$PROJECT_DIR$/src/main/Classes/StringPropertyClasses/Anagrafica/StringPropertySupplier.java" />
         <option value="$PROJECT_DIR$/src/main/Classes/StringPropertyClass.java" />
         <option value="$PROJECT_DIR$/src/main/Classes/NormalClass.java" />
         <option value="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMensa.java" />
@@ -358,7 +301,6 @@
         <option value="$PROJECT_DIR$/src/main/controllers/AbstractStageController.java" />
         <option value="$PROJECT_DIR$/src/test/SocketTest/TestMensa/SocketModeTestMensa.java" />
         <option value="$PROJECT_DIR$/src/test/RMITest/TestMensa/RmiModeTestMensa.java" />
-        <option value="$PROJECT_DIR$/src/main/qrReader/WebcamQRReader.java" />
         <option value="$PROJECT_DIR$/src/test/RMITest/RmiModeTestMensa.java" />
         <option value="$PROJECT_DIR$/src/test/RMITest/RmiModeTestGite.java" />
         <option value="$PROJECT_DIR$/src/test/RMITest/RmiModeTestAnagrafica.java" />
@@ -371,6 +313,9 @@
         <option value="$PROJECT_DIR$/src/test/SocketTest/SocketTestSuite.java" />
         <option value="$PROJECT_DIR$/src/main/DMLCommandExecutor.java" />
         <option value="$PROJECT_DIR$/src/main/Gui.java" />
+        <option value="$PROJECT_DIR$/src/main/qrReader/NewWebcamQRReader.java" />
+        <option value="$PROJECT_DIR$/src/main/qrReader/WebcamCapture.java" />
+        <option value="$PROJECT_DIR$/src/main/qrReader/WebcamQRReader.java" />
       </list>
     </option>
   </component>
@@ -394,15 +339,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="bridj-0.7.0.jar" type="ab9368bb:PsiFileNode" />
+            </path>
+            <path>
+              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="slf4j-api-1.7.2.jar" type="ab9368bb:PsiFileNode" />
             </path>
             <path>
               <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
@@ -421,6 +382,21 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Menu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="qrReader" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
@@ -453,6 +429,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -462,7 +439,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="ta&#9;FILE&#9;file:///Users/rafaelmosca/ChildCareTech/src/main/resources/images/tapperemove.png&#10;Progetto&#9;PSI&#9;JAVA://com.sun.tools.doclets.internal.toolkit.util.VisibleMemberMap.ClassMembers#isPropertyGetterOrSetter&#10;substring&#9;PSI&#9;JAVA://com.sun.org.apache.regexp.internal.CharacterIterator#substring&#10;substring(1,&#9;PSI&#9;JAVA://org.hamcrest.core.SubstringMatcher&#10;confirmatio&#9;PSI&#9;JAVA://javafx.scene.control.Alert.AlertType#CONFIRMATION" />
@@ -576,25 +553,24 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="TestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="ChildCareTech" />
+    <configuration name="WebcamQRReader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="main.qrReader.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="main.qrReader.WebcamQRReader" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TestSuite" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
+      <module name="ChildCareTech" />
       <envs />
-      <patterns />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -678,19 +654,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.TestSuite" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.TestSuite (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Application.SocketServer" />
-      <item index="3" class="java.lang.String" itemvalue="Application.RMIServerLauncher" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Gui" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.TestSuite (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Application.SocketServer" />
+      <item index="2" class="java.lang.String" itemvalue="Application.RMIServerLauncher" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Gui" />
+      <item index="4" class="java.lang.String" itemvalue="Application.WebcamQRReader" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Gui" />
-        <item index="1" class="java.lang.String" itemvalue="Application.RMIServerLauncher" />
-        <item index="2" class="java.lang.String" itemvalue="Application.SocketServer" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.TestSuite (1)" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.TestSuite" />
+        <item index="1" class="java.lang.String" itemvalue="Application.WebcamQRReader" />
+        <item index="2" class="java.lang.String" itemvalue="Application.RMIServerLauncher" />
+        <item index="3" class="java.lang.String" itemvalue="Application.SocketServer" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.TestSuite (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -755,7 +731,8 @@
       <workItem from="1525120561542" duration="755000" />
       <workItem from="1525177445982" duration="97000" />
       <workItem from="1525266893885" duration="150000" />
-      <workItem from="1525354323356" duration="361000" />
+      <workItem from="1525354323356" duration="711000" />
+      <workItem from="1525356702759" duration="2700000" />
     </task>
     <task id="LOCAL-00001" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
       <created>1523647210513</created>
@@ -1009,7 +986,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525177480251</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Code Cleanup Anagrafica">
+      <created>1525354694242</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1525354694242</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1045,7 +1029,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143017000" />
+    <option name="totallyTimeSpent" value="146067000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1069,7 +1053,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37410587" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37911302" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1163,34 +1147,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainAccessi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="81" column="89" lean-forward="false" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddDish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2981">
-          <caret line="221" column="24" lean-forward="true" selection-start-line="221" selection-start-column="23" selection-end-line="221" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Classes/NormalClasses/Anagrafica/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="39" column="32" lean-forward="false" selection-start-line="39" selection-start-column="32" selection-end-line="39" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddAllergen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="120" column="40" lean-forward="false" selection-start-line="120" selection-start-column="40" selection-end-line="120" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Classes/NormalClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1311,13 +1267,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/qrReader/Untitled" />
-    <entry file="file://$PROJECT_DIR$/src/main/qrReader/WebcamQRReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="103" column="26" lean-forward="true" selection-start-line="103" selection-start-column="26" selection-end-line="103" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JAVA/main">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1592,7 +1541,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/SocketTest/SocketModeTestGite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="0">
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1603,22 +1552,22 @@
     <entry file="file://$PROJECT_DIR$/src/main/RmiMode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/SocketServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-129">
-          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        <state relative-caret-position="285">
+          <caret line="24" column="37" lean-forward="false" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/controllers/Menu/ControllerLogin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
+        <state relative-caret-position="900">
           <caret line="80" column="32" lean-forward="false" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
           <folding />
         </state>
@@ -1628,6 +1577,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/qrReader/NewWebcamQRReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/qrReader/WebcamCapture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="36" lean-forward="false" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1642,9 +1607,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Gui.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+        <state relative-caret-position="360">
+          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Accessi/ControllerAccessiGeneraQR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-855">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainAccessi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="81" column="75" lean-forward="false" selection-start-line="81" selection-start-column="75" selection-end-line="81" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/qrReader/WebcamQRReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="133" column="5" lean-forward="true" selection-start-line="133" selection-start-column="5" selection-end-line="133" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4318#4319#0" expanded="true" />
+            <element signature="e#4375#4376#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1713,7 +1706,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>junit:junit:4.12</last-edited>
+          <last-edited>com.github.sarxos:webcam-capture:0.3.12</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

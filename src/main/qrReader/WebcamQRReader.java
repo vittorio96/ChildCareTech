@@ -2,13 +2,16 @@ package main.qrReader;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
+import java.io.Closeable;
+import java.io.IOException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
-import javax.swing.JFrame;
-import javax.swing.JTextArea;
+import javax.swing.*;
 
 import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamPanel;
@@ -22,7 +25,7 @@ import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
 import com.google.zxing.common.HybridBinarizer;
 import main.Client;
 
-public class WebcamQRReader extends JFrame implements Runnable, ThreadFactory {
+public class WebcamQRReader extends JFrame implements Runnable, ThreadFactory, Closeable {
 
     private static final long serialVersionUID = 6441489157408381878L;
 
@@ -43,7 +46,7 @@ public class WebcamQRReader extends JFrame implements Runnable, ThreadFactory {
         setTitle("Read QR / Bar Code With Webcam");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        Dimension size = WebcamResolution.QVGA.getSize();
+        Dimension size = WebcamResolution.VGA.getSize();
 
         webcam = Webcam.getWebcams().get(0);
         webcam.setViewSize(size);
@@ -52,16 +55,26 @@ public class WebcamQRReader extends JFrame implements Runnable, ThreadFactory {
         panel.setPreferredSize(size);
         panel.setFPSDisplayed(true);
 
-        textarea = new JTextArea();
+        /*textarea = new JTextArea();
         textarea.setEditable(false);
-        textarea.setPreferredSize(size);
+        textarea.setPreferredSize(size);*/
 
         add(panel);
-        add(textarea);
+        //add(textarea);
 
         pack();
         setVisible(true);
+        addWindowListener(new WindowAdapter() {
 
+            @Override
+            public void windowClosing(WindowEvent e) {
+                try {
+                    close();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
         executor.execute(this);
     }
 
@@ -96,7 +109,7 @@ public class WebcamQRReader extends JFrame implements Runnable, ThreadFactory {
 
             if (result != null) {
                 String dechipheredCode = result.getText();
-                textarea.setText("Codice riconosciuto! " + dechipheredCode);
+                //textarea.setText("Codice riconosciuto! " + dechipheredCode);
                     final int PREFIXSIZE=6;
                     boolean success = false;
                     if(dechipheredCode.startsWith("Child")){
@@ -105,27 +118,38 @@ public class WebcamQRReader extends JFrame implements Runnable, ThreadFactory {
                         success = client.clientStaffQRAccess(dechipheredCode.substring(PREFIXSIZE));
                     }
                     if(success) {
-                        textarea.append("\n Inserito con successo");
+
                         try {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException e) {
+                            this.close();
+                            this.dispose();
+                            showmessage("Presenza di " + dechipheredCode + " inserita con successo");
+                        } catch (IOException e) {
                             e.printStackTrace();
                         }
-                        this.dispose(); }
-                    else {textarea.append("\n Ma si è verificato un errore nel inserimento");}
+                    }
+                    else {showmessage("Si è verificato un errore nel inserimento");}
             }
 
         } while (true);
     }
 
+    private void showmessage(String text) {
+        JOptionPane.showMessageDialog(null, text);
+    }
+
     @Override
     public Thread newThread(Runnable r) {
         Thread t = new Thread(r, "Webcam");
-        //t.setDaemon(true);
+        t.setDaemon(true);
         return t;
     }
 
    public static void main(String[] args) {
         new WebcamQRReader();
+    }
+
+    @Override
+    public void close() throws IOException {
+        webcam.close();
     }
 }
