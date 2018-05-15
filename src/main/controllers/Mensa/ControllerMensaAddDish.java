@@ -13,14 +13,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import main.Classes.NormalClasses.Mensa.Dish;
 import main.Classes.StringPropertyClasses.Mensa.StringPropertyIngredient;
-import main.controllers.AbstractPopupController;
+import main.controllers.AbstractController;
+import main.controllers.PopupController;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerMensaAddDish extends AbstractPopupController implements Initializable {
+public class ControllerMensaAddDish extends AbstractController implements Initializable {
 
     /*
         Tables
@@ -69,6 +70,7 @@ public class ControllerMensaAddDish extends AbstractPopupController implements I
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        controllerType = new PopupController();
         setColumnassociations();
         refreshIngredientsList();
         setFilter();
@@ -219,7 +221,7 @@ public class ControllerMensaAddDish extends AbstractPopupController implements I
     */
 
     @FXML private void handleGoHomeButton(){
-        close(goHomeIV);
+        controllerType.close(goHomeIV);
     }
 
 

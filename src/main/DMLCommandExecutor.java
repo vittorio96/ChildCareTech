@@ -21,11 +21,11 @@ public class DMLCommandExecutor {
 
     private ConnectionPool myPool;
 
+
     public DMLCommandExecutor() {
 
         this.myPool = new ConnectionPool();
     }
-
 
     public boolean insertChildDailyPresenceIntoDb(String codF){
         Statement stmt = null;
@@ -66,7 +66,8 @@ public class DMLCommandExecutor {
                 status = true;
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
+            System.out.println(ex);
         } finally {
             myPool.releaseConnection(conn);
             return status;
@@ -123,7 +124,9 @@ public class DMLCommandExecutor {
             if (stmt.executeUpdate(generateSQLInsertStatement(p)) == 1)
                 status = true;
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
+            System.out.println("Not possible insert of new person");
+            System.out.println(ex);
         } finally {
             myPool.releaseConnection(conn);
             return status;
@@ -131,7 +134,7 @@ public class DMLCommandExecutor {
     }
 
     //Generate a SQL statement for insertPersonIntoDb method
-    private String generateSQLInsertStatement(Person p) {
+    private String generateSQLInsertStatement(Person p) {//S
         String query = null;
         if (p instanceof Staff) {
             Staff s = (Staff) p;
@@ -178,7 +181,9 @@ public class DMLCommandExecutor {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
+            System.out.println("Not possible insert of new supplier into db");
+            System.out.println(ex);
         } finally {
             myPool.releaseConnection(conn);
             return status;
@@ -203,7 +208,7 @@ public class DMLCommandExecutor {
                 return true;
             else
                 return false;
-        } catch (SQLException ex) { //Handle a double key exception
+        } catch (SQLException ex) {
             System.out.println(ex);
             return false;
         } finally {
@@ -228,11 +233,10 @@ public class DMLCommandExecutor {
                 return true;
             else
                 return false;
-        } catch (SQLException ex) { //Handle a double key exception
+        } catch (SQLException ex) {
             System.out.println(ex);
             return false;
         } finally {
-            System.out.println("CIAO");
             myPool.releaseConnection(conn);
         }
     }
@@ -503,12 +507,14 @@ public class DMLCommandExecutor {
         String sql = "INSERT INTO GITA"
                 + "(NomeG, DataG, Destinazione, Partenza)"
                 + " VALUES('" + trip.getNomeGita() + "','" + trip.getData() + "','" + trip.getDestinazione() + "' ,'" + trip.getPartenza() + "')" +
-                "ON DUPLICATE KEY UPDATE Destinazione='"+trip.getDestinazione()+"' , Partenza='"+trip.getPartenza()+"';";
+                "ON DUPLICATE KEY UPDATE Destinazione='"+trip.getDestinazione()+"', Partenza='"+trip.getPartenza()+"';";
         try {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
+            System.out.println("Not possible insert of new trip");
+            System.out.println(ex);
         } finally {
             myPool.releaseConnection(conn);
             return status;
@@ -533,9 +539,10 @@ public class DMLCommandExecutor {
         try {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
-        } catch (SQLException ex) { //Handle a double key exception
-            //System.out.println("Double entry in insert");
-            ex.printStackTrace();
+        } catch (SQLException ex) {
+            System.out.println("Not possible insert of new bus");
+            System.out.println(ex);
+            //ex.printStackTrace();
         } finally {
             myPool.releaseConnection(conn);
             return status;
@@ -561,7 +568,9 @@ public class DMLCommandExecutor {
                 status = true;
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            System.out.println("Not possible insert of new stop");
+            System.out.println(ex);
+            //ex.printStackTrace();
         } finally {
             myPool.releaseConnection(conn);
             return status;
@@ -573,6 +582,9 @@ public class DMLCommandExecutor {
         Statement stmt = null;
         boolean status = false;
         Connection conn = myPool.getConnection();
+
+        if(list == null)
+            return false;
 
         try {
             stmt = conn.createStatement();
@@ -588,7 +600,9 @@ public class DMLCommandExecutor {
                 if (stmt.executeUpdate(sql) == 1)
                     status = true;
             } catch (SQLException ex) {
-                ex.printStackTrace();
+                //ex.printStackTrace();
+                System.out.println("Not possible insert of new stop presence");
+                System.out.println(ex);
                 myPool.releaseConnection(conn);
                 return status;
             }
@@ -740,7 +754,7 @@ public class DMLCommandExecutor {
         try {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
-        } catch (SQLException ex) { //Handle a delete exception
+        } catch (SQLException ex) {
             System.out.println(ex);
         } finally {
             myPool.releaseConnection(conn);
@@ -769,7 +783,7 @@ public class DMLCommandExecutor {
         try {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
-        } catch (SQLException ex) { //Handle a delete exception
+        } catch (SQLException ex) {
             System.out.println(ex);
         } finally {
             myPool.releaseConnection(conn);
@@ -798,7 +812,7 @@ public class DMLCommandExecutor {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
 
-        } catch (SQLException ex) { //Handle a double key exception
+        } catch (SQLException ex) {
             System.out.println(ex);
         } finally {
             myPool.releaseConnection(conn);
@@ -825,7 +839,7 @@ public class DMLCommandExecutor {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
 
-        } catch (SQLException ex) { //Handle a double key exception
+        } catch (SQLException ex) {
             System.out.println(ex);
         } finally {
             myPool.releaseConnection(conn);
@@ -853,7 +867,8 @@ public class DMLCommandExecutor {
                 if (stmt.executeUpdate(sql) == 1)
                     status = true;
             } catch (SQLException ex) {
-                ex.printStackTrace();
+                //ex.printStackTrace();
+                System.out.println(ex);
                 myPool.releaseConnection(conn);
                 return status;
             }
@@ -883,7 +898,7 @@ public class DMLCommandExecutor {
         try {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
-        } catch (SQLException ex) { //Handle a delete exception
+        } catch (SQLException ex) {
             System.out.println(ex);
         } finally {
             myPool.releaseConnection(conn);
@@ -1029,9 +1044,9 @@ public class DMLCommandExecutor {
         try {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
-        } catch (SQLException ex) { //Handle a double key exception
-            //System.out.println("Double entry in insert");
-            ex.printStackTrace();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            //ex.printStackTrace();
         } finally {
             myPool.releaseConnection(conn);
             return status;
@@ -1052,9 +1067,9 @@ public class DMLCommandExecutor {
         try {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
-        } catch (SQLException ex) { //Handle a double key exception
-            //System.out.println("Double entry in insert");
-            ex.printStackTrace();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+            //ex.printStackTrace();
         } finally {
             myPool.releaseConnection(conn);
             return status;
@@ -1080,7 +1095,7 @@ public class DMLCommandExecutor {
         try {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
-        } catch (SQLException ex) { //Handle a delete exception
+        } catch (SQLException ex) {
             System.out.println(ex);
         } finally {
             myPool.releaseConnection(conn);
@@ -1111,9 +1126,9 @@ public class DMLCommandExecutor {
         try {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
-        } catch (SQLException ex) { //Handle a double key exception
-            //System.out.println("Double entry in insert");
-            ex.printStackTrace();
+        } catch (SQLException ex) {
+            //ex.printStackTrace();
+            System.out.println(ex);
         } finally {
             myPool.releaseConnection(conn);
             return status;
@@ -1142,9 +1157,8 @@ public class DMLCommandExecutor {
         try {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
-        } catch (SQLException ex) { //Handle a double key exception
-            //System.out.println("Double entry in insert");
-            ex.printStackTrace();
+        } catch (SQLException ex) {
+            System.out.println(ex);
         } finally {
             myPool.releaseConnection(conn);
             return status;
@@ -1299,8 +1313,9 @@ public class DMLCommandExecutor {
         try {
             stmt = conn.createStatement();
             rs = stmt.executeQuery(sql);
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException ex) {
+            //ex.printStackTrace();
+            System.out.println(ex);
             return null;
         } finally {
             myPool.releaseConnection(conn);
@@ -1441,8 +1456,8 @@ public class DMLCommandExecutor {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
         } catch (SQLException ex) { //Handle a double key exception
-            //System.out.println("Double entry in insert");
-            ex.printStackTrace();
+            //ex.printStackTrace();
+            System.out.println(ex);
         } finally {
             myPool.releaseConnection(conn);
             return status;
@@ -1465,8 +1480,8 @@ public class DMLCommandExecutor {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
         } catch (SQLException ex) { //Handle a double key exception
-            //System.out.println("Double entry in insert");
-            ex.printStackTrace();
+            //ex.printStackTrace();
+            System.out.println(ex);
         } finally {
             myPool.releaseConnection(conn);
             return status;
@@ -1488,7 +1503,8 @@ public class DMLCommandExecutor {
             if (stmt.executeUpdate(sql) == 1)
                 status = true;
         } catch (SQLException ex) { //Handle a double key exception
-            ex.printStackTrace();
+            System.out.println(ex);
+            //ex.printStackTrace();
         } finally {
             myPool.releaseConnection(conn);
             return status;

@@ -3,16 +3,13 @@ package main.controllers.Menu;
 import com.google.zxing.EncodeHintType;
 import com.google.zxing.NotFoundException;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
-import main.User;
 import main.controllers.AbstractController;
-import main.controllers.AbstractStageController;
+import main.controllers.StageController;
 import main.qrReader.QRReader;
 import main.qrReader.WebcamQRReader;
 
@@ -25,7 +22,7 @@ import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.concurrent.FutureTask;
 
-public class ControllerMainAccessi extends AbstractStageController implements Initializable {
+public class ControllerMainAccessi extends AbstractController implements Initializable {
 
     /*
         Buttons & Initialization
@@ -36,8 +33,9 @@ public class ControllerMainAccessi extends AbstractStageController implements In
     @FXML Button readQRFromWebcamButton;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources){
         AbstractController.setCurrentController(this);
+        controllerType = new StageController();
     }
 
     /*

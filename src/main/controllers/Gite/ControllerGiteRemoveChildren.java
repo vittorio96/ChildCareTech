@@ -8,14 +8,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
-import javafx.scene.input.MouseEvent;
 import main.Classes.NormalClasses.Anagrafica.Child;
 import main.Classes.NormalClasses.Gite.Bus;
 import main.Classes.NormalClasses.Gite.BusAssociation;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.Classes.StringPropertyClasses.Gite.StringPropertyBus;
 import main.controllers.AbstractController;
-import main.controllers.AbstractPopOverController;
+import main.controllers.PopOverController;
+import main.controllers.PopupController;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerGiteRemoveChildren extends AbstractPopOverController implements Initializable {
+public class ControllerGiteRemoveChildren extends AbstractController implements Initializable {
 
     //Buttons
     @FXML private Button genericButton;
@@ -50,11 +50,15 @@ public class ControllerGiteRemoveChildren extends AbstractPopOverController impl
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        setControllerType();
         AbstractController.setCurrentController(this);
         setColumnAssociations();
         refreshChildrenTable();
 
+    }
+
+    private void setControllerType() {
+        controllerType = new PopOverController();
     }
 
     protected void setColumnAssociations() {
@@ -104,6 +108,6 @@ public class ControllerGiteRemoveChildren extends AbstractPopOverController impl
     }
 
     @FXML private void handleGoHomebutton(){
-        close(genericButton);
+        controllerType.close(genericButton);
     }
 }

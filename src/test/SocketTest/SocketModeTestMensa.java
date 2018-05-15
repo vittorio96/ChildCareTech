@@ -260,4 +260,12 @@ public class SocketModeTestMensa {
         return staff;
     }
 
+    public void deleteCreatedStaff(){
+
+    }
+
+    public void deleteCreatedIngredient(){
+
+    }
+
 }

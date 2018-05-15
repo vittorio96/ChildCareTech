@@ -11,7 +11,7 @@ import java.util.List;
 public interface RemoteServerInterface extends Remote{
 
     //Remote method to check if a user is registered
-    public User verifyLogin(String username, String password, RemoteClientInterface client) throws RemoteException;
+    public User verifyLogin(String username, String password) throws RemoteException;
 
     //Remote method to execute a person into db
     public boolean insertPersonExecution(Person p) throws RemoteException;

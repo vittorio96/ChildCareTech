@@ -1,29 +1,17 @@
 package main.controllers.Menu;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import main.User;
 import main.controllers.AbstractController;
-import main.controllers.AbstractStageController;
+import main.controllers.StageController;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.ResultSet;
 import java.util.ResourceBundle;
 
-public class ControllerMainAnagrafica extends AbstractStageController implements Initializable {
+public class ControllerMainAnagrafica extends AbstractController implements Initializable {
 
     /*
         Buttons & Initialization
@@ -38,8 +26,9 @@ public class ControllerMainAnagrafica extends AbstractStageController implements
 
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources){
         AbstractController.setCurrentController(this);
+        controllerType = new StageController();
     }
 
     /*

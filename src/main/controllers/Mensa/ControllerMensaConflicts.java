@@ -14,13 +14,14 @@ import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.Classes.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.Classes.StringPropertyClasses.Mensa.StringPropertyIngredient;
-import main.controllers.AbstractPopupController;
+import main.controllers.AbstractController;
+import main.controllers.PopupController;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerMensaConflicts extends AbstractPopupController implements Initializable {
+public class ControllerMensaConflicts extends AbstractController implements Initializable {
 
     /*
         Tables
@@ -57,9 +58,14 @@ public class ControllerMensaConflicts extends AbstractPopupController implements
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setControllerType();
         setTableAssociations();
         refreshDishTable();
         refreshPersonTables();
+    }
+
+    private void setControllerType() {
+        controllerType = new PopupController();
     }
 
     private void refreshPersonTables() {
@@ -179,6 +185,6 @@ public class ControllerMensaConflicts extends AbstractPopupController implements
     */
 
     public void closeCurrentPopup() {
-        close(closeImageView);
+        controllerType.close(closeImageView);
     }
 }

@@ -6,21 +6,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.util.StringConverter;
 import main.Classes.NormalClasses.Anagrafica.Staff;
 import main.User;
-import main.controllers.AbstractPopupController;
+import main.controllers.AbstractController;
+import main.controllers.PopupController;
 import main.qrReader.QRGenerator;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
-public class ControllerAnagraficaAddStaff extends AbstractPopupController implements Initializable {
+public class ControllerAnagraficaAddStaff extends AbstractController implements Initializable {
 
     private final int CODFISLENGTH = 16;
 
@@ -36,10 +35,14 @@ public class ControllerAnagraficaAddStaff extends AbstractPopupController implem
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        setControllerType();
         choiceBoxSetup();
         setTextFieldAutocaps(codFisTextField);
         datePickerStandardInitialize(birthdayDatePicker);
+    }
+
+    private void setControllerType() {
+        controllerType = new PopupController();
     }
 
     private void choiceBoxSetup() {
@@ -94,6 +97,6 @@ public class ControllerAnagraficaAddStaff extends AbstractPopupController implem
     public void handleGoHomebutton() {
         if(createConfirmationDialog("Sei sicuro di voler chiudere?",
                 "I dati inseriti non verranno salvati."))
-            close(goHomeImageView);
+            controllerType.close(goHomeImageView);
     }
 }

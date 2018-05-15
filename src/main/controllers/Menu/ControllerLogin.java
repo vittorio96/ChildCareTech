@@ -10,7 +10,7 @@ import javafx.scene.control.*;
 import main.Client;
 import main.User;
 import main.controllers.AbstractController;
-import main.controllers.AbstractStageController;
+import main.controllers.StageController;
 
 
 import java.io.IOException;
@@ -21,7 +21,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class ControllerLogin extends AbstractStageController implements Initializable {
+public class ControllerLogin extends AbstractController implements Initializable {
 
     /*
        Static
@@ -47,9 +47,9 @@ public class ControllerLogin extends AbstractStageController implements Initiali
     public void initialize(URL location, ResourceBundle resources) {
         // Implementing the Initializable interface means that this method
         // will be called when the controllerLogin instance is created
-
         AbstractController.setCurrentController(this);
         controllerLogin = this;
+        controllerType = new StageController();
 
         ArrayList items = new ArrayList<String>();
         items.add("RMI");

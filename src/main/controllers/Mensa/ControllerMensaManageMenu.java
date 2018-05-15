@@ -11,7 +11,8 @@ import javafx.util.Duration;
 import main.Classes.NormalClasses.Mensa.Dish;
 import main.Classes.NormalClasses.Mensa.Menu;
 import main.Classes.StringPropertyClasses.Mensa.StringPropertyDish;
-import main.controllers.AbstractPopupController;
+import main.controllers.AbstractController;
+import main.controllers.PopupController;
 import org.controlsfx.control.PopOver;
 
 import java.io.IOException;
@@ -21,7 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerMensaManageMenu extends AbstractPopupController implements Initializable {
+public class ControllerMensaManageMenu extends AbstractController implements Initializable {
 
     /*
         Add & Remove Buttons and close button
@@ -81,10 +82,15 @@ public class ControllerMensaManageMenu extends AbstractPopupController implement
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setControllerType();
         columnAssociation();
         selectionMenuSetup();
         refreshDishes(defaultDay);
         ingredientPopupSetup();
+    }
+
+    private void setControllerType() {
+        controllerType = new PopupController();
     }
 
     private void ingredientPopupSetup() {
@@ -165,7 +171,7 @@ public class ControllerMensaManageMenu extends AbstractPopupController implement
 
     public void goHome() throws IOException {
         handleOpenedPopovers();
-        close(goHomeIV);
+        controllerType.close(goHomeIV);
     }
 
     private void handleOpenedPopovers() {

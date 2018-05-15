@@ -30,6 +30,7 @@ public abstract class AbstractController {
     public static AbstractController currentController;
     protected static User loggedUser;
     protected static User.UserTypeFlag userTypeFlag;
+    protected ControllerType controllerType;
 
     protected static final String ERRORCSS = "-fx-text-box-border: red ; -fx-focus-color: red ;";
     protected static final String NORMALCSS ="-fx-text-box-border: lightgray ; -fx-focus-color: #81CEE9;";
@@ -296,8 +297,6 @@ public abstract class AbstractController {
     protected void setEventListeners(){
 
     }
-
-    public abstract void close(Node node);
 
 
 

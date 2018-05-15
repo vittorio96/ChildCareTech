@@ -15,14 +15,15 @@ import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.Classes.StringPropertyClasses.Gite.StringPropertyBus;
 import main.Classes.StringPropertyClasses.Gite.StringPropertyStop;
 import main.Classes.StringPropertyClasses.Gite.StringPropertyTrip;
-import main.controllers.AbstractPopupController;
+import main.controllers.AbstractController;
+import main.controllers.PopupController;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 
-public class ControllerGiteManagePresenzeTappe extends AbstractPopupController implements Initializable {
+public class ControllerGiteManagePresenzeTappe extends AbstractController implements Initializable {
 
     //Tabella 1
     private ObservableList<StringPropertyTrip> giteObservableList = FXCollections.observableArrayList();
@@ -68,9 +69,14 @@ public class ControllerGiteManagePresenzeTappe extends AbstractPopupController i
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setControllerType();
         setColumnAssociations();
         setEventListeners();
         refreshTripTable();
+    }
+
+    private void setControllerType() {
+        controllerType = new PopupController();
     }
 
     @FXML public void insertStopPresence(ActionEvent event) {
@@ -212,8 +218,7 @@ public class ControllerGiteManagePresenzeTappe extends AbstractPopupController i
 
 
     @FXML private void handleGoHomeButton(){
-        Stage stage = (Stage) saveButton.getScene().getWindow();
-        stage.close();
+        controllerType.close(saveButton);
     }
 
     private void refreshChildTable(StringPropertyStop selectedStop) {

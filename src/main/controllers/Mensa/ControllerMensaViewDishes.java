@@ -11,7 +11,8 @@ import javafx.scene.image.ImageView;
 import main.Classes.NormalClasses.Mensa.Dish;
 import main.Classes.NormalClasses.Mensa.Menu;
 import main.Classes.StringPropertyClasses.Mensa.StringPropertyDish;
-import main.controllers.AbstractPopupController;
+import main.controllers.AbstractController;
+import main.controllers.PopupController;
 import org.controlsfx.control.PopOver;
 
 import java.io.IOException;
@@ -19,7 +20,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerMensaViewDishes extends AbstractPopupController implements Initializable {
+public class ControllerMensaViewDishes extends AbstractController implements Initializable {
 
     /*
         Static
@@ -63,7 +64,7 @@ public class ControllerMensaViewDishes extends AbstractPopupController implement
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        setControllerType();
         refreshDishes();
         dishesTable.setRowFactory( tv -> {
             TableRow<StringPropertyDish> row = new TableRow<>();
@@ -80,6 +81,10 @@ public class ControllerMensaViewDishes extends AbstractPopupController implement
             });
             return row ;
         });
+    }
+
+    private void setControllerType() {
+        controllerType = new PopupController();
     }
 
 
@@ -126,7 +131,7 @@ public class ControllerMensaViewDishes extends AbstractPopupController implement
 
 
     public void goHome() {
-        close(goHomeIV);
+        controllerType.close(goHomeIV);
     }
 
     public void addNewDish() throws IOException {

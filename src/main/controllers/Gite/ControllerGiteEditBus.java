@@ -3,15 +3,16 @@ package main.controllers.Gite;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import main.Classes.NormalClasses.Gite.Bus;
 import main.Classes.StringPropertyClasses.Gite.StringPropertyBus;
-import main.controllers.AbstractPopOverController;
+import main.controllers.AbstractController;
+import main.controllers.PopOverController;
+import main.controllers.PopupController;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerGiteEditBus extends AbstractPopOverController implements Initializable {
+public class ControllerGiteEditBus extends AbstractController implements Initializable {
 
     public static StringPropertyBus bus;
     @FXML private Button saveButton;
@@ -22,6 +23,7 @@ public class ControllerGiteEditBus extends AbstractPopOverController implements 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setControllerType();
         nomeAutotrasportatoreTextField.setText(bus.getNomeA());
         targaAutobusTextField.setText(bus.getTarga());
     }
@@ -55,6 +57,10 @@ public class ControllerGiteEditBus extends AbstractPopOverController implements 
 
     }
 
+    private void setControllerType() {
+        controllerType = new PopOverController();
+    }
+
     private boolean textConstraintsRespected() {
         final int LICENSEPLATELENGTH = 7;
         int errors = 0;
@@ -65,7 +71,7 @@ public class ControllerGiteEditBus extends AbstractPopOverController implements 
     }
 
     @FXML private void handleGoHomebutton(){
-        close(saveButton);
+        controllerType.close(saveButton);
     }
 
 

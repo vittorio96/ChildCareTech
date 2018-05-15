@@ -2,23 +2,19 @@ package main.controllers.Gite;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import javafx.util.StringConverter;
 import main.Classes.NormalClasses.Gite.Bus;
 import main.Classes.NormalClasses.Gite.Trip;
 import main.controllers.AbstractController;
-import main.controllers.AbstractPopupController;
+import main.controllers.PopupController;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class ControllerGiteAddTrip extends AbstractPopupController implements Initializable {
+public class ControllerGiteAddTrip extends AbstractController implements Initializable {
     private final String pattern = "dd/MM/yyyy";
 
     //Tasti
@@ -37,14 +33,18 @@ public class ControllerGiteAddTrip extends AbstractPopupController implements In
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        setControllerType();
         AbstractController.setCurrentController(this);
         datePickerStandardInitialize(dateOfDepartureDatePicker);
 
     }
 
+    private void setControllerType() {
+        controllerType = new PopupController();
+    }
+
     @FXML private void handleGoHomebutton(){
-        close(saveButton);
+        controllerType.close(saveButton);
     }
 
     @FXML private void handleSaveButton(){

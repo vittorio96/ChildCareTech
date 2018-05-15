@@ -1,5 +1,3 @@
-package test;
-
 import main.ConnectionPool;
 
 /*import static org.junit.jupiter.api.Assertions.*;

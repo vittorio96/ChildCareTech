@@ -1,14 +1,16 @@
 package main.controllers.Mensa;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import main.controllers.AbstractController;
-import main.controllers.AbstractPopOverController;
-import main.controllers.AbstractPopupController;
+import main.controllers.PopupController;
 
-public class ControllerMensaAddIngredient extends AbstractPopupController{
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ControllerMensaAddIngredient extends AbstractController implements Initializable {
 
     /*
         GUI nodes
@@ -35,7 +37,7 @@ public class ControllerMensaAddIngredient extends AbstractPopupController{
     }
 
     @FXML private void handleGoHomebutton(){
-        close(goHomeImageView);
+        controllerType.close(goHomeImageView);
     }
 
     /*
@@ -48,4 +50,8 @@ public class ControllerMensaAddIngredient extends AbstractPopupController{
         return errors == 0;
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        controllerType = new PopupController();
+    }
 }

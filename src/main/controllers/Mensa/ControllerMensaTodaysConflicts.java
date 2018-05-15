@@ -13,14 +13,15 @@ import main.Classes.NormalClasses.Anagrafica.Staff;
 import main.Classes.NormalClasses.Mensa.Menu;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
-import main.controllers.AbstractPopupController;
+import main.controllers.AbstractController;
+import main.controllers.PopupController;
 
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerMensaTodaysConflicts extends AbstractPopupController implements Initializable {
+public class ControllerMensaTodaysConflicts extends AbstractController implements Initializable {
 
     /*
         Tables
@@ -55,10 +56,15 @@ public class ControllerMensaTodaysConflicts extends AbstractPopupController impl
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setControllerType();
         setTableAssociations();
         selectionMenuSetup();
         refreshPersonTables(defaultDay);
 
+    }
+
+    private void setControllerType() {
+        controllerType = new PopupController();
     }
 
     /*
@@ -139,7 +145,7 @@ public class ControllerMensaTodaysConflicts extends AbstractPopupController impl
     }
 
     @FXML public void closeCurrentPopup() {
-        close(closeImageView);
+        controllerType.close(closeImageView);
     }
 
 }

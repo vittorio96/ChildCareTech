@@ -3,25 +3,21 @@ package main.controllers.Anagrafica;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.util.StringConverter;
 import main.Classes.NormalClasses.Anagrafica.Child;
 import main.Classes.NormalClasses.Anagrafica.Contact;
-import main.Classes.NormalClasses.Anagrafica.Person;
 import main.controllers.AbstractController;
-import main.controllers.AbstractPopupController;
+import main.controllers.PopupController;
 import main.qrReader.QRGenerator;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class ControllerAnagraficaAddChild extends AbstractPopupController implements Initializable {
+public class ControllerAnagraficaAddChild extends AbstractController implements Initializable {
 
     /*
         Gui elements
@@ -59,11 +55,15 @@ public class ControllerAnagraficaAddChild extends AbstractPopupController implem
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        setControllerType();
         AbstractController.setCurrentController(this);
         setToCapsTextFieldTransform();
         datePickerStandardInitialize(birthdayDatePicker);
 
+    }
+
+    private void setControllerType() {
+        controllerType = new PopupController();
     }
 
     /*
@@ -80,7 +80,7 @@ public class ControllerAnagraficaAddChild extends AbstractPopupController implem
     public void handleGoHomebutton() {
         if(createConfirmationDialog("Sei sicuro di voler chiudere?",
                 "I dati inseriti non verranno salvati."))
-            close(goHomeImageView);
+            controllerType.close(goHomeImageView);
     }
 
 
@@ -110,7 +110,7 @@ public class ControllerAnagraficaAddChild extends AbstractPopupController implem
                 //Genera QR image
                 QRGenerator.GenerateQR(child);
                 createSuccessPopup();
-                close(goHomeImageView);
+                controllerType.close(goHomeImageView);
             }
 
         }

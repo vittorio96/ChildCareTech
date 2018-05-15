@@ -8,13 +8,15 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import main.Classes.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.Classes.StringPropertyClasses.Mensa.StringPropertyIngredient;
-import main.controllers.AbstractPopOverController;
+import main.controllers.AbstractController;
+import main.controllers.PopOverController;
+import main.controllers.PopupController;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerShowIngredientsPopOver extends AbstractPopOverController implements Initializable {
+public class ControllerShowIngredientsPopOver extends AbstractController implements Initializable {
 
     /*
         Static
@@ -35,9 +37,19 @@ public class ControllerShowIngredientsPopOver extends AbstractPopOverController 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ingredientsOnDish.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
+        setControllerType();
+        setColumnAssociations();
         showIngredients();
 
+    }
+
+
+    protected void setColumnAssociations() {
+        ingredientsOnDish.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
+    }
+
+    private void setControllerType() {
+        controllerType = new PopOverController();
     }
     private void showIngredients() {
         List<String> ingredients = CLIENT.clientExtractIngredientsForDishFromDb(dish.getNomeP());

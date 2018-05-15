@@ -7,7 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 import main.Classes.NormalClasses.Anagrafica.Child;
 import main.Classes.NormalClasses.Gite.Bus;
 
@@ -17,7 +16,7 @@ import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.Classes.StringPropertyClasses.Gite.StringPropertyBus;
 import main.Classes.StringPropertyClasses.Gite.StringPropertyTrip;
 import main.controllers.AbstractController;
-import main.controllers.AbstractPopupController;
+import main.controllers.PopupController;
 import org.controlsfx.control.PopOver;
 
 import java.io.IOException;
@@ -26,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerGiteManageTrip extends AbstractPopupController implements Initializable {
+public class ControllerGiteManageTrip extends AbstractController implements Initializable {
 
     @FXML private Button genericButton;
     @FXML private ImageView editBusIV;
@@ -58,11 +57,15 @@ public class ControllerGiteManageTrip extends AbstractPopupController implements
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        setControllerType();
         AbstractController.setCurrentController(this);
         setColumnAssociations();
         setEventListeners();
         refreshTripTable();
+    }
+
+    private void setControllerType() {
+        controllerType = new PopupController();
     }
 
     protected void setColumnAssociations() {
@@ -210,7 +213,7 @@ public class ControllerGiteManageTrip extends AbstractPopupController implements
     }
 
     @FXML private void goHome(){
-        close(genericButton);
+        controllerType.close(genericButton);
     }
 
     @FXML public void editBus() throws IOException {

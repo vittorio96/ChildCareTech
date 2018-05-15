@@ -14,13 +14,14 @@ import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyPerson;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.Classes.StringPropertyClasses.Mensa.StringPropertyIngredient;
-import main.controllers.AbstractPopupController;
+import main.controllers.AbstractController;
+import main.controllers.PopupController;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerMensaAddAllergen extends AbstractPopupController implements Initializable {
+public class ControllerMensaAddAllergen extends AbstractController implements Initializable {
 
     /*
         Tables
@@ -59,6 +60,7 @@ public class ControllerMensaAddAllergen extends AbstractPopupController implemen
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        controllerType = new PopupController();
         setTableAssociations();
         refreshTables();
     }
@@ -190,7 +192,7 @@ public class ControllerMensaAddAllergen extends AbstractPopupController implemen
     */
 
     @FXML private void handleClosePopup() {
-        close(closeIV);
+        controllerType.close(closeIV);
     }
 
     /*

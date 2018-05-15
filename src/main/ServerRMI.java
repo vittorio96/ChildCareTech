@@ -20,7 +20,7 @@ public class ServerRMI extends UnicastRemoteObject implements RemoteServerInterf
     }
 
     @Override
-    public User verifyLogin(String username, String password, RemoteClientInterface client) throws RemoteException {
+    public User verifyLogin(String username, String password) throws RemoteException {
 
         String name = null;
         String psw = null;

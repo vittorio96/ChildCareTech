@@ -6,12 +6,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
-import javafx.util.StringConverter;
 import main.Classes.NormalClasses.Anagrafica.Staff;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyPerson;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
-import main.controllers.AbstractPopupController;
+import main.controllers.AbstractController;
+import main.controllers.PopupController;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -19,7 +18,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerAnagraficaManageStaff extends AbstractPopupController implements Initializable {
+public class ControllerAnagraficaManageStaff extends AbstractController implements Initializable {
 
     //main list
     private ObservableList<StringPropertyStaff> staffObservableList = FXCollections.observableArrayList();
@@ -43,9 +42,14 @@ public class ControllerAnagraficaManageStaff extends AbstractPopupController imp
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setControllerType();
         setColumnAssociations();
         datePickerStandardInitialize(birthdayDatePicker);
         setEventListeners();
+    }
+
+    private void setControllerType() {
+        controllerType = new PopupController();
     }
 
     protected void setEventListeners() {
@@ -92,7 +96,7 @@ public class ControllerAnagraficaManageStaff extends AbstractPopupController imp
     }
 
     @FXML private void handleGoHomeButton(){
-        close(saveChangesButton);
+        controllerType.close(saveChangesButton);
     }
 
     @FXML private void handleDeleteButton(){
@@ -128,7 +132,7 @@ public class ControllerAnagraficaManageStaff extends AbstractPopupController imp
     }
 
     public void handleGoHomebutton() {
-        close(goHomeImageView);
+        controllerType.close(goHomeImageView);
     }
 
     public StringPropertyPerson getSelectedStaff() {

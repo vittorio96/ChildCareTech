@@ -7,17 +7,18 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-import javafx.util.StringConverter;
 import main.Classes.NormalClasses.Gite.Trip;
 import main.Classes.StringPropertyClasses.Gite.StringPropertyTrip;
-import main.controllers.AbstractPopOverController;
+import main.controllers.AbstractController;
+import main.controllers.PopOverController;
+import main.controllers.PopupController;
 
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-public class ControllerGiteEditTrip extends AbstractPopOverController implements Initializable {
+public class ControllerGiteEditTrip extends AbstractController implements Initializable {
 
     //Static
     private static StringPropertyTrip trip;
@@ -38,9 +39,13 @@ public class ControllerGiteEditTrip extends AbstractPopOverController implements
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        setControllerType();
         datePickerStandardInitialize(dateOfDepartureDatePicker);
         initialDetailsDisplay();
+    }
+
+    private void setControllerType() {
+        controllerType = new PopOverController();
     }
 
     private void initialDetailsDisplay() {
@@ -56,7 +61,7 @@ public class ControllerGiteEditTrip extends AbstractPopOverController implements
 
 
     @FXML private void handleGoHomebutton(){
-        close(saveButton);
+        controllerType.close(saveButton);
     }
 
     @FXML public void handleSaveButton(ActionEvent event) {

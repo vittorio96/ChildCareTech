@@ -11,7 +11,8 @@ import main.Classes.NormalClasses.Anagrafica.Child;
 import main.Classes.NormalClasses.Anagrafica.Staff;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
-import main.controllers.AbstractPopupController;
+import main.controllers.AbstractController;
+import main.controllers.PopupController;
 import main.qrReader.QRGenerator;
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,7 +20,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerAccessiGeneraQR extends AbstractPopupController implements Initializable {
+public class ControllerAccessiGeneraQR extends AbstractController implements Initializable {
     //main list
     private ObservableList<StringPropertyChild> childObservableList = FXCollections.observableArrayList();
     private ObservableList<StringPropertyStaff> staffObservableList = FXCollections.observableArrayList();
@@ -45,6 +46,7 @@ public class ControllerAccessiGeneraQR extends AbstractPopupController implement
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setControllerType();
         codeColumn.setCellValueFactory(cellData -> cellData.getValue().codRProperty());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
         surnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
@@ -76,6 +78,10 @@ public class ControllerAccessiGeneraQR extends AbstractPopupController implement
 
         staffTable.setItems(staffObservableList);
 
+    }
+
+    private void setControllerType() {
+        controllerType = new PopupController();
     }
 
     @FXML
@@ -116,7 +122,7 @@ public class ControllerAccessiGeneraQR extends AbstractPopupController implement
 
 
     @FXML private void handleGoHomebutton(){
-        close(exitButton);
+        controllerType.close(exitButton);
     }
 
 }

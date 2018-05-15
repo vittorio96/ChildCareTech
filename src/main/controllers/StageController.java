@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public abstract class AbstractStageController extends AbstractController{
+public class StageController implements ControllerType{
 
     public void close(Node button){
         Stage stage = (Stage) button.getScene().getWindow();

@@ -8,7 +8,8 @@ import javafx.scene.control.*;
 import main.Classes.NormalClasses.Anagrafica.Child;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyPerson;
-import main.controllers.AbstractPopupController;
+import main.controllers.AbstractController;
+import main.controllers.PopupController;
 
 import java.net.URL;
 import java.time.LocalDate;
@@ -16,7 +17,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerAnagraficaManageChild extends AbstractPopupController implements Initializable {
+public class ControllerAnagraficaManageChild extends AbstractController implements Initializable {
 
     //main list
     private ObservableList<StringPropertyChild> childObservableList = FXCollections.observableArrayList();
@@ -40,11 +41,16 @@ public class ControllerAnagraficaManageChild extends AbstractPopupController imp
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setControllerType();
         setColumnAssociations();
         datePickerStandardInitialize(birthdayDatePicker);
         setEventListeners();
         populateTable();
 
+    }
+
+    private void setControllerType() {
+        controllerType = new PopupController();
     }
 
     protected void setColumnAssociations() {
@@ -116,7 +122,7 @@ public class ControllerAnagraficaManageChild extends AbstractPopupController imp
     }
 
     @FXML private void handleGoHomebutton(){
-        close(saveChangesButton);
+        controllerType.close(saveChangesButton);
     }
 
     private boolean textConstraintsRespectedForUpdate() {

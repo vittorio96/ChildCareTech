@@ -11,14 +11,14 @@ import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.Classes.StringPropertyClasses.Gite.StringPropertyBus;
 import main.Classes.StringPropertyClasses.Gite.StringPropertyTrip;
 import main.controllers.AbstractController;
-import main.controllers.AbstractPopupController;
+import main.controllers.PopupController;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
 
-public class ControllerGiteAddBus extends AbstractPopupController implements Initializable {
+public class ControllerGiteAddBus extends AbstractController implements Initializable {
 
     //Tasti
     @FXML private Button saveButton;
@@ -48,7 +48,7 @@ public class ControllerGiteAddBus extends AbstractPopupController implements Ini
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        setControllerType();
         AbstractController.setCurrentController(this);
         busesColumn.setCellValueFactory(cellData -> cellData.getValue().targaProperty());
         codiceBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().codRProperty());
@@ -58,6 +58,10 @@ public class ControllerGiteAddBus extends AbstractPopupController implements Ini
                 (observable, oldValue, newValue) -> showRelatedBusAndChildren(newValue));
         refreshBusTable(gita);
 
+    }
+
+    private void setControllerType() {
+        controllerType = new PopupController();
     }
 
     private void showRelatedBusAndChildren(StringPropertyBus selectedbus) {
@@ -92,7 +96,7 @@ public class ControllerGiteAddBus extends AbstractPopupController implements Ini
 
 
     @FXML private void handleGoHomebutton(){
-        close(saveButton);
+        controllerType.close(saveButton);
     }
 
 

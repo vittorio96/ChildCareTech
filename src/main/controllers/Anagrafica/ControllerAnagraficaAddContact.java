@@ -11,13 +11,13 @@ import main.Classes.NormalClasses.Anagrafica.Contact;
 import main.Classes.NormalClasses.Anagrafica.Person;
 import main.Classes.NormalClasses.Anagrafica.Supplier;
 import main.controllers.AbstractController;
-import main.controllers.AbstractPopupController;
+import main.controllers.PopupController;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerAnagraficaAddContact extends AbstractPopupController implements Initializable {
+public class ControllerAnagraficaAddContact extends AbstractController implements Initializable {
 
     /*
         Gui elements
@@ -52,7 +52,7 @@ public class ControllerAnagraficaAddContact extends AbstractPopupController impl
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        setControllerType();
         setTextFieldAutocaps(codFisTextField);
 
         tabPane.getSelectionModel().selectedItemProperty().addListener((obs,ov,nv)->{
@@ -65,6 +65,9 @@ public class ControllerAnagraficaAddContact extends AbstractPopupController impl
 
     }
 
+    private void setControllerType() {
+        controllerType = new PopupController();
+    }
     /*
         Gui methods
     */
@@ -77,7 +80,7 @@ public class ControllerAnagraficaAddContact extends AbstractPopupController impl
                         "Contatto già esistente o cellulare già in Db");
             } else {
                 createSuccessPopup();
-                close(goHomeImageView);
+                controllerType.close(goHomeImageView);
             }
         }
         else{ createFieldErrorPopup(); }
@@ -93,7 +96,7 @@ public class ControllerAnagraficaAddContact extends AbstractPopupController impl
                         "Contatto già esistente o cellulare già in Db");
             } else {
                 createSuccessPopup();
-                close(goHomeImageView);
+                controllerType.close(goHomeImageView);
             }
         }
         else{ createFieldErrorPopup(); }
@@ -151,7 +154,7 @@ public class ControllerAnagraficaAddContact extends AbstractPopupController impl
     public void handleGoHomebutton(MouseEvent mouseEvent) {
         if(createConfirmationDialog("Sei sicuro di voler chiudere?",
                 "I dati inseriti non verranno salvati."))
-            close(goHomeImageView);
+            controllerType.close(goHomeImageView);
     }
 
     /*

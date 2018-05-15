@@ -5,7 +5,9 @@ import main.Classes.NormalClasses.Mensa.Dish;
 import main.Classes.NormalClasses.Mensa.Intolerance;
 import main.Classes.NormalClasses.Mensa.Menu;
 
+import java.net.MalformedURLException;
 import java.rmi.Naming;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.util.List;
 
@@ -33,7 +35,7 @@ public class RmiMode implements SessionMode {
         User candidateUser;
 
         try{
-            candidateUser = server.verifyLogin(user, password, client);
+            candidateUser = server.verifyLogin(user, password);
             return candidateUser;
         }
         catch(RemoteException e){

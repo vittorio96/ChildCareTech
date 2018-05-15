@@ -11,14 +11,15 @@ import main.Classes.NormalClasses.Gite.Trip;
 import main.Classes.StringPropertyClasses.Gite.StringPropertyBus;
 import main.Classes.StringPropertyClasses.Gite.StringPropertyStop;
 import main.Classes.StringPropertyClasses.Gite.StringPropertyTrip;
-import main.controllers.AbstractPopupController;
+import main.controllers.AbstractController;
+import main.controllers.PopupController;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerGiteAddStop extends AbstractPopupController implements Initializable {
+public class ControllerGiteAddStop extends AbstractController implements Initializable {
     //Tasti e campi
     @FXML private Button saveButton;
     @FXML private TextField luogoTextField;
@@ -47,11 +48,15 @@ public class ControllerGiteAddStop extends AbstractPopupController implements In
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        setControllerType();
         setColumnAssociations();
         setEventListeners();
         refreshTripTable();
 
+    }
+
+    private void setControllerType() {
+        controllerType = new PopupController();
     }
 
     @FXML private void deleteStop(){
@@ -169,7 +174,7 @@ public class ControllerGiteAddStop extends AbstractPopupController implements In
     }
 
     @FXML private void handleGoHomebutton() throws IOException {
-        close(saveButton);
+        controllerType.close(saveButton);
     }
 
     private boolean textConstraintsRespected() {

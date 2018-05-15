@@ -3,7 +3,7 @@ package main.controllers;
 import javafx.scene.Node;
 import org.controlsfx.control.PopOver;
 
-public abstract class AbstractPopOverController extends AbstractController {
+public class PopOverController implements ControllerType {
 
     public void close(Node node){
         PopOver stage = (PopOver) node.getScene().getWindow();

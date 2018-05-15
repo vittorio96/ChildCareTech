@@ -11,13 +11,14 @@ import main.Classes.NormalClasses.Anagrafica.Person;
 import main.Classes.NormalClasses.Anagrafica.Supplier;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyContact;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertySupplier;
-import main.controllers.AbstractPopupController;
+import main.controllers.AbstractController;
+import main.controllers.PopupController;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerAnagraficaManageContact extends AbstractPopupController implements Initializable {
+public class ControllerAnagraficaManageContact extends AbstractController implements Initializable {
 
     /*
         Gui elements
@@ -66,9 +67,14 @@ public class ControllerAnagraficaManageContact extends AbstractPopupController i
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setControllerType();
         setColumnAssociations();
         setEventListeners();
         populateTables();
+    }
+
+    private void setControllerType() {
+        controllerType = new PopupController();
     }
 
     protected void setEventListeners() {
@@ -361,7 +367,7 @@ public class ControllerAnagraficaManageContact extends AbstractPopupController i
     }
 
     public void handleGoHomebutton() {
-        close(goHomeImageView);
+        controllerType.close(goHomeImageView);
     }
 
 }

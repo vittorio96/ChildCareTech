@@ -2,23 +2,16 @@ package main.controllers.Menu;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import main.User;
 import main.controllers.AbstractController;
-import main.controllers.AbstractStageController;
-import org.controlsfx.control.PopOver;
+import main.controllers.StageController;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerMainMensa extends AbstractStageController implements Initializable {
+public class ControllerMainMensa extends AbstractController implements Initializable {
 
     /*
         Buttons & Initialization
@@ -33,6 +26,7 @@ public class ControllerMainMensa extends AbstractStageController implements Init
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         AbstractController.setCurrentController(this);
+        controllerType = new StageController();
     }
 
     /*

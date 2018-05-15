@@ -2,23 +2,20 @@ package main.controllers.Menu;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import main.User;
 import main.controllers.AbstractController;
-import main.controllers.AbstractStageController;
-import org.controlsfx.control.PopOver;
+import main.controllers.StageController;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControllerMainMenu extends AbstractStageController implements Initializable {
+public class ControllerMainMenu extends AbstractController implements Initializable {
 
     /*
         Buttons & Initialization
@@ -40,6 +37,7 @@ public class ControllerMainMenu extends AbstractStageController implements Initi
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         AbstractController.setCurrentController(this);
+        controllerType = new StageController();
         loggedUserDataDisplay.setText(loggedUser.getUsername().toUpperCase());
         setEnabledItems();
     }
