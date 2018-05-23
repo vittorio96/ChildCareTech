@@ -68,12 +68,13 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
+        AbstractController.setCurrentController(this);
         setColumnAssociations();
         setEventListeners();
         populateTables();
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -370,4 +371,8 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
         controllerType.close(goHomeImageView);
     }
 
+    @Override
+    public void refresh() {
+
+    }
 }

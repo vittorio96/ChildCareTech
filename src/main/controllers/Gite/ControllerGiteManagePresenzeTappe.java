@@ -70,12 +70,13 @@ public class ControllerGiteManagePresenzeTappe extends AbstractController implem
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
+        AbstractController.setCurrentController(this);
         setColumnAssociations();
         setEventListeners();
         refreshTripTable();
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -235,6 +236,8 @@ public class ControllerGiteManagePresenzeTappe extends AbstractController implem
         iscrizioniTable.setItems(bambiniObservableList);
     }
 
-    //TODO isStringProperty Interface
-    //TODO isNormal Interface
+    @Override
+    public void refresh() {
+
+    }
 }

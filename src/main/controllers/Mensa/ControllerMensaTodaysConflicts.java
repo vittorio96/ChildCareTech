@@ -63,7 +63,7 @@ public class ControllerMensaTodaysConflicts extends AbstractController implement
 
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -146,6 +146,11 @@ public class ControllerMensaTodaysConflicts extends AbstractController implement
 
     @FXML public void closeCurrentPopup() {
         controllerType.close(closeImageView);
+    }
+
+    @Override
+    public void refresh() {
+
     }
 
 }

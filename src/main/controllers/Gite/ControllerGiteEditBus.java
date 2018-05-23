@@ -24,6 +24,8 @@ public class ControllerGiteEditBus extends AbstractController implements Initial
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
+        AbstractController.setCurrentController(this);
+        setTextFieldAutocaps(targaAutobusTextField);
         nomeAutotrasportatoreTextField.setText(bus.getNomeA());
         targaAutobusTextField.setText(bus.getTarga());
     }
@@ -57,14 +59,14 @@ public class ControllerGiteEditBus extends AbstractController implements Initial
 
     }
 
-    private void setControllerType() {
-        controllerType = new PopOverController();
+    protected void setControllerType() {
+        controllerType = new PopupController();
     }
 
     private boolean textConstraintsRespected() {
         final int LICENSEPLATELENGTH = 7;
         int errors = 0;
-        errors+= textFieldLengthRespected(nomeAutotrasportatoreTextField, LICENSEPLATELENGTH) ? 0:1;
+        errors+= textFieldLengthRespected(targaAutobusTextField, LICENSEPLATELENGTH) ? 0:1;
         errors+= textFieldConstraintsRespected(nomeAutotrasportatoreTextField) ? 0:1;
         return errors == 0;
 
@@ -75,6 +77,8 @@ public class ControllerGiteEditBus extends AbstractController implements Initial
     }
 
 
-    public void addNewIngredient() {
+    @Override
+    public void refresh() {
+
     }
 }

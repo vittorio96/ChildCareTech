@@ -59,12 +59,13 @@ public class ControllerMensaConflicts extends AbstractController implements Init
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
+        AbstractController.setCurrentController(this);
         setTableAssociations();
         refreshDishTable();
         refreshPersonTables();
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -186,5 +187,10 @@ public class ControllerMensaConflicts extends AbstractController implements Init
 
     public void closeCurrentPopup() {
         controllerType.close(closeImageView);
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

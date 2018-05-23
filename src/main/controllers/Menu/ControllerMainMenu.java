@@ -37,9 +37,13 @@ public class ControllerMainMenu extends AbstractController implements Initializa
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         AbstractController.setCurrentController(this);
-        controllerType = new StageController();
+        setControllerType();
         loggedUserDataDisplay.setText(loggedUser.getUsername().toUpperCase());
         setEnabledItems();
+    }
+
+    protected void setControllerType() {
+        controllerType = new StageController();
     }
 
     /*
@@ -66,26 +70,31 @@ public class ControllerMainMenu extends AbstractController implements Initializa
         changeScene(logoutButton,"../../resources/fxml/login.fxml");
     }
 
+    @Override
+    public void refresh() {
+
+    }
+
 
 
     private void setEnabledItems() {
 
         if(userTypeFlag == User.UserTypeFlag.MENSA) {
+            chefPane.setVisible(true);
             adminPane.setVisible(false);
             teacherPane.setVisible(false);
-            chefPane.setVisible(true);
             giteButton.setDisable(true);
             anagraficaButton.setDisable(true);
-        }
-        if(userTypeFlag== User.UserTypeFlag.SUPERVISORE){
+        }else if(userTypeFlag == User.UserTypeFlag.SUPERVISORE){
+            teacherPane.setVisible(true);
             chefPane.setVisible(false);
             adminPane.setVisible(false);
-            teacherPane.setVisible(true);
             mensaButton.setDisable(true);
         }else {
+            adminPane.setVisible(true);
             chefPane.setVisible(false);
             teacherPane.setVisible(false);
-            adminPane.setVisible(true);
+
         }
 
     }

@@ -42,6 +42,7 @@ public class ControllerAnagraficaManageChild extends AbstractController implemen
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
+        AbstractController.setCurrentController(this);
         setColumnAssociations();
         datePickerStandardInitialize(birthdayDatePicker);
         setEventListeners();
@@ -49,7 +50,7 @@ public class ControllerAnagraficaManageChild extends AbstractController implemen
 
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -149,5 +150,10 @@ public class ControllerAnagraficaManageChild extends AbstractController implemen
         selectedChild.setCognome(surnameTextField.getText());
         selectedChild.setDataNascita(birthdayDatePicker.getValue().format(DateTimeFormatter.ofPattern(DBDATEPATTERN)));
         return selectedChild;
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

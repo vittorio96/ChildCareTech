@@ -118,4 +118,11 @@ public interface SessionMode {
     public List<Child> extractIntolerantsChildrenForMenuFromDb(Menu.MenuTypeFlag codMenu);
 
     public List<Staff> extractIntolerantsWorkersForMenuFromDb(Menu.MenuTypeFlag codMenu);
+
+   /*
+    boolean registerClientToDBNotifications(Client c);
+
+    boolean unsubscribeClientToDBNotifications(Client c);
+
+    */
 }

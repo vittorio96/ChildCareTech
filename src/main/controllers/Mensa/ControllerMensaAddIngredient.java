@@ -24,7 +24,7 @@ public class ControllerMensaAddIngredient extends AbstractController implements 
 
     @FXML private void handleSaveButton() {
         if(textConstraintsRespected()){
-            boolean success = CLIENT.clientInsertIngredientIntoDb(ingredientNameTextField.getText().toUpperCase());
+            boolean success = CLIENT.clientInsertIngredientIntoDb(ingredientNameTextField.getText().replaceAll("'","''").toUpperCase());
             if (!success) {
                 createErrorPopup("Errore","Non è stato possibile aggiungere l'ingrediente");
             } else {
@@ -52,6 +52,15 @@ public class ControllerMensaAddIngredient extends AbstractController implements 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        setControllerType();
+    }
+
+    protected void setControllerType() {
         controllerType = new PopupController();
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

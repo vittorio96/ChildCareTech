@@ -605,6 +605,21 @@ public class RmiMode implements SessionMode {
         }
     }
 
+   /* @Override
+    public boolean registerClientToDBNotifications(Client c) {
+        try {
+            return server.registerClientToDBNotifications(c);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean unsubscribeClientToDBNotifications(Client c) {
+        return false;
+    }*/
+
     /*public static void main(String[] args){
         Client c = null;
         try {

@@ -70,13 +70,16 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        controllerType = new PopupController();
+        setControllerType();
         setColumnassociations();
         refreshIngredientsList();
         setFilter();
 
     }
 
+    protected void setControllerType() {
+        controllerType = new PopupController();
+    }
 
     private void setFilter() {
         filteredData = new FilteredList<>(availableIngredientsObservableList, p -> true);
@@ -224,5 +227,8 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
         controllerType.close(goHomeIV);
     }
 
+    @Override
+    public void refresh() {
 
+    }
 }

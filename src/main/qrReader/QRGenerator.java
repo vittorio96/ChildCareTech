@@ -25,7 +25,7 @@ public class QRGenerator {
                     BarcodeFormat.QR_CODE, 400, 400, hintMap);
             MatrixToImageWriter.writeToFile(matrix, filePath.substring(filePath
                     .lastIndexOf('.') + 1), new File(filePath));
-            System.out.println("QR Code image created successfully!");
+            //System.out.println("QR Code image created successfully!");
             return true;
         } catch (Exception e) {
             System.err.println(e);

@@ -50,6 +50,8 @@ public abstract class AbstractController {
         currentController = controller;
     }
 
+    protected abstract void setControllerType();
+
     public void changeScene(Button button, String fxmlPath) throws IOException {
 
         Stage stage;
@@ -297,6 +299,8 @@ public abstract class AbstractController {
     protected void setEventListeners(){
 
     }
+
+    public abstract void refresh();
 
 
 

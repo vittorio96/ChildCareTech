@@ -49,6 +49,7 @@ public class SocketModeTestMensa {
         socketMode.disconnect();
     }
 
+
     @Test
     public void insertIngredientIntoDb() throws Exception {
         assertTrue(socketMode.insertIngredientIntoDb("testIngredient" ));
@@ -69,15 +70,10 @@ public class SocketModeTestMensa {
     }
 
     @Test
-    public void insertInvalidChildIntoleranceIntoDb() throws Exception {
-        insertInvalidChildIntoleranceDue2Ingredient();
-        insertInvalidChildIntoleranceDue2ChildCode();
-    }
-
-    @Test
     public void insertInvalidChildIntoleranceDue2Ingredient() throws Exception {
         Intolerance testIntolerance = new ChildIntolerance(getExistingChildCode(),getNonExistingIngredientName());
         assertFalse(socketMode.insertIntoleranceIntoDb(testIntolerance));
+        socketMode.deleteSubjectFromDb("Child", getExistingChildCode());
     }
 
     @Test
@@ -90,6 +86,7 @@ public class SocketModeTestMensa {
     public void insertValidIntoleranceIntoDb() throws Exception {
         Intolerance testIntolerance = new ChildIntolerance(getExistingChildCode(),getExistingIngredientName());
         assertTrue(socketMode.insertIntoleranceIntoDb(testIntolerance));
+        socketMode.deleteSubjectFromDb("Child", getExistingChildCode());
     }
 
     @Test
@@ -112,17 +109,21 @@ public class SocketModeTestMensa {
     public void extractDishesFromDb() throws Exception {
         socketMode.insertDishIntoMenuIntoDb(getExistingMenu(), getExistingIngredientName());
         assertNotNull(socketMode.extractDishesForMenuFromDb(getExistingMenu()));
+        socketMode.deleteDishFromMenuFromDb(getExistingMenu(),getExistingIngredientName());
     }
 
     @Test
     public void extractIntolerantsChildrenForIngredientFromDb() throws Exception {
         socketMode.insertIntoleranceIntoDb(getExistingChildIntolerance());
         assertNotNull(socketMode.extractIntolerantsChildrenForIngredientFromDb(getExistingIngredientName()));
+        socketMode.deleteIntoleranceFromDb(getExistingChildIntolerance());
     }
 
     @Test
     public void extractDishesForMenuFromDb() throws Exception {
         socketMode.insertDishIntoMenuIntoDb(getExistingMenu(),getExistingDish().getNomeP());
+        assertNotNull(socketMode.extractDishesForMenuFromDb(getExistingMenu()));
+        socketMode.deleteDishFromMenuFromDb(getExistingMenu(),getExistingDish().getNomeP());
     }
 
     @Test
@@ -130,24 +131,29 @@ public class SocketModeTestMensa {
         socketMode.insertDishIntoDb(getExistingDish());
         socketMode.insertIngredientIntoDishIntoDb(getExistingDish().getNomeP(),getExistingIngredientName());
         assertNotNull(socketMode.extractIngredientsForDishFromDb(getExistingDish().getNomeP()));
+        socketMode.deleteDishFromDb(getExistingDish());
     }
 
     @Test
     public void insertIngredientIntoDishIntoDb() throws Exception {
         socketMode.insertDishIntoDb(getExistingDish());
         assertTrue(socketMode.insertIngredientIntoDishIntoDb(getExistingDish().getNomeP(),getExistingIngredientName()));
+        socketMode.deleteIngredientFromDishFromDb(getExistingDish().getNomeP(),getExistingIngredientName());
+        socketMode.deleteDishFromDb(getExistingDish());
     }
 
     @Test
     public void insertDishIntoMenuIntoDb() throws Exception {
         Dish dish = new Dish("PiattoTest", Dish.DishTypeFlag.PRIMO);
+        socketMode.insertDishIntoDb(dish);
         assertTrue(socketMode.insertDishIntoMenuIntoDb(getExistingMenu(), dish.getNomeP()));
         socketMode.deleteDishFromMenuFromDb(getExistingMenu(), dish.getNomeP());
+        socketMode.deleteDishFromDb(dish);
     }
 
     @Test
     public void deleteIngredientFromDishFromDb() throws Exception {
-        socketMode.insertIngredientIntoDishIntoDb(getExistingIngredientName(),getExistingDish().getNomeP());
+        socketMode.insertIngredientIntoDishIntoDb(getExistingDish().getNomeP(), getExistingIngredientName());
         assertTrue(socketMode.deleteIngredientFromDishFromDb(getExistingDish().getNomeP(), getExistingIngredientName()));
     }
 
@@ -170,6 +176,9 @@ public class SocketModeTestMensa {
         boolean success = socketMode.insertIntoleranceIntoDb(intolerance);
         assertNotNull(socketMode.extractIntolerantsWorkersForIngredientFromDb(getExistingIngredientName()));
         socketMode.deleteIntoleranceFromDb(intolerance);
+        socketMode.deleteSubjectFromDb("Staff", getExistingStaff().getCodiceFiscale());
+
+
     }
 
     @Test
@@ -177,6 +186,8 @@ public class SocketModeTestMensa {
         Intolerance intolerance= new ChildIntolerance(getExistingChildCode(),getExistingIngredientName());
         socketMode.insertIntoleranceIntoDb(intolerance);
         assertNotNull(socketMode.extractUntoleratedIngredientsForPersonFromDb(getExistingChild()));
+        socketMode.deleteIntoleranceFromDb(intolerance);
+        socketMode.deleteSubjectFromDb("Child", getExistingChildCode());
     }
 
     @Test
@@ -188,6 +199,8 @@ public class SocketModeTestMensa {
         while(itr.hasNext()){
             assertFalse(itr.next().equals(getExistingIngredientName()));
         }
+        socketMode.deleteSubjectFromDb("Child", getExistingChildCode());
+        socketMode.deleteIntoleranceFromDb(intolerance);
     }
 
     private Child getExistingChild() {
@@ -257,15 +270,8 @@ public class SocketModeTestMensa {
 
     public Person getExistingStaff() {
         Person staff = new Staff("CODFISSTAFTEST12", "NomeStaff", "CognomeStaff", "UsernameStaff", "password", "1990-01-01", User.UserTypeFlag.AMMINISTRATIVO);
+        socketMode.insertPersonIntoDb(staff);
         return staff;
-    }
-
-    public void deleteCreatedStaff(){
-
-    }
-
-    public void deleteCreatedIngredient(){
-
     }
 
 }

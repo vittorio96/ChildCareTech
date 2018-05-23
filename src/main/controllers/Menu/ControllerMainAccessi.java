@@ -35,6 +35,10 @@ public class ControllerMainAccessi extends AbstractController implements Initial
     @Override
     public void initialize(URL location, ResourceBundle resources){
         AbstractController.setCurrentController(this);
+        setControllerType();
+    }
+
+    protected void setControllerType() {
         controllerType = new StageController();
     }
 
@@ -79,5 +83,10 @@ public class ControllerMainAccessi extends AbstractController implements Initial
         WebcamQRReader.setClient(CLIENT);
         FutureTask<WebcamQRReader> launchWebcam = new FutureTask<>(WebcamQRReader::new) ;
         SwingUtilities.invokeLater(launchWebcam);
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

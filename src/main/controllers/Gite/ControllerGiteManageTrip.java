@@ -64,7 +64,7 @@ public class ControllerGiteManageTrip extends AbstractController implements Init
         refreshTripTable();
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -151,35 +151,39 @@ public class ControllerGiteManageTrip extends AbstractController implements Init
     }
 
     @FXML private void removeTrip(){
-        if (giteTable.getSelectionModel().selectedItemProperty().get() != null) {
-            StringPropertyTrip selectedGita = giteTable.getSelectionModel().selectedItemProperty().get();
-            boolean success = CLIENT.clientDeleteTripFromDb(selectedGita.getNome(),selectedGita.getData());
-            if (success) {
-                createSuccessPopup();
-                refreshTripTable();
-                refreshChildrenTable(selectedGita.getData());
-            } else {
-                createErrorPopup("Errore", "Non è stato possibile eliminare la gita, riprova più tardi");
+        if(createDeleteConfirmationDialog()){
+            if (giteTable.getSelectionModel().selectedItemProperty().get() != null) {
+                StringPropertyTrip selectedGita = giteTable.getSelectionModel().selectedItemProperty().get();
+                boolean success = CLIENT.clientDeleteTripFromDb(selectedGita.getNome(),selectedGita.getData());
+                if (success) {
+                    createSuccessPopup();
+                    refreshTripTable();
+                    refreshChildrenTable(selectedGita.getData());
+                } else {
+                    createErrorPopup("Errore", "Non è stato possibile eliminare la gita, riprova più tardi");
+                }
+            }else {
+                createErrorPopup("Errore", "Non hai selezionato una gita");
             }
-        }else {
-            createErrorPopup("Errore", "Non hai selezionato una gita");
         }
     }
 
     @FXML private void removeBus(){
-        if (giteTable.getSelectionModel().selectedItemProperty().get() != null &
-                autobusTable.getSelectionModel().selectedItemProperty().get() != null) {
-            StringPropertyBus selectedBus = autobusTable.getSelectionModel().selectedItemProperty().get();
-            boolean success = CLIENT.clientDeleteBusFromDb(selectedBus.getNomeG(), selectedBus.getDataG(),selectedBus.getTarga());
-            if (success) {
-                createSuccessPopup();
-                refreshBusTable(selectedBus.getNomeG(), selectedBus.getDataG());
-                refreshChildrenTable(selectedBus.getDataG());
+        if(createDeleteConfirmationDialog()) {
+            if (giteTable.getSelectionModel().selectedItemProperty().get() != null &
+                    autobusTable.getSelectionModel().selectedItemProperty().get() != null) {
+                StringPropertyBus selectedBus = autobusTable.getSelectionModel().selectedItemProperty().get();
+                boolean success = CLIENT.clientDeleteBusFromDb(selectedBus.getNomeG(), selectedBus.getDataG(), selectedBus.getTarga());
+                if (success) {
+                    createSuccessPopup();
+                    refreshBusTable(selectedBus.getNomeG(), selectedBus.getDataG());
+                    refreshChildrenTable(selectedBus.getDataG());
+                } else {
+                    createErrorPopup("Errore", "Non è stato possibile eliminare l'autobus, riprova più tardi");
+                }
             } else {
-                createErrorPopup("Errore", "Non è stato possibile eliminare l'autobus, riprova più tardi");
+                createErrorPopup("Errore", "Non hai selezionato un autobus");
             }
-        }else {
-            createErrorPopup("Errore", "Non hai selezionato un autobus");
         }
     }
 
@@ -221,7 +225,7 @@ public class ControllerGiteManageTrip extends AbstractController implements Init
                 autobusTable.getSelectionModel().selectedItemProperty().get() != null) {
             StringPropertyBus selectedBus = autobusTable.getSelectionModel().selectedItemProperty().get();
             ControllerGiteEditBus.setBus(selectedBus);
-            openPopOver("../../resources/fxml/gite_editBus.fxml", PopOver.ArrowLocation.LEFT_CENTER, editBusIV );
+            openPopup(editBusIV, "../../resources/fxml/gite_editBus.fxml",380,380);
             //changeSceneInPopup(genericButton, "../../resources/fxml/gite_editBus.fxml",380,380);
             refreshBusTable(selectedBus.getNomeG(), selectedBus.getDataG());
         }else {
@@ -233,8 +237,8 @@ public class ControllerGiteManageTrip extends AbstractController implements Init
         if (giteTable.getSelectionModel().selectedItemProperty().get() != null){
             StringPropertyTrip selectedTrip = giteTable.getSelectionModel().selectedItemProperty().get();
             ControllerGiteEditTrip.setTrip(selectedTrip);
-            openPopOver("../../resources/fxml/gite_editTrip.fxml", PopOver.ArrowLocation.LEFT_TOP, editTripIV );
-            //changeSceneInPopup(genericButton,"../../resources/fxml/gite_editTrip.fxml",380,380);
+            //openPopOver("../../resources/fxml/gite_editTrip.fxml", PopOver.ArrowLocation.LEFT_TOP, editTripIV );
+            openPopup(editTripIV,"../../resources/fxml/gite_editTrip.fxml",380,380);
             refreshTripTable();
         }else {
             createErrorPopup("Errore", "Non hai selezionato una gita");
@@ -242,15 +246,22 @@ public class ControllerGiteManageTrip extends AbstractController implements Init
     }
 
     @FXML public void removeChildren() throws IOException {
-        StringPropertyBus selectedBus = autobusTable.getSelectionModel().selectedItemProperty().get();
-        if (giteTable.getSelectionModel().selectedItemProperty().get() != null & selectedBus!= null){
-            ControllerGiteRemoveChildren.setSelectedBus(selectedBus);
-            openPopOver("../../resources/fxml/gite_editChild.fxml", PopOver.ArrowLocation.LEFT_BOTTOM, editChildIV);
-            //changeSceneInPopup(genericButton,"../../resources/fxml/gite_editChild.fxml",380,380);
-            refreshTripTable();
-            refreshChildrenTable(selectedBus.getDataG());
-        }else {
-            createErrorPopup("Errore", "Non hai selezionato una gita e autobus");
-        }
+
+            StringPropertyBus selectedBus = autobusTable.getSelectionModel().selectedItemProperty().get();
+            StringPropertyTrip selectedGita = giteTable.getSelectionModel().selectedItemProperty().get();
+            if (giteTable.getSelectionModel().selectedItemProperty().get() != null & selectedBus!= null){
+                ControllerGiteRemoveChildren.setSelectedBus(selectedBus);
+                openPopup(editChildIV,"../../resources/fxml/gite_editChild.fxml",380,380);
+                //openPopOver("../../resources/fxml/gite_editChild.fxml", PopOver.ArrowLocation.LEFT_BOTTOM, editChildIV);
+                showRelatedAutobusAndChildren(selectedGita);
+            }else {
+                createErrorPopup("Errore", "Non hai selezionato una gita e autobus");
+            }
+
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

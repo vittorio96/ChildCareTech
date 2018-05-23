@@ -26,6 +26,10 @@ public class ControllerMainMensa extends AbstractController implements Initializ
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         AbstractController.setCurrentController(this);
+        setControllerType();
+    }
+
+    protected void setControllerType() {
         controllerType = new StageController();
     }
 
@@ -52,6 +56,11 @@ public class ControllerMainMensa extends AbstractController implements Initializ
 
     public void viewTodaysConflicts() throws IOException {
         changeSceneInPopup(todaysProblemButton,"../../resources/fxml/mensa_viewTodaysConflicts.fxml",800,450);
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }
 

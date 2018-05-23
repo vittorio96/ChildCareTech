@@ -28,6 +28,10 @@ public class ControllerMainAnagrafica extends AbstractController implements Init
     @Override
     public void initialize(URL location, ResourceBundle resources){
         AbstractController.setCurrentController(this);
+        setControllerType();
+    }
+
+    protected void setControllerType() {
         controllerType = new StageController();
     }
 
@@ -36,7 +40,7 @@ public class ControllerMainAnagrafica extends AbstractController implements Init
     */
 
     @FXML protected void handleAddChildButton(ActionEvent event) throws IOException {
-        changeSceneInPopup(addChildButton,"../../resources/fxml/anagrafica_addChild.fxml",800,450);
+        changeSceneInPopup(addChildButton,"../../resources/fxml/anagrafica_addChildNew.fxml",800,450);
     }
 
     @FXML protected void handleAddStaffButton(ActionEvent event) throws IOException {
@@ -57,5 +61,10 @@ public class ControllerMainAnagrafica extends AbstractController implements Init
 
     @FXML protected void handleEditContactButton(ActionEvent event) throws IOException {
         changeSceneInPopup(editContactButton,"../../resources/fxml/anagrafica_manageContact.fxml",800,450);
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

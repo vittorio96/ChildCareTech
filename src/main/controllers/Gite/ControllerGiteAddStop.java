@@ -49,13 +49,14 @@ public class ControllerGiteAddStop extends AbstractController implements Initial
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
+        AbstractController.setCurrentController(this);
         setColumnAssociations();
         setEventListeners();
         refreshTripTable();
 
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -197,6 +198,11 @@ public class ControllerGiteAddStop extends AbstractController implements Initial
 
     private boolean isBusSelected() {
         return autobusTable.getSelectionModel().selectedItemProperty().get() != null;
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }
 

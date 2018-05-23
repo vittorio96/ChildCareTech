@@ -36,12 +36,13 @@ public class ControllerAnagraficaAddStaff extends AbstractController implements 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
+        AbstractController.setCurrentController(this);
         choiceBoxSetup();
         setTextFieldAutocaps(codFisTextField);
         datePickerStandardInitialize(birthdayDatePicker);
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -98,5 +99,10 @@ public class ControllerAnagraficaAddStaff extends AbstractController implements 
         if(createConfirmationDialog("Sei sicuro di voler chiudere?",
                 "I dati inseriti non verranno salvati."))
             controllerType.close(goHomeImageView);
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

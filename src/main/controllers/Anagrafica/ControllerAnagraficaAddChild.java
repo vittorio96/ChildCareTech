@@ -24,6 +24,7 @@ public class ControllerAnagraficaAddChild extends AbstractController implements 
     */
 
     private final int CODFISLENGTH = 16;
+
     @FXML ImageView goHomeImageView;
 
     @FXML private TextField nameTextField;
@@ -62,7 +63,7 @@ public class ControllerAnagraficaAddChild extends AbstractController implements 
 
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -210,5 +211,10 @@ public class ControllerAnagraficaAddChild extends AbstractController implements 
     private boolean parent2NotEmpty() {
         return codFisParent2TextField.getText().length()!=0 || nameParent2TextField.getText().length()!=0 ||
                 surnameParent2TextField.getText().length()!=0 || cellphoneParent2TextField.getText().length()!=0;
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

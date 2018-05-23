@@ -966,6 +966,16 @@ public class SocketMode implements SessionMode {
         }
     }
 
+    @Override
+    public boolean registerClientToDBNotifications(Client c) {
+        return false;
+    }
+
+    @Override
+    public boolean unsubscribeClientToDBNotifications(Client c) {
+        return false;
+    }
+
     //Main method to support testing without GUI
      /*public static void main(String[] args){
          Client c = null;

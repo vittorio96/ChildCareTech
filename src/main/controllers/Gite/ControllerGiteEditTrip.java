@@ -40,12 +40,15 @@ public class ControllerGiteEditTrip extends AbstractController implements Initia
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
+        AbstractController.setCurrentController(this);
         datePickerStandardInitialize(dateOfDepartureDatePicker);
         initialDetailsDisplay();
     }
 
-    private void setControllerType() {
-        controllerType = new PopOverController();
+    protected void setControllerType() {
+        //controllerType = new PopOverController();
+        controllerType = new PopupController();
+
     }
 
     private void initialDetailsDisplay() {
@@ -90,7 +93,7 @@ public class ControllerGiteEditTrip extends AbstractController implements Initia
         String dataGita = dateOfDepartureDatePicker.getValue().format(DateTimeFormatter.ofPattern(DBDATEPATTERN));
         String destinazione = tripDestinationTextField.getText();
 
-        Trip newgita = new Trip(nomeGita, partenza, destinazione, dataGita);
+        Trip newgita = new Trip(nomeGita, dataGita, partenza, destinazione);
         return newgita;
     }
 
@@ -103,6 +106,11 @@ public class ControllerGiteEditTrip extends AbstractController implements Initia
         errors+= datePickerIsDateSelected(dateOfDepartureDatePicker) ? 0:1;
 
         return errors == 0;
+
+    }
+
+    @Override
+    public void refresh() {
 
     }
 }

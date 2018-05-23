@@ -53,7 +53,8 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
-        setTextFieldAutocaps(codFisTextField);
+        AbstractController.setCurrentController(this);
+        setAutoCaps();
 
         tabPane.getSelectionModel().selectedItemProperty().addListener((obs,ov,nv)->{
             if(nv!=null){
@@ -65,8 +66,14 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
 
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
+    }
+
+    private void setAutoCaps() {
+        setTextFieldAutocaps(pivaTextField);
+        setTextFieldAutocaps(codFisTextField);
+        setTextFieldAutocaps(codFisTextField1);
     }
     /*
         Gui methods
@@ -112,6 +119,7 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
                         "Contatto già esistente o cellulare già in Db");
             } else {
                 createSuccessPopup();
+                controllerType.close(goHomeImageView);
             }
         }
         else{ createFieldErrorPopup(); }
@@ -191,5 +199,10 @@ public class ControllerAnagraficaAddContact extends AbstractController implement
 
         Person newDoctor = new Contact(nome,  cognome, codFis, cell, Integer.toString(tipo.getOrdernum()) );
         return newDoctor;
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

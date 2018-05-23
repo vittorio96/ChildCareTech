@@ -43,12 +43,13 @@ public class ControllerAnagraficaManageStaff extends AbstractController implemen
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
+        AbstractController.setCurrentController(this);
         setColumnAssociations();
         datePickerStandardInitialize(birthdayDatePicker);
         setEventListeners();
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -150,5 +151,10 @@ public class ControllerAnagraficaManageStaff extends AbstractController implemen
 
     public boolean isAStaffRowSelected() {
         return isRowSelected(staffTable);
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

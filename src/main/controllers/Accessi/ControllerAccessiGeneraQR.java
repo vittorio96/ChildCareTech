@@ -47,6 +47,7 @@ public class ControllerAccessiGeneraQR extends AbstractController implements Ini
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
+        AbstractController.setCurrentController(this);
         codeColumn.setCellValueFactory(cellData -> cellData.getValue().codRProperty());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
         surnameColumn.setCellValueFactory(cellData -> cellData.getValue().cognomeProperty());
@@ -80,7 +81,7 @@ public class ControllerAccessiGeneraQR extends AbstractController implements Ini
 
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -123,6 +124,11 @@ public class ControllerAccessiGeneraQR extends AbstractController implements Ini
 
     @FXML private void handleGoHomebutton(){
         controllerType.close(exitButton);
+    }
+
+    @Override
+    public void refresh() {
+
     }
 
 }

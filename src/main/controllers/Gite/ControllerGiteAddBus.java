@@ -50,6 +50,7 @@ public class ControllerGiteAddBus extends AbstractController implements Initiali
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
         AbstractController.setCurrentController(this);
+        setTextFieldAutocaps(targaAutobusTextField);
         busesColumn.setCellValueFactory(cellData -> cellData.getValue().targaProperty());
         codiceBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().codRProperty());
         nomeBambinoColumn.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
@@ -60,7 +61,7 @@ public class ControllerGiteAddBus extends AbstractController implements Initiali
 
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -133,6 +134,11 @@ public class ControllerGiteAddBus extends AbstractController implements Initiali
         errors+= textFieldLengthRespected(targaAutobusTextField, LICENSEPLATELENGTH) ? 0:1;
 
         return errors == 0;
+
+    }
+
+    @Override
+    public void refresh() {
 
     }
 }

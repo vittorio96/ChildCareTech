@@ -15,6 +15,7 @@ import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyPerson;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.Classes.StringPropertyClasses.Mensa.StringPropertyIngredient;
 import main.controllers.AbstractController;
+import main.controllers.PopOverController;
 import main.controllers.PopupController;
 
 import java.net.URL;
@@ -49,10 +50,10 @@ public class ControllerMensaAddAllergen extends AbstractController implements In
     @FXML private Tab staffTab;
     @FXML private Tab childTab;
 
-    private ObservableList<StringPropertyPerson> childObservableList = FXCollections.observableArrayList();
-    private ObservableList<StringPropertyPerson> staffObservableList = FXCollections.observableArrayList();
+    private ObservableList<StringPropertyPerson>     childObservableList         = FXCollections.observableArrayList();
+    private ObservableList<StringPropertyPerson>     staffObservableList         = FXCollections.observableArrayList();
     private ObservableList<StringPropertyIngredient> notAllergicToObservableList = FXCollections.observableArrayList();
-    private ObservableList<StringPropertyIngredient> allergicToObservableList = FXCollections.observableArrayList();
+    private ObservableList<StringPropertyIngredient> allergicToObservableList    = FXCollections.observableArrayList();
 
     /*
         Initialization
@@ -60,9 +61,14 @@ public class ControllerMensaAddAllergen extends AbstractController implements In
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        controllerType = new PopupController();
+        setControllerType();
+        AbstractController.setCurrentController(this);
         setTableAssociations();
         refreshTables();
+    }
+
+    protected void setControllerType() {
+        controllerType = new PopupController();
     }
 
     private void setTableAssociations() {
@@ -243,6 +249,11 @@ public class ControllerMensaAddAllergen extends AbstractController implements In
         Person selectedPerson = null;
         if(selectedSPPerson!= null) selectedPerson = selectedSPPerson.toPerson();
         return selectedPerson;
+    }
+
+    @Override
+    public void refresh() {
+
     }
 
 }

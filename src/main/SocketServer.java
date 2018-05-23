@@ -40,7 +40,8 @@ public class SocketServer {
 
             try{
                 Socket socket = serverSocket.accept(); //Attesa bloccante
-                executor.submit(new ClientHandler(socket, this));
+                //executor.submit(new ClientHandler(socket, this));
+                executor.submit(new ServerSocket_SQLIF(socket, this));
             }
 
             catch(IOException e){

@@ -57,8 +57,9 @@ public class ControllerGiteRemoveChildren extends AbstractController implements 
 
     }
 
-    private void setControllerType() {
-        controllerType = new PopOverController();
+    protected void setControllerType() {
+        //controllerType = new PopOverController();
+        controllerType = new PopupController();
     }
 
     protected void setColumnAssociations() {
@@ -90,7 +91,8 @@ public class ControllerGiteRemoveChildren extends AbstractController implements 
         unenrolled.clear();
         if(selectedBus != null){
             for (StringPropertyChild c : bambiniObservableList){
-                if (c.isBooleanStatus() )  unenrolled.add(new BusAssociation(c.getCodiceFiscale(),selectedBus.getNomeG(), selectedBus.getDataG(),selectedBus.getTarga()));
+                if (c.isBooleanStatus() )  unenrolled.add(new BusAssociation(c.getCodiceFiscale(),
+                        selectedBus.getNomeG(), selectedBus.getDataG(),selectedBus.getTarga()));
             }
             Iterator<BusAssociation> itr = unenrolled.iterator();
             while (itr.hasNext()){
@@ -98,7 +100,7 @@ public class ControllerGiteRemoveChildren extends AbstractController implements 
             }
             if (errors == 0) {
                 createSuccessPopup();
-                refreshChildrenTable();
+                handleGoHomebutton();
             } else {
                 createErrorPopup("Errore", "Non è stato possibile iscrivere uno o tutti i bambini, riprova più tardi");
             }
@@ -109,5 +111,10 @@ public class ControllerGiteRemoveChildren extends AbstractController implements 
 
     @FXML private void handleGoHomebutton(){
         controllerType.close(genericButton);
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

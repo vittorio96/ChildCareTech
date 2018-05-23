@@ -10,7 +10,9 @@ import javafx.scene.control.*;
 import main.Client;
 import main.User;
 import main.controllers.AbstractController;
+import main.controllers.PopupController;
 import main.controllers.StageController;
+import sun.security.krb5.internal.TGSRep;
 
 
 import java.io.IOException;
@@ -49,7 +51,7 @@ public class ControllerLogin extends AbstractController implements Initializable
         // will be called when the controllerLogin instance is created
         AbstractController.setCurrentController(this);
         controllerLogin = this;
-        controllerType = new StageController();
+        setControllerType();
 
         ArrayList items = new ArrayList<String>();
         items.add("RMI");
@@ -57,6 +59,11 @@ public class ControllerLogin extends AbstractController implements Initializable
         ObservableList al = FXCollections.observableArrayList(items);
         connectionModeDropList.setItems(al);
     }
+
+    protected void setControllerType() {
+        controllerType = new StageController();
+    }
+
 
     public ControllerLogin() throws RemoteException, NotBoundException, MalformedURLException {
         super();
@@ -68,7 +75,7 @@ public class ControllerLogin extends AbstractController implements Initializable
         userTypeFlag = loggedUser.getUserTypeFlag();
     }
 
-    @FXML protected void handleLoginButtonAction( ActionEvent event ) throws IOException {
+    @FXML protected void handleLoginButtonAction( ActionEvent event ) throws IOException, InterruptedException {
         String user = usernameField.getText();
         String password = passwordField.getText();
 
@@ -85,7 +92,9 @@ public class ControllerLogin extends AbstractController implements Initializable
             } else {
                 registerUser(userObject);
                 Client.registerUser(userObject);
-                //changeScene(loginButton, "../resources/fxml/splashscreen.fxml");
+                /*
+                CLIENT.clientRegisterClientToDBNotifications();
+                */
                 changeScene(loginButton, "../../resources/fxml/main_menu.fxml");
             }
         }
@@ -97,6 +106,11 @@ public class ControllerLogin extends AbstractController implements Initializable
 
     public void printToOutputField(String s){
         outputField.setText(s);
+    }
+
+    @Override
+    public void refresh() {
+
     }
 
 }

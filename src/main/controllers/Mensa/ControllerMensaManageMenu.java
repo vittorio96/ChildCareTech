@@ -83,13 +83,14 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
+        AbstractController.setCurrentController(this);
         columnAssociation();
         selectionMenuSetup();
         refreshDishes(defaultDay);
         ingredientPopupSetup();
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -256,6 +257,11 @@ public class ControllerMensaManageMenu extends AbstractController implements Ini
                 selectedDish = dolceTable.getSelectionModel().selectedItemProperty().get();
         }
         return selectedDish;
+    }
+
+    @Override
+    public void refresh() {
+
     }
 
 }

@@ -65,6 +65,7 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
+        AbstractController.setCurrentController(this);
         refreshDishes();
         dishesTable.setRowFactory( tv -> {
             TableRow<StringPropertyDish> row = new TableRow<>();
@@ -83,7 +84,7 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
         });
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -168,5 +169,10 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
             }
             else createGenericErrorPopup();
         } else createErrorPopup("Errore", "Seleziona un piatto dalla tabella!");
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

@@ -39,7 +39,7 @@ public class ControllerGiteAddTrip extends AbstractController implements Initial
 
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopupController();
     }
 
@@ -104,5 +104,10 @@ public class ControllerGiteAddTrip extends AbstractController implements Initial
         String targaAutobus = targaAutobusTextField.getText();
         String nomeAutotrasportatore = nomeAutotrasportatoreTextField.getText();
         return new Bus(targaAutobus, nomeAutotrasportatore, nomeGita, dataGita);
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

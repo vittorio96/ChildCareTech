@@ -25,9 +25,12 @@ public class ControllerMainGite extends AbstractController implements Initializa
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         AbstractController.setCurrentController(this);
-        controllerType = new StageController();
+        setControllerType();
     }
 
+    protected void setControllerType() {
+        controllerType = new StageController();
+    }
     /*
         Scene Redirects
     */
@@ -42,6 +45,11 @@ public class ControllerMainGite extends AbstractController implements Initializa
 
     @FXML protected void handlePresenzeButtonAction(ActionEvent event) throws IOException {
         changeSceneInPopup(presenzeButton, "../../resources/fxml/gite_addPresence.fxml", 900, 600);
+    }
+
+    @Override
+    public void refresh() {
+
     }
 
 }

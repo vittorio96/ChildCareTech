@@ -48,15 +48,21 @@ public class ControllerShowIngredientsPopOver extends AbstractController impleme
         ingredientsOnDish.setCellValueFactory(cellData -> cellData.getValue().nomeProperty());
     }
 
-    private void setControllerType() {
+    protected void setControllerType() {
         controllerType = new PopOverController();
     }
+
     private void showIngredients() {
         List<String> ingredients = CLIENT.clientExtractIngredientsForDishFromDb(dish.getNomeP());
         if (ingredients != null) for (String s : ingredients) {
             ingredientsObservableList.add(new StringPropertyIngredient(s));
         }
         ingredientsOnDishTable.setItems(ingredientsObservableList);
+    }
+
+    @Override
+    public void refresh() {
+
     }
 
 }

@@ -5,8 +5,10 @@ import main.Classes.NormalClasses.Gite.*;
 import main.Classes.NormalClasses.Mensa.Dish;
 import main.Classes.NormalClasses.Mensa.Intolerance;
 import main.Classes.NormalClasses.Mensa.Menu;
+import main.controllers.AbstractController;
 import main.controllers.Menu.ControllerLogin;
 
+import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -234,6 +236,12 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
 
     @Override
     public void update() throws RemoteException {
-
+        AbstractController.currentController.refresh();
     }
+
+    /*
+    public boolean clientRegisterClientToDBNotifications() {
+        return session.registerClientToDBNotifications(this);
+    }
+    */
 }
