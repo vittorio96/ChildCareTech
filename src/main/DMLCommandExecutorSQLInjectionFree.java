@@ -981,7 +981,7 @@ public class DMLCommandExecutorSQLInjectionFree {
             stmt.setString(1,ba.getNomeG());
             stmt.setString(2,ba.getDataG());
             stmt.setString(3,ba.getTarga());
-            stmt.setString(3,ba.getCodF());
+            stmt.setString(4,ba.getCodF());
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -1667,7 +1667,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         try {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, nomeP);
-            stmt.setString(1, nomeI);
+            stmt.setString(2, nomeI);
         } catch (SQLException e) {
             e.printStackTrace();
         }
