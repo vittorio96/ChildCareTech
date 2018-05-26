@@ -280,6 +280,7 @@ public class DMLCommandExecutorSQLInjectionFree {
             Staff s = (Staff) p;
 
             update = "UPDATE PERSONALE SET  Nome= ? , Cognome= ?, DataN = ?, TypeFlag= ? WHERE CodF= ?;";
+            stmt = conn.prepareStatement(update);
 
             stmt.setString(1,s.getNome());
             stmt.setString(2,s.getCognome());
@@ -289,6 +290,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         } else if (p instanceof Child) {
             Child c = (Child) p;
             update = "UPDATE BAMBINO SET  Nome= ?, Cognome= ?, DataN = ? WHERE CodF= ?;";
+            stmt = conn.prepareStatement(update);
 
             stmt.setString(1,c.getNome());
             stmt.setString(2,c.getCognome());
@@ -298,6 +300,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         } else if (p instanceof Contact) {
             Contact o = (Contact) p;
             update = "UPDATE ESTERNO SET  Nome=?, Cognome=?, Cell =?, TypeFlag= ? WHERE CodF=?;";
+            stmt = conn.prepareStatement(update);
 
             stmt.setString(1,o.getNome());
             stmt.setString(2,o.getCognome());
@@ -873,7 +876,7 @@ public class DMLCommandExecutorSQLInjectionFree {
                 +" WHERE NomeG= ? AND DataG= ?;";
 
         try {
-            stmt = conn.prepareStatement(sql);;
+            stmt = conn.prepareStatement(sql);
             stmt.setString(1,newTrip.getNomeGita());
             stmt.setString(2,newTrip.getData());
             stmt.setString(3,newTrip.getDestinazione());
@@ -1610,7 +1613,6 @@ public class DMLCommandExecutorSQLInjectionFree {
         Connection conn = myPool.getConnection();
         String sql = "INSERT INTO COMPOSIZIONEPIATTO (NomeI, NomeP) VALUES(?,?) ON DUPLICATE KEY UPDATE NomeP=?;";
 
-
         try {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1,nomeI);
@@ -1753,6 +1755,8 @@ public class DMLCommandExecutorSQLInjectionFree {
             return null;
     }
 
+
+
     public List<String> selectUntoleratedIngredientsForPersonFromDb(Person p) throws SQLException{
         List<String> ingredientsList = new ArrayList<>();
         ResultSet rs;
@@ -1870,4 +1874,53 @@ public class DMLCommandExecutorSQLInjectionFree {
         }
 
     }*/
+
+    public List<String> selectUntoleratedDishesForPersonOnMenu(Person p, Menu.MenuTypeFlag menu) throws SQLException{
+        List<String> dishesList = new ArrayList<>();
+        ResultSet rs;
+        Connection conn = myPool.getConnection();
+        PreparedStatement stmt;
+        String sql;
+
+        if(p instanceof Child){
+            sql = "SELECT M.NomeP FROM ComposizioneMenu M, ComposizionePiatto P WHERE M.NomeP=P.NomeP " +
+                    "and M.CodGiorno = ? and P.NomeI in (SELECT NomeI from IntolleranzaBambino where CodF = ?);";
+
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, menu.getOrderNum());
+            stmt.setString(2, p.getCodiceFiscale());
+
+        }
+        else if(p instanceof Staff) {
+            sql = "SELECT M.NomeP FROM ComposizioneMenu M, ComposizionePiatto P WHERE M.NomeP=P.NomeP " +
+                    "and M.CodGiorno = ? and P.NomeI in (SELECT NomeI from IntolleranzaPersonale where CodF = ?)";
+
+            stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, menu.getOrderNum());
+            stmt.setString(2, p.getCodiceFiscale());
+        }
+        else
+            return null;
+
+        try {
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            String nomeP = rs.getString("NomeP");
+            dishesList.add(nomeP);
+        }
+
+        if(dishesList.size()>0)
+            return dishesList;
+        else
+            return null;
+    }
+
 }

@@ -444,4 +444,13 @@ public class ServerRMI_SQLIF extends UnicastRemoteObject implements RemoteServer
         return DMLCommandExecutorSQLInjectionFree.getInstance().subscribeClient(c);
     }*/
 
+    @Override
+    public List<String> extractUntoleratedDishesForPersonOnMenuDbExecution(Person p, Menu.MenuTypeFlag menu) throws RemoteException {
+        try {
+            return DMLCommandExecutorSQLInjectionFree.getInstance().selectUntoleratedDishesForPersonOnMenu(p, menu);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

@@ -5,10 +5,7 @@ import main.Classes.NormalClasses.Gite.*;
 import main.Classes.NormalClasses.Mensa.*;
 
 import java.rmi.RemoteException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -1306,9 +1303,9 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT P.* " +
+        String sql = "SELECT S.* FROM PERSONALE S WHERE S.CodF in (SELECT P.CodF " +
                 "FROM PERSONALE P, INTOLLERANZAPERSONALE IP, COMPOSIZIONEPIATTO CP, COMPOSIZIONEMENU CM " +
-                "WHERE P.CodF=IP.CodF AND IP.NomeI=CP.NomeI AND CP.NomeP=CM.NomeP AND CM.CodGiorno='"+codMenu.getOrderNum()+"' ORDER BY P.Cognome;";
+                "WHERE P.CodF=IP.CodF AND IP.NomeI=CP.NomeI AND CP.NomeP=CM.NomeP AND CM.CodGiorno='"+codMenu.getOrderNum()+"' ORDER BY P.Cognome);";
 
         Connection conn = myPool.getConnection();
 
@@ -1346,9 +1343,9 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT B.* " +
+        String sql = "SELECT S.* FROM BAMBINO S WHERE S.CodF in (SELECT B.CodF " +
                 "FROM BAMBINO B, INTOLLERANZABAMBINO IB, COMPOSIZIONEPIATTO CP, COMPOSIZIONEMENU CM " +
-                "WHERE B.CodF=IB.CodF AND IB.NomeI=CP.NomeI AND CP.NomeP=CM.NomeP AND CM.CodGiorno='"+codMenu.getOrderNum()+"' ORDER BY B.Cognome;";
+                "WHERE B.CodF=IB.CodF AND IB.NomeI=CP.NomeI AND CP.NomeP=CM.NomeP AND CM.CodGiorno='"+codMenu.getOrderNum()+"' ORDER BY B.Cognome);";
         Connection conn = myPool.getConnection();
 
         try {
@@ -1678,6 +1675,52 @@ public class DMLCommandExecutor {
         else
             return null;
     }
+
+    public List<String> selectUntoleratedDishesForPersonOnMenu(Person p, Menu.MenuTypeFlag menu) throws SQLException{
+        List<String> dishesList = new ArrayList<>();
+        ResultSet rs;
+        Connection conn = myPool.getConnection();
+        Statement stmt;
+        String sql;
+
+        if(p instanceof Child){
+            sql = "SELECT DISTINCT M.NomeP FROM ComposizioneMenu M, ComposizionePiatto P WHERE M.NomeP=P.NomeP " +
+                    "and M.CodGiorno =" +"'"+menu.getOrderNum() +"'"+ "and P.NomeI in (SELECT NomeI from IntolleranzaBambino where CodF = " + "'"+p.getCodiceFiscale()+"');";
+
+            stmt = conn.createStatement();
+
+        }
+        else if(p instanceof Staff) {
+            sql = "SELECT DISTINCT M.NomeP FROM ComposizioneMenu M, ComposizionePiatto P WHERE M.NomeP=P.NomeP " +
+                    "and M.CodGiorno =" +"'"+menu.getOrderNum() +"'"+ " and P.NomeI in (SELECT NomeI from IntolleranzaPersonale where CodF =" + "'"+p.getCodiceFiscale()+"');";
+
+            stmt = conn.createStatement();
+        }
+        else
+            return null;
+
+        try {
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            String nomeP = rs.getString("NomeP");
+            dishesList.add(nomeP);
+        }
+
+        if(dishesList.size()>0)
+            return dishesList;
+        else
+            return null;
+    }
+
+
 
     /*
     public boolean subscribeClient(Client c) {

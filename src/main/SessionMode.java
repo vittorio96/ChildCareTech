@@ -125,4 +125,5 @@ public interface SessionMode {
     boolean unsubscribeClientToDBNotifications(Client c);
 
     */
+   public List<String> extractUntoleratedDishesForPersonOnMenu(Person p, Menu.MenuTypeFlag menu);
 }

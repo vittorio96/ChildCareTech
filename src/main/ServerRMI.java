@@ -439,6 +439,16 @@ public class ServerRMI extends UnicastRemoteObject implements RemoteServerInterf
         }
     }
 
+    @Override
+    public List<String> extractUntoleratedDishesForPersonOnMenuDbExecution(Person p, Menu.MenuTypeFlag menu) throws RemoteException {
+        try {
+            return DMLCommandExecutor.getInstance().selectUntoleratedDishesForPersonOnMenu(p,menu);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     /*@Override
     public boolean registerClientToDBNotifications(Client c) throws RemoteException {
         return false;

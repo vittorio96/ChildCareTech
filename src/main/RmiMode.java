@@ -635,4 +635,14 @@ public class RmiMode implements SessionMode {
 
         session.disconnect();
     }*/
+
+    @Override
+    public List<String> extractUntoleratedDishesForPersonOnMenu(Person p, Menu.MenuTypeFlag menu) {
+        try {
+            return server.extractUntoleratedDishesForPersonOnMenuDbExecution(p, menu);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

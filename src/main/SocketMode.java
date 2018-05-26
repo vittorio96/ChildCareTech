@@ -966,15 +966,6 @@ public class SocketMode implements SessionMode {
         }
     }
 
-    @Override
-    public boolean registerClientToDBNotifications(Client c) {
-        return false;
-    }
-
-    @Override
-    public boolean unsubscribeClientToDBNotifications(Client c) {
-        return false;
-    }
 
     //Main method to support testing without GUI
      /*public static void main(String[] args){
@@ -992,4 +983,24 @@ public class SocketMode implements SessionMode {
 
          session.disconnect();
      }*/
+
+    @Override
+    public List<String> extractUntoleratedDishesForPersonOnMenu(Person p, Menu.MenuTypeFlag menu) {
+
+        try {
+            socketObjectOut.writeObject("cmd_selectUntoleratedDishesFromMenuFromPerson");
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(p);
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(menu);
+            socketObjectOut.flush();
+
+            return (List<String>)socketObjectIn.readObject();//Attesa bloccante
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
 }

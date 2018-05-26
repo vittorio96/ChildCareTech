@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import main.Classes.NormalClasses.Anagrafica.Child;
@@ -13,9 +14,12 @@ import main.Classes.NormalClasses.Anagrafica.Staff;
 import main.Classes.NormalClasses.Mensa.Menu;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
+import main.Classes.StringPropertyClasses.Mensa.StringPropertyDish;
 import main.controllers.AbstractController;
 import main.controllers.PopupController;
+import org.controlsfx.control.PopOver;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
@@ -49,6 +53,8 @@ public class ControllerMensaTodaysConflicts extends AbstractController implement
     private ObservableList<StringPropertyChild> childObservableList = FXCollections.observableArrayList();
     private ObservableList<StringPropertyStaff> staffObservableList = FXCollections.observableArrayList();
     private final Menu.MenuTypeFlag defaultDay = Menu.MenuTypeFlag.MONDAY;
+    private final String conflictingDishesFXMLPath =  "../../resources/fxml/mensa_viewConflictingDishesPopOver.fxml";
+
 
     /*
         Initialization
@@ -60,7 +66,42 @@ public class ControllerMensaTodaysConflicts extends AbstractController implement
         setTableAssociations();
         selectionMenuSetup();
         refreshPersonTables(defaultDay);
+        setPopOvers();
 
+    }
+
+    private void setPopOvers() {
+        staffTable.setRowFactory( tv -> {
+            TableRow<StringPropertyStaff> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
+                    StringPropertyStaff selected = row.getItem();
+                    ControllerShowConflictingDishesPopOver.setVariables(selected.toPerson(), getSelectedMenu());
+                    try {
+                        openPopOver(conflictingDishesFXMLPath, PopOver.ArrowLocation.LEFT_CENTER, row);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            return row ;
+        });
+
+        childTable.setRowFactory( tv -> {
+            TableRow<StringPropertyChild> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
+                    StringPropertyChild selected = row.getItem();
+                    ControllerShowConflictingDishesPopOver.setVariables(selected.toPerson(), getSelectedMenu());
+                    try {
+                        openPopOver(conflictingDishesFXMLPath, PopOver.ArrowLocation.LEFT_CENTER, row);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            return row ;
+        });
     }
 
     protected void setControllerType() {

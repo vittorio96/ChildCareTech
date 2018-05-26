@@ -203,6 +203,7 @@ public abstract class AbstractController {
     }
 
     public boolean textFieldConstraintsRespected(TextField textField) {
+        handleSQLInjection(textField);
         if(textField.getText().length() == 0){
             textField.setStyle(ERRORCSS);
             return false;
@@ -213,6 +214,7 @@ public abstract class AbstractController {
     }
 
     public boolean textFieldLengthRespected(TextField textField, Integer size) {
+        handleSQLInjection(textField);
         if(textField.getText().length() != size){
             textField.setStyle(ERRORCSS);
             return false;
@@ -220,6 +222,10 @@ public abstract class AbstractController {
             textField.setStyle(NORMALCSS);
             return true;
         }
+    }
+
+    private void handleSQLInjection(TextField textField) {
+        textField.setText(textField.getText().replaceAll("'", "’"));
     }
 
     public boolean datePickerIsDateSelected(DatePicker datePicker) {

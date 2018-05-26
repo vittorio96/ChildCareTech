@@ -202,12 +202,16 @@ public class ClientHandler implements Runnable{
                 case "cmd_selectIntolerantsWorkersForMenu": this.selectIntolerantsWorkersForMenuFromDbExecution();
                     break;
 
+                case "cmd_selectUntoleratedDishesFromMenuFromPerson": this.extractUntoleratedDishesForPersonOnMenuDbExecution();
+                    break;
+
                 case "cmd_quit": this.closeConnection();
                     break;
             }
 
         }while(!command.equals("cmd_quit"));
     }
+
 
     private void selectIntolerantsWorkersForMenuFromDbExecution() {
         Menu.MenuTypeFlag codMenu=null;
@@ -1230,6 +1234,34 @@ public class ClientHandler implements Runnable{
             socketObjectIn.close();
             socket.close();
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void extractUntoleratedDishesForPersonOnMenuDbExecution() {
+        Person p = null;
+        Menu.MenuTypeFlag menu = null;
+        try {
+            p = (Person) socketObjectIn.readObject();//Attesa bloccante
+            menu = (Menu.MenuTypeFlag) socketObjectIn.readObject();//Attesa bloccante
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        List<String> list = null;
+        try {
+            list = DMLCommandExecutor.getInstance().selectUntoleratedDishesForPersonOnMenu(p, menu);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+
+        try {
+            socketObjectOut.writeObject(list);
+            socketObjectOut.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }

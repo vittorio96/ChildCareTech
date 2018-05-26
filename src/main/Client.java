@@ -234,6 +234,10 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
         return session.extractIntolerantsChildrenForMenuFromDb(selectedMenu);
     }
 
+    public List<String> clientExtractConflictingDishesFromMenu(Person p, Menu.MenuTypeFlag selectedMenu) {
+        return session.extractUntoleratedDishesForPersonOnMenu(p, selectedMenu);
+    }
+
     @Override
     public void update() throws RemoteException {
         AbstractController.currentController.refresh();
