@@ -3,17 +3,15 @@ package main;
 import main.Classes.NormalClasses.Anagrafica.*;
 import main.Classes.NormalClasses.Gite.*;
 import main.Classes.NormalClasses.Mensa.*;
-
-import java.rmi.RemoteException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DMLCommandExecutorSQLInjectionFree {
 
-    private static DMLCommandExecutor instance = new DMLCommandExecutor();//Singleton
+    private static DMLCommandExecutorSQLInjectionFree instance = new DMLCommandExecutorSQLInjectionFree();//Singleton
 
-    public static synchronized DMLCommandExecutor getInstance() {
+    public static synchronized DMLCommandExecutorSQLInjectionFree getInstance() {
         return instance;
     }
 
@@ -27,19 +25,16 @@ public class DMLCommandExecutorSQLInjectionFree {
     }
 
     public boolean insertChildDailyPresenceIntoDb(String codF){
-        PreparedStatement stmt = null;
+        Statement stmt = null;
         boolean status = false;
         Connection conn = myPool.getConnection();
-        String sql = "INSERT INTO PRESENZABAMBINO (CodF, DataOra) VALUES( ?, ? );";
 
         try {
-            stmt = conn.prepareStatement(sql);
-            stmt.setString(1, codF);
-            stmt.setString(2, "sysdate()");
+            stmt = conn.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        String sql = "INSERT INTO PRESENZABAMBINO (CodF, DataOra) VALUES('" + codF + "', sysdate());";
         try {
             if (stmt.executeUpdate(sql) == 1) {
                 status = true;
@@ -53,18 +48,16 @@ public class DMLCommandExecutorSQLInjectionFree {
     }
 
     public boolean insertPersonDailyPresenceIntoDb(String codF){
-        PreparedStatement stmt = null;
+        Statement stmt = null;
         boolean status = false;
         Connection conn = myPool.getConnection();
-        String sql = "INSERT INTO PRESENZAPERSONALE (CodF, DataOra) VALUES( ?, ? );";
+
         try {
-            stmt = conn.prepareStatement(sql);
-            stmt.setString(1, codF);
-            stmt.setString(2, "sysdate()");
+            stmt = conn.createStatement();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        String sql = "INSERT INTO PRESENZAPERSONALE (CodF, DataOra) VALUES('" + codF + "', sysdate());";
         try {
             if (stmt.executeUpdate(sql) == 1) {
                 status = true;
@@ -91,7 +84,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setString(1, username);
 
-        ResultSet rs = stmt.executeQuery(sql);
+        ResultSet rs = stmt.executeQuery();
 
         myPool.releaseConnection(conn);
 
@@ -185,7 +178,7 @@ public class DMLCommandExecutorSQLInjectionFree {
             stmt.setString(5,o.getTipo());
         }
 
-        return stmt.executeUpdate(query) == 1;
+        return stmt.executeUpdate() == 1;
     }
 
     //Insert a supplier into db
@@ -195,8 +188,8 @@ public class DMLCommandExecutorSQLInjectionFree {
         boolean status = false;
         PreparedStatement stmt = null;
         String sql = "INSERT INTO FORNITORE"
-                + " (PIva, NomeF, Tel, Email)"
-                + " VALUES(?,?,?,?)"
+                + "(PIva, NomeF, Tel, Email)"
+                + " VALUES (?,?,?,?)"
                 + " ON DUPLICATE KEY UPDATE NomeF= ? , Tel=? , Email= ? ;";
 
         try {
@@ -214,7 +207,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         }
 
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
         } catch (SQLException ex) {
             //ex.printStackTrace();
@@ -261,7 +254,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         }
 
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 return true;
             else
                 return false;
@@ -309,7 +302,7 @@ public class DMLCommandExecutorSQLInjectionFree {
             stmt.setString(5,o.getCodiceFiscale());
         }
 
-        return stmt.executeUpdate(update) == 1;
+        return stmt.executeUpdate() == 1;
     }
 
     //Select children from db so as to send them to clients
@@ -565,7 +558,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         }
 
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
         } catch (SQLException ex) {
             //ex.printStackTrace();
@@ -597,7 +590,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         }
 
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
         } catch (SQLException ex) {
             System.out.println("Not possible insert of new bus");
@@ -629,7 +622,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         }
 
         try {
-            if (stmt.executeUpdate(sql) == 1) {
+            if (stmt.executeUpdate() == 1) {
                 status = true;
             }
         } catch (SQLException ex) {
@@ -663,7 +656,7 @@ public class DMLCommandExecutorSQLInjectionFree {
                 stmt.setString(4,sp.getNomeG());
                 stmt.setString(5,sp.getDataG());
                 stmt.setString(6,sp.getCodF());
-                if (stmt.executeUpdate(sql) == 1)
+                if (stmt.executeUpdate() == 1)
                     status = true;
             } catch (SQLException ex) {
                 //ex.printStackTrace();
@@ -825,7 +818,7 @@ public class DMLCommandExecutorSQLInjectionFree {
 
             }
 
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
         } catch (SQLException ex) {
             System.out.println(ex);
@@ -854,7 +847,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         }
 
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
         } catch (SQLException ex) {
             System.out.println(ex);
@@ -889,7 +882,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         }
 
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
 
         } catch (SQLException ex) {
@@ -915,14 +908,15 @@ public class DMLCommandExecutorSQLInjectionFree {
             stmt.setString(2,newBus.getDataG());
             stmt.setString(3,newBus.getTarga());
             stmt.setString(4,newBus.getNomeA());
-            stmt.setString(5,oldBus.getDataG());
-            stmt.setString(6,oldBus.getTarga());
+            stmt.setString(5,oldBus.getNomeG());
+            stmt.setString(6,oldBus.getDataG());
+            stmt.setString(7,oldBus.getTarga());
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
 
         } catch (SQLException ex) {
@@ -954,9 +948,10 @@ public class DMLCommandExecutorSQLInjectionFree {
                 stmt.setString(4,ba.getDataG());
                 stmt.setString(5,ba.getCodF());
 
-            }
                 if (stmt.executeUpdate() == 1)
                     status = true;
+            }
+
         } catch (SQLException ex) {
             //ex.printStackTrace();
             System.out.println(ex);
@@ -990,7 +985,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         }
 
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
         } catch (SQLException ex) {
             System.out.println(ex);
@@ -1014,7 +1009,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         try {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, tripDate);
-            rs = stmt.executeQuery(sql);
+            rs = stmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -1057,7 +1052,7 @@ public class DMLCommandExecutorSQLInjectionFree {
             stmt.setString(1,bus.getTarga());
             stmt.setString(2,bus.getNomeG());
             stmt.setString(3,bus.getDataG());
-            rs = stmt.executeQuery(sql);
+            rs = stmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -1091,7 +1086,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         ResultSet rs;
         PreparedStatement stmt;
 
-        String sql = "SELECT B.* " +
+        String sql = "SELECT DISTINCT B.* " +
                 "FROM PRESENZABAMBINO as PB, AssegnazioneAutobus as AB, BAMBINO as B " +
                 "WHERE B.CodF=AB.CodF AND PB.CodF=AB.CodF AND DATE(PB.DataOra)= ? AND AB.NomeG= ? AND AB.Targa= ? " +
                 "AND AB.DataG=? AND B.CodF NOT IN (SELECT PT.CodF FROM PRESENZATAPPA as PT " +
@@ -1109,7 +1104,7 @@ public class DMLCommandExecutorSQLInjectionFree {
             stmt.setString(6,stop.getTarga());
             stmt.setString(7,stop.getDataGita());
             stmt.setString(8,Integer.toString(stop.getNumeroTappa()));
-            rs = stmt.executeQuery(sql);
+            rs = stmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -1153,7 +1148,7 @@ public class DMLCommandExecutorSQLInjectionFree {
             e.printStackTrace();
         }
         try {
-            if (stmt.executeUpdate(sql) == 1){
+            if (stmt.executeUpdate() == 1){
                 status = true;
                 //notifyUpdates();
             }
@@ -1182,7 +1177,7 @@ public class DMLCommandExecutorSQLInjectionFree {
             e.printStackTrace();
         }
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
         } catch (SQLException ex) {
             System.out.println(ex);
@@ -1211,7 +1206,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         }
 
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
         } catch (SQLException ex) {
             System.out.println(ex);
@@ -1250,7 +1245,7 @@ public class DMLCommandExecutorSQLInjectionFree {
 
 
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
         } catch (SQLException ex) {
             //ex.printStackTrace();
@@ -1289,7 +1284,7 @@ public class DMLCommandExecutorSQLInjectionFree {
 
 
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
         } catch (SQLException ex) {
             System.out.println(ex);
@@ -1402,13 +1397,13 @@ public class DMLCommandExecutorSQLInjectionFree {
         ResultSet rs;
         PreparedStatement stmt;
 
-        String sql = "SELECT B.* FROM BAMBINO B JOIN INTOLLERANZABAMBINO IB ON B.CodF = IB.CodF WHERE IB.NomeI = ? ORDER BY B.Cognome;";
+        String sql = "SELECT DISTINCT B.* FROM BAMBINO B JOIN INTOLLERANZABAMBINO IB ON B.CodF = IB.CodF WHERE IB.NomeI = ? ORDER BY B.Cognome;";
         Connection conn = myPool.getConnection();
 
         try {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, nomeI);
-            rs = stmt.executeQuery(sql);
+            rs = stmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -1439,7 +1434,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         ResultSet rs;
         PreparedStatement stmt;
 
-        String sql = "SELECT P.* " +
+        String sql = "SELECT DISTINCT P.* " +
                 "FROM PERSONALE P, INTOLLERANZAPERSONALE IP, COMPOSIZIONEPIATTO CP, COMPOSIZIONEMENU CM " +
                 "WHERE P.CodF=IP.CodF AND IP.NomeI=CP.NomeI AND CP.NomeP=CM.NomeP AND CM.CodGiorno= ? ORDER BY P.Cognome;";
 
@@ -1448,7 +1443,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         try {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, Integer.toString(codMenu.getOrderNum()));
-            rs = stmt.executeQuery(sql);
+            rs = stmt.executeQuery();
         } catch (SQLException ex) {
             //ex.printStackTrace();
             System.out.println(ex);
@@ -1480,7 +1475,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         ResultSet rs;
         PreparedStatement stmt;
 
-        String sql = "SELECT B.* " +
+        String sql = "SELECT DISTINCT B.* " +
                 "FROM BAMBINO B, INTOLLERANZABAMBINO IB, COMPOSIZIONEPIATTO CP, COMPOSIZIONEMENU CM " +
                 "WHERE B.CodF=IB.CodF AND IB.NomeI=CP.NomeI AND CP.NomeP=CM.NomeP AND CM.CodGiorno= ? ORDER BY B.Cognome;";
         Connection conn = myPool.getConnection();
@@ -1488,7 +1483,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         try {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, Integer.toString(codMenu.getOrderNum()));
-            rs = stmt.executeQuery(sql);
+            rs = stmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -1525,7 +1520,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         try {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, Integer.toString(codMenu.getOrderNum()));
-            rs = stmt.executeQuery(sql);
+            rs = stmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -1559,7 +1554,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         try {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, nomeP);
-            rs = stmt.executeQuery(sql);
+            rs = stmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -1595,7 +1590,7 @@ public class DMLCommandExecutorSQLInjectionFree {
             e.printStackTrace();
         }
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
         } catch (SQLException ex) { //Handle a double key exception
             //ex.printStackTrace();
@@ -1622,7 +1617,7 @@ public class DMLCommandExecutorSQLInjectionFree {
             e.printStackTrace();
         }
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
         } catch (SQLException ex) { //Handle a double key exception
             //ex.printStackTrace();
@@ -1648,7 +1643,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         }
         
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
         } catch (SQLException ex) { //Handle a double key exception
             System.out.println(ex);
@@ -1675,7 +1670,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         }
 
         try {
-            if (stmt.executeUpdate(sql) == 1)
+            if (stmt.executeUpdate() == 1)
                 status = true;
         } catch (SQLException ex) { //Handle a double key exception
             ex.printStackTrace();
@@ -1697,7 +1692,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         try {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, Integer.toString(dishType.getOrderNum()));
-            rs = stmt.executeQuery(sql);
+            rs = stmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -1731,7 +1726,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         try {
             stmt = conn.prepareStatement(sql);
             stmt.setString(1, nomeI);
-            rs = stmt.executeQuery(sql);
+            rs = stmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -1781,7 +1776,7 @@ public class DMLCommandExecutorSQLInjectionFree {
 
         try {
 
-            rs = stmt.executeQuery(sql);
+            rs = stmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -1827,7 +1822,7 @@ public class DMLCommandExecutorSQLInjectionFree {
             return null;
 
         try {
-            rs = stmt.executeQuery(sql);
+            rs = stmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -1883,7 +1878,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         String sql;
 
         if(p instanceof Child){
-            sql = "SELECT M.NomeP FROM ComposizioneMenu M, ComposizionePiatto P WHERE M.NomeP=P.NomeP " +
+            sql = "SELECT DISTINCT M.NomeP FROM ComposizioneMenu M, ComposizionePiatto P WHERE M.NomeP=P.NomeP " +
                     "and M.CodGiorno = ? and P.NomeI in (SELECT NomeI from IntolleranzaBambino where CodF = ?);";
 
             stmt = conn.prepareStatement(sql);
@@ -1892,7 +1887,7 @@ public class DMLCommandExecutorSQLInjectionFree {
 
         }
         else if(p instanceof Staff) {
-            sql = "SELECT M.NomeP FROM ComposizioneMenu M, ComposizionePiatto P WHERE M.NomeP=P.NomeP " +
+            sql = "SELECT DISTINCT M.NomeP FROM ComposizioneMenu M, ComposizionePiatto P WHERE M.NomeP=P.NomeP " +
                     "and M.CodGiorno = ? and P.NomeI in (SELECT NomeI from IntolleranzaPersonale where CodF = ?)";
 
             stmt = conn.prepareStatement(sql);
@@ -1903,7 +1898,7 @@ public class DMLCommandExecutorSQLInjectionFree {
             return null;
 
         try {
-            rs = stmt.executeQuery(sql);
+            rs = stmt.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

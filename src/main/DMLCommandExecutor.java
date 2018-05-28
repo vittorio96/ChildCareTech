@@ -991,12 +991,13 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT Z.* FROM BAMBINO Z WHERE Z.CodF in (SELECT B.CodF " +
+        String sql = "SELECT DISTINCT B.*  " +
                 "FROM PRESENZABAMBINO as PB, AssegnazioneAutobus as AB, BAMBINO as B " +
                 "WHERE B.CodF=AB.CodF AND PB.CodF=AB.CodF AND DATE(PB.DataOra)='"+stop.getDataGita()+"' AND AB.NomeG='"+stop.getNomeGita()+"' AND AB.Targa='"+stop.getTarga()+"' AND AB.DataG='"+stop.getDataGita()+"' "+
                 "AND B.CodF NOT IN (SELECT PT.CodF " +
                 "FROM PRESENZATAPPA as PT " +
-                "WHERE PT.NomeG='"+stop.getNomeGita()+"' AND PT.Targa='"+stop.getTarga()+"' AND PT.DataG='"+stop.getDataGita()+"' AND PT.NumTappa='"+stop.getNumeroTappa()+"')) ORDER BY Z.Cognome;";
+                "WHERE PT.NomeG='"+stop.getNomeGita()+"' AND PT.Targa='"+stop.getTarga()+"' AND PT.DataG='"+stop.getDataGita()+"' AND PT.NumTappa='"+stop.getNumeroTappa()+"') ORDER BY B.Cognome;";
+
         Connection conn = myPool.getConnection();
 
         try {
@@ -1267,7 +1268,7 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT B.* FROM BAMBINO B JOIN INTOLLERANZABAMBINO IB ON B.CodF = IB.CodF WHERE IB.NomeI = '"+nomeI+"' ORDER BY B.Cognome;";
+        String sql = "SELECT DISTINCT B.* FROM BAMBINO B JOIN INTOLLERANZABAMBINO IB ON B.CodF = IB.CodF WHERE IB.NomeI = '"+nomeI+"' ORDER BY B.Cognome;";
         Connection conn = myPool.getConnection();
 
         try {
@@ -1303,9 +1304,9 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT S.* FROM PERSONALE S WHERE S.CodF in (SELECT P.CodF " +
+        String sql = "SELECT DISTINCT P.* " +
                 "FROM PERSONALE P, INTOLLERANZAPERSONALE IP, COMPOSIZIONEPIATTO CP, COMPOSIZIONEMENU CM " +
-                "WHERE P.CodF=IP.CodF AND IP.NomeI=CP.NomeI AND CP.NomeP=CM.NomeP AND CM.CodGiorno='"+codMenu.getOrderNum()+"' ORDER BY P.Cognome);";
+                "WHERE P.CodF=IP.CodF AND IP.NomeI=CP.NomeI AND CP.NomeP=CM.NomeP AND CM.CodGiorno='"+codMenu.getOrderNum()+"' ORDER BY P.Cognome;";
 
         Connection conn = myPool.getConnection();
 
@@ -1343,9 +1344,9 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT S.* FROM BAMBINO S WHERE S.CodF in (SELECT B.CodF " +
+        String sql = "SELECT DISTINCT B.* " +
                 "FROM BAMBINO B, INTOLLERANZABAMBINO IB, COMPOSIZIONEPIATTO CP, COMPOSIZIONEMENU CM " +
-                "WHERE B.CodF=IB.CodF AND IB.NomeI=CP.NomeI AND CP.NomeP=CM.NomeP AND CM.CodGiorno='"+codMenu.getOrderNum()+"' ORDER BY B.Cognome);";
+                "WHERE B.CodF=IB.CodF AND IB.NomeI=CP.NomeI AND CP.NomeP=CM.NomeP AND CM.CodGiorno='"+codMenu.getOrderNum()+"' ORDER BY B.Cognome;";
         Connection conn = myPool.getConnection();
 
         try {
