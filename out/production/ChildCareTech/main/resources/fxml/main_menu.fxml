@@ -78,6 +78,15 @@
                               <Font name="Futura Medium" size="36.0" />
                            </font>
                         </Label>
+                        <Pane fx:id="chefPane" layoutX="178.0" layoutY="144.0" prefHeight="252.0" prefWidth="261.0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="178.0" AnchorPane.rightAnchor="181.0" AnchorPane.topAnchor="144.0">
+                           <children>
+                              <ImageView fx:id="imageDisplay11" fitHeight="220.0" fitWidth="231.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/chef.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
                         <Pane fx:id="teacherPane" layoutX="178.0" layoutY="144.0" prefHeight="250.0" prefWidth="261.0">
                            <children>
                               <ImageView fx:id="imageDisplay1" fitHeight="220.0" fitWidth="231.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
@@ -92,15 +101,6 @@
                               <ImageView fx:id="imageDisplay" fitHeight="220.0" fitWidth="231.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../images/businessman.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                        </Pane>
-                        <Pane fx:id="chefPane" layoutX="178.0" layoutY="144.0" prefHeight="252.0" prefWidth="261.0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="178.0" AnchorPane.rightAnchor="181.0" AnchorPane.topAnchor="144.0">
-                           <children>
-                              <ImageView fx:id="imageDisplay11" fitHeight="220.0" fitWidth="231.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../images/chef.png" />
                                  </image>
                               </ImageView>
                            </children>

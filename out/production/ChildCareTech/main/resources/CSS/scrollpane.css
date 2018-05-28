@@ -2,24 +2,36 @@
     -fx-background-color: #FFFFFF;
 }
 
-.scroll-bar:horizontal, .scroll-bar:vertical{
-    -fx-background-color:transparent;
+/* The increment and decrement button CSS class of scrollbar */
+.increment-button ,.decrement-button {
+  -fx-background-color:transparent;
+	-fx-border-color:derive(gray,80%);
+}
+.increment-arrow, .decrement-arrow{
+   -fx-background-color:transparent;
+   -fx-padding:0;
+   -fx-opacity: 0;
 }
 
-.increment-button, .decrement-button {
-    -fx-background-color: transparent;
-    -fx-border-color: transparent;
+.scroll-bar:vertical {
+    -fx-pref-width: 10.5;
+    -fx-padding: 3;
 }
-
-.scroll-bar:horizontal .track,
+/* The main scrollbar **track** CSS class  */
+.scroll-bar:horizontal .track ,
 .scroll-bar:vertical .track{
     -fx-background-color: transparent;
-    -fx-border-color: transparent;
-    -fx-background-radius: 0em;
+	 -fx-border-color:derive(gray,80%);
+	 -fx-background-radius: 0em;
 }
 
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
 .scroll-bar:horizontal .thumb,
 .scroll-bar:vertical .thumb {
-    -fx-background-color: white;
-    -fx-background-radius: 5em;
+  -fx-background-color:derive(black,90%);
+	-fx-background-insets: 0, 0, 0;
+	-fx-background-radius: 0em;
+
 }
+.filler { -fx-background-color: transparent}
+.corner { -fx-background-color: transparent}
