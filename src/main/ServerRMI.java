@@ -449,6 +449,16 @@ public class ServerRMI extends UnicastRemoteObject implements RemoteServerInterf
         }
     }
 
+    @Override
+    public String getCorrectBusFromChildFromDbExecution(String codR, String nomeG, String dataG) throws RemoteException {
+        try {
+            return DMLCommandExecutor.getInstance().getCorrectBusNumberForChild(codR, nomeG, dataG);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     /*@Override
     public boolean registerClientToDBNotifications(Client c) throws RemoteException {
         return false;

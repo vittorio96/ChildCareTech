@@ -10,8 +10,8 @@ public class RMIServerLauncher {
             //System.setSecurityManager(new RMISecurityManager());
             java.rmi.registry.LocateRegistry.createRegistry(1099);
 
-            //RemoteServerInterface server =new ServerRMI();
-            RemoteServerInterface server =new ServerRMI_SQLIF();
+            RemoteServerInterface server =new ServerRMI();
+            //RemoteServerInterface server =new ServerRMI_SQLIF();
             Naming.rebind("rmi://127.0.0.1/stub", server);//Name binding
             System.out.println("[System] main.ServerRMI is ready.");
         }catch (Exception e) {

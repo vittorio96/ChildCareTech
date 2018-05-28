@@ -17,8 +17,11 @@ import main.Classes.StringPropertyClasses.Gite.StringPropertyStop;
 import main.Classes.StringPropertyClasses.Gite.StringPropertyTrip;
 import main.controllers.AbstractController;
 import main.controllers.PopupController;
+import org.controlsfx.control.PopOver;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -63,8 +66,9 @@ public class ControllerGiteManagePresenzeTappe extends AbstractController implem
     //Buttons
     @FXML private Button saveButton;
     @FXML private Button goHomeButton;
+    @FXML private Button lookupButton;
 
-    @FXML private List<StopPresence> stopPresenceList;
+    @FXML private List<StopPresence> stopPresenceList = new ArrayList<StopPresence>();
 
 
     @Override
@@ -150,20 +154,29 @@ public class ControllerGiteManagePresenzeTappe extends AbstractController implem
         if(selectedChild != null) {
             List<Contact> contacts = CLIENT.clientExtractParentsFromChild(selectedChild.getCodiceFiscale());
             int i = 0;
-            for (Contact c : contacts) {
-                if (c.getTipo().equals(Integer.toString(Contact.ContactTypeFlag.GENITORE.getOrdernum()))) {
-                    if (i == 1) {
-                        parent2TextField.setText(c.getNome() + " " + c.getCognome());
-                        parent2CellTextField.setText(c.getCellulare());
-                        i++;
-                    }
-                    if (i == 0) {
-                        parent1TextField.setText(c.getNome() + " " + c.getCognome());
-                        parent1CellTextField.setText(c.getCellulare());
-                        i++;
-                    } else break;
+            if (contacts != null) {
+                for (Contact c : contacts) {
+                    if (c.getTipo().equals(Integer.toString(Contact.ContactTypeFlag.GENITORE.getOrdernum()))) {
+                        if (i == 1) {
+                            parent2TextField.setText(c.getNome() + " " + c.getCognome());
+                            parent2CellTextField.setText(c.getCellulare());
+                            i++;
+                        }
+                        if (i == 0) {
+                            parent1TextField.setText(c.getNome() + " " + c.getCognome());
+                            parent1CellTextField.setText(c.getCellulare());
+                            parent2TextField.setText(" ");
+                            parent2CellTextField.setText(" ");
+                            i++;
+                        } else break;
 
+                    }
                 }
+            } else{
+                parent2TextField.setText(" ");
+                parent1TextField.setText(" ");
+                parent2CellTextField.setText(" ");
+                parent1CellTextField.setText(" ");
             }
         }
     }
@@ -236,8 +249,19 @@ public class ControllerGiteManagePresenzeTappe extends AbstractController implem
         iscrizioniTable.setItems(bambiniObservableList);
     }
 
+   @FXML private void lookupPopup() throws IOException {
+        if(getSelectedGita() != null) {
+            ControllerGiteLookupCorrectBus.setTrip(getSelectedGita());
+            openPopOver("../../resources/fxml/gite_getCorrectBus.fxml", PopOver.ArrowLocation.BOTTOM_CENTER, lookupButton);
+        } else createErrorPopup("Errore", "Seleziona prima una gita");
+    }
+
     @Override
     public void refresh() {
 
+    }
+
+    public StringPropertyTrip getSelectedGita() {
+        return giteTable.getSelectionModel().selectedItemProperty().get();
     }
 }

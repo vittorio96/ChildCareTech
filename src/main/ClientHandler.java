@@ -205,6 +205,9 @@ public class ClientHandler implements Runnable{
                 case "cmd_selectUntoleratedDishesFromMenuFromPerson": this.extractUntoleratedDishesForPersonOnMenuDbExecution();
                     break;
 
+                case "cmd_getCorrectBusFromChild": this.getCorrectBusFromChildFromDbExecution();
+                    break;
+
                 case "cmd_quit": this.closeConnection();
                     break;
             }
@@ -1261,6 +1264,36 @@ public class ClientHandler implements Runnable{
 
         try {
             socketObjectOut.writeObject(list);
+            socketObjectOut.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void getCorrectBusFromChildFromDbExecution() {
+        String codR = null;
+        String nomeG = null;
+        String dataG = null;
+        try {
+            codR = (String) socketObjectIn.readObject();//Attesa bloccante
+            nomeG = (String) socketObjectIn.readObject();//Attesa bloccante
+            dataG = (String) socketObjectIn.readObject();//Attesa bloccante
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String targa = null;
+        try {
+            targa = DMLCommandExecutor.getInstance().getCorrectBusNumberForChild(codR, nomeG, dataG);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println(e.getSQLState());
+        }
+
+        try {
+            socketObjectOut.writeObject(targa);
             socketObjectOut.flush();
         } catch (IOException e) {
             e.printStackTrace();

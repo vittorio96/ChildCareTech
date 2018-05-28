@@ -453,4 +453,14 @@ public class ServerRMI_SQLIF extends UnicastRemoteObject implements RemoteServer
             return null;
         }
     }
+
+    @Override
+    public String getCorrectBusFromChildFromDbExecution(String codR, String nomeG, String dataG) throws RemoteException {
+        try {
+            return DMLCommandExecutor.getInstance().getCorrectBusNumberForChild(codR, nomeG, dataG);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

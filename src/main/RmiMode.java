@@ -645,4 +645,14 @@ public class RmiMode implements SessionMode {
             return null;
         }
     }
+
+    @Override
+    public String getCorrectBusFromChildFromDb(String codR, String nomeG, String dataG) {
+        try {
+            return server.getCorrectBusFromChildFromDbExecution(codR, nomeG, dataG);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

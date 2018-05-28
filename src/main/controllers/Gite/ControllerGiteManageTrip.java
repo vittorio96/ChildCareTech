@@ -83,8 +83,18 @@ public class ControllerGiteManageTrip extends AbstractController implements Init
         giteTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showRelatedAutobusAndChildren(newValue));
 
+        autobusTable.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldValue, newValue) -> handleChildrenRefresh(newValue));
+
+
         busesColumn.setCellValueFactory(cellData -> cellData.getValue().targaProperty());
 
+    }
+
+    private void handleChildrenRefresh(StringPropertyBus newValue) {
+        if(newValue!= null){
+            refreshChildrenTable(newValue.getDataG());
+        }
     }
 
     private void refreshTripTable(){

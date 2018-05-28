@@ -1923,4 +1923,29 @@ public class DMLCommandExecutorSQLInjectionFree {
             return null;
     }
 
+    public String getCorrectBusNumberForChild(String codR, String nomeG, String dataG) throws SQLException{
+        String targa = null;
+        ResultSet rs;
+        Connection conn = myPool.getConnection();
+        Statement stmt;
+        String sql = "SELECT A.Targa from AssegnazioneAutobus A, Bambino B where B.CodF=A.codF and B.codR = " +"'"+ codR +"' " +
+                "and NomeG = "+"'"+ nomeG+"'and DataG = "+"'"+ dataG+"';";
+        stmt = conn.createStatement();
+
+        try {
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            targa = rs.getString("Targa");
+        }
+        return targa;
+    }
+
 }

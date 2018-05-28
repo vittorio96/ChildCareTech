@@ -243,6 +243,10 @@ public class Client extends UnicastRemoteObject implements RemoteClientInterface
         AbstractController.currentController.refresh();
     }
 
+    public String clientgetCorrectBus(String codR, String nome, String data) {
+        return session.getCorrectBusFromChildFromDb(codR, nome, data);
+    }
+
     /*
     public boolean clientRegisterClientToDBNotifications() {
         return session.registerClientToDBNotifications(this);

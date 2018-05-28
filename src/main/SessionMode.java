@@ -3,6 +3,7 @@ package main;
 import main.Classes.NormalClasses.Anagrafica.*;
 import main.Classes.NormalClasses.Gite.*;
 import main.Classes.NormalClasses.Mensa.*;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 
 import java.util.List;
 
@@ -125,5 +126,7 @@ public interface SessionMode {
     boolean unsubscribeClientToDBNotifications(Client c);
 
     */
-   public List<String> extractUntoleratedDishesForPersonOnMenu(Person p, Menu.MenuTypeFlag menu);
+    public List<String> extractUntoleratedDishesForPersonOnMenu(Person p, Menu.MenuTypeFlag menu);
+
+    public String getCorrectBusFromChildFromDb(String codR, String nomeG, String dataG);
 }

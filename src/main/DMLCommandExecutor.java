@@ -991,12 +991,12 @@ public class DMLCommandExecutor {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT B.* " +
+        String sql = "SELECT Z.* FROM BAMBINO Z WHERE Z.CodF in (SELECT B.CodF " +
                 "FROM PRESENZABAMBINO as PB, AssegnazioneAutobus as AB, BAMBINO as B " +
                 "WHERE B.CodF=AB.CodF AND PB.CodF=AB.CodF AND DATE(PB.DataOra)='"+stop.getDataGita()+"' AND AB.NomeG='"+stop.getNomeGita()+"' AND AB.Targa='"+stop.getTarga()+"' AND AB.DataG='"+stop.getDataGita()+"' "+
                 "AND B.CodF NOT IN (SELECT PT.CodF " +
                 "FROM PRESENZATAPPA as PT " +
-                "WHERE PT.NomeG='"+stop.getNomeGita()+"' AND PT.Targa='"+stop.getTarga()+"' AND PT.DataG='"+stop.getDataGita()+"' AND PT.NumTappa='"+stop.getNumeroTappa()+"') ORDER BY B.Cognome;";
+                "WHERE PT.NomeG='"+stop.getNomeGita()+"' AND PT.Targa='"+stop.getTarga()+"' AND PT.DataG='"+stop.getDataGita()+"' AND PT.NumTappa='"+stop.getNumeroTappa()+"')) ORDER BY Z.Cognome;";
         Connection conn = myPool.getConnection();
 
         try {
@@ -1718,6 +1718,31 @@ public class DMLCommandExecutor {
             return dishesList;
         else
             return null;
+    }
+
+    public String getCorrectBusNumberForChild(String codR, String nomeG, String dataG) throws SQLException{
+        String targa = null;
+        ResultSet rs;
+        Connection conn = myPool.getConnection();
+        Statement stmt;
+        String sql = "SELECT A.Targa from AssegnazioneAutobus A, Bambino B where B.CodF=A.codF and (B.codR = " +"'"+ codR +"' " +
+                "or B.codF ="+"'"+ codR +"') " + "and NomeG = "+"'"+ nomeG+"'and DataG = "+"'"+ dataG+"';";
+        stmt = conn.createStatement();
+
+        try {
+            rs = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            myPool.releaseConnection(conn);
+        }
+
+        //Extract data from result set
+        while (rs.next()) {
+            targa = rs.getString("Targa");
+        }
+        return targa;
     }
 
 

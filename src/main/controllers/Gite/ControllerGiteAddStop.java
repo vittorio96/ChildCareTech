@@ -123,7 +123,7 @@ public class ControllerGiteAddStop extends AbstractController implements Initial
                 (observable, oldValue, newValue) -> showRelatedBuses(newValue));
 
         autobusTable.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> showRelatedTappe(newValue.getNomeG(), newValue.getDataG(), newValue.getTarga()));
+                (observable, oldValue, newValue) -> showRelatedTappe(newValue));
 
     }
 
@@ -135,33 +135,35 @@ public class ControllerGiteAddStop extends AbstractController implements Initial
     }
 
     private void showRelatedBuses(StringPropertyTrip selectedTrip) {
-        currentBusArrayList = CLIENT.clientExtractAllBusesFromTrip(selectedTrip.getNome(), selectedTrip.getData());
-        busObservableList.clear();
-        if(currentBusArrayList != null){
-            for(Bus b : currentBusArrayList){
-                busObservableList.add(new StringPropertyBus(b));
+        if(selectedTrip != null) {
+            currentBusArrayList = CLIENT.clientExtractAllBusesFromTrip(selectedTrip.getNome(), selectedTrip.getData());
+            busObservableList.clear();
+            if (currentBusArrayList != null) {
+                for (Bus b : currentBusArrayList) {
+                    busObservableList.add(new StringPropertyBus(b));
+                }
             }
+            stopTable.getItems().clear();
+            autobusTable.setItems(busObservableList);
         }
-        stopTable.getItems().clear();
-        autobusTable.setItems(busObservableList);
     }
 
     private void showRelatedTappe(StringPropertyBus selectedBus) {
+        if(selectedBus != null){
+            stopTable.setItems(null);
+            stopObservableList.clear();
 
-        stopTable.setItems(null);
-        stopObservableList.clear();
-
-        List<Stop> stopArrayList = CLIENT.clientExtractRelatedStopsFromTrip(selectedBus.getNomeG(),selectedBus.getDataG(),selectedBus.getTarga());
-        if(stopArrayList != null){
-            for(Stop s : stopArrayList){
-                stopObservableList.add(new StringPropertyStop(s));
+            List<Stop> stopArrayList = CLIENT.clientExtractRelatedStopsFromTrip(selectedBus.getNomeG(),selectedBus.getDataG(),selectedBus.getTarga());
+            if(stopArrayList != null){
+                for(Stop s : stopArrayList){
+                    stopObservableList.add(new StringPropertyStop(s));
+                }
             }
+            stopTable.setItems(stopObservableList);
         }
-        stopTable.setItems(stopObservableList);
     }
 
     private void showRelatedTappe(String nomeG, String dataG, String targa ) {
-
         stopTable.setItems(null);
         stopObservableList.clear();
 

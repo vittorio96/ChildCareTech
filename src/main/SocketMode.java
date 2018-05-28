@@ -1003,4 +1003,25 @@ public class SocketMode implements SessionMode {
             return null;
         }
     }
+
+    @Override
+    public String getCorrectBusFromChildFromDb(String codR, String nomeG, String dataG) {
+        try {
+            socketObjectOut.writeObject("cmd_getCorrectBusFromChild");
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(codR);
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(nomeG);
+            socketObjectOut.flush();
+            socketObjectOut.writeObject(dataG);
+            socketObjectOut.flush();
+
+            return (String) socketObjectIn.readObject();//Attesa bloccante
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getLocalizedMessage());
+            return null;
+        }
+    }
 }

@@ -118,4 +118,6 @@ public interface RemoteServerInterface extends Remote{
 
     public List<String> extractUntoleratedDishesForPersonOnMenuDbExecution(Person p, Menu.MenuTypeFlag menu) throws RemoteException;
 
+    public String getCorrectBusFromChildFromDbExecution(String codR, String nomeG, String dataG) throws RemoteException;
+
 }

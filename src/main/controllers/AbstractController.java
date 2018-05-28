@@ -120,6 +120,14 @@ public abstract class AbstractController {
         alert2.setContentText("Dati inseriti correttamente nel database.\n");
         alert2.showAndWait();
     }
+    public void createCustomSuccessPopup(String header, String content){
+        Alert alert2 = new Alert(Alert.AlertType.ERROR); //truly a success
+        alert2.setGraphic(new javafx.scene.image.ImageView(this.getClass().getResource("/main/resources/images/checkmark.png").toString()));
+        alert2.setTitle("Successo");
+        alert2.setHeaderText(header);
+        alert2.setContentText(content);
+        alert2.showAndWait();
+    }
 
     public void createInfoPopup(String contentText){
         Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
