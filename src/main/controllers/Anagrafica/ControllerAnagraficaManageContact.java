@@ -2,6 +2,8 @@ package main.controllers.Anagrafica;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -10,6 +12,7 @@ import main.Classes.NormalClasses.Anagrafica.Contact;
 import main.Classes.NormalClasses.Anagrafica.Person;
 import main.Classes.NormalClasses.Anagrafica.Supplier;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyContact;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertySupplier;
 import main.controllers.AbstractController;
 import main.controllers.PopupController;
@@ -25,9 +28,15 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
     */
 
     //main lists
-    private ObservableList<StringPropertyContact> parentObservableList = FXCollections.observableArrayList();
-    private ObservableList<StringPropertyContact> doctorObservableList = FXCollections.observableArrayList();
-    private ObservableList<StringPropertySupplier> supplierObservableList = FXCollections.observableArrayList();
+    private ObservableList<StringPropertyContact>   parentObservableList = FXCollections.observableArrayList();
+    private SortedList<StringPropertyContact>       parentSortedData;
+    private FilteredList<StringPropertyContact>     parentFilteredData;
+    private ObservableList<StringPropertyContact>   doctorObservableList = FXCollections.observableArrayList();
+    private SortedList<StringPropertyContact>       doctorSortedData;
+    private FilteredList<StringPropertyContact>     doctorFilteredData;
+    private ObservableList<StringPropertySupplier>  supplierObservableList = FXCollections.observableArrayList();
+    private SortedList<StringPropertySupplier>      supplierSortedData;
+    private FilteredList<StringPropertySupplier>    supplierFilteredData;
 
     //Utilities
     private String lastSelection;
@@ -65,6 +74,9 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
     @FXML private TextField supplierEmailTextField;
     @FXML private TextField supplierCellphoneTextField;
 
+    //Ricerca
+    @FXML private TextField searchTextField;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setControllerType();
@@ -72,6 +84,7 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
         setColumnAssociations();
         setEventListeners();
         populateTables();
+        setFilters();
     }
 
     protected void setControllerType() {
@@ -127,6 +140,12 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
         doctorTable.setItems(doctorObservableList);
         parentTable.setItems(parentObservableList);
         supplierTable.setItems(supplierObservableList);
+    }
+
+    private void setFilters() {
+        setParentFilter();
+        setDoctorFilter();
+        setSupplierFilter();
     }
 
     /*
@@ -365,6 +384,100 @@ public class ControllerAnagraficaManageContact extends AbstractController implem
     private boolean isRowSelected(TableView tableView) {
         int selectedIndex = tableView.getSelectionModel().getSelectedIndex();
         return selectedIndex >= 0;
+    }
+
+    private void setParentFilter() {
+        parentFilteredData = new FilteredList<>(parentObservableList, p -> true);
+        //Set the filter
+        searchTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            parentFilteredData.setPredicate(staff -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name of every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (staff.getNome().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches first name.
+                } else if (staff.getCognome().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }
+                return false; // Does not match.
+            });
+        });
+
+        // 3. Wrap the FilteredList in a SortedList.
+        parentSortedData = new SortedList<>(parentFilteredData);
+
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        parentSortedData.comparatorProperty().bind(parentTable.comparatorProperty());
+
+        // 5. Add sorted (and filtered) data to the table.
+        parentTable.setItems(parentSortedData);
+    }
+
+    private void setSupplierFilter() {
+        supplierFilteredData = new FilteredList<>(supplierObservableList, p -> true);
+        //Set the filter
+        searchTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            supplierFilteredData.setPredicate(supplier -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name of every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (supplier.getNomeF().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches first name.
+                }
+                return false; // Does not match.
+            });
+        });
+
+        // 3. Wrap the FilteredList in a SortedList.
+        supplierSortedData = new SortedList<>(supplierFilteredData);
+
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        supplierSortedData.comparatorProperty().bind(supplierTable.comparatorProperty());
+
+        // 5. Add sorted (and filtered) data to the table.
+        supplierTable.setItems(supplierSortedData);
+
+    }
+
+    private void setDoctorFilter() {
+
+        doctorFilteredData = new FilteredList<>(doctorObservableList, p -> true);
+        //Set the filter
+        searchTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            doctorFilteredData.setPredicate(doctor -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name of every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (doctor.getNome().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches first name.
+                }else if (doctor.getCognome().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }
+                return false; // Does not match.
+            });
+        });
+
+        // 3. Wrap the FilteredList in a SortedList.
+        doctorSortedData = new SortedList<>(doctorFilteredData);
+
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        doctorSortedData.comparatorProperty().bind(doctorTable.comparatorProperty());
+
+        // 5. Add sorted (and filtered) data to the table.
+        doctorTable.setItems(doctorSortedData);
+
     }
 
     public void handleGoHomebutton() {

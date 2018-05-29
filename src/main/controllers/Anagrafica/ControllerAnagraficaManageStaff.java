@@ -2,11 +2,14 @@ package main.controllers.Anagrafica;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import main.Classes.NormalClasses.Anagrafica.Staff;
+import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyChild;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyPerson;
 import main.Classes.StringPropertyClasses.Anagrafica.StringPropertyStaff;
 import main.controllers.AbstractController;
@@ -20,8 +23,10 @@ import java.util.ResourceBundle;
 
 public class ControllerAnagraficaManageStaff extends AbstractController implements Initializable {
 
-    //main list
+    //main lists
     private ObservableList<StringPropertyStaff> staffObservableList = FXCollections.observableArrayList();
+    private SortedList<StringPropertyStaff> sortedData;
+    private FilteredList<StringPropertyStaff> filteredData;
 
     //Tabella
     @FXML private TableView<StringPropertyStaff> staffTable;
@@ -35,6 +40,8 @@ public class ControllerAnagraficaManageStaff extends AbstractController implemen
     @FXML private TextField surnameTextField;
     @FXML private TextField codFisTextField;
     @FXML private DatePicker birthdayDatePicker;
+    @FXML private TextField searchTextField;
+
 
     //Buttons
     @FXML private Button saveChangesButton;
@@ -47,6 +54,7 @@ public class ControllerAnagraficaManageStaff extends AbstractController implemen
         setColumnAssociations();
         datePickerStandardInitialize(birthdayDatePicker);
         setEventListeners();
+        setFilter();
     }
 
     protected void setControllerType() {
@@ -156,5 +164,38 @@ public class ControllerAnagraficaManageStaff extends AbstractController implemen
     @Override
     public void refresh() {
 
+    }
+
+    private void setFilter() {
+        filteredData = new FilteredList<>(staffObservableList, p -> true);
+        //Set the filter
+        searchTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(staff -> {
+                // If filter text is empty, display all persons.
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+
+                // Compare first name and last name of every person with filter text.
+                String lowerCaseFilter = newValue.toLowerCase();
+                if (staff.getNome().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches first name.
+                } else if (staff.getCognome().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches last name.
+                }else if (staff.getUsername().toLowerCase().contains(lowerCaseFilter)) {
+                    return true; // Filter matches code
+                }
+                return false; // Does not match.
+            });
+        });
+
+        // 3. Wrap the FilteredList in a SortedList.
+        sortedData = new SortedList<>(filteredData);
+
+        // 4. Bind the SortedList comparator to the TableView comparator.
+        sortedData.comparatorProperty().bind(staffTable.comparatorProperty());
+
+        // 5. Add sorted (and filtered) data to the table.
+        staffTable.setItems(sortedData);
     }
 }

@@ -62,6 +62,7 @@ public class ControllerAnagraficaAddStaff extends AbstractController implements 
                 //Genera QR
                 QRGenerator.GenerateQR(staff);
                 createSuccessPopup();
+                controllerType.close(goHomeImageView);
             }
         }
         else{

@@ -392,6 +392,7 @@ public class SocketMode implements SessionMode {
         try {
             socketObjectOut.writeObject(new String("cmd_insert_stop_presences"));
             socketObjectOut.flush();
+            socketObjectOut.reset();//Clean up stream removing previous list //TODO
             socketObjectOut.writeObject(list);
             socketObjectOut.flush();
 
@@ -506,6 +507,7 @@ public class SocketMode implements SessionMode {
         try {
             socketObjectOut.writeObject(new String("cmd_insert_busAssociations"));
             socketObjectOut.flush();
+            socketObjectOut.reset();// Clean up stream removing previous list //TODO
             socketObjectOut.writeObject(list);
             socketObjectOut.flush();
 

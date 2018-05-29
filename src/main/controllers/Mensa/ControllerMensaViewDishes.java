@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 import main.Classes.NormalClasses.Mensa.Dish;
 import main.Classes.NormalClasses.Mensa.Menu;
 import main.Classes.StringPropertyClasses.Mensa.StringPropertyDish;
@@ -17,6 +18,7 @@ import org.controlsfx.control.PopOver;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -55,6 +57,7 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
     @FXML private TableView<StringPropertyDish> dishesTable;
     @FXML private TableColumn<StringPropertyDish,String> dishesColumn;
     private final String viewIngredientsFxmlPath = "../../resources/fxml/mensa_viewIngredientsPopOver.fxml";
+    private ArrayList<PopOver> popOvers = new ArrayList<>();
 
     /*
         Initialization
@@ -74,7 +77,7 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
                     StringPropertyDish selected = row.getItem();
                     ControllerShowIngredientsPopOver.setDish(selected);
                     try {
-                        openPopOver(viewIngredientsFxmlPath, PopOver.ArrowLocation.LEFT_CENTER, row);
+                        popOvers.add(openPopOverWR(viewIngredientsFxmlPath, PopOver.ArrowLocation.LEFT_CENTER, row));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -132,7 +135,14 @@ public class ControllerMensaViewDishes extends AbstractController implements Ini
 
 
     public void goHome() {
+        handleOpenedPopovers();
         controllerType.close(goHomeIV);
+    }
+
+    private void handleOpenedPopovers() {
+        if(popOvers.size()>0){
+            for(PopOver p: popOvers) if(p!= null) p.hide(Duration.millis(0));
+        }
     }
 
     public void addNewDish() throws IOException {

@@ -11,10 +11,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 import main.Classes.NormalClasses.Mensa.Dish;
 import main.Classes.StringPropertyClasses.Mensa.StringPropertyIngredient;
 import main.controllers.AbstractController;
 import main.controllers.PopupController;
+import org.controlsfx.control.PopOver;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -226,6 +228,8 @@ public class ControllerMensaAddDish extends AbstractController implements Initia
     @FXML private void handleGoHomeButton(){
         controllerType.close(goHomeIV);
     }
+
+
 
     @Override
     public void refresh() {

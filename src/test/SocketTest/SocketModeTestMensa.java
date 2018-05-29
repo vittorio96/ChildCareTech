@@ -46,6 +46,7 @@ public class SocketModeTestMensa {
 
     @AfterClass
     public static void testSessionDisconnect() {
+        cleanup();
         socketMode.disconnect();
     }
 
@@ -272,6 +273,13 @@ public class SocketModeTestMensa {
         Person staff = new Staff("CODFISSTAFTEST12", "NomeStaff", "CognomeStaff", "UsernameStaff", "password", "1990-01-01", User.UserTypeFlag.AMMINISTRATIVO);
         socketMode.insertPersonIntoDb(staff);
         return staff;
+    }
+
+    private static void cleanup() {
+        socketMode.deleteSubjectFromDb("Contact","CODFISGEN1TEST12");
+        socketMode.deleteSubjectFromDb("Contact","CODFISGEN2TEST12");
+        socketMode.deleteSubjectFromDb("Contact","CODFISPEDRTEST12");
+        socketMode.deleteSubjectFromDb("Child", "CODFISTEST123456");
     }
 
 }

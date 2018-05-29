@@ -9,6 +9,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
+import javafx.util.Duration;
 import main.Classes.NormalClasses.Anagrafica.Child;
 import main.Classes.NormalClasses.Anagrafica.Staff;
 import main.Classes.NormalClasses.Mensa.Menu;
@@ -21,6 +22,7 @@ import org.controlsfx.control.PopOver;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -54,6 +56,7 @@ public class ControllerMensaTodaysConflicts extends AbstractController implement
     private ObservableList<StringPropertyStaff> staffObservableList = FXCollections.observableArrayList();
     private final Menu.MenuTypeFlag defaultDay = Menu.MenuTypeFlag.MONDAY;
     private final String conflictingDishesFXMLPath =  "../../resources/fxml/mensa_viewConflictingDishesPopOver.fxml";
+    private ArrayList<PopOver> popOvers = new ArrayList<>();
 
 
     /*
@@ -78,7 +81,7 @@ public class ControllerMensaTodaysConflicts extends AbstractController implement
                     StringPropertyStaff selected = row.getItem();
                     ControllerShowConflictingDishesPopOver.setVariables(selected.toPerson(), getSelectedMenu());
                     try {
-                        openPopOver(conflictingDishesFXMLPath, PopOver.ArrowLocation.LEFT_CENTER, row);
+                        popOvers.add(openPopOverWR(conflictingDishesFXMLPath, PopOver.ArrowLocation.LEFT_CENTER, row));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -94,7 +97,7 @@ public class ControllerMensaTodaysConflicts extends AbstractController implement
                     StringPropertyChild selected = row.getItem();
                     ControllerShowConflictingDishesPopOver.setVariables(selected.toPerson(), getSelectedMenu());
                     try {
-                        openPopOver(conflictingDishesFXMLPath, PopOver.ArrowLocation.LEFT_CENTER, row);
+                        popOvers.add(openPopOverWR(conflictingDishesFXMLPath, PopOver.ArrowLocation.LEFT_CENTER, row));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -186,7 +189,14 @@ public class ControllerMensaTodaysConflicts extends AbstractController implement
     }
 
     @FXML public void closeCurrentPopup() {
+        handleOpenedPopovers();
         controllerType.close(closeImageView);
+    }
+
+    private void handleOpenedPopovers() {
+        if(popOvers.size()>0){
+            for(PopOver p: popOvers) if(p!= null) p.hide(Duration.millis(0));
+        }
     }
 
     @Override

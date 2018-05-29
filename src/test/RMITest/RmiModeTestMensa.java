@@ -273,5 +273,6 @@ public class RmiModeTestMensa {
         rmiMode.deleteSubjectFromDb("Contact","CODFISGEN1TEST12");
         rmiMode.deleteSubjectFromDb("Contact","CODFISGEN2TEST12");
         rmiMode.deleteSubjectFromDb("Contact","CODFISPEDRTEST12");
+        rmiMode.deleteSubjectFromDb("Child", "CODFISTEST123456");
     }
 }

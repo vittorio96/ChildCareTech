@@ -67,6 +67,7 @@ public class ControllerMainMenu extends AbstractController implements Initializa
     }
     
     @FXML protected void handleLogoutButtonAction(ActionEvent event) throws IOException {
+        CLIENT.getSession().disconnect();
         changeScene(logoutButton,"../../resources/fxml/login.fxml");
     }
 
