@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.controllers.Mensa.ControllerMensaAddDish">
+   <children>
+      <ImageView fx:id="goHomeIV" fitHeight="19.0" fitWidth="32.0" layoutX="775.0" layoutY="7.0" onMouseClicked="#handleGoHomeButton" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/close.png" />
+         </image>
+      </ImageView>
+      <GridPane alignment="CENTER" layoutX="35.0" layoutY="43.0" prefHeight="389.0" prefWidth="731.0">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="351.1393127441406" minWidth="10.0" prefWidth="345.528076171875" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="171.87353515625" minWidth="0.0" prefWidth="41.471923828125" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="343.6533508300781" minWidth="10.0" prefWidth="342.25054931640625" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="71.63745880126953" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="67.04481506347656" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="47.95518493652344" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="208.0438232421875" minHeight="10.0" prefHeight="205.3167266845703" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="49.211395263671875" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Salva:" textFill="#717e93" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Futura Medium" size="15.0" />
+               </font>
+               <padding>
+                  <Insets right="100.0" />
+               </padding>
+            </Label>
+            <TableView fx:id="ingredientsOnDishTable" prefHeight="129.0" prefWidth="163.0" style="-fx-background-color: white; -fx-border-color: #D3D3D3#D3D3D3; -fx-border-radius: 4;" stylesheets="@../CSS/noheaderTableView.css" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <placeholder>
+                  <Label text="" />
+               </placeholder>
+               <columns>
+                <TableColumn fx:id="ingredientsOnDish" prefWidth="75.0" sortable="false" text="Ingredienti nel piatto" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView fx:id="availableIngredientsTable" prefHeight="141.0" prefWidth="120.0" style="-fx-background-color: white; -fx-border-color: #D3D3D3#D3D3D3; -fx-border-radius: 4;" stylesheets="@../CSS/noheaderTableView.css" GridPane.rowIndex="3">
+               <placeholder>
+                  <Label text="" />
+               </placeholder>
+               <columns>
+                  <TableColumn fx:id="availableIngredients" prefWidth="75.0" text="Ingredienti disponibili" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <GridPane prefHeight="92.0" prefWidth="354.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.86585998535156" minWidth="10.0" prefWidth="107.83540344238281" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.86585235595703" minWidth="10.0" prefWidth="239.1645965576172" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label prefHeight="39.0" prefWidth="110.0" text="Nome piatto:" textAlignment="CENTER" textFill="#717e93" wrapText="true" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font name="Futura Medium" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dishNameTextField" maxWidth="257.0" prefHeight="27.0" prefWidth="257.0" GridPane.columnIndex="1" />
+               </children>
+            </GridPane>
+            <ImageView fitHeight="123.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.valignment="TOP">
+               <image>
+                  <Image url="@../images/spaghetti.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="saveNewDishIV" fitHeight="20.0" fitWidth="20.0" onMouseClicked="#saveNewDish" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <image>
+                  <Image url="@../images/diskette.png" />
+               </image>
+            </ImageView>
+            <GridPane prefHeight="92.0" prefWidth="354.0" GridPane.rowIndex="2">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="173.86585998535156" minWidth="10.0" prefWidth="107.83540344238281" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.86585235595703" minWidth="10.0" prefWidth="239.1645965576172" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="searchFieldAvailable" maxWidth="240.0" prefHeight="27.0" prefWidth="237.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                  <Label prefHeight="38.0" prefWidth="105.0" text="Cerca ingrediente:" textFill="#717e93" wrapText="true" GridPane.halignment="RIGHT">
+                     <font>
+                        <Font name="Futura Medium" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+      <Button fx:id="refreshButton" layoutX="164.0" layoutY="-95.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="0.0" text="Button" />
+   </children>
+</AnchorPane>

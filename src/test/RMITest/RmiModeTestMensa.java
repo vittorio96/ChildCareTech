@@ -1,11 +1,15 @@
 package test.RMITest;
 
-import main.*;
-import main.Classes.NormalClasses.Anagrafica.Contact;
-import main.Classes.NormalClasses.Anagrafica.Person;
-import main.Classes.NormalClasses.Anagrafica.Staff;
-import main.Classes.NormalClasses.Mensa.*;
-import main.Classes.NormalClasses.Anagrafica.Child;
+import main.entities.normal_entities.Anagrafica.Contact;
+import main.entities.normal_entities.Anagrafica.Person;
+import main.entities.normal_entities.Anagrafica.Staff;
+import main.entities.normal_entities.Mensa.*;
+import main.entities.normal_entities.Anagrafica.Child;
+import main.client.Client;
+import main.client.server_interface.RmiMode;
+import main.client.server_interface.SessionMode;
+import main.client.User;
+import main.server.rmi_server.RMIServerLauncher;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -38,13 +42,16 @@ public class RmiModeTestMensa {
 
     @AfterClass
     public static void testSessionDisconnect() {
+        cleanup();
         rmiMode.disconnect();
     }
 
 
+
+
     @Test
     public void insertIngredientIntoDb() throws Exception {
-        assertTrue(rmiMode.insertIngredientIntoDb("testIngredient" ));
+        assertTrue(rmiMode.insertIngredientIntoDb("nonexistingIngredient"));
     }
 
     @Test
@@ -62,15 +69,10 @@ public class RmiModeTestMensa {
     }
 
     @Test
-    public void insertInvalidChildIntoleranceIntoDb() throws Exception {
-        insertInvalidChildIntoleranceDue2Ingredient();
-        insertInvalidChildIntoleranceDue2ChildCode();
-    }
-
-    @Test
     public void insertInvalidChildIntoleranceDue2Ingredient() throws Exception {
         Intolerance testIntolerance = new ChildIntolerance(getExistingChildCode(),getNonExistingIngredientName());
         assertFalse(rmiMode.insertIntoleranceIntoDb(testIntolerance));
+        rmiMode.deleteSubjectFromDb("Child", getExistingChildCode());
     }
 
     @Test
@@ -83,6 +85,7 @@ public class RmiModeTestMensa {
     public void insertValidIntoleranceIntoDb() throws Exception {
         Intolerance testIntolerance = new ChildIntolerance(getExistingChildCode(),getExistingIngredientName());
         assertTrue(rmiMode.insertIntoleranceIntoDb(testIntolerance));
+        rmiMode.deleteSubjectFromDb("Child", getExistingChildCode());
     }
 
     @Test
@@ -105,17 +108,21 @@ public class RmiModeTestMensa {
     public void extractDishesFromDb() throws Exception {
         rmiMode.insertDishIntoMenuIntoDb(getExistingMenu(), getExistingIngredientName());
         assertNotNull(rmiMode.extractDishesForMenuFromDb(getExistingMenu()));
+        rmiMode.deleteDishFromMenuFromDb(getExistingMenu(),getExistingIngredientName());
     }
 
     @Test
     public void extractIntolerantsChildrenForIngredientFromDb() throws Exception {
         rmiMode.insertIntoleranceIntoDb(getExistingChildIntolerance());
         assertNotNull(rmiMode.extractIntolerantsChildrenForIngredientFromDb(getExistingIngredientName()));
+        rmiMode.deleteIntoleranceFromDb(getExistingChildIntolerance());
     }
 
     @Test
     public void extractDishesForMenuFromDb() throws Exception {
         rmiMode.insertDishIntoMenuIntoDb(getExistingMenu(),getExistingDish().getNomeP());
+        assertNotNull(rmiMode.extractDishesForMenuFromDb(getExistingMenu()));
+        rmiMode.deleteDishFromMenuFromDb(getExistingMenu(),getExistingDish().getNomeP());
     }
 
     @Test
@@ -123,24 +130,29 @@ public class RmiModeTestMensa {
         rmiMode.insertDishIntoDb(getExistingDish());
         rmiMode.insertIngredientIntoDishIntoDb(getExistingDish().getNomeP(),getExistingIngredientName());
         assertNotNull(rmiMode.extractIngredientsForDishFromDb(getExistingDish().getNomeP()));
+        rmiMode.deleteDishFromDb(getExistingDish());
     }
 
     @Test
     public void insertIngredientIntoDishIntoDb() throws Exception {
         rmiMode.insertDishIntoDb(getExistingDish());
         assertTrue(rmiMode.insertIngredientIntoDishIntoDb(getExistingDish().getNomeP(),getExistingIngredientName()));
+        rmiMode.deleteIngredientFromDishFromDb(getExistingDish().getNomeP(),getExistingIngredientName());
+        rmiMode.deleteDishFromDb(getExistingDish());
     }
 
     @Test
     public void insertDishIntoMenuIntoDb() throws Exception {
         Dish dish = new Dish("PiattoTest", Dish.DishTypeFlag.PRIMO);
+        rmiMode.insertDishIntoDb(dish);
         assertTrue(rmiMode.insertDishIntoMenuIntoDb(getExistingMenu(), dish.getNomeP()));
         rmiMode.deleteDishFromMenuFromDb(getExistingMenu(), dish.getNomeP());
+        rmiMode.deleteDishFromDb(dish);
     }
 
     @Test
     public void deleteIngredientFromDishFromDb() throws Exception {
-        rmiMode.insertIngredientIntoDishIntoDb(getExistingIngredientName(),getExistingDish().getNomeP());
+        rmiMode.insertIngredientIntoDishIntoDb(getExistingDish().getNomeP(), getExistingIngredientName());
         assertTrue(rmiMode.deleteIngredientFromDishFromDb(getExistingDish().getNomeP(), getExistingIngredientName()));
     }
 
@@ -163,6 +175,9 @@ public class RmiModeTestMensa {
         boolean success = rmiMode.insertIntoleranceIntoDb(intolerance);
         assertNotNull(rmiMode.extractIntolerantsWorkersForIngredientFromDb(getExistingIngredientName()));
         rmiMode.deleteIntoleranceFromDb(intolerance);
+        rmiMode.deleteSubjectFromDb("Staff", getExistingStaff().getCodiceFiscale());
+
+
     }
 
     @Test
@@ -170,6 +185,8 @@ public class RmiModeTestMensa {
         Intolerance intolerance= new ChildIntolerance(getExistingChildCode(),getExistingIngredientName());
         rmiMode.insertIntoleranceIntoDb(intolerance);
         assertNotNull(rmiMode.extractUntoleratedIngredientsForPersonFromDb(getExistingChild()));
+        rmiMode.deleteIntoleranceFromDb(intolerance);
+        rmiMode.deleteSubjectFromDb("Child", getExistingChildCode());
     }
 
     @Test
@@ -181,6 +198,8 @@ public class RmiModeTestMensa {
         while(itr.hasNext()){
             assertFalse(itr.next().equals(getExistingIngredientName()));
         }
+        rmiMode.deleteSubjectFromDb("Child", getExistingChildCode());
+        rmiMode.deleteIntoleranceFromDb(intolerance);
     }
 
     private Child getExistingChild() {
@@ -252,5 +271,12 @@ public class RmiModeTestMensa {
         Person staff = new Staff("CODFISSTAFTEST12", "NomeStaff", "CognomeStaff", "UsernameStaff", "password", "1990-01-01", User.UserTypeFlag.AMMINISTRATIVO);
         rmiMode.insertPersonIntoDb(staff);
         return staff;
+    }
+
+    private static void cleanup() {
+        rmiMode.deleteSubjectFromDb("Contact","CODFISGEN1TEST12");
+        rmiMode.deleteSubjectFromDb("Contact","CODFISGEN2TEST12");
+        rmiMode.deleteSubjectFromDb("Contact","CODFISPEDRTEST12");
+        rmiMode.deleteSubjectFromDb("Child", "CODFISTEST123456");
     }
 }

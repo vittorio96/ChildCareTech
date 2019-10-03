@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.controllers.Menu.ControllerMainMenu">
+   <children>
+      <SplitPane dividerPositions="0.23057644110275688" layoutX="1.0" layoutY="-1.0" prefHeight="450.0" prefWidth="800.0" stylesheets="@../CSS/splitpane.css">
+        <items>
+          <AnchorPane maxWidth="180.0" minHeight="0.0" minWidth="180.0" prefHeight="160.0" prefWidth="180.0">
+               <children>
+                  <Pane layoutY="1.0" prefHeight="450.0" prefWidth="180.0" style="-fx-background-color: #eef2f6 #eef2f6 #eef2f6 #eef2f6;">
+                     <children>
+                        <Pane prefHeight="100.0" prefWidth="180.0" style="-fx-background-color: #717E93;">
+                           <children>
+                              <TextField id="WelcomeField" fx:id="loggedUserDataDisplay" editable="false" layoutX="37.0" layoutY="53.0" prefHeight="27.0" prefWidth="113.0" style="-fx-background-color: #717E93; -fx-text-inner-color: #FFFFFF; -fx-alignment: center; -fx-font-family: Futura;" />
+                              <ImageView fitHeight="42.0" fitWidth="37.0" layoutX="72.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/user.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Button fx:id="logoutButton" layoutX="65.0" layoutY="376.0" mnemonicParsing="false" onAction="#handleLogoutButtonAction" stylesheets="@../CSS/loginButton.css" text="Logout" />
+                        <GridPane layoutY="98.0" prefHeight="200.0" prefWidth="180.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button fx:id="anagraficaButton" mnemonicParsing="false" onAction="#handleAnagraficaButtonAction" prefHeight="45.0" prefWidth="180.0" stylesheets="@../CSS/hoverableButton.css" text="Anagrafica">
+                                 <font>
+                                    <Font name="Futura Medium" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="giteButton" mnemonicParsing="false" onAction="#handleGiteButtonAction" prefHeight="45.0" prefWidth="180.0" stylesheets="@../CSS/hoverableButton.css" text="Gite" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Futura Medium" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="mensaButton" mnemonicParsing="false" onAction="#handleMensaButtonAction" prefHeight="45.0" prefWidth="180.0" stylesheets="@../CSS/hoverableButton.css" text="Mensa" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Futura Medium" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="accessiButton" mnemonicParsing="false" onAction="#handleAccessiButtonAction" prefHeight="45.0" prefWidth="180.0" stylesheets="@../CSS/hoverableButton.css" text="Accessi" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Futura Medium" size="13.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="lateralPane" maxHeight="450.0" maxWidth="600.0" minHeight="450.0" minWidth="600.0" prefHeight="450.0" prefWidth="600.0">
+               <children>
+                  <AnchorPane layoutX="-10.0" minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="620.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-10.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="121.0" layoutY="49.0" text="Che piacere rivederti!" textFill="#6d7786" AnchorPane.bottomAnchor="350.0" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="123.0" AnchorPane.topAnchor="49.0">
+                           <font>
+                              <Font name="Futura Medium" size="36.0" />
+                           </font>
+                        </Label>
+                        <Pane fx:id="chefPane" layoutX="178.0" layoutY="144.0" prefHeight="252.0" prefWidth="261.0" AnchorPane.bottomAnchor="54.0" AnchorPane.leftAnchor="178.0" AnchorPane.rightAnchor="181.0" AnchorPane.topAnchor="144.0">
+                           <children>
+                              <ImageView fx:id="imageDisplay11" fitHeight="220.0" fitWidth="231.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/chef.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="teacherPane" layoutX="178.0" layoutY="144.0" prefHeight="250.0" prefWidth="261.0">
+                           <children>
+                              <ImageView fx:id="imageDisplay1" fitHeight="220.0" fitWidth="231.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/teacher.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                        <Pane fx:id="adminPane" layoutX="178.0" layoutY="144.0" prefHeight="250.0" prefWidth="261.0">
+                           <children>
+                              <ImageView fx:id="imageDisplay" fitHeight="220.0" fitWidth="231.0" layoutX="21.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/businessman.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
