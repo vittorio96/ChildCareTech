@@ -19,7 +19,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.Anagrafica.ControllerAnagraficaManageStaff">
    <children>
-      <SplitPane dividerPositions="0.34962406015037595" layoutX="153.0" layoutY="70.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.34962406015037595" layoutX="153.0" layoutY="30.0" prefHeight="420.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
@@ -100,5 +100,11 @@
             </AnchorPane>
         </items>
       </SplitPane>
+      <TextField fx:id="searchTextField" layoutX="94.0" layoutY="1.0" prefHeight="27.0" prefWidth="183.0" stylesheets="@../CSS/textfield.css" />
+      <Label layoutX="29.0" layoutY="6.0" text="Cerca">
+         <font>
+            <Font name="Futura Medium" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

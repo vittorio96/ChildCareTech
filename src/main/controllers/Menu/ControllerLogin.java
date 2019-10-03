@@ -10,9 +10,7 @@ import javafx.scene.control.*;
 import main.Client;
 import main.User;
 import main.controllers.AbstractController;
-import main.controllers.PopupController;
 import main.controllers.StageController;
-import sun.security.krb5.internal.TGSRep;
 
 
 import java.io.IOException;

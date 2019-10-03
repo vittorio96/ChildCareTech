@@ -1,433 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d6c0d706-84bd-4bc3-bf0c-c19e80a727dc" name="Default" comment="Prepared Statements">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/DMLCommandExecutor.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/DMLCommandExecutor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/DMLCommandExecutorSQLInjectionFree.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/DMLCommandExecutorSQLInjectionFree.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/RMIServerLauncher.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/RMIServerLauncher.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish$1.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish$2.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaTodaysConflicts.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaTodaysConflicts.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaViewDishes.class" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaViewDishes.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/gite_editChild.fxml" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/gite_editChild.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/SocketMode.java" afterPath="$PROJECT_DIR$/src/main/SocketMode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.java" afterPath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageChild.java" afterPath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageChild.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageContact.java" afterPath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageContact.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageStaff.java" afterPath="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageStaff.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddDish.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddDish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaTodaysConflicts.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaTodaysConflicts.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaViewDishes.java" afterPath="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaViewDishes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMenu.java" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_manageChild.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_manageChild.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_manageContact.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_manageContact.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_manageStaff.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/anagrafica_manageStaff.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/fxml/gite_editChild.fxml" afterPath="$PROJECT_DIR$/src/main/resources/fxml/gite_editChild.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/RMITest/RmiModeTestMensa.java" afterPath="$PROJECT_DIR$/src/test/RMITest/RmiModeTestMensa.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/SocketTest/SocketModeTestMensa.java" afterPath="$PROJECT_DIR$/src/test/SocketTest/SocketModeTestMensa.java" />
+    <list default="true" id="0293a638-09b7-458c-82b1-1141feedfb0e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChildCareTech.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ChildCareTech.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Arquillian_JUnit_Release.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/com_github_sarxos_webcam_capture_0_3_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/controlsfx_8_40_14.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_5_1_46.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/zxing_1_7_javase_20_22_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChildCareTechEvolution.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/ChildCareTech.mwb" beforeDir="false" afterPath="$PROJECT_DIR$/db/ChildCareTech.mwb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Anagrafica/Child.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Anagrafica/Child.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Anagrafica/Contact$ContactTypeFlag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Anagrafica/Contact$ContactTypeFlag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Anagrafica/Contact.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Anagrafica/Contact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Anagrafica/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Anagrafica/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Anagrafica/Staff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Anagrafica/Staff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Anagrafica/Supplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Anagrafica/Supplier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Gite/Bus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Gite/Bus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Gite/BusAssociation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Gite/BusAssociation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Gite/Stop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Gite/Stop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Gite/StopPresence.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Gite/StopPresence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Gite/Trip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Gite/Trip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Mensa/ChildIntolerance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Mensa/ChildIntolerance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Mensa/Dish$DishTypeFlag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Mensa/Dish$DishTypeFlag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Mensa/Dish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Mensa/Dish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Mensa/Intolerance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Mensa/Intolerance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Mensa/Menu$MenuTypeFlag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Mensa/Menu$MenuTypeFlag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Mensa/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Mensa/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Mensa/PersonIntolerance.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/NormalClasses/Mensa/PersonIntolerance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyChild.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyChild.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyContact$ContactTypeFlag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyContact$ContactTypeFlag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyContact.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyContact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyPerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyPerson.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyStaff$StaffTypeFlag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyStaff$StaffTypeFlag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyStaff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Anagrafica/StringPropertyStaff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Anagrafica/StringPropertySupplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Anagrafica/StringPropertySupplier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Gite/StringPropertyBus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Gite/StringPropertyBus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Gite/StringPropertyChildEnrollment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Gite/StringPropertyChildEnrollment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Gite/StringPropertyStop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Gite/StringPropertyStop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Gite/StringPropertyStopPresence.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Gite/StringPropertyStopPresence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Gite/StringPropertyTrip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Gite/StringPropertyTrip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Mensa/StringPropertyDish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Mensa/StringPropertyDish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Mensa/StringPropertyIngredient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Classes/StringPropertyClasses/Mensa/StringPropertyIngredient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/ConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/ConnectionPool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/DMLCommandExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/DMLCommandExecutor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/DMLCommandExecutorSQLInjectionFree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/DMLCommandExecutorSQLInjectionFree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/Gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/Gui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/RMIServerLauncher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/RMIServerLauncher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/RemoteClientInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/RemoteClientInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/RemoteServerInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/RemoteServerInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/RmiMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/RmiMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/ServerRMI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/ServerRMI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/ServerRMI_SQLIF.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/ServerRMI_SQLIF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/ServerSocket_SQLIF.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/ServerSocket_SQLIF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/SessionMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/SessionMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/SocketMode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/SocketMode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/SocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/SocketServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/StartServers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/StartServers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/User$UserTypeFlag.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/User$UserTypeFlag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/AbstractController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/AbstractController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/AbstractController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/AbstractController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Accessi/ControllerAccessiGeneraQR.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Accessi/ControllerAccessiGeneraQR.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChild.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChild.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChildNew$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChildNew$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChildNew$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChildNew$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChildNew$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChildNew$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChildNew$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChildNew$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChildNew.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddChildNew.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddContact.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddContact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaManageChild.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaManageChild.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaManageContact.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaManageContact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaManageStaff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Anagrafica/ControllerAnagraficaManageStaff.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/ControllerType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/ControllerType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteAddBus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteAddBus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteAddStop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteAddStop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteAddTrip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteAddTrip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteEditBus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteEditBus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteEditTrip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteEditTrip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteLookupCorrectBus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteLookupCorrectBus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteManagePresenzeTappe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteManagePresenzeTappe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteManageTrip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteManageTrip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteRemoveChildren.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Gite/ControllerGiteRemoveChildren.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddAllergen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddAllergen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddDish.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddIngredient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaAddIngredient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaConflicts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaConflicts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaManageMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaManageMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaTodaysConflicts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaTodaysConflicts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaViewDishes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerMensaViewDishes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerShowConflictingDishesPopOver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerShowConflictingDishesPopOver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerShowIngredientsPopOver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/ControllerShowIngredientsPopOver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/IngredientSupplier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Mensa/IngredientSupplier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainAccessi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainAccessi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainAnagrafica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainAnagrafica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainGite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainGite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainMensa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainMensa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/Menu/ControllerMainMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/PopOverController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/PopOverController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/PopupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/PopupController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/StageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/controllers/StageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/QRGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/QRGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/QRReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/QRReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/WebcamQRReader$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/WebcamQRReader$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/WebcamQRReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/qrReader/WebcamQRReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/anagrafica_manageChild.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/anagrafica_manageChild.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/anagrafica_manageContact.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/anagrafica_manageContact.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/anagrafica_manageStaff.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/anagrafica_manageStaff.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/gite_addPresence.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/main/resources/fxml/gite_addPresence.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/test/RMITest/RMITestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/test/RMITest/RMITestSuite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/test/RMITest/RmiModeTestAnagrafica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/test/RMITest/RmiModeTestAnagrafica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/test/RMITest/RmiModeTestGite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/test/RMITest/RmiModeTestGite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/test/RMITest/RmiModeTestMensa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/test/RMITest/RmiModeTestMensa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/test/SocketTest/SocketModeTestAnagrafica.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/test/SocketTest/SocketModeTestAnagrafica.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/test/SocketTest/SocketModeTestGite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/test/SocketTest/SocketModeTestGite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/test/SocketTest/SocketModeTestMensa.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/test/SocketTest/SocketModeTestMensa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/test/SocketTest/SocketTestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/test/SocketTest/SocketTestSuite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChildCareTech/test/TestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChildCareTech/test/TestSuite.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/DMLCommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DMLCommandExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/DMLCommandExecutorSQLInjectionFree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/DMLCommandExecutorSQLInjectionFree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteManagePresenzeTappe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteManagePresenzeTappe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/controllers/Menu/ControllerLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/gite_addPresence.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/gite_addPresence.fxml" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/Progetto/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/ChildCareTech$Gui.coverage" NAME="Gui Coverage Results" MODIFIED="1523653233513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>main.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/ChildCareTech$TestSuite__1_.coverage" NAME="TestSuite (1) Coverage Results" MODIFIED="1526389559879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>test.*</FILTER>
-    </SUITE>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RMIServerLauncher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/RMIServerLauncher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SocketTestSuite.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/SocketTest/SocketTestSuite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RMITestSuite.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/RMITest/RMITestSuite.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SocketModeTestMensa.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/SocketTest/SocketModeTestMensa.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3449">
-              <caret line="277" column="25" lean-forward="false" selection-start-line="277" selection-start-column="25" selection-end-line="277" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RmiModeTestMensa.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/RMITest/RmiModeTestMensa.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="271" column="4" lean-forward="true" selection-start-line="271" selection-start-column="4" selection-end-line="276" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DMLCommandExecutorSQLInjectionFree.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/DMLCommandExecutorSQLInjectionFree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="963" column="6" lean-forward="false" selection-start-line="963" selection-start-column="6" selection-end-line="963" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1527523346401" expanded="true" signature="1040:1117" ph="INSERT INTO PRESENZABAMBINO... " />
-                <marker date="1527523346401" expanded="true" signature="1742:1821" ph="INSERT INTO PRESENZAPERSONALE... " />
-                <marker date="1527523346401" expanded="true" signature="2381:2432" ph="SELECT * FRO... Personale" />
-                <marker date="1527523346401" expanded="true" signature="4018:4169" ph="INSERT INTO PERSONALE... " />
-                <marker date="1527523346401" expanded="true" signature="4648:4796" ph="INSERT INTO BAMBINO... " />
-                <marker date="1527523346401" expanded="true" signature="5317:5441" ph="INSERT INTO ESTERNO... " />
-                <marker date="1527523346401" expanded="true" signature="6018:6196" ph="INSERT INTO FORNITORE... " />
-                <marker date="1527523346401" expanded="true" signature="7662:7723" ph="UPDATE FORNI... " />
-                <marker date="1527523346401" expanded="true" signature="8618:8698" ph="UPDATE PERSO... " />
-                <marker date="1527523346401" expanded="true" signature="9083:9147" ph="UPDATE BAMBI... " />
-                <marker date="1527523346401" expanded="true" signature="9496:9568" ph="UPDATE ESTER... " />
-                <marker date="1527523346401" expanded="true" signature="10167:10205" ph="SELECT * FRO... Bambino" />
-                <marker date="1527523346401" expanded="true" signature="11456:11494" ph="SELECT * FRO... ESTERNO" />
-                <marker date="1527523346401" expanded="true" signature="12566:12604" ph="SELECT * FRO... FORNITORE" />
-                <marker date="1527523346401" expanded="true" signature="13604:13644" ph="SELECT * FRO... PERSONALE" />
-                <marker date="1527523346401" expanded="true" signature="14763:14909" ph="SELECT ESTER... BAMBINO" />
-                <marker date="1527523346401" expanded="true" signature="17297:17462" ph="INSERT INTO GITA... " />
-                <marker date="1527523346401" expanded="true" signature="18473:18590" ph="INSERT INTO AUTOBUS... " />
-                <marker date="1527523346401" expanded="true" signature="19532:19594" ph="INSERT INTO TAPPA... " />
-                <marker date="1527523346401" expanded="true" signature="20633:20794" ph="INSERT INTO PRESENZATAPPA... " />
-                <marker date="1527523346401" expanded="true" signature="21820:21882" ph="SELECT * FRO... GITA" />
-                <marker date="1527523346401" expanded="true" signature="22905:23022" ph="SELECT * FRO... TAPPA" />
-                <marker date="1527523346401" expanded="true" signature="24095:24185" ph="SELECT * FRO... AUTOBUS" />
-                <marker date="1527523346401" expanded="true" signature="25297:25341" ph="DELETE FROM " />
-                <marker date="1527523346401" expanded="true" signature="25551:25611" ph="DELETE FROM " />
-                <marker date="1527523346401" expanded="true" signature="25863:25937" ph="DELETE FROM " />
-                <marker date="1527523346401" expanded="true" signature="26626:26830" ph="DELETE FROM " />
-                <marker date="1527523346401" expanded="true" signature="27559:27672" ph="UPDATE GITA " />
-                <marker date="1527523346401" expanded="true" signature="28656:28775" ph="UPDATE AUTOB... " />
-                <marker date="1527523346401" expanded="true" signature="29821:30014" ph="INSERT INTO ASSEGNAZIONEAUTOBUS... " />
-                <marker date="1527523346401" expanded="true" signature="30813:30916" ph="DELETE FROM " />
-                <marker date="1527523346401" expanded="true" signature="31792:31922" ph="SELECT * FRO... BAMBINO" />
-                <marker date="1527523346401" expanded="true" signature="31854:31904" ph="SELECT CodF ASSEGNAZIONEAUTOBUS" />
-                <marker date="1527523346401" expanded="true" signature="33252:33417" ph="SELECT * FRO... BAMBINO" />
-                <marker date="1527523346401" expanded="true" signature="34834:35265" ph="SELECT B.* F... PRESENZABAMBINO" />
-                <marker date="1527523346401" expanded="true" signature="36939:37013" ph="INSERT INTO INGREDIENTE... " />
-                <marker date="1527523346401" expanded="true" signature="37777:37855" ph="INSERT INTO PIATTO... " />
-                <marker date="1527523346401" expanded="true" signature="38643:38676" ph="DELETE FROM " />
-                <marker date="1527523346401" expanded="true" signature="39502:39593" ph="INSERT INTO INTOLLERANZABAMBINO... " />
-                <marker date="1527523346401" expanded="true" signature="39681:39774" ph="INSERT INTO INTOLLERANZAPERSONALE... " />
-                <marker date="1527523346401" expanded="true" signature="40737:40795" ph="DELETE FROM " />
-                <marker date="1527523346401" expanded="true" signature="40898:40959" ph="DELETE FROM " />
-                <marker date="1527523346401" expanded="true" signature="41718:41758" ph="SELECT * FRO... INGREDIENTE" />
-                <marker date="1527523346401" expanded="true" signature="42547:42584" ph="SELECT * FRO... MENU" />
-                <marker date="1527523346401" expanded="true" signature="43473:43508" ph="SELECT * FRO... PIATTO" />
-                <marker date="1527523346401" expanded="true" signature="44449:44569" ph="SELECT B.* F... BAMBINO" />
-                <marker date="1527523346401" expanded="true" signature="45701:45953" ph="SELECT P.* F... PERSONALE" />
-                <marker date="1527523346401" expanded="true" signature="47107:47355" ph="SELECT B.* F... BAMBINO" />
-                <marker date="1527523346401" expanded="true" signature="48507:48621" ph="SELECT * FRO... PIATTO" />
-                <marker date="1527523346401" expanded="true" signature="49625:49739" ph="SELECT I.* F... INGREDIENTE" />
-                <marker date="1527523346401" expanded="true" signature="50616:50708" ph="INSERT INTO COMPOSIZIONEMENU... " />
-                <marker date="1527523346401" expanded="true" signature="51559:51648" ph="INSERT INTO COMPOSIZIONEPIATTO... " />
-                <marker date="1527523346401" expanded="true" signature="52468:52527" ph="DELETE FROM " />
-                <marker date="1527523346401" expanded="true" signature="53349:53407" ph="DELETE FROM " />
-                <marker date="1527523346401" expanded="true" signature="54151:54199" ph="SELECT * FRO... PIATTO" />
-                <marker date="1527523346401" expanded="true" signature="55211:55326" ph="SELECT P.* F... PERSONALE" />
-                <marker date="1527523346401" expanded="true" signature="56533:56600" ph="SELECT NomeI... INTOLLERANZABAMBINO" />
-                <marker date="1527523346401" expanded="true" signature="56771:56840" ph="SELECT NomeI... INTOLLERANZAPERSONALE" />
-                <marker date="1527523346401" expanded="true" signature="57838:57995" ph="SELECT I.* F... INGREDIENTE" />
-                <marker date="1527523346401" expanded="true" signature="57916:57977" ph="SELECT IB.No... INTOLLERANZABAMBINO" />
-                <marker date="1527523346401" expanded="true" signature="58168:58326" ph="SELECT I.* F... INGREDIENTE" />
-                <marker date="1527523346401" expanded="true" signature="58245:58308" ph="SELECT IP.No... INTOLLERANZAPERSONALE" />
-                <marker date="1527523346401" expanded="true" signature="60003:60209" ph="SELECT M.Nom... ComposizioneMenu" />
-                <marker date="1527523346401" expanded="true" signature="60003:60210" ph="SELECT I.* F... INGREDIENTE" />
-                <marker date="1527523346401" expanded="true" signature="60156:60207" ph="SELECT NomeI... IntolleranzaBambino" />
-                <marker date="1527523346401" expanded="true" signature="60156:60208" ph="SELECT NomeI... IntolleranzaBambino" />
-                <marker date="1527523346401" expanded="true" signature="60430:60437" ph="SELECT I.* F... INGREDIENTE" />
-                <marker date="1527523346401" expanded="true" signature="60430:60521" ph="SELECT M.Nom... ComposizioneMenu" />
-                <marker date="1527523346401" expanded="true" signature="60430:60638" ph="SELECT M.Nom... ComposizioneMenu" />
-                <marker date="1527523346401" expanded="true" signature="60583:60637" ph="SELECT NomeI... IntolleranzaPersonale" />
-                <marker date="1527523346401" expanded="true" signature="61585:61763" ph="SELECT A.Tar... AssegnazioneAutobus" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SocketServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/SocketServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControllerAnagraficaManageStaff.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageStaff.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="169" column="8" lean-forward="false" selection-start-line="169" selection-start-column="8" selection-end-line="198" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControllerAnagraficaManageContact.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageContact.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="48" column="27" lean-forward="true" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>execute</find>
-      <find>executeQuery(</find>
-      <find>executeQuery(sql)</find>
-      <find>insertS</find>
-      <find>supplie</find>
-      <find>insert</find>
-      <find>insertC</find>
-      <find>insertBus</find>
-      <find>update</find>
-      <find>presence</find>
-      <find>Dail</find>
-      <find>updateBus</find>
-      <find>person</find>
-      <find>prese</find>
-      <find>child</find>
-      <find>sys</find>
-      <find>insertPersonDailyPresenceIntoDb</find>
-      <find>trip</find>
-      <find>BusAss</find>
-      <find>Intoler</find>
-      <find>Untole</find>
-      <find>Miss</find>
-      <find>DIS</find>
-      <find>Intol</find>
-      <find>openP</find>
-      <find>busA</find>
-      <find>List</find>
-      <find>BusAs</find>
-      <find>(List</find>
-      <find>getExis</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>../../resources/fxml/</replace>
-      <replace>TextField1</replace>
-      <replace>adddDishToMenu</replace>
-      <replace>addDishToMenu</replace>
-      <replace>=&quot;16.0&quot;</replace>
-      <replace>availableNormalList</replace>
-      <replace>onDishNormalList</replace>
-      <replace>availableIngredientsObservableList</replace>
-      <replace>ingredientsOnDishObservableList</replace>
-      <replace>chosen</replace>
-      <replace>Chosen</replace>
-      <replace>parents</replace>
-      <replace>Parents</replace>
-      <replace>doctors</replace>
-      <replace>executeUpdate()</replace>
-      <replace>executeQuery()</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$/src/main/Classes/NormalClasses/Anagrafica</dir>
-    </dirStrings>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
-    <push-targets>
-      <push-target-info target-remote="origin" target-branch="Rafael" repo="$PROJECT_DIR$" source="documentazione" />
-    </push-targets>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainAnagrafica.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainGite.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMensa.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddIngredient.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaConflicts.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaManageMenu.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerShowIngredientsPopOver.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteAddBus.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteAddTrip.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteEditBus.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteEditTrip.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteRemoveChildren.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddChild.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddChildNew.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddContact.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Accessi/ControllerAccessiGeneraQR.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddAllergen.java" />
-        <option value="$PROJECT_DIR$/src/main/ServerSocket_SQLIF.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/mensa_viewConflictingDishesPopOver.fxml" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerShowConflictingDishesPopOver.java" />
-        <option value="$PROJECT_DIR$/src/main/ClientHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/SessionMode.java" />
-        <option value="$PROJECT_DIR$/src/main/RemoteServerInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/ServerRMI.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/gite_addPresence.fxml" />
-        <option value="$PROJECT_DIR$/src/main/Client.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/AbstractController.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteLookupCorrectBus.java" />
-        <option value="$PROJECT_DIR$/src/main/RmiMode.java" />
-        <option value="$PROJECT_DIR$/src/main/ServerRMI_SQLIF.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/getCorrectBus.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/gite_getCorrectBus.fxml" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteManageTrip.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteAddStop.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteManagePresenzeTappe.java" />
-        <option value="$PROJECT_DIR$/src/main/DMLCommandExecutor.java" />
-        <option value="$PROJECT_DIR$/src/main/DMLCommandExecutorSQLInjectionFree.java" />
-        <option value="$PROJECT_DIR$/src/main/RMIServerLauncher.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/fxml/gite_editChild.fxml" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddDish.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaViewDishes.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaTodaysConflicts.java" />
-        <option value="$PROJECT_DIR$/src/main/SocketServer.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMenu.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageChild.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageStaff.java" />
-        <option value="$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageContact.java" />
-        <option value="$PROJECT_DIR$/src/main/SocketMode.java" />
-        <option value="$PROJECT_DIR$/src/test/RMITest/RmiModeTestMensa.java" />
-        <option value="$PROJECT_DIR$/src/test/SocketTest/SocketModeTestMensa.java" />
-      </list>
-    </option>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChildCareTech" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="RMITest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChildCareTech" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-    </panes>
-  </component>
+  <component name="ProjectId" id="1RVm2hofV84SsicCTMMxV4UTuJc" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="Downloaded.Files.Path.Enabled" value="true" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="ta&#9;FILE&#9;file:///Users/rafaelmosca/ChildCareTech/src/main/resources/images/tapperemove.png&#10;Progetto&#9;PSI&#9;JAVA://com.sun.tools.doclets.internal.toolkit.util.VisibleMemberMap.ClassMembers#isPropertyGetterOrSetter&#10;substring&#9;PSI&#9;JAVA://com.sun.org.apache.regexp.internal.CharacterIterator#substring&#10;substring(1,&#9;PSI&#9;JAVA://org.hamcrest.core.SubstringMatcher&#10;confirmatio&#9;PSI&#9;JAVA://javafx.scene.control.Alert.AlertType#CONFIRMATION" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/RMITest" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="main.controllers" />
-      <recent name="main.controllers.Mensa" />
-      <recent name="main.StringPropertyClasses.Mensa" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/lib" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/Progetto/src/main/resources/fxml" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -442,731 +177,132 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Gui">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Gui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <option name="MAIN_CLASS_NAME" value="main.Gui" />
+      <module name="ChildCareTech" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="main.Gui" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ChildCareTech" />
-      <envs />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="RMIServerLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <option name="MAIN_CLASS_NAME" value="main.RMIServerLauncher" />
+      <module name="ChildCareTech" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="main.RMIServerLauncher" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ChildCareTech" />
-      <envs />
-    </configuration>
-    <configuration name="RMITestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="test.RMITest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="ChildCareTech" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test.RMITest" />
-      <option name="MAIN_CLASS_NAME" value="test.RMITest.RMITestSuite" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="SocketServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <option name="MAIN_CLASS_NAME" value="main.SocketServer" />
+      <module name="ChildCareTech" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="main.SocketServer" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ChildCareTech" />
-      <envs />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="SocketTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+    <configuration name="StartServers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.StartServers" />
+      <module name="ChildCareTech" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="test.SocketTest.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="ChildCareTech" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test.SocketTest" />
-      <option name="MAIN_CLASS_NAME" value="test.SocketTest.SocketTestSuite" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-    </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Gui" />
-      <item index="1" class="java.lang.String" itemvalue="Application.RMIServerLauncher" />
-      <item index="2" class="java.lang.String" itemvalue="Application.SocketServer" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.RMITestSuite" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.SocketTestSuite" />
+    <list>
+      <item itemvalue="Application.RMIServerLauncher" />
+      <item itemvalue="Application.Gui" />
+      <item itemvalue="Application.SocketServer" />
+      <item itemvalue="Application.StartServers" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Gui" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SocketTestSuite" />
-        <item index="2" class="java.lang.String" itemvalue="Application.SocketServer" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.RMITestSuite" />
-        <item index="4" class="java.lang.String" itemvalue="Application.RMIServerLauncher" />
+      <list>
+        <item itemvalue="Application.Gui" />
+        <item itemvalue="Application.StartServers" />
+        <item itemvalue="Application.SocketServer" />
+        <item itemvalue="Application.RMIServerLauncher" />
       </list>
     </recent_temporary>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
-  </component>
   <component name="SvnConfiguration">
-    <configuration>$USER_HOME$/.subversion</configuration>
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d6c0d706-84bd-4bc3-bf0c-c19e80a727dc" name="Default" comment="" />
-      <created>1523645359894</created>
+      <changelist id="0293a638-09b7-458c-82b1-1141feedfb0e" name="Default" comment="" />
+      <created>1527589921444</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1523645359894</updated>
-      <workItem from="1523645362175" duration="1397000" />
-      <workItem from="1523646828172" duration="344000" />
-      <workItem from="1523647192665" duration="7098000" />
-      <workItem from="1523659734036" duration="97000" />
-      <workItem from="1523702209665" duration="644000" />
-      <workItem from="1523710168626" duration="1347000" />
-      <workItem from="1523744911461" duration="249000" />
-      <workItem from="1523829004337" duration="546000" />
-      <workItem from="1523829984264" duration="462000" />
-      <workItem from="1523862795394" duration="875000" />
-      <workItem from="1523894641449" duration="10962000" />
-      <workItem from="1523909126231" duration="1790000" />
-      <workItem from="1523911282387" duration="834000" />
-      <workItem from="1523994370460" duration="181000" />
-      <workItem from="1524037322198" duration="15476000" />
-      <workItem from="1524091852607" duration="2036000" />
-      <workItem from="1524096004427" duration="127000" />
-      <workItem from="1524120948335" duration="5401000" />
-      <workItem from="1524137471061" duration="1155000" />
-      <workItem from="1524215699182" duration="2794000" />
-      <workItem from="1524332247711" duration="2066000" />
-      <workItem from="1524334322577" duration="14000" />
-      <workItem from="1524336757272" duration="4294000" />
-      <workItem from="1524418694655" duration="4751000" />
-      <workItem from="1524468468382" duration="1479000" />
-      <workItem from="1524472299116" duration="1014000" />
-      <workItem from="1524475501171" duration="372000" />
-      <workItem from="1524484140179" duration="1490000" />
-      <workItem from="1524497342437" duration="6957000" />
-      <workItem from="1524507320071" duration="10631000" />
-      <workItem from="1524553176213" duration="22130000" />
-      <workItem from="1524586366103" duration="324000" />
-      <workItem from="1524586934407" duration="76000" />
-      <workItem from="1524656808817" duration="228000" />
-      <workItem from="1524670819952" duration="916000" />
-      <workItem from="1524688268319" duration="4652000" />
-      <workItem from="1524725961321" duration="4821000" />
-      <workItem from="1524744662502" duration="812000" />
-      <workItem from="1524750258995" duration="3995000" />
-      <workItem from="1524754501915" duration="79000" />
-      <workItem from="1524821506397" duration="12665000" />
-      <workItem from="1524940172147" duration="1332000" />
-      <workItem from="1525114502995" duration="1799000" />
-      <workItem from="1525119597951" duration="512000" />
-      <workItem from="1525120114040" duration="430000" />
-      <workItem from="1525120561542" duration="755000" />
-      <workItem from="1525177445982" duration="97000" />
-      <workItem from="1525266893885" duration="150000" />
-      <workItem from="1525354323356" duration="711000" />
-      <workItem from="1525356702759" duration="2844000" />
-      <workItem from="1525458598623" duration="3028000" />
-      <workItem from="1525465905930" duration="1028000" />
-      <workItem from="1525467835635" duration="235000" />
-      <workItem from="1525468125550" duration="76000" />
-      <workItem from="1525468265316" duration="441000" />
-      <workItem from="1525473441393" duration="547000" />
-      <workItem from="1526380085539" duration="2863000" />
-      <workItem from="1526387162328" duration="296000" />
-      <workItem from="1526387528859" duration="584000" />
-      <workItem from="1526389020049" duration="4298000" />
-      <workItem from="1526559629209" duration="111000" />
-      <workItem from="1526566381903" duration="240000" />
-      <workItem from="1526566626772" duration="275000" />
-      <workItem from="1526629081494" duration="561000" />
-      <workItem from="1526654258594" duration="9444000" />
-      <workItem from="1526719411556" duration="564000" />
-      <workItem from="1526721094978" duration="15685000" />
-      <workItem from="1526883224984" duration="826000" />
-      <workItem from="1526885383158" duration="257000" />
-      <workItem from="1526936803560" duration="4338000" />
-      <workItem from="1526990031377" duration="996000" />
-      <workItem from="1527064856235" duration="1375000" />
-      <workItem from="1527093909638" duration="2590000" />
-      <workItem from="1527097322178" duration="740000" />
-      <workItem from="1527232616225" duration="2086000" />
-      <workItem from="1527277060409" duration="1414000" />
-      <workItem from="1527327573671" duration="13438000" />
-      <workItem from="1527354609545" duration="8327000" />
-      <workItem from="1527424782030" duration="117000" />
-      <workItem from="1527492106150" duration="349000" />
-      <workItem from="1527496202695" duration="2400000" />
-      <workItem from="1527502084643" duration="138000" />
-      <workItem from="1527508239115" duration="5557000" />
-      <workItem from="1527531373427" duration="6552000" />
+      <updated>1527589921444</updated>
+      <workItem from="1527589924797" duration="745000" />
+      <workItem from="1569760434038" duration="87000" />
+      <workItem from="1570119118240" duration="49000" />
     </task>
-    <task id="LOCAL-00001" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1523647210513</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1523647210513</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1523647996763</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1523647996763</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1523653341192</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1523653341192</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1523659745216</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1523659745217</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1523830281057</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1523830281057</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1523900182501</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1523900182501</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1523911301338</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1523911301338</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1523994412537</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1523994412538</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524040421144</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1524040421144</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524047605436</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1524047605436</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524053081201</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1524053081201</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524091884367</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1524091884367</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524092653629</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1524092653629</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524096127696</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1524096127696</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524332404901</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1524332404901</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524334332795</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1524334332795</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524423444615</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1524423444615</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524475519543</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1524475519543</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524516606635</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1524516606636</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524518484091</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1524518484091</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524520562175</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1524520562175</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524553402772</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1524553402772</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524553862180</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1524553862180</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524570894386</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1524570894386</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524570915244</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1524570915244</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524576636844</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1524576636844</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524586496111</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1524586496111</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Enjoy Child Care Evolution The new version of Child Care Tech">
-      <created>1524692200464</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1524692200464</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Code Cleanup Anagrafica">
-      <created>1524728612423</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1524728612423</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Code Cleanup Anagrafica">
-      <created>1524729135814</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1524729135814</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Code Cleanup Anagrafica">
-      <created>1524729168446</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1524729168446</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Code Cleanup Anagrafica">
-      <created>1524730227838</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1524730227838</updated>
-    </task>
-    <task id="LOCAL-00033" summary="School Trip Code Cleanup">
-      <created>1524754453016</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1524754453016</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Code Cleanup Anagrafica">
-      <created>1524839190837</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1524839190837</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Code Cleanup Anagrafica">
-      <created>1524861309253</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1524861309253</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Code Cleanup Anagrafica">
-      <created>1525177480251</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1525177480251</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Code Cleanup Anagrafica">
-      <created>1525354694242</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1525354694242</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Code Cleanup Anagrafica">
-      <created>1525362164141</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1525362164141</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Prepared Statements">
-      <created>1527068262692</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1527068262692</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Prepared Statements">
-      <created>1527068287931</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1527068287931</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Prepared Statements">
-      <created>1527098079999</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1527098079999</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Prepared Statements">
-      <created>1527346662143</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1527346662143</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Couple of new methods">
-      <created>1527354639002</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1527354639002</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Prepared Statements">
-      <created>1527492150307</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1527492150307</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Distinct queries.">
-      <created>1527502140601</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1527502140601</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Prepared Statements">
-      <created>1527531459632</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1527531459632</updated>
-    </task>
-    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="RMITestSuite - 2018.05.28 at 17h 18m 04s.xml">
-      <configuration name="RMITestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RMITestSuite - 2018.05.28 at 17h 22m 02s.xml">
-      <configuration name="RMITestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RMITestSuite - 2018.05.28 at 17h 25m 08s.xml">
-      <configuration name="RMITestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RMITestSuite - 2018.05.28 at 17h 26m 59s.xml">
-      <configuration name="RMITestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RMITestSuite - 2018.05.28 at 17h 30m 35s.xml">
-      <configuration name="RMITestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RMITestSuite - 2018.05.28 at 17h 33m 24s.xml">
-      <configuration name="RMITestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RMITestSuite - 2018.05.29 at 10h 59m 18s.xml">
-      <configuration name="RMITestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SocketTestSuite - 2018.05.29 at 11h 02m 06s.xml">
-      <configuration name="SocketTestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestSuite - 2018.05.28 at 17h 33m 48s.xml">
-      <configuration name="TestSuite" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestSuite - 2018.05.28 at 23h 13m 22s.xml">
-      <configuration name="TestSuite" configurationId="JUnit" />
-    </history-entry>
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239899000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1024" height="640" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.005291005" sideWeight="0.49427754" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32627866" sideWeight="0.49427754" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30818415" sideWeight="0.5028612" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2680776" sideWeight="0.50572246" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.49713877" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3156823" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39661428" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5629471" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-    </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42711" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3319027" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39897698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -1174,716 +310,22 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
-    <MESSAGE value="Enjoy Child Care Evolution The new version of Child Care Tech" />
-    <MESSAGE value="School Trip Code Cleanup" />
-    <MESSAGE value="Code Cleanup Anagrafica" />
-    <MESSAGE value="Couple of new methods" />
-    <MESSAGE value="Distinct queries." />
-    <MESSAGE value="Prepared Statements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Prepared Statements" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/SocketTest/SocketModeTestAnagrafica.java</url>
-          <line>36</line>
-          <properties />
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerShowConflictingDishesPopOver.java</url>
-          <line>61</line>
-          <properties />
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerShowIngredientsPopOver.java</url>
-          <line>55</line>
-          <properties />
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/DMLCommandExecutorSQLInjectionFree.java</url>
-          <line>80</line>
-          <properties />
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="93" />
-    </breakpoint-manager>
-    <watches-manager />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteEditTrip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-472">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ClientHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="1278" column="55" lean-forward="false" selection-start-line="1278" selection-start-column="55" selection-end-line="1278" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/gite_getCorrectBus.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/gite_getCorrectBus.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="32" lean-forward="false" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteManageTrip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1695">
-          <caret line="138" column="17" lean-forward="false" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteLookupCorrectBus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainGite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/javafx-src.zip!/javafx/util/Callback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="51" column="13" lean-forward="false" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="136" column="39" lean-forward="false" selection-start-line="136" selection-start-column="39" selection-end-line="136" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/SessionMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/sql/SQLException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3001">
-          <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddChild.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddChildNew.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="176" column="40" lean-forward="true" selection-start-line="176" selection-start-column="40" selection-end-line="176" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteAddStop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="146" column="53" lean-forward="false" selection-start-line="146" selection-start-column="53" selection-end-line="146" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ServerSocket_SQLIF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="1254" column="69" lean-forward="false" selection-start-line="1254" selection-start-column="69" selection-end-line="1254" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ServerRMI_SQLIF.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/RMITest/RmiModeTestGite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9405">
-          <caret line="644" column="0" lean-forward="false" selection-start-line="644" selection-start-column="0" selection-end-line="644" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/RMITest/RmiModeTestAnagrafica.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1830">
-          <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteManagePresenzeTappe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2430">
-          <caret line="187" column="85" lean-forward="false" selection-start-line="187" selection-start-column="85" selection-end-line="187" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/DMLCommandExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="1735" column="32" lean-forward="false" selection-start-line="1735" selection-start-column="32" selection-end-line="1735" selection-end-column="32" />
-          <folding>
-            <marker date="1527523346395" expanded="true" signature="994:1071" ph="INSERT INTO PRESENZABAMBINO... " />
-            <marker date="1527523346395" expanded="true" signature="1696:1775" ph="INSERT INTO PRESENZAPERSONALE... " />
-            <marker date="1527523346395" expanded="true" signature="2435:2502" ph="SELECT * FRO... Personale" />
-            <marker date="1527523346395" expanded="true" signature="5609:5926" ph="INSERT INTO FORNITORE... " />
-            <marker date="1527523346395" expanded="true" signature="7116:7256" ph="UPDATE FORNI... " />
-            <marker date="1527523346395" expanded="true" signature="9083:9121" ph="SELECT * FRO... Bambino" />
-            <marker date="1527523346395" expanded="true" signature="10372:10410" ph="SELECT * FRO... ESTERNO" />
-            <marker date="1527523346395" expanded="true" signature="11482:11520" ph="SELECT * FRO... FORNITORE" />
-            <marker date="1527523346395" expanded="true" signature="12520:12560" ph="SELECT * FRO... PERSONALE" />
-            <marker date="1527523346395" expanded="true" signature="13679:13825" ph="SELECT ESTER... BAMBINO" />
-            <marker date="1527523346395" expanded="true" signature="16340:16682" ph="INSERT INTO GITA... " />
-            <marker date="1527523346395" expanded="true" signature="17378:17654" ph="INSERT INTO AUTOBUS... " />
-            <marker date="1527523346395" expanded="true" signature="18355:18561" ph="INSERT INTO TAPPA... " />
-            <marker date="1527523346395" expanded="true" signature="19394:19713" ph="INSERT INTO PRESENZATAPPA... " />
-            <marker date="1527523346395" expanded="true" signature="20379:20441" ph="SELECT * FRO... GITA" />
-            <marker date="1527523346395" expanded="true" signature="21464:21581" ph="SELECT * FRO... TAPPA" />
-            <marker date="1527523346395" expanded="true" signature="22654:22744" ph="SELECT * FRO... AUTOBUS" />
-            <marker date="1527523346395" expanded="true" signature="23778:23844" ph="DELETE FROM " />
-            <marker date="1527523346395" expanded="true" signature="23913:24006" ph="DELETE FROM " />
-            <marker date="1527523346395" expanded="true" signature="24075:24195" ph="DELETE FROM " />
-            <marker date="1527523346395" expanded="true" signature="24837:25041" ph="DELETE FROM " />
-            <marker date="1527523346395" expanded="true" signature="25760:26034" ph="UPDATE GITA " />
-            <marker date="1527523346395" expanded="true" signature="26694:26980" ph="UPDATE AUTOB... " />
-            <marker date="1527523346395" expanded="true" signature="27786:28073" ph="INSERT INTO ASSEGNAZIONEAUTOBUS... " />
-            <marker date="1527523346395" expanded="true" signature="28639:28811" ph="DELETE FROM " />
-            <marker date="1527523346395" expanded="true" signature="29499:29642" ph="SELECT * FRO... BAMBINO" />
-            <marker date="1527523346395" expanded="true" signature="29561:29624" ph="SELECT CodF ASSEGNAZIONEAUTOBUS" />
-            <marker date="1527523346395" expanded="true" signature="30901:31120" ph="SELECT * FRO... BAMBINO" />
-            <marker date="1527523346395" expanded="true" signature="32390:33016" ph="SELECT Z.* F... BAMBINO" />
-            <marker date="1527523346395" expanded="true" signature="34401:34502" ph="INSERT INTO INGREDIENTE... " />
-            <marker date="1527523346395" expanded="true" signature="35132:35296" ph="INSERT INTO PIATTO... " />
-            <marker date="1527523346395" expanded="true" signature="35759:35813" ph="DELETE FROM " />
-            <marker date="1527523346395" expanded="true" signature="36689:36870" ph="INSERT INTO INTOLLERANZABAMBINO... " />
-            <marker date="1527523346395" expanded="true" signature="36950:37131" ph="INSERT INTO INTOLLERANZAPERSONALE... " />
-            <marker date="1527523346395" expanded="true" signature="37892:38009" ph="DELETE FROM " />
-            <marker date="1527523346395" expanded="true" signature="38090:38209" ph="DELETE FROM " />
-            <marker date="1527523346395" expanded="true" signature="38723:38763" ph="SELECT * FRO... INGREDIENTE" />
-            <marker date="1527523346395" expanded="true" signature="39552:39589" ph="SELECT * FRO... MENU" />
-            <marker date="1527523346395" expanded="true" signature="40478:40513" ph="SELECT * FRO... PIATTO" />
-            <marker date="1527523346395" expanded="true" signature="41446:41576" ph="SELECT B.* F... BAMBINO" />
-            <marker date="1527523346395" expanded="true" signature="42661:42938" ph="SELECT S.* F... PERSONALE" />
-            <marker date="1527523346395" expanded="true" signature="44011:44284" ph="SELECT S.* F... BAMBINO" />
-            <marker date="1527523346395" expanded="true" signature="45355:45494" ph="SELECT * FRO... PIATTO" />
-            <marker date="1527523346395" expanded="true" signature="46417:46540" ph="SELECT I.* F... INGREDIENTE" />
-            <marker date="1527523346395" expanded="true" signature="47506:47652" ph="INSERT INTO COMPOSIZIONEMENU... " />
-            <marker date="1527523346395" expanded="true" signature="48346:48474" ph="INSERT INTO COMPOSIZIONEPIATTO... " />
-            <marker date="1527523346395" expanded="true" signature="49174:49273" ph="DELETE FROM " />
-            <marker date="1527523346395" expanded="true" signature="49966:50049" ph="DELETE FROM " />
-            <marker date="1527523346395" expanded="true" signature="50571:50646" ph="SELECT * FRO... PIATTO" />
-            <marker date="1527523346395" expanded="true" signature="51576:51701" ph="SELECT P.* F... PERSONALE" />
-            <marker date="1527523346395" expanded="true" signature="52807:52899" ph="SELECT NomeI... INTOLLERANZABAMBINO" />
-            <marker date="1527523346395" expanded="true" signature="52958:53052" ph="SELECT NomeI... INTOLLERANZAPERSONALE" />
-            <marker date="1527523346395" expanded="true" signature="53975:54157" ph="SELECT I.* F... INGREDIENTE" />
-            <marker date="1527523346395" expanded="true" signature="54053:54139" ph="SELECT IB.No... INTOLLERANZABAMBINO" />
-            <marker date="1527523346395" expanded="true" signature="54216:54399" ph="SELECT I.* F... INGREDIENTE" />
-            <marker date="1527523346395" expanded="true" signature="54293:54381" ph="SELECT IP.No... INTOLLERANZAPERSONALE" />
-            <marker date="1527523346395" expanded="true" signature="55384:55518" ph="SELECT M.Nom... ComposizioneMenu" />
-            <marker date="1527523346395" expanded="true" signature="55384:55620" ph="SELECT M.Nom... ComposizioneMenu" />
-            <marker date="1527523346395" expanded="true" signature="55384:55650" ph="SELECT DISTI... ComposizioneMenu" />
-            <marker date="1527523346395" expanded="true" signature="55567:55619" ph="SELECT NomeI... IntolleranzaBambino" />
-            <marker date="1527523346395" expanded="true" signature="55766:55900" ph="SELECT M.Nom... ComposizioneMenu" />
-            <marker date="1527523346395" expanded="true" signature="55766:55905" ph="SELECT M.Nom... ComposizioneMenu" />
-            <marker date="1527523346395" expanded="true" signature="55766:55929" ph="SELECT M.Nom... ComposizioneMenu" />
-            <marker date="1527523346395" expanded="true" signature="55766:56033" ph="SELECT M.Nom... ComposizioneMenu" />
-            <marker date="1527523346395" expanded="true" signature="55766:56034" ph="SELECT DISTI... ComposizioneMenu" />
-            <marker date="1527523346395" expanded="true" signature="55766:56035" ph="SELECT M.Nom... ComposizioneMenu" />
-            <marker date="1527523346395" expanded="true" signature="55950:56003" ph="SELECT NomeI... IntolleranzaPersonale" />
-            <marker date="1527523346395" expanded="true" signature="55950:56033" ph="SELECT NomeI... IntolleranzaPersonale" />
-            <marker date="1527523346395" expanded="true" signature="56880:56966" ph="SELECT A.Tar... AssegnazioneAutobus" />
-            <marker date="1527523346395" expanded="true" signature="56880:56981" ph="SELECT A.Tar... AssegnazioneAutobus" />
-            <marker date="1527523346395" expanded="true" signature="56880:56982" ph="SELECT A.Tar... AssegnazioneAutobus" />
-            <marker date="1527523346395" expanded="true" signature="56880:56983" ph="SELECT A.Tar... AssegnazioneAutobus" />
-            <marker date="1527523346395" expanded="true" signature="56880:57016" ph="SELECT A.Tar... AssegnazioneAutobus" />
-            <marker date="1527523346395" expanded="true" signature="56880:57049" ph="SELECT A.Tar... AssegnazioneAutobus" />
-            <marker date="1527523346395" expanded="true" signature="56880:57050" ph="SELECT A.Tar... AssegnazioneAutobus" />
-            <marker date="1527523346395" expanded="true" signature="56880:57065" ph="SELECT A.Tar... AssegnazioneAutobus" />
-            <marker date="1527523346395" expanded="true" signature="56880:57081" ph="SELECT A.Tar... AssegnazioneAutobus" />
-            <marker date="1527523346395" expanded="true" signature="56880:57092" ph="SELECT A.Tar... AssegnazioneAutobus" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddContact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="104" column="37" lean-forward="true" selection-start-line="104" selection-start-column="37" selection-end-line="104" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaAddStaff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="64" column="54" lean-forward="false" selection-start-line="64" selection-start-column="54" selection-end-line="64" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Gite/ControllerGiteRemoveChildren.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/gite_editChild.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="21" column="103" lean-forward="false" selection-start-line="21" selection-start-column="103" selection-end-line="21" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/AbstractController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="153" column="22" lean-forward="true" selection-start-line="153" selection-start-column="22" selection-end-line="153" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaManageMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="75" column="27" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaViewDishes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1346">
-          <caret line="137" column="31" lean-forward="true" selection-start-line="137" selection-start-column="31" selection-end-line="137" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerShowConflictingDishesPopOver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="65" column="30" lean-forward="false" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaConflicts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-519">
-          <caret line="138" column="17" lean-forward="false" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaTodaysConflicts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="68" column="6" lean-forward="true" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ServerRMI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="451" column="4" lean-forward="false" selection-start-line="451" selection-start-column="4" selection-end-line="459" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/TestSuite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/StartServers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Menu/ControllerLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-707">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/RmiMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9325">
-          <caret line="654" column="24" lean-forward="false" selection-start-line="654" selection-start-column="24" selection-end-line="654" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/fxml/anagrafica_manageChild.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="102" column="17" lean-forward="false" selection-start-line="102" selection-start-column="17" selection-end-line="102" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Menu/ControllerMainMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Mensa/ControllerMensaAddDish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="65" column="4" lean-forward="false" selection-start-line="65" selection-start-column="4" selection-end-line="66" selection-end-column="64" />
-          <folding>
-            <element signature="e#8335#8336#0" expanded="true" />
-            <element signature="e#8381#8382#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageChild.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="40" column="4" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageStaff.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="169" column="8" lean-forward="false" selection-start-line="169" selection-start-column="8" selection-end-line="198" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/controllers/Anagrafica/ControllerAnagraficaManageContact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="48" column="27" lean-forward="true" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="110" column="17" lean-forward="false" selection-start-line="110" selection-start-column="17" selection-end-line="110" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/DMLCommandExecutorSQLInjectionFree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="963" column="6" lean-forward="false" selection-start-line="963" selection-start-column="6" selection-end-line="963" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1527523346401" expanded="true" signature="1040:1117" ph="INSERT INTO PRESENZABAMBINO... " />
-            <marker date="1527523346401" expanded="true" signature="1742:1821" ph="INSERT INTO PRESENZAPERSONALE... " />
-            <marker date="1527523346401" expanded="true" signature="2381:2432" ph="SELECT * FRO... Personale" />
-            <marker date="1527523346401" expanded="true" signature="4018:4169" ph="INSERT INTO PERSONALE... " />
-            <marker date="1527523346401" expanded="true" signature="4648:4796" ph="INSERT INTO BAMBINO... " />
-            <marker date="1527523346401" expanded="true" signature="5317:5441" ph="INSERT INTO ESTERNO... " />
-            <marker date="1527523346401" expanded="true" signature="6018:6196" ph="INSERT INTO FORNITORE... " />
-            <marker date="1527523346401" expanded="true" signature="7662:7723" ph="UPDATE FORNI... " />
-            <marker date="1527523346401" expanded="true" signature="8618:8698" ph="UPDATE PERSO... " />
-            <marker date="1527523346401" expanded="true" signature="9083:9147" ph="UPDATE BAMBI... " />
-            <marker date="1527523346401" expanded="true" signature="9496:9568" ph="UPDATE ESTER... " />
-            <marker date="1527523346401" expanded="true" signature="10167:10205" ph="SELECT * FRO... Bambino" />
-            <marker date="1527523346401" expanded="true" signature="11456:11494" ph="SELECT * FRO... ESTERNO" />
-            <marker date="1527523346401" expanded="true" signature="12566:12604" ph="SELECT * FRO... FORNITORE" />
-            <marker date="1527523346401" expanded="true" signature="13604:13644" ph="SELECT * FRO... PERSONALE" />
-            <marker date="1527523346401" expanded="true" signature="14763:14909" ph="SELECT ESTER... BAMBINO" />
-            <marker date="1527523346401" expanded="true" signature="17297:17462" ph="INSERT INTO GITA... " />
-            <marker date="1527523346401" expanded="true" signature="18473:18590" ph="INSERT INTO AUTOBUS... " />
-            <marker date="1527523346401" expanded="true" signature="19532:19594" ph="INSERT INTO TAPPA... " />
-            <marker date="1527523346401" expanded="true" signature="20633:20794" ph="INSERT INTO PRESENZATAPPA... " />
-            <marker date="1527523346401" expanded="true" signature="21820:21882" ph="SELECT * FRO... GITA" />
-            <marker date="1527523346401" expanded="true" signature="22905:23022" ph="SELECT * FRO... TAPPA" />
-            <marker date="1527523346401" expanded="true" signature="24095:24185" ph="SELECT * FRO... AUTOBUS" />
-            <marker date="1527523346401" expanded="true" signature="25297:25341" ph="DELETE FROM " />
-            <marker date="1527523346401" expanded="true" signature="25551:25611" ph="DELETE FROM " />
-            <marker date="1527523346401" expanded="true" signature="25863:25937" ph="DELETE FROM " />
-            <marker date="1527523346401" expanded="true" signature="26626:26830" ph="DELETE FROM " />
-            <marker date="1527523346401" expanded="true" signature="27559:27672" ph="UPDATE GITA " />
-            <marker date="1527523346401" expanded="true" signature="28656:28775" ph="UPDATE AUTOB... " />
-            <marker date="1527523346401" expanded="true" signature="29821:30014" ph="INSERT INTO ASSEGNAZIONEAUTOBUS... " />
-            <marker date="1527523346401" expanded="true" signature="30813:30916" ph="DELETE FROM " />
-            <marker date="1527523346401" expanded="true" signature="31792:31922" ph="SELECT * FRO... BAMBINO" />
-            <marker date="1527523346401" expanded="true" signature="31854:31904" ph="SELECT CodF ASSEGNAZIONEAUTOBUS" />
-            <marker date="1527523346401" expanded="true" signature="33252:33417" ph="SELECT * FRO... BAMBINO" />
-            <marker date="1527523346401" expanded="true" signature="34834:35265" ph="SELECT B.* F... PRESENZABAMBINO" />
-            <marker date="1527523346401" expanded="true" signature="36939:37013" ph="INSERT INTO INGREDIENTE... " />
-            <marker date="1527523346401" expanded="true" signature="37777:37855" ph="INSERT INTO PIATTO... " />
-            <marker date="1527523346401" expanded="true" signature="38643:38676" ph="DELETE FROM " />
-            <marker date="1527523346401" expanded="true" signature="39502:39593" ph="INSERT INTO INTOLLERANZABAMBINO... " />
-            <marker date="1527523346401" expanded="true" signature="39681:39774" ph="INSERT INTO INTOLLERANZAPERSONALE... " />
-            <marker date="1527523346401" expanded="true" signature="40737:40795" ph="DELETE FROM " />
-            <marker date="1527523346401" expanded="true" signature="40898:40959" ph="DELETE FROM " />
-            <marker date="1527523346401" expanded="true" signature="41718:41758" ph="SELECT * FRO... INGREDIENTE" />
-            <marker date="1527523346401" expanded="true" signature="42547:42584" ph="SELECT * FRO... MENU" />
-            <marker date="1527523346401" expanded="true" signature="43473:43508" ph="SELECT * FRO... PIATTO" />
-            <marker date="1527523346401" expanded="true" signature="44449:44569" ph="SELECT B.* F... BAMBINO" />
-            <marker date="1527523346401" expanded="true" signature="45701:45953" ph="SELECT P.* F... PERSONALE" />
-            <marker date="1527523346401" expanded="true" signature="47107:47355" ph="SELECT B.* F... BAMBINO" />
-            <marker date="1527523346401" expanded="true" signature="48507:48621" ph="SELECT * FRO... PIATTO" />
-            <marker date="1527523346401" expanded="true" signature="49625:49739" ph="SELECT I.* F... INGREDIENTE" />
-            <marker date="1527523346401" expanded="true" signature="50616:50708" ph="INSERT INTO COMPOSIZIONEMENU... " />
-            <marker date="1527523346401" expanded="true" signature="51559:51648" ph="INSERT INTO COMPOSIZIONEPIATTO... " />
-            <marker date="1527523346401" expanded="true" signature="52468:52527" ph="DELETE FROM " />
-            <marker date="1527523346401" expanded="true" signature="53349:53407" ph="DELETE FROM " />
-            <marker date="1527523346401" expanded="true" signature="54151:54199" ph="SELECT * FRO... PIATTO" />
-            <marker date="1527523346401" expanded="true" signature="55211:55326" ph="SELECT P.* F... PERSONALE" />
-            <marker date="1527523346401" expanded="true" signature="56533:56600" ph="SELECT NomeI... INTOLLERANZABAMBINO" />
-            <marker date="1527523346401" expanded="true" signature="56771:56840" ph="SELECT NomeI... INTOLLERANZAPERSONALE" />
-            <marker date="1527523346401" expanded="true" signature="57838:57995" ph="SELECT I.* F... INGREDIENTE" />
-            <marker date="1527523346401" expanded="true" signature="57916:57977" ph="SELECT IB.No... INTOLLERANZABAMBINO" />
-            <marker date="1527523346401" expanded="true" signature="58168:58326" ph="SELECT I.* F... INGREDIENTE" />
-            <marker date="1527523346401" expanded="true" signature="58245:58308" ph="SELECT IP.No... INTOLLERANZAPERSONALE" />
-            <marker date="1527523346401" expanded="true" signature="60003:60209" ph="SELECT M.Nom... ComposizioneMenu" />
-            <marker date="1527523346401" expanded="true" signature="60003:60210" ph="SELECT I.* F... INGREDIENTE" />
-            <marker date="1527523346401" expanded="true" signature="60156:60207" ph="SELECT NomeI... IntolleranzaBambino" />
-            <marker date="1527523346401" expanded="true" signature="60156:60208" ph="SELECT NomeI... IntolleranzaBambino" />
-            <marker date="1527523346401" expanded="true" signature="60430:60437" ph="SELECT I.* F... INGREDIENTE" />
-            <marker date="1527523346401" expanded="true" signature="60430:60521" ph="SELECT M.Nom... ComposizioneMenu" />
-            <marker date="1527523346401" expanded="true" signature="60430:60638" ph="SELECT M.Nom... ComposizioneMenu" />
-            <marker date="1527523346401" expanded="true" signature="60583:60637" ph="SELECT NomeI... IntolleranzaPersonale" />
-            <marker date="1527523346401" expanded="true" signature="61585:61763" ph="SELECT A.Tar... AssegnazioneAutobus" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Gui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="method#main#0;class#Gui#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/RMIServerLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/RMITest/RMITestSuite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/SocketMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6595">
-          <caret line="545" column="24" lean-forward="false" selection-start-line="545" selection-start-column="19" selection-end-line="545" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/RMITest/RmiModeTestMensa.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="271" column="4" lean-forward="true" selection-start-line="271" selection-start-column="4" selection-end-line="276" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/SocketTest/SocketModeTestMensa.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3449">
-          <caret line="277" column="25" lean-forward="false" selection-start-line="277" selection-start-column="25" selection-end-line="277" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/SocketServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/SocketTest/SocketTestSuite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-  </component>
   <component name="masterDetails">
     <states>
-      <state key="ArtifactsStructureConfigurable.UI">
+      <state key="ProjectJDKs.UI">
         <settings>
-          <artifact-editor />
+          <last-edited>9</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>ChildCareTech</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>mysql:mysql-connector-java:5.1.46</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.3908046" />
               </list>
             </option>
           </splitter-proportions>

@@ -60,8 +60,10 @@ public class ControllerGiteManagePresenzeTappe extends AbstractController implem
     //TextFields
     @FXML private TextField parent1TextField;
     @FXML private TextField parent2TextField;
+    @FXML private TextField doctorTextField;
     @FXML private TextField parent1CellTextField;
     @FXML private TextField parent2CellTextField;
+    @FXML private TextField doctorCellTextField;
 
     //Buttons
     @FXML private Button saveButton;
@@ -170,6 +172,10 @@ public class ControllerGiteManagePresenzeTappe extends AbstractController implem
                             i++;
                         } else break;
 
+                    }
+                    if (c.getTipo().equals(Integer.toString(Contact.ContactTypeFlag.PEDIATRA.getOrdernum()))) {
+                        doctorTextField.setText(c.getNome() + " " + c.getCognome());
+                        doctorCellTextField.setText(c.getCellulare());
                     }
                 }
             } else{

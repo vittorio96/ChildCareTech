@@ -462,7 +462,7 @@ public class DMLCommandExecutorSQLInjectionFree {
         ResultSet rs;
         Statement stmt;
 
-        String sql = "SELECT ESTERNO.* FROM  BAMBINO,ESTERNO WHERE BAMBINO.CodF='" + childCodF + "' AND (BAMBINO.CodFGen1=ESTERNO.CodF OR BAMBINO.CodFGen2=ESTERNO.CodF);";
+        String sql = "SELECT ESTERNO.* FROM  BAMBINO,ESTERNO WHERE BAMBINO.CodF='" + childCodF + "' AND (BAMBINO.CodFGen1=ESTERNO.CodF OR BAMBINO.CodFGen2=ESTERNO.CodF OR BAMBINO.CodFPed=ESTERNO.CodF);";
         Connection conn = myPool.getConnection();
 
         try {
@@ -1036,7 +1036,6 @@ public class DMLCommandExecutorSQLInjectionFree {
         else
             return null;
     }
-    //TODO sistemare
 
     public List<Child> selectChildrenForBusFromDb(Bus bus) throws SQLException{
         List<Child> childrenList = new ArrayList<>();

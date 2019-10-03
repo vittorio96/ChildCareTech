@@ -21,7 +21,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.Anagrafica.ControllerAnagraficaManageContact">
    <children>
-      <TabPane fx:id="tabPane" prefHeight="445.0" prefWidth="800.0" stylesheets="@../CSS/tabpane.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="tabPane" layoutX="5.0" layoutY="6.0" prefHeight="450.0" prefWidth="800.0" stylesheets="@../CSS/tabpane.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <tabs>
             <Tab fx:id="fornitoreTab" text="Fornitore">
                <content>
@@ -275,5 +275,11 @@
             <Image url="@../images/close.png" />
          </image>
       </ImageView>
+      <TextField fx:id="searchTextField" layoutX="478.0" layoutY="3.0" prefHeight="27.0" prefWidth="183.0" stylesheets="@../CSS/textfield.css" />
+      <Label layoutX="413.0" layoutY="8.0" text="Cerca">
+         <font>
+            <Font name="Futura Medium" size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
