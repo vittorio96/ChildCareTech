@@ -1,5 +1,5 @@
 # ChildCareTech
-Final project of Software Engineering 1
+## Final project of Software Engineering 1
 
 <p align="center">
   <img width="100%" src="https://i.imgur.com/tm9mSuM.png" alt="header" />
@@ -11,14 +11,11 @@ Final project of Software Engineering 1
 ## Description
 Repository of the project developed for the "Final project of Software Engineering" course, part of the Bachelor of Science in Engineering of Computing System at Politecnico di Milano.
 
-This fianl test aims at assessing the students' ability to design a complex software system given the requirements of all the stakeholders.
-
-
-## Executables
-The executables are the .jar files in the root of the repository. One is for the server, and two for the clients (either using CLI or a simple JavaFX GUI).
+This final test aims at assessing the students' ability to design a complex software system given the requirements of all the stakeholders.
 
 The project has been developed with the following technologies:
 - Backend: Java
+- Database: MySQL
 - Frontend: JavaFx
 
 ## Group
