@@ -19,7 +19,7 @@ The project has been developed with the following technologies:
 - Frontend: JavaFx
 
 ## Group
-| First name | Last Name |
-| ---------- | --------- | 
-| Vittorio Maria Enrico | Denti |
-| Rafael Francesco | Mosca Aguilar | 
+| First name | Last Name | GitHub |
+| ---------- | --------- | ------ |
+| Vittorio Maria Enrico | Denti | https://github.com/vittorio96 |
+| Rafael Francesco | Mosca Aguilar | https://github.com/rfma23  |
