@@ -1,11 +1,15 @@
 package test.RMITest;
 
-import main.*;
-import main.Classes.NormalClasses.Anagrafica.Contact;
-import main.Classes.NormalClasses.Anagrafica.Person;
-import main.Classes.NormalClasses.Anagrafica.Staff;
-import main.Classes.NormalClasses.Mensa.*;
-import main.Classes.NormalClasses.Anagrafica.Child;
+import main.entities.normal_entities.Anagrafica.Contact;
+import main.entities.normal_entities.Anagrafica.Person;
+import main.entities.normal_entities.Anagrafica.Staff;
+import main.entities.normal_entities.Mensa.*;
+import main.entities.normal_entities.Anagrafica.Child;
+import main.client.Client;
+import main.client.server_interface.RmiMode;
+import main.client.server_interface.SessionMode;
+import main.client.User;
+import main.server.rmi_server.RMIServerLauncher;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.controllers.ControllerAnagraficaEditStaff">
+   <children>
+      <Label layoutX="330.0" layoutY="14.0" text="Modifica Personale" textFill="#6d7786">
+         <font>
+            <Font name="Futura Medium" size="36.0" />
+         </font>
+      </Label>
+      <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="452.0" prefWidth="162.0" style="-fx-background-color: #eef2f6 #eef2f6 #eef2f6 #eef2f6;">
+         <children>
+            <Pane layoutX="-3.0" layoutY="-1.0" prefHeight="99.0" prefWidth="166.0" style="-fx-background-color: #717E93;">
+               <children>
+                  <TextField id="WelcomeField" fx:id="loggedUserDataDisplay" editable="false" layoutX="27.0" layoutY="53.0" prefHeight="27.0" prefWidth="113.0" style="-fx-background-color: #717E93; -fx-text-inner-color: #FFFFFF; -fx-alignment: center; -fx-font-family: Futura;" />
+                  <ImageView fitHeight="42.0" fitWidth="37.0" layoutX="65.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/user.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Button fx:id="logoutButton" layoutX="52.0" layoutY="376.0" mnemonicParsing="false" onAction="#handleLogoutButtonAction" stylesheets="@../CSS/loginButton.css" text="Logout" />
+            <Button fx:id="anagraficaButton" layoutY="98.0" mnemonicParsing="false" onAction="#handleAnagraficaButtonAction" prefHeight="41.0" prefWidth="163.0" stylesheets="@../CSS/hoverableButton.css" text="Anagrafica">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="giteButton" layoutY="139.0" mnemonicParsing="false" onAction="#handleGiteButtonAction" prefHeight="41.0" prefWidth="163.0" stylesheets="@../CSS/hoverableButton.css" text="Gite">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="mensaButton" layoutY="180.0" mnemonicParsing="false" onAction="#handleMensaButtonAction" prefHeight="41.0" prefWidth="163.0" stylesheets="@../CSS/hoverableButton.css" text="Mensa">
+               <font>
+                  <Font name="Futura Medium" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="178.0" layoutY="144.0" prefHeight="292.0" prefWidth="605.0">
+         <children>
+            <GridPane alignment="TOP_CENTER" layoutX="14.0" layoutY="16.0" prefHeight="185.0" prefWidth="578.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="159.35302734375" minWidth="10.0" prefWidth="154.5574951171875" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="110.20452880859375" minWidth="10.0" prefWidth="36.68768310546875" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.50711059570312" minWidth="10.0" prefWidth="112.579833984375" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.92169189453125" minWidth="10.0" prefWidth="165.420166015625" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="62.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="97.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text fill="#6d7786" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome*">
+                     <font>
+                        <Font name="Futura Medium" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#6d7786" strokeType="OUTSIDE" strokeWidth="0.0" text="Cognome*" textAlignment="CENTER" GridPane.columnIndex="3">
+                     <font>
+                        <Font name="Futura Medium" size="13.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Text>
+                  <Text fill="#6d7786" strokeType="OUTSIDE" strokeWidth="0.0" text="Codice Fiscale*" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Futura Medium" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#6d7786" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipologia*" wrappingWidth="123.26727294921875" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Futura Medium" size="13.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#6d7786" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Nascita*" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Futura Medium" size="13.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="nameTextField" GridPane.columnIndex="1" />
+                  <TextField fx:id="codFisTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="surnameTextField" GridPane.columnIndex="4" />
+                  <ChoiceBox fx:id="userTypeDropList" prefHeight="27.0" prefWidth="157.0" stylesheets="@../CSS/choicebox.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <DatePicker fx:id="birthdayDatePicker" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <Pane layoutX="11.0" layoutY="240.0" prefHeight="30.0" prefWidth="578.0">
+               <children>
+                  <GridPane prefHeight="30.0" prefWidth="578.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text fill="#6d7786" strokeType="OUTSIDE" strokeWidth="0.0" text="Rimuovi utente" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Futura Medium" size="13.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="33.0" fitWidth="137.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                           <image>
+                              <Image url="@../images/delete.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                        <Text fill="#6d7786" strokeType="OUTSIDE" strokeWidth="0.0" text="Salva modifiche" GridPane.columnIndex="4">
+                           <font>
+                              <Font name="Futura Medium" size="13.0" />
+                           </font>
+                        </Text>
+                        <ImageView fitHeight="29.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+                           <image>
+                              <Image url="@../images/diskette.png" />
+                           </image>
+                           <GridPane.margin>
+                              <Insets left="30.0" />
+                           </GridPane.margin>
+                        </ImageView>
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="192.0" layoutY="106.0" prefHeight="30.0" prefWidth="578.0">
+         <children>
+            <GridPane prefHeight="30.0" prefWidth="578.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.0" minWidth="10.0" prefWidth="144.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="387.0" minWidth="10.0" prefWidth="368.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="63.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="nameTextField1" prefHeight="27.0" prefWidth="365.0" GridPane.columnIndex="1" />
+                  <ImageView fx:id="searchButton" fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                     <image>
+                        <Image url="@../images/zoom.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <Text fill="#6d7786" strokeType="OUTSIDE" strokeWidth="0.0" text="Ricerca per username:     ">
+                     <font>
+                        <Font name="Futura Medium" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </GridPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

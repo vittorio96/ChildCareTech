@@ -1,8 +1,11 @@
 package test.RMITest;
 
-import main.*;
-
-import main.Classes.NormalClasses.Anagrafica.*;
+import main.entities.normal_entities.Anagrafica.*;
+import main.client.Client;
+import main.client.server_interface.RmiMode;
+import main.client.server_interface.SessionMode;
+import main.client.User;
+import main.server.rmi_server.RMIServerLauncher;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;

@@ -1,10 +1,14 @@
 package test.SocketTest;
 
-import main.Classes.NormalClasses.Anagrafica.Child;
-import main.Classes.NormalClasses.Anagrafica.Contact;
-import main.Classes.NormalClasses.Anagrafica.Staff;
-import main.Classes.NormalClasses.Gite.*;
-import main.*;
+import main.entities.normal_entities.Anagrafica.Child;
+import main.entities.normal_entities.Anagrafica.Contact;
+import main.entities.normal_entities.Anagrafica.Staff;
+import main.entities.normal_entities.Gite.*;
+import main.client.Client;
+import main.client.server_interface.SessionMode;
+import main.client.server_interface.SocketMode;
+import main.client.User;
+import main.server.socket_server.SocketServer;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
